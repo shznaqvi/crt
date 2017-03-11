@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_section_g"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.aku.hassannaqvi.crt.SectionGActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr"
+            android:orientation="vertical"
+            android:paddingEnd="5dp">
+
+            <TextView
+                android:id="@+id/app_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="@string/secG"
+                android:textSize="30sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:padding="2dp"
+                android:text="@string/fpg001"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <CheckBox
+                android:id="@+id/fpg00101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00101" />
+
+            <CheckBox
+                android:id="@+id/fpg00102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00102" />
+
+            <CheckBox
+                android:id="@+id/fpg00103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00103" />
+
+            <CheckBox
+                android:id="@+id/fpg00104"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00104" />
+
+            <CheckBox
+                android:id="@+id/fpg00105"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00105" />
+
+            <CheckBox
+                android:id="@+id/fpg00106"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00106" />
+
+            <CheckBox
+                android:id="@+id/fpg00107"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00107" />
+
+            <CheckBox
+                android:id="@+id/fpg00108"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00108" />
+
+            <CheckBox
+                android:id="@+id/fpg00109"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpg00109" />
+
+            <CheckBox
+                android:id="@+id/fpg00188"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+
+            <EditText
+                android:id="@+id/fpg00188x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:padding="2dp"
+                android:text="@string/fpg002"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <RadioGroup
+                android:id="@+id/fpg002"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/fpg00201"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/fpg00202"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimary"
+                android:padding="2dp"
+                android:text="@string/fpg003"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="#efefef"
+                android:padding="2dp"
+                android:text="@string/fpgsub1"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/fpg003"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/fpg00301"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00301" />
+
+                <RadioButton
+                    android:id="@+id/fpg00302"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00302" />
+
+                <RadioButton
+                    android:id="@+id/fpg00303"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00303" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#efefef"
+                    android:padding="2dp"
+                    android:text="@string/fpgsub2"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/fpg00304"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00304" />
+
+                <RadioButton
+                    android:id="@+id/fpg00305"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00305" />
+
+                <RadioButton
+                    android:id="@+id/fpg00306"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00306" />
+
+                <RadioButton
+                    android:id="@+id/fpg00307"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00307" />
+
+                <RadioButton
+                    android:id="@+id/fpg00308"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00308" />
+
+                <RadioButton
+                    android:id="@+id/fpg00388"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/fpg00388x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/other"
+                android:inputType="textCapWords"
+                android:visibility="gone" />
+
+            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_End"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="2dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/end_interview"
+                    android:textColor="#ff1e1e" />
+
+                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/start_interview"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:visibility="visible" />
+                <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

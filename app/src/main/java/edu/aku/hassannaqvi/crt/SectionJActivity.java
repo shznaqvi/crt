@@ -3,22 +3,11 @@ package edu.aku.hassannaqvi.crt;
 import android.app.Activity;
 import android.os.Bundle;
 
-import butterknife.OnClick;
-
-public class EndingActivity extends Activity {
-
+public class SectionJActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ending);
-
-
+        setContentView(R.layout.activity_section_j);
     }
-
-    @OnClick(R.id.btn_End)
-    void onBtnEndClick() {
-
-    }
-
 }

@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.crt;
 
 import android.annotation.SuppressLint;
@@ -10,34 +11,44 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
+*/
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
- */
+ *//*
+
 public class SplashscreenActivity extends Activity {
 
-    /**
+    */
+/**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-     */
+ *//*
+
     private static final boolean AUTO_HIDE = true;
-    /**
+    */
+/**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
-     */
+ *//*
+
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
-    /**
+    */
+/**
      * Some older devices needs a small delay between UI widget updates
      * and a change of the status and navigation bar.
-     */
+ *//*
+
     private static final int UI_ANIMATION_DELAY = 300;
     private static int SPLASH_TIME_OUT = 3000;
     private final Handler mHideHandler = new Handler();
-    /**
+    */
+/**
      * Touch listener to use for in-layout UI controls to delay hiding the
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
-     */
+ *//*
+
     private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -97,10 +108,12 @@ public class SplashscreenActivity extends Activity {
 
         new Handler().postDelayed(new Runnable() {
 
-            /*
+            */
+/*
              * Showing splash screen with a timer. This will be useful when you
              * want to show case your app logo / company
-             */
+             *//*
+
 
             @Override
             public void run() {
@@ -173,12 +186,15 @@ public class SplashscreenActivity extends Activity {
         mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
     }
 
-    /**
+    */
+/**
      * Schedules a call to hide() in [delay] milliseconds, canceling any
      * previously scheduled calls.
-     */
+ *//*
+
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 }
+*/

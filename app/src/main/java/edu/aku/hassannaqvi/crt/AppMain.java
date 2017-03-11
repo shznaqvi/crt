@@ -11,8 +11,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 /**
  * Created by hassan.naqvi on 11/30/2016.
  */
@@ -58,7 +56,7 @@ public class AppMain extends Application {
     public static String areaCode;
     public static String curCluster;
     //    For participant
-    public static ArrayList<EligibleParticipants> Eparticipant;
+    //public static ArrayList<EligibleParticipants> Eparticipant;
     public static String currentParticipantName = "";
     protected LocationManager locationManager;
     Location location;

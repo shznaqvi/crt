@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.crt;
 
 import android.annotation.TargetApi;
@@ -48,16 +49,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static android.R.string.cancel;
 
+
+*/
 /**
  * A login screen that offers login via email/password.
- */
+ *//*
+
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
-    /**
+    */
+/**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
-     */
+ *//*
+
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
@@ -88,9 +95,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     List<String> clustersName;
     HashMap<String, String> cluster;
 
-    /**
+    */
+/**
      * Keep track of the login task to ensure we can cancel it if requested.
-     */
+ *//*
+
     private UserLoginTask mAuthTask = null;
 
     @Override
@@ -99,7 +108,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        try {
+        */
+/*try {
             long installedOn = this
                     .getPackageManager()
                     .getPackageInfo("edu.aku.hassannaqvi.crt", 0)
@@ -193,7 +203,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 }
             });
 
-        }
+        }*//*
+
 
     }
 
@@ -201,7 +212,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     void onSyncClustersClick() {
         //TODO implement
 
-        // Require permissions INTERNET & ACCESS_NETWORK_STATE
+      */
+/*  // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -233,7 +245,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             spUC.setAdapter(dataAdapter);
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
-        }
+        }*//*
+
 
 
     }
@@ -243,13 +256,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
 
-    /**
+    */
+/**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
-     */
+ *//*
+
     private void attemptLogin() {
-        if (mAuthTask != null) {
+       */
+/* if (mAuthTask != null) {
             return;
         }
 
@@ -276,13 +292,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
-        } /*else if (!isEmailValid(email)) {
+        } */
+/*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
-        }*/
+        }*//*
 
-        if (cancel) {
+
+        */
+/*if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
@@ -292,7 +311,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
-        }
+        }*//*
+
     }
 
     private boolean isEmailValid(String email) {
@@ -305,9 +325,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         return password.length() >= 7;
     }
 
-    /**
+    */
+/**
      * Shows the progress UI and hides the login form.
-     */
+ *//*
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -412,10 +434,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         int IS_PRIMARY = 1;
     }
 
-    /**
+    */
+/**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
-     */
+ *//*
+
+
+    */
+/*
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
@@ -430,7 +457,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
-            try {
+      */
+/*      try {
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -443,7 +471,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
-            }
+            }*//*
+
+    */
+/*
 
             // TODO: register the new account here.
             return true;
@@ -451,7 +482,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         @Override
         protected void onPostExecute(final Boolean success) {
-            mAuthTask = null;
+            */
+/*mAuthTask = null;
             showProgress(false);
 
             LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -494,16 +526,20 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 AlertDialog alert = alertDialogBuilder.create();
                 alert.show();
 
-            }
+            }*//*
+
 
         }
 
 
         @Override
         protected void onCancelled() {
-            mAuthTask = null;
+         */
+/*   mAuthTask = null;
             showProgress(false);
-        }
-    }
+        }*//*
+
+    }*
 }
 
+*/

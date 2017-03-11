@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_section_a"
+    android:id="@+id/activity_section_b"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.crt.SectionAActivity">
+    tools:context="edu.aku.hassannaqvi.crt.SectionBActivity">
 
     <ScrollView
         android:id="@+id/scrollView01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:scrollbars="horizontal">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layoutDirection="ltr"
             android:orientation="vertical"
             android:paddingEnd="5dp">
 
             <TextView
                 android:id="@+id/app_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 android:gravity="center"
-                android:text="@string/secA"
+                android:text="@string/secB"
                 android:textSize="30sp" />
 
             <View
@@ -44,44 +44,44 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/colorPrimary"
                 android:padding="2dp"
-                android:text="@string/fpa001"
+                android:text="@string/fpb001"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/fpa001"
+                android:id="@+id/fpb001"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/fpa00101"
+                    android:id="@+id/fpb00101"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpa00101" />
+                    android:text="@string/fpb00101" />
 
                 <RadioButton
-                    android:id="@+id/fpa00102"
+                    android:id="@+id/fpb00102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpa00102" />
+                    android:text="@string/fpb00102" />
 
                 <RadioButton
-                    android:id="@+id/fpa00103"
+                    android:id="@+id/fpb00103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpa00103" />
+                    android:text="@string/fpb00103" />
 
                 <RadioButton
-                    android:id="@+id/fpa00104"
+                    android:id="@+id/fpb00104"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpa00104" />
+                    android:text="@string/fpb00104" />
 
                 <RadioButton
-                    android:id="@+id/fpa00105"
+                    android:id="@+id/fpb00105"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpa00105" />
+                    android:text="@string/fpb00105" />
 
             </RadioGroup>
 
@@ -91,24 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
                 android:padding="2dp"
-                android:text="@string/fpa002"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/fpa002"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fpa002"
-                android:inputType="textCapWords" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa003"
+                android:text="@string/fpb002"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
@@ -118,43 +101,27 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/fpa00301"
+                    android:id="@+id/fpb00201"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
-                    android:hint="@string/fpa00301"
-                    android:inputType="textCapWords"
-                    android:maxLength="3" />
+                    android:hint="@string/month"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:paddingEnd="5dp" />
 
                 <EditText
-                    android:id="@+id/fpa00302"
+                    android:id="@+id/fpb00202"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
-                    android:hint="@string/fpa00302"
+                    android:hint="@string/day"
                     android:inputType="number"
-                    android:maxLength="3" />
-
+                    android:maxLength="2"
+                    android:paddingEnd="5dp" />
 
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa004"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <EditText
-                android:id="@+id/fpa00401"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fpa00401"
-                android:inputType="textCapWords" />
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
@@ -169,9 +136,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="endInterview"
                     android:padding="2dp"
-                    android:paddingEnd="5dp"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e" />
 
@@ -181,13 +146,10 @@
                     android:id="@+id/btn_Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="startInterview"
                     android:padding="2dp"
-                    android:paddingEnd="5dp"
                     android:text="@string/start_interview"
                     android:textColor="@color/colorPrimaryDark"
                     android:visibility="visible" />
-
                 <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
 
             </LinearLayout>
@@ -197,6 +159,5 @@
 
 
     </ScrollView>
-
 
 </RelativeLayout>
