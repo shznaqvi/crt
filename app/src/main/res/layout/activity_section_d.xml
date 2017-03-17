@@ -10,7 +10,7 @@
         android:id="@+id/scrollView01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scrollbars="horizontal">
 
@@ -37,6 +37,7 @@
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary" />
 
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -59,29 +60,45 @@
                     android:layout_height="wrap_content"
                     android:text="@string/yes" />
 
+
                 <RadioButton
                     android:id="@+id/fpd00102"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpd00102" />
+                    android:text="@string/no" />
+
 
                 <RadioButton
                     android:id="@+id/fpd00103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no" />
-
+                    android:text="@string/fpd00103" />
             </RadioGroup>
 
             <EditText
-                android:id="@+id/fpd00103R"
+                android:id="@+id/fpd00102r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/fpd00103R"
-                android:inputType="textCapWords"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/fpd00102r"
+                android:maxLength="30"
                 android:visibility="gone" />
 
-            <TextView
+
+            <LinearLayout
+                android:id="@+id/fpdGrp001"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/fpdGrp001a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -150,11 +167,14 @@
                 android:id="@+id/fpd001a88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
+                android:maxLength="30"
                 android:visibility="gone" />
 
-            <TextView
+                </LinearLayout>
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -173,13 +193,7 @@
                     android:id="@+id/fpd00201"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes" />
-
-                <RadioButton
-                    android:id="@+id/fpd00299"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dkn" />
+                    android:text="@string/fpd00201" />
 
                 <RadioButton
                     android:id="@+id/fpd00288"
@@ -187,15 +201,22 @@
                     android:layout_height="wrap_content"
                     android:text="@string/other" />
 
+                <RadioButton
+                    android:id="@+id/fpd00299"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkn" />
+
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/fpd00288x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/other"
-                android:inputType="textCapWords"
-                android:visibility="gone" />
+                <EditText
+                    android:id="@+id/fpd00288x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/other"
+                    android:visibility="gone" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -213,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fpd00301"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="2" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -244,9 +265,15 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fpd00401"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="1" />
 
-            <TextView
+                <LinearLayout
+                    android:id="@+id/fpdGrp004"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -315,11 +342,13 @@
                 android:id="@+id/fpd004a88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
                 android:visibility="gone" />
 
-            <TextView
+                </LinearLayout>
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -340,7 +369,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
                     android:hint="@string/day"
-                    android:inputType="textCapWords"
+                    android:inputType="number"
                     android:maxLength="2" />
 
                 <EditText
@@ -370,7 +399,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fpd00601"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="2" />
 
             <EditText
                 android:id="@+id/fpd00602"
@@ -378,9 +407,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fpd00602"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="2" />
 
-            <TextView
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -409,6 +439,11 @@
 
             </RadioGroup>
 
+                <LinearLayout
+                    android:id="@+id/fpdGrp007"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -461,11 +496,13 @@
                 android:id="@+id/fpd00888x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
                 android:visibility="gone" />
+                </LinearLayout>
 
-            <TextView
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -494,7 +531,13 @@
 
             </RadioGroup>
 
-            <TextView
+                <LinearLayout
+                    android:id="@+id/fpdGrp009"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -539,8 +582,8 @@
                 android:id="@+id/fpd009a88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
                 android:visibility="gone" />
 
             <TextView
@@ -595,28 +638,31 @@
                     android:text="@string/fpd009c03" />
 
                 <RadioButton
-                    android:id="@+id/fpd009c99"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dkn" />
-
-                <RadioButton
                     android:id="@+id/fpd009c88"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/other" />
 
+
+                <RadioButton
+                    android:id="@+id/fpd009c99"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkn" />
+
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/fpd009c88x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/other"
-                android:inputType="textCapWords"
-                android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/fpd009c88x"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:hint="@string/other"
+                        android:visibility="gone" />
 
+                </LinearLayout>
 
+            </LinearLayout>
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
             <LinearLayout
@@ -629,9 +675,9 @@
                     android:id="@+id/btn_End"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:padding="10dp"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e" />
 
@@ -641,8 +687,8 @@
                     android:id="@+id/btn_Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
                     android:text="@string/start_interview"
                     android:textColor="@color/colorPrimaryDark"
                     android:visibility="visible" />

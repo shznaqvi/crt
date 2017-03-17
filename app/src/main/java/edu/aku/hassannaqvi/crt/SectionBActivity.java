@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.crt;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,6 +18,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static android.content.ContentValues.TAG;
 
 public class SectionBActivity extends Activity {
 
@@ -94,12 +97,64 @@ public class SectionBActivity extends Activity {
 
         JSONObject js = new JSONObject();
 
+        js.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3" : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
+        js.put("fpb00201", fpb00201.getText().toString());
+        js.put("fpb00202", fpb00202.getText().toString());
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
     }
 
     public boolean validateForm() {
+
+        // =================== Q1  ====================
+        if (fpb001.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
+            fpb00105.setError("This Data is required");
+            Log.d(TAG, "not selected: fpb001 ");
+            return false;
+        } else {
+            fpb00105.setError(null);
+        }
+
+        // =================== Q2  ====================
+        if (fpb00201.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.month), Toast.LENGTH_SHORT).show();
+            fpb00201.setError("This data is required");
+            Log.d(TAG, "empty: fpa002  ");
+            return false;
+        } else {
+            fpb00201.setError(null);
+        }
+
+        if ((Integer.parseInt(fpb00201.getText().toString()) < 7) || (Integer.parseInt(fpb00201.getText().toString()) > 24)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.fpb002) + getString(R.string.month), Toast.LENGTH_LONG).show();
+            fpb00201.setError("Range is 7-24 months");
+            Log.i(TAG, "fpb00201: Range is 7-24 months");
+            return false;
+        } else {
+            fpb00201.setError(null);
+        }
+
+        if (fpb00202.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+            fpb00202.setError("This data is required");
+            Log.d(TAG, "empty: fpa002  ");
+            return false;
+        } else {
+            fpb00202.setError(null);
+        }
+
+        if ((Integer.parseInt(fpb00202.getText().toString()) < 1) || (Integer.parseInt(fpb00202.getText().toString()) > 30)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
+            fpb00202.setError("Range is 1-30 days");
+            Log.i(TAG, "fpb00202: Range is 1-30 days");
+            return false;
+        } else {
+            fpb00202.setError(null);
+        }
+
+
 
         return true;
     }

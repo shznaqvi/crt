@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.crt;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,6 +18,8 @@ import org.json.JSONObject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static android.content.ContentValues.TAG;
 
 public class SectionAActivity extends Activity {
 
@@ -102,12 +105,81 @@ public class SectionAActivity extends Activity {
 
         JSONObject js = new JSONObject();
 
+        js.put("fpa001", fpa00101.isChecked() ? "1" : fpa00102.isChecked() ? "2" : fpa00103.isChecked() ? "3" : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
+        js.put("fpa002", fpa002.getText().toString());
+        js.put("fpa00301", fpa00301.getText().toString());
+        js.put("fpa00302 ", fpa00302.getText().toString());
+        js.put(" fpa00401  ", fpa00401.getText().toString());
+
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
     }
 
     public boolean validateForm() {
+
+        if (fpa001.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.fpa001), Toast.LENGTH_SHORT).show();
+            fpa00105.setError("This Data is required");
+            Log.d(TAG, "not selected: fpa001 ");
+            return false;
+        } else {
+            fpa00105.setError(null);
+        }
+
+        if (fpa002.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.fpa002), Toast.LENGTH_SHORT).show();
+            fpa002.setError("This data is required");
+            Log.d(TAG, "empty: fpa002  ");
+            return false;
+        } else {
+            fpa002.setError(null);
+        }
+
+        if (fpa00301.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.fpa00301), Toast.LENGTH_SHORT).show();
+            fpa00301.setError("This data is required");
+            Log.d(TAG, "empty: fpa00301  ");
+            return false;
+        } else {
+            fpa00301.setError(null);
+        }
+
+        if (fpa00302.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.fpa00302), Toast.LENGTH_SHORT).show();
+            fpa00302.setError("This data is required");
+            Log.d(TAG, "empty: fpa00302  ");
+            return false;
+        } else {
+            fpa00302.setError(null);
+        }
+
+        if ((Integer.parseInt(fpa00302.getText().toString()) == 0)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.fpa003) + getString(R.string.fpa00302), Toast.LENGTH_LONG).show();
+            fpa00302.setError("Id cannnot be zero");
+            Log.i(TAG, "fpa00302: ID cannot not be zero");
+            return false;
+        } else {
+            fpa00302.setError(null);
+        }
+
+        if (fpa00401.getText().toString().isEmpty()) {
+            Toast.makeText(this, "" + getString(R.string.fpa00401), Toast.LENGTH_SHORT).show();
+            fpa00401.setError("This data is required");
+            Log.d(TAG, "empty: fpa00401  ");
+            return false;
+        } else {
+            fpa00401.setError(null);
+        }
+
+        if ((Integer.parseInt(fpa00401.getText().toString()) == 0)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.fpa00401), Toast.LENGTH_LONG).show();
+            fpa00401.setError("# cannnot be zero");
+            Log.i(TAG, "fpa00401: # cannot not be zero");
+            return false;
+        } else {
+            fpa00401.setError(null);
+        }
 
         return true;
     }

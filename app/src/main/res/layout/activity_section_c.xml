@@ -66,8 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -87,8 +87,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,8 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/kg"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLength="5" />
 
             <TextView
@@ -160,7 +160,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/kg"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLength="5" />
 
             <TextView
@@ -181,7 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/kg"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:maxLength="5" />
 
             <TextView
@@ -212,8 +212,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -233,8 +233,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -254,8 +254,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cm"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:inputType="numberDecimal"
+                android:maxLength="5" />
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
@@ -270,9 +270,9 @@
                     android:id="@+id/btn_End"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:padding="10dp"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e" />
 
@@ -282,8 +282,8 @@
                     android:id="@+id/btn_Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
                     android:text="@string/start_interview"
                     android:textColor="@color/colorPrimaryDark"
                     android:visibility="visible" />

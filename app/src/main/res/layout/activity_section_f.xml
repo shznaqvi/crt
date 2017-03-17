@@ -67,7 +67,13 @@
 
             </RadioGroup>
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fpfGrp001"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -95,7 +101,7 @@
                     android:text="@string/fpf001a02" />
 
                 <RadioButton
-                    android:id="@+id/fpd00fa03"
+                    android:id="@+id/fpf001a03"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fpf001a03" />
@@ -142,8 +148,9 @@
                 android:id="@+id/fpf001a88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
+                android:maxLength="30"
                 android:visibility="gone" />
 
             <TextView
@@ -174,7 +181,7 @@
                     android:text="@string/fpf001b02" />
 
                 <RadioButton
-                    android:id="@+id/fpd00fb03"
+                    android:id="@+id/fpf001b03"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fpf001b03" />
@@ -198,9 +205,12 @@
                 android:id="@+id/fpf001b88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:hint="@string/other"
-                android:inputType="textCapWords"
+                android:maxLength="30"
                 android:visibility="gone" />
+
+            </LinearLayout>
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
@@ -214,9 +224,9 @@
                     android:id="@+id/btn_End"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:padding="10dp"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e" />
 
@@ -226,8 +236,8 @@
                     android:id="@+id/btn_Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:paddingEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
                     android:text="@string/start_interview"
                     android:textColor="@color/colorPrimaryDark"
                     android:visibility="visible" />

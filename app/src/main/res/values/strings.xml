@@ -74,8 +74,8 @@
     <string name="fpc002">Weight : </string>
     <string name="fpc003">Left mid-upper arm circumference(MUAC)</string>
     <string name="fpd001">Have You received Snf/Wavamum for your child during last month?(show sachets of Wavamum) </string>
-    <string name="fpd00102">Refued to receive</string>
-    <string name="fpd00103R">Reason </string>
+    <string name="fpd00103">Refued to receive</string>
+    <string name="fpd00102r">Reason </string>
     <string name="fpd001a">If refused,what was/were the reason for refusal?</string>
     <string name="fpd001a01">Tastes is not good/bad taste</string>
     <string name="fpd001a02">It cause diarrhea</string>
@@ -186,9 +186,9 @@
     <string name="fph004g">Thin porridge?  </string>
     <string name="fph004h"> Any other liquids such as [Grip Water, Tea, Rice water]?</string>
     <string name="fph004i"> Any other liquids </string>
-    <string name="fph005"> 5. How many times yesterday during the day or at night did (NAME) consume any (ITEM FROM LIST)?Read Question 5 for items B, C, and F if child consumed the item.Record ‘99’ for Don’t Know</string>
+    <string name="fph005"> How many times yesterday during the day or at night did (NAME) consume any (ITEM FROM LIST)?</string>
     <string name="fph00501">Times </string>
-    <string name="fph006"> </string>
+    <string name="fph006">a) Think about when (NAME) first woke up yesterday. Did (NAME) eat anything at that time? \n  b) What did (NAME) do after that? Did (NAME) eat anything at that time? \n c) What ingredients were in that (MIXED DISH)? Probe: Anything else?  </string>
     <string name="fph006a">Porridge, bread, rice, noodles, or other foods made from grains </string>
     <string name="fph006b"> Pumpkin, carrots, squash, or sweet potatoes that are yellow or orange inside</string>
     <string name="fph006c">White potatoes, white yams, manioc, cassava, or any other foods made from roots  </string>
