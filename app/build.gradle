@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "edu.aku.hassannaqvi.crt"
+        applicationId "edu.aku.hassannaqvi.cbtfollowup"
         minSdkVersion 22
         targetSdkVersion 25
         versionCode 1

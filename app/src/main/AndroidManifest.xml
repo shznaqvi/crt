@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.aku.hassannaqvi.crt">
+    package="edu.aku.hassannaqvi.cbtfollowup">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.location.gps" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -9,21 +23,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SectionAActivity">
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SectionBActivity" />
-        <activity android:name=".SectionCActivity" />
-        <activity android:name=".SectionEActivity" />
-        <activity android:name=".SectionFActivity" />
-        <activity android:name=".SectionGActivity" />
-        <activity android:name=".SectionDActivity" />
-        <activity android:name=".SectionHActivity" />
-        <activity android:name=".SectionIActivity" />
-        <activity android:name=".SectionJActivity"></activity>
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.LoginActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionAActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionCActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionEActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionFActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionGActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionIActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionJActivity" />
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     android:id="@+id/activity_section_d"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.aku.hassannaqvi.crt.SectionDActivity">
+    tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity">
 
     <ScrollView
         android:id="@+id/scrollView01"
