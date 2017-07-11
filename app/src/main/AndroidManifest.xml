@@ -30,6 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.LoginActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.MainActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionAActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionCActivity" />
