@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -28,13 +26,7 @@ import static android.content.ContentValues.TAG;
 public class SectionFActivity extends Activity {
 
     @BindView(R.id.activity_section_f)
-    RelativeLayout activitySectionF;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.textView)
-    TextView textView;
+    ScrollView activitySectionF;
     @BindView(R.id.fpf001)
     RadioGroup fpf001;
     @BindView(R.id.fpf00101)
@@ -79,6 +71,27 @@ public class SectionFActivity extends Activity {
     EditText fpf001b88x;
     @BindView(R.id.fpfGrp001)
     LinearLayout fpfGrp001;
+
+    {
+        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        if (validateForm()) {
+            try {
+                saveDrafts();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (updateDb()) {
+                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                finish();
+                Intent secG = new Intent(this, SectionGActivity.class);
+                startActivity(secG);
+
+            } else {
+                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,27 +157,9 @@ public class SectionFActivity extends Activity {
         startActivity(endSec);
     }
 
-
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
-        if (validateForm()) {
-            try {
-                saveDrafts();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
-
-                finish();
-                Intent secG = new Intent(this, SectionGActivity.class);
-                startActivity(secG);
-
-            } else {
-                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
-            }
-        }
+    @OnClick(R.id.btnNext)
+    void onBtnNextClick() {
+        //TODO implement
     }
 
     private boolean updateDb() {

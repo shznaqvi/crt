@@ -1,75 +1,38 @@
-/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.InputType;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.cbtfollowup.R;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.TehsilsContract;
 import edu.aku.hassannaqvi.cbtfollowup.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
-import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
-import edu.aku.hassannaqvi.cbtfollowup.sync.SyncForms;
 
 
 public class MainActivity extends Activity {
-    public static String TAG = MainActivity.class.getSimpleName();
-    public List<String> lhwName;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     @BindView(R.id.adminsec)
     LinearLayout adminsec;
     @BindView(R.id.recordSummary)
     TextView recordSummary;
-    @BindView(R.id.clusterNo)
-    EditText clusterNo;
-    @BindView(R.id.MN01)
-    Spinner mN01;
-    @BindView(R.id.MN02)
-    Spinner mN02;
-    @BindView(R.id.MN03)
-    Spinner mN03;
-    Map<String, String> tehsils, lhws;
-    DatabaseHelper db;
-    List<String> hfCodes;
-    SharedPreferences sharedPref;
-    SharedPreferences.Editor editor;
-    AlertDialog.Builder builder;
-    String m_Text = "";
+    /*  @BindView(R.id.psuNo)
+      EditText psuNo;*/
     private String rSumText = "";
-
-    //boolean check = false;*/
-/**//*
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +40,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
         // Reset working variables
-        AppMain.mnb1 = "Test";
+        //   AppMain.childName = "Test";
         AppMain.chCount = 0;
         AppMain.chTotal = 0;
 
@@ -88,75 +52,40 @@ public class MainActivity extends Activity {
             adminsec.setVisibility(View.GONE);
         }
 
-//        Tag Working
 
-        sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-        editor = sharedPref.edit();
+     /*   DatabaseHelper db = new DatabaseHelper(this);
+        Collection<FormsContract> todaysForms = new ArrayList<>();
 
-        builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Tag Name");
-
-        final EditText input = new EditText(MainActivity.this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                m_Text = input.getText().toString();
-                if (!m_Text.equals("")) {
-                    editor.putString("tagName", m_Text);
-                    editor.commit();
-                }
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
-            builder.show();
-        }
-
-//        End Tag
-
-
-        db = new DatabaseHelper(this);
-        //Collection<FormsContract> todaysForms = new ArrayList<>();
-
-        //todaysForms = db.getTodayForms();
+        todaysForms = db.getTodayForms();
 
         rSumText += "TODAY'S RECORDS SUMMARY\r\n";
         rSumText += "=======================";
         rSumText += "\r\n\r\n";
-        //rSumText += "Total Forms Today: " + todaysForms.size();
+        rSumText += "Total Forms Today: " + todaysForms.size();
         rSumText += "\r\n";
         rSumText += "    Forms List: \r\n";
         String iStatus = "";
-//        for (FormsContract fc : todaysForms) {
-//
-//            switch (fc.getiStatus()) {
-//                case "1":
-//                    iStatus = "Complete";
-//                    break;
-//                case "2":
-//                    iStatus = "House Locked";
-//                    break;
-//                case "3":
-//                    iStatus = "Refused";
-//                    break;
-//                case "4":
-//                    iStatus = "Refused";
-//                    break;
-//            }
-//
-//            rSumText += fc.getLhwCode() + " " + fc.getHouseHold() + " " + iStatus;
-//            rSumText += "\r\n";
-//
-//        }
+        for (FormsContract fc : todaysForms) {
+
+            switch (fc.getiStatus()) {
+                case "1":
+                    iStatus = "Complete";
+                    break;
+                case "2":
+                    iStatus = "House Locked";
+                    break;
+                case "3":
+                    iStatus = "Refused";
+                    break;
+                case "4":
+                    iStatus = "Refused";
+                    break;
+            }
+
+            rSumText += fc.getPrimaryUnit() + " " + fc.getHouseHold() + " " + iStatus;
+            rSumText += "\r\n";
+
+        }
 
         rSumText += "--------------------------------------------------\r\n";
         if (AppMain.admin) {
@@ -168,140 +97,27 @@ public class MainActivity extends Activity {
             rSumText += "\r\n";
         }
         recordSummary.setText(rSumText);
-
-        //        Sync Spinners
-
-        AppMain.fc = null;
-
-        // Spinner Drop down elements
-        tehsils = new HashMap<>();
-        final List<String> Tname = new ArrayList<>();
-        Collection<TehsilsContract> Tc = db.getAllTehsils();
-        Log.d(TAG, "onCreate: " + Tc.size());
-        for (TehsilsContract hf : Tc) {
-            tehsils.put(hf.getTehsil_name(), hf.getTehsil_code());
-            Tname.add(hf.getTehsil_name());
-        }
-
-        mN01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Tname));
-
-        final List<String> hfCodes = new ArrayList<>();
-
-        mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Spinner Drop down elements
-                List<String> hfNames = new ArrayList<>();
-
-                AppMain.tehsilCode = tehsils.get(Tname.get(position));
-
-                Collection<HFacilitiesContract> hfc = db.getAllHFacilitiesByTehsil(AppMain.tehsilCode);
-                Log.d(TAG, "onCreate: " + hfc.size());
-                for (HFacilitiesContract hf : hfc) {
-                    hfNames.add(hf.gethFacilityName());
-                    hfCodes.add(hf.gethFacilityCode());
-                }
-
-                // attaching data adapter to spinner
-                mN02.setAdapter(new ArrayAdapter<>(getBaseContext(),
-                        android.R.layout.simple_spinner_dropdown_item, hfNames));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.hfCode = hfCodes.get(position);
-
-                lhwName = new ArrayList<String>();
-                lhws = new HashMap<String, String>();
-                Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfCodes.get(position));
-                for (LHWsContract lhw : lhwc) {
-                    lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
-                    lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
-                }
-                ArrayAdapter<String> psuAdapter = new ArrayAdapter<>(getBaseContext(),
-                        android.R.layout.simple_spinner_dropdown_item, lhwName);
-
-                psuAdapter
-                        .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                mN03.setAdapter(psuAdapter);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        mN03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                AppMain.lhwCode = lhws.get(lhwName.get(position));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+*/
 
     }
 
-    public void openForm(View v) {
+ /*   public void CheckPSU(View v) {
+        if (!psuNo.getText().toString().isEmpty()) {
 
+            psuNo.setError(null);
 
-        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
-
-            if (mN01.getSelectedItem() != null) {
-                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-                startActivity(oF);
-            } else {
-                Toast.makeText(getApplicationContext(), "First click on Download Data", Toast.LENGTH_SHORT).show();
-            }
+            Intent Flist = new Intent(this, FormsList.class);
+            Flist.putExtra("psu_no", psuNo.getText().toString());
+            startActivity(Flist);
         } else {
-
-            builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Tag Name");
-
-            final EditText input = new EditText(MainActivity.this);
-            input.setInputType(InputType.TYPE_CLASS_TEXT);
-            builder.setView(input);
-
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    m_Text = input.getText().toString();
-                    if (!m_Text.equals("")) {
-                        editor.putString("tagName", m_Text);
-                        editor.commit();
-
-                        if (mN01.getSelectedItem() != null) {
-                            Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-                            startActivity(oF);
-                        } else {
-                            Toast.makeText(getApplicationContext(), "First click on Download Data", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
-            });
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-
-            builder.show();
+            Toast.makeText(this, "Error(Empty): Data Required", Toast.LENGTH_SHORT).show();
+            psuNo.setError("Error(Empty): Data Required");
         }
+    }*/
 
-
+    public void openForm(View v) {
+        Intent oF = new Intent(this, SectionAActivity.class);
+        startActivity(oF);
     }
 
     public void openA(View v) {
@@ -315,30 +131,26 @@ public class MainActivity extends Activity {
     }
 
     public void openC(View v) {
-        Intent iC = new Intent(this, SectionBActivity.class);
+        Intent iC = new Intent(this, SectionCActivity.class);
         startActivity(iC);
     }
 
     public void openD(View v) {
-        Intent iD = new Intent(this, SectionBActivity.class);
+        Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);
     }
 
     public void openE(View v) {
-        Intent iD = new Intent(this, SectionBActivity.class);
+        //Intent iD = new Intent(this, KAPActivity.class);
+        Intent iD = new Intent(this, SectionEActivity.class);
         startActivity(iD);
     }
 
     public void openF(View v) {
+        //Intent iD = new Intent(this, SocioEconomicActivity.class);
         Intent iD = new Intent(this, SectionFActivity.class);
         startActivity(iD);
     }
-
-   */
-/* public void openIM(View v) {
-        Intent iIM = new Intent(this, SectionIMActivity.class);
-        startActivity(iIM);
-    }*//*
 
 
     public void openG(View v) {
@@ -351,26 +163,10 @@ public class MainActivity extends Activity {
         startActivity(iH);
     }
 
-   */
-/*public void openK(View v) {
-        Intent iK = new Intent(this, SectionKActivity.class);
-        startActivity(iK);
+    public void openI(View v) {
+        Intent iI = new Intent(this, SectionIActivity.class);
+        startActivity(iI);
     }
-*//*
-
-   */
-/* public void openL(View v) {
-        Intent iL = new Intent(this, SectionLActivity.class);
-        startActivity(iL);
-    }
-*//*
-
-  */
-/*  public void openM(View v) {
-        Intent iM = new Intent(this, SectionMActivity.class);
-        startActivity(iM);
-    }*//*
-
 
     public void openEnd(View v) {
         Intent iEnd = new Intent(this, EndingActivity.class);
@@ -382,15 +178,16 @@ public class MainActivity extends Activity {
         startActivity(dbmanager);
     }
 
-    */
-/*public void CheckCluster(View v) {
+    /*public void CheckCluster(View v) {
         Intent cluster_list = new Intent(getApplicationContext(), FormsList.class);
         cluster_list.putExtra("clusterno", clusterNo.getText().toString());
         startActivity(cluster_list);
 
-    }*//*
+    }*/
+  /*  public void syncServer(View view) {
 
-    public void syncServer(View view) {
+        String formsUrl = AppMain._HOST_URL + "pssp/api/forms.php";
+        String imsUrl = AppMain._HOST_URL + "pssp/api/ims.php";
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -400,6 +197,9 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncForms(this).execute();
 
+            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
+            new SyncIMs(this).execute();
+            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -412,17 +212,26 @@ public class MainActivity extends Activity {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
 
-    }
+    }*/
 
-    public void syncDevice(View view) {
-
+   /* public void syncDevice(View view) {
         if (isNetworkAvailable()) {
 
-            syncData sync = new syncData(this);
-            sync.execute();
-        }
 
-    }
+            GetUsers gu = new GetUsers(this);
+            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
+            gu.execute();
+
+
+            SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = syncPref.edit();
+
+            editor.putString("LastSyncDevice ", dtToday);
+
+            editor.apply();
+
+        }
+    }*/
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
@@ -431,178 +240,30 @@ public class MainActivity extends Activity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
+    private boolean isHostAvailable() {
 
-    public class syncData extends AsyncTask<String, String, String> {
+        if (isNetworkAvailable()) {
+            try {
+                SocketAddress sockaddr = new InetSocketAddress(AppMain._IP, AppMain._PORT);
+                // Create an unbound socket
+                Socket sock = new Socket();
 
-        private Context mContext;
+                // This method will block no more than timeoutMs.
+                // If the timeout occurs, SocketTimeoutException is thrown.
+                int timeoutMs = 2000;   // 2 seconds
+                sock.connect(sockaddr, timeoutMs);
+                return true;
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "Server Not Available for Update", Toast.LENGTH_SHORT).show();
+                return false;
+            }
 
-        public syncData(Context mContext) {
-            this.mContext = mContext;
+        } else {
+            Toast.makeText(getApplicationContext(), "Network not available for Update", Toast.LENGTH_SHORT).show();
+            return false;
+
         }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-                    GetUsers us = new GetUsers(mContext);
-                    Toast.makeText(mContext, "Syncing Users", Toast.LENGTH_SHORT).show();
-                    us.execute();
-
-                    GetTehsil gt = new GetTehsil(mContext);
-                    Toast.makeText(mContext, "Syncing Tehsils", Toast.LENGTH_SHORT).show();
-                    gt.execute();
-
-                    GetVillages gv = new GetVillages(mContext);
-                    Toast.makeText(mContext, "Syncing Villages", Toast.LENGTH_SHORT).show();
-                    gv.execute();
-
-                    GetUCs gu = new GetUCs(mContext);
-                    Toast.makeText(mContext, "Syncing Ucs", Toast.LENGTH_SHORT).show();
-                    gu.execute();
-
-                    GetHFacilities gh = new GetHFacilities(mContext);
-                    Toast.makeText(mContext, "Syncing Health Facilities", Toast.LENGTH_SHORT).show();
-                    gh.execute();
-
-                    GetLHWs gp = new GetLHWs(mContext);
-                    Toast.makeText(mContext, "Syncing LHWs", Toast.LENGTH_SHORT).show();
-                    gp.execute();
-
-                    GetSources sr = new GetSources(mContext);
-                    Toast.makeText(mContext, "Syncing NGOs", Toast.LENGTH_SHORT).show();
-                    sr.execute();
-
-                    SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = syncPref.edit();
-
-                    editor.putString("LastSyncDevice", dtToday);
-
-                    editor.apply();
-                }
-            });
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-
-                    //        Sync Spinners
-
-                    AppMain.fc = null;
-
-                    // Spinner Drop down elements
-                    tehsils = new HashMap<>();
-                    final List<String> Tname = new ArrayList<>();
-                    Collection<TehsilsContract> Tc = db.getAllTehsil();
-                    Log.d(TAG, "onCreate: " + Tc.size());
-                    for (TehsilsContract hf : Tc) {
-                        tehsils.put(hf.getTehsil_name(), hf.getTehsil_code());
-                        Tname.add(hf.getTehsil_name());
-                    }
-
-                    mN01.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, Tname));
-
-                    mN01.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            // Spinner Drop down elements
-                            List<String> hfNames = new ArrayList<>();
-
-                            hfCodes = new ArrayList<>();
-
-                            AppMain.tehsilCode = tehsils.get(Tname.get(position));
-
-                            Collection<HFacilitiesContract> hfc = db.getAllHFacilitiesByTehsil(AppMain.tehsilCode);
-                            Log.d(TAG, "onCreate: " + hfc.size());
-                            for (HFacilitiesContract hf : hfc) {
-                                hfNames.add(hf.gethFacilityName());
-                                hfCodes.add(hf.gethFacilityCode());
-                            }
-
-                            // attaching data adapter to spinner
-                            mN02.setAdapter(new ArrayAdapter<>(getBaseContext(),
-                                    android.R.layout.simple_spinner_dropdown_item, hfNames));
-
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-
-                    mN02.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            AppMain.hfCode = hfCodes.get(position);
-
-                            lhwName = new ArrayList<String>();
-                            lhws = new HashMap<String, String>();
-                            Collection<LHWsContract> lhwc = db.getAllLhwsByHf(hfCodes.get(position));
-                            for (LHWsContract lhw : lhwc) {
-                                lhws.put("" + (lhw.getLHWName() + " (" + lhw.getLHWCode() + ")"), lhw.getLHWCode());
-                                lhwName.add(lhw.getLHWName() + " (" + lhw.getLHWCode() + ")");
-                            }
-                            ArrayAdapter<String> psuAdapter = new ArrayAdapter<String>(MainActivity.this,
-                                    android.R.layout.simple_spinner_item, lhwName);
-
-                            psuAdapter
-                                    .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            mN03.setAdapter(psuAdapter);
-
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-
-                    mN03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            AppMain.lhwCode = lhws.get(lhwName.get(position));
-                */
-/*Collection<LHWsContract> lhwc = db.getAllLhwsByHf(AppMain.hh01txt);
-                for (LHWsContract l : lhwc) {
-                    Log.d(TAG, "onItemSelected: " + l.getLHWCode() + " -" + AppMain.hh02txt);
-
-                    if (l.getLHWCode().equals(AppMain.hh02txt)) {
-                        Log.d(TAG, "onItemSelected: " + l.getLHWName());
-                        String[] psuNameS = l.getLHWName().toString().split("\\|");
-                        districtN.setText(psuNameS[0]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[0]);
-                        ucN.setText(psuNameS[1]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[1]);
-                        psuN.setText(psuNameS[2]);
-                        Log.d(TAG, "onItemSelected: " + psuNameS[2]);
-
-                    }
-                }*//*
-
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-
-                }
-            }, 1200);
-        }
-
     }
+
+
 }
-
-
-
-*/
