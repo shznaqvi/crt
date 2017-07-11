@@ -278,43 +278,133 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void updateB(String id) {
+    public int updateB() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SB, true);
+        values.put(FormColumns.COLUMN_SB, AppMain.fc.getsF());
 
-        // Which row to update, based on the title
-        String where = FormColumns.COLUMN_ID + " LIKE ?";
-        String[] whereArgs = {id};
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
-        int count = db.update(
-                FormColumns.TABLE_NAME,
+        int count = db.update(FormColumns.TABLE_NAME,
                 values,
-                where,
-                whereArgs);
-        db.close();
+                selection,
+                selectionArgs);
+        return count;
     }
 
-    public void updateC(String id) {
+    public int updateC() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SC, true);
+        values.put(FormColumns.COLUMN_SC, AppMain.fc.getsF());
 
-        // Which row to update, based on the title
-        String where = FormColumns.COLUMN_ID + " LIKE ?";
-        String[] whereArgs = {id};
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
 
-        int count = db.update(
-                FormColumns.TABLE_NAME,
+        int count = db.update(FormColumns.TABLE_NAME,
                 values,
-                where,
-                whereArgs);
-        db.close();
+                selection,
+                selectionArgs);
+        return count;
     }
+
+    public int updateD() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SD, AppMain.fc.getsF());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateE() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SE, AppMain.fc.getsF());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateF() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SF, AppMain.fc.getsF());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateG() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SG, AppMain.fc.getsF());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateH() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SH, AppMain.fc.getsF());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+
 
     public Collection<ClustersContract> getAllClusters() {
         SQLiteDatabase db = this.getReadableDatabase();

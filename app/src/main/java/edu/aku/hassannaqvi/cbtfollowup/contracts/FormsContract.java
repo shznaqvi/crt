@@ -26,6 +26,11 @@ public class FormsContract {
     private String sA = "";
     private String sB = "";
     private String sC = "";
+    private String sD = "";
+    private String sE = "";
+    private String sF = "";
+    private String sG = "";
+    private String sH = "";
     private String gpsLat = "";
     private String gpsLng = "";
     private String gpsTime = "";
@@ -141,6 +146,46 @@ public class FormsContract {
         this.sC = sC;
     }
 
+    public String getsD() {
+        return sD;
+    }
+
+    public void setsD(String sD) {
+        this.sD = sD;
+    }
+
+    public String getsE() {
+        return sE;
+    }
+
+    public void setsE(String sE) {
+        this.sE = sE;
+    }
+
+    public String getsF() {
+        return sF;
+    }
+
+    public void setsF(String sF) {
+        this.sF = sF;
+    }
+
+    public String getsG() {
+        return sG;
+    }
+
+    public void setsG(String sG) {
+        this.sG = sG;
+    }
+
+    public String getsH() {
+        return sH;
+    }
+
+    public void setsH(String sH) {
+        this.sH = sH;
+    }
+
     public String getGpsLat() {
         return gpsLat;
     }
@@ -212,6 +257,11 @@ public class FormsContract {
         this.sA = jsonObject.getString(FormColumns.COLUMN_SA);
         this.sB = jsonObject.getString(FormColumns.COLUMN_SB);
         this.sC = jsonObject.getString(FormColumns.COLUMN_SC);
+        this.sD = jsonObject.getString(FormColumns.COLUMN_SD);
+        this.sE = jsonObject.getString(FormColumns.COLUMN_SE);
+        this.sF = jsonObject.getString(FormColumns.COLUMN_SF);
+        this.sG = jsonObject.getString(FormColumns.COLUMN_SG);
+        this.sH = jsonObject.getString(FormColumns.COLUMN_SH);
         this.gpsLat = jsonObject.getString(FormColumns.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormColumns.COLUMN_GPSLNG);
         this.gpsTime = jsonObject.getString(FormColumns.COLUMN_GPSTIME);
@@ -239,6 +289,11 @@ public class FormsContract {
         this.sA = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SB));
         this.sC = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SC));
+        this.sD = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SD));
+        this.sE = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SE));
+        this.sF = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SF));
+        this.sG = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SG));
+        this.sH = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SH));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_GPSLNG));
         this.gpsTime = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_GPSTIME));
@@ -270,6 +325,11 @@ public class FormsContract {
         json.put(FormColumns.COLUMN_SA, this.sA == null ? JSONObject.NULL : this.sA);
         json.put(FormColumns.COLUMN_SB, this.sB == null ? JSONObject.NULL : this.sB);
         json.put(FormColumns.COLUMN_SC, this.sC == null ? JSONObject.NULL : this.sC);
+        json.put(FormColumns.COLUMN_SD, this.sD == null ? JSONObject.NULL : this.sD);
+        json.put(FormColumns.COLUMN_SE, this.sE == null ? JSONObject.NULL : this.sE);
+        json.put(FormColumns.COLUMN_SF, this.sF == null ? JSONObject.NULL : this.sF);
+        json.put(FormColumns.COLUMN_SG, this.sG == null ? JSONObject.NULL : this.sG);
+        json.put(FormColumns.COLUMN_SH, this.sH == null ? JSONObject.NULL : this.sH);
         json.put(FormColumns.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
         json.put(FormColumns.COLUMN_GPSLNG, this.gpsLng == null ? JSONObject.NULL : this.gpsLng);
         json.put(FormColumns.COLUMN_GPSTIME, this.gpsTime == null ? JSONObject.NULL : this.gpsTime);
@@ -302,6 +362,11 @@ public class FormsContract {
         public static final String COLUMN_SA = "sa";
         public static final String COLUMN_SB = "sb";
         public static final String COLUMN_SC = "sc";
+        public static final String COLUMN_SD = "sd";
+        public static final String COLUMN_SE = "se";
+        public static final String COLUMN_SF = "sf";
+        public static final String COLUMN_SG = "sg";
+        public static final String COLUMN_SH = "sh";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";
         public static final String COLUMN_GPSTIME = "gpstime";
