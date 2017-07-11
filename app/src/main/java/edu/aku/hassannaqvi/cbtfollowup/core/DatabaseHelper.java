@@ -39,20 +39,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormColumns.TABLE_NAME + "(" +
-            FormColumns.COLUMN__ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            FormColumns.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FormColumns.COLUMN_PROJECTNAME + " TEXT," +
             FormColumns.COLUMN_SURVEYTYPE + " TEXT," +
             FormColumns.COLUMN_UID + " TEXT," +
             FormColumns.COLUMN_FORMDATE + " TEXT," +
-            FormColumns.COLUMN_INTERVIEWER01 + " TEXT," +
-            FormColumns.COLUMN_INTERVIEWER02 + " TEXT," +
+            FormColumns.COLUMN_USER + " TEXT," +
+            FormColumns.COLUMN_DEVICETAGID + " TEXT," +
             FormColumns.COLUMN_CLUSTERCODE + " TEXT," +
             FormColumns.COLUMN_VILLAGEACODE + " TEXT," +
             FormColumns.COLUMN_HOUSEHOLD + " TEXT," +
             FormColumns.COLUMN_ISTATUS + " TEXT," +
             FormColumns.COLUMN_SA + " TEXT," +
-            FormColumns.COLUMN_SBA + " TEXT," +
-            FormColumns.COLUMN_SBB + " TEXT," +
+            FormColumns.COLUMN_SB + " TEXT," +
+            FormColumns.COLUMN_SC + " TEXT," +
             FormColumns.COLUMN_GPSLAT + " TEXT," +
             FormColumns.COLUMN_GPSLNG + " TEXT," +
             FormColumns.COLUMN_GPSTIME + " TEXT," +
@@ -206,11 +206,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormColumns.COLUMN_PROJECTNAME, fc.getProjectName());
         values.put(FormColumns.COLUMN_SURVEYTYPE, fc.getSurveyType());
-        //values.put(FormColumns.COLUMN__ID, fc.getID()); // WONT BE SET AT 'INSERT'
+        //values.put(FormColumns.COLUMN_ID, fc.getID()); // WONT BE SET AT 'INSERT'
         values.put(FormColumns.COLUMN_UID, fc.getUID());
         values.put(FormColumns.COLUMN_FORMDATE, fc.getFormDate());
-        values.put(FormColumns.COLUMN_INTERVIEWER01, fc.getInterviewer01());
-        values.put(FormColumns.COLUMN_INTERVIEWER02, fc.getInterviewer02());
+        values.put(FormColumns.COLUMN_USER, fc.getUser());
+        values.put(FormColumns.COLUMN_DEVICETAGID, fc.getDevicetagId());
         values.put(FormColumns.COLUMN_CLUSTERCODE, fc.getClustercode());
         values.put(FormColumns.COLUMN_VILLAGEACODE, fc.getVillageacode());
         values.put(FormColumns.COLUMN_HOUSEHOLD, fc.getHousehold());
@@ -259,16 +259,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public int updateFormID() {
+        SQLiteDatabase db = this.getReadableDatabase();
 
-    public void updateBA(String id) {
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_UID, AppMain.fc.getUID());
+
+// Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+
+    public void updateB(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SBA, true);
+        values.put(FormColumns.COLUMN_SB, true);
 
         // Which row to update, based on the title
-        String where = FormColumns._ID + " LIKE ?";
+        String where = FormColumns.COLUMN_ID + " LIKE ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -279,15 +297,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void updateBB(String id) {
+    public void updateC(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SBB, true);
+        values.put(FormColumns.COLUMN_SC, true);
 
         // Which row to update, based on the title
-        String where = FormColumns._ID + " LIKE ?";
+        String where = FormColumns.COLUMN_ID + " LIKE ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -348,18 +366,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 FormColumns.COLUMN_PROJECTNAME,
                 FormColumns.COLUMN_SURVEYTYPE,
-                FormColumns.COLUMN__ID,
+                FormColumns.COLUMN_ID,
                 FormColumns.COLUMN_UID,
                 FormColumns.COLUMN_FORMDATE,
-                FormColumns.COLUMN_INTERVIEWER01,
-                FormColumns.COLUMN_INTERVIEWER02,
+                FormColumns.COLUMN_USER,
+                FormColumns.COLUMN_DEVICETAGID,
                 FormColumns.COLUMN_CLUSTERCODE,
                 FormColumns.COLUMN_VILLAGEACODE,
                 FormColumns.COLUMN_HOUSEHOLD,
                 FormColumns.COLUMN_ISTATUS,
                 FormColumns.COLUMN_SA,
-                FormColumns.COLUMN_SBA,
-                FormColumns.COLUMN_SBB,
+                FormColumns.COLUMN_SB,
+                FormColumns.COLUMN_SC,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,
