@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/colorHeading"
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SplashscreenActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -20,7 +20,7 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="Mapps LOGO"
             android:paddingTop="72dp"
-            android:src="@drawable/mapps2_icon" />
+            android:src="@drawable/agakhan" />
 
         <TextView
             android:id="@+id/fullscreen_content"
@@ -30,7 +30,7 @@
             android:gravity="center_horizontal"
 
             android:keepScreenOn="true"
-            android:text="Mapps Forms 2017"
+            android:text="CBT - FOLLOW UP"
             android:textColor="@color/colorAccent"
             android:textSize="32sp"
             android:textStyle="bold" />
