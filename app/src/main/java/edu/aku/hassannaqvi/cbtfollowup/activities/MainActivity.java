@@ -1,12 +1,19 @@
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +39,13 @@ public class MainActivity extends Activity {
     TextView recordSummary;
     /*  @BindView(R.id.psuNo)
       EditText psuNo;*/
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
+    AlertDialog.Builder builder;
+    String m_Text = "";
+    private ProgressDialog pd;
+    private Boolean exit = false;
     private String rSumText = "";
 
     @Override
@@ -50,6 +64,37 @@ public class MainActivity extends Activity {
             adminsec.setVisibility(View.VISIBLE);
         } else {
             adminsec.setVisibility(View.GONE);
+        }
+
+        sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+        editor = sharedPref.edit();
+
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Tag Name");
+
+        final EditText input = new EditText(MainActivity.this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString();
+                if (!m_Text.equals("")) {
+                    editor.putString("tagName", m_Text);
+                    editor.commit();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
+            builder.show();
         }
 
 
@@ -116,8 +161,40 @@ public class MainActivity extends Activity {
     }*/
 
     public void openForm(View v) {
-        Intent oF = new Intent(this, SectionAActivity.class);
-        startActivity(oF);
+        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null) {
+            Intent oF = new Intent(this, SectionAActivity.class);
+            startActivity(oF);
+        } else {
+
+            builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Tag Name");
+
+            final EditText input = new EditText(MainActivity.this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            builder.setView(input);
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    m_Text = input.getText().toString();
+                    if (!m_Text.equals("")) {
+                        editor.putString("tagName", m_Text);
+                        editor.commit();
+
+                        Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                        startActivity(oF);
+                    }
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
+        }
     }
 
     public void openA(View v) {
@@ -265,5 +342,25 @@ public class MainActivity extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if (exit) {
+            finish(); // finish activity
+
+            startActivity(new Intent(this, LoginActivity.class));
+
+        } else {
+            Toast.makeText(this, "Press Back again to Exit.",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
+        }
+    }
 
 }
