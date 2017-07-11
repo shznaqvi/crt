@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_section_c"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionCActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:scrollbars="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layoutDirection="ltr"
-            android:orientation="vertical"
-            android:paddingEnd="5dp">
-
-            <TextView
-                android:id="@+id/app_header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="@string/secC"
-                android:textSize="30sp" />
+            android:orientation="vertical">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/colorPrimary" />
+                android:background="@color/black" />
 
             <TextView
-                android:id="@+id/textView"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpc001"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:background="@color/colorAccent"
+                android:text="@string/section_C"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:typeface="serif" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/fpc001" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM1"
@@ -72,8 +67,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM2"
@@ -93,8 +86,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM3"
@@ -114,18 +105,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpc002"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:layout_marginTop="8dp"
+                android:text="@string/fpc002" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM1"
@@ -145,8 +130,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM2"
@@ -166,8 +149,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
                 android:background="#efefef"
                 android:padding="2dp"
                 android:text="@string/fpcsubM3"
@@ -184,78 +165,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="5" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpc003"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#efefef"
-                android:padding="2dp"
-                android:text="@string/fpcsubM1"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/fpc003m1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cm"
-                android:inputType="numberDecimal"
-                android:maxLength="5" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#efefef"
-                android:padding="2dp"
-                android:text="@string/fpcsubM2"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/fpc003m2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cm"
-                android:inputType="numberDecimal"
-                android:maxLength="5" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#efefef"
-                android:padding="2dp"
-                android:text="@string/fpcsubM3"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/fpc003m3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cm"
-                android:inputType="numberDecimal"
-                android:maxLength="5" />
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
@@ -267,27 +177,27 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_End"
+                    android:id="@+id/btnNext"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:padding="10dp"
-                    android:text="@string/end_interview"
-                    android:textColor="#ff1e1e" />
-
-                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+                    android:onClick="submitSecA"
+                    android:text="@string/next_section"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textSize="24sp" />
 
                 <Button
-                    android:id="@+id/btn_Continue"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnEnd"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:padding="10dp"
-                    android:text="@string/start_interview"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:visibility="visible" />
-                <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:onClick="endForm"
+                    android:text="@string/end_interview"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -297,4 +207,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+

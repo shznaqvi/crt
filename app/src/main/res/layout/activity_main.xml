@@ -32,12 +32,83 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_grad"
             android:padding="20dp"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="14sp" />
 
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/MN01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@color/colorHeading"
+                android:popupBackground="#d6d6d6" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="2"
+                android:text="Tehsil:" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/MN02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@color/colorHeading"
+                android:popupBackground="#d6d6d6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="2"
+                android:text="Health Facilitiy:" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/MN03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@color/colorHeading"
+                android:popupBackground="#d6d6d6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="2"
+                android:text="Name of LHW:" />
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/openForm"
@@ -48,13 +119,24 @@
             android:onClick="openForm"
             android:text="Open New Form" />
 
+
+        <Button
+            android:id="@+id/getChildrens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:onClick="getChildrens"
+            android:text="Get Childrens" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/areaCode"
+                android:id="@+id/clusterNo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,16 +173,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
-            <Button
-                android:id="@+id/openMembers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openMembers"
-                android:text="Section Members" />
 
             <Button
                 android:id="@+id/openA"
@@ -139,6 +211,15 @@
                 android:text="Section D" />
 
             <Button
+                android:id="@+id/openIM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openIM"
+                android:text="Section IM" />
+
+            <Button
                 android:id="@+id/openE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,6 +247,7 @@
                 android:onClick="openG"
                 android:text="Section G" />
 
+
             <Button
                 android:id="@+id/openH"
                 android:layout_width="match_parent"
@@ -175,23 +257,6 @@
                 android:onClick="openH"
                 android:text="Section H" />
 
-            <Button
-                android:id="@+id/openI"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openI"
-                android:text="Section I" />
-
-            <Button
-                android:id="@+id/openJ"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openJ"
-                android:text="Section J" />
 
             <Button
                 android:id="@+id/openK"
@@ -202,6 +267,7 @@
                 android:onClick="openK"
                 android:text="Section K" />
 
+
             <Button
                 android:id="@+id/openL"
                 android:layout_width="match_parent"
@@ -210,6 +276,7 @@
                 android:layout_marginTop="16dp"
                 android:onClick="openL"
                 android:text="Section L" />
+
 
             <Button
                 android:id="@+id/openM"
@@ -220,15 +287,14 @@
                 android:onClick="openM"
                 android:text="Section M" />
 
-
-            <!--<Button-->
-            <!--android:id="@+id/openEnd"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--android:onClick="openEnd"-->
-            <!--android:text="Section End" />-->
+            <Button
+                android:id="@+id/openEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="openEnd"
+                android:text="Section End" />
 
             <Button
                 android:id="@+id/openDB"

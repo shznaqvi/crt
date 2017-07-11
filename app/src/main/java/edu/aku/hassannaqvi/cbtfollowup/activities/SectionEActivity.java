@@ -11,9 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,11 +28,7 @@ import static android.content.ContentValues.TAG;
 public class SectionEActivity extends Activity {
 
     @BindView(R.id.activity_section_e)
-    RelativeLayout activitySectionE;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
+    ScrollView activitySectionE;
     @BindView(R.id.fpe001)
     RadioGroup fpe001;
     @BindView(R.id.fpe00101)
@@ -45,8 +39,6 @@ public class SectionEActivity extends Activity {
     EditText fpe001a;
     @BindView(R.id.fpe001b)
     EditText fpe001b;
-    @BindView(R.id.textView2)
-    TextView textView2;
     @BindView(R.id.fpe00201)
     CheckBox fpe00201;
     @BindView(R.id.fpe00201x)
@@ -214,8 +206,8 @@ public class SectionEActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
+    @OnClick(R.id.btnNext)
+    void onBtnNextClick() {
         Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {

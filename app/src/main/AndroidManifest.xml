@@ -39,7 +39,6 @@
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionIActivity" />
-        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionJActivity" />
     </application>
 
 </manifest>

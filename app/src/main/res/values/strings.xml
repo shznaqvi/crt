@@ -11,8 +11,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions." </string>
 
     <!-- String related to form buttons -->
-    <string name="end_interview"> End Interview </string>
-    <string name="start_interview"> Start Interview</string>
+    <string name="end_interview"> End </string>
+    <string name="next_section"> Next Section</string>
 
     <!-- Strings that are fixed for all apps -->
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
@@ -35,16 +35,16 @@
     <string name="status">Interview status</string>
 
     <!-- String related to section headings -->
-    <string name="secA">Identification </string>
-    <string name="secB">Child Current Status</string>
-    <string name="secC">Anthropometry</string>
-    <string name="secD">Compliance Assessment of specialized Nutriious Food(SNF)-[For Arm 4 and 5]</string>
-    <string name="secE">Bisp Cash Transfer-[For Arms 2-5]</string>
-    <string name="secF">Behaviour Change Communication(BCC)</string>
-    <string name="secG">Child Morbidity and care Seeking</string>
-    <string name="secH">Infant and Young Child Feeding(IYCF)</string>
-    <string name="secI">Form Completion</string>
-    <string name="secJ">Supervisory Checks</string>
+    <string name="section_A">Identification </string>
+    <string name="section_B">Child Current Status</string>
+    <string name="section_C">Anthropometry</string>
+    <string name="section_D">Compliance Assessment of specialized Nutriious Food(SNF)-[For Arm 4 and 5]</string>
+    <string name="section_E">Bisp Cash Transfer-[For Arms 2-5]</string>
+    <string name="section_F">Behaviour Change Communication(BCC)</string>
+    <string name="section_G">Child Morbidity and care Seeking</string>
+    <string name="section_H">Infant and Young Child Feeding(IYCF)</string>
+    <string name="section_I">Form Completion</string>
+    <string name="section_J">Supervisory Checks</string>
 
     <!-- Strings related to Sections Below -->
 
@@ -188,7 +188,7 @@
     <string name="fph004i"> Any other liquids </string>
     <string name="fph005"> How many times yesterday during the day or at night did (NAME) consume any (ITEM FROM LIST)?</string>
     <string name="fph00501">Times </string>
-    <string name="fph006">a) Think about when (NAME) first woke up yesterday. Did (NAME) eat anything at that time? \n  b) What did (NAME) do after that? Did (NAME) eat anything at that time? \n c) What ingredients were in that (MIXED DISH)? Probe: Anything else?  </string>
+    <string name="fph006">Please describe everything that (NAME) ate yesterday during the day or night, whether at home or outside the home.</string>
     <string name="fph006a">Porridge, bread, rice, noodles, or other foods made from grains </string>
     <string name="fph006b"> Pumpkin, carrots, squash, or sweet potatoes that are yellow or orange inside</string>
     <string name="fph006c">White potatoes, white yams, manioc, cassava, or any other foods made from roots  </string>

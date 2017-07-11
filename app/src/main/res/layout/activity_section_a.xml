@@ -1,52 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_section_a"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionAActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView01"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:scrollbars="horizontal">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <View
+        android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black" />
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-            android:layoutDirection="ltr"
-            android:orientation="vertical"
-            android:paddingEnd="5dp">
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorAccent"
+            android:text="@string/section_A"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:typeface="serif" />
 
-            <TextView
-                android:id="@+id/app_header"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:text="@string/secA"
-                android:textSize="30sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorPrimary" />
+            android:layout_height="2dp"
+            android:background="@android:color/black" />
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa001"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:layout_marginTop="8dp"
+                android:text="@string/fpa001" />
 
             <RadioGroup
                 android:id="@+id/fpa001"
@@ -55,64 +50,54 @@
 
                 <RadioButton
                     android:id="@+id/fpa00101"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpa00101" />
 
                 <RadioButton
                     android:id="@+id/fpa00102"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpa00102" />
 
                 <RadioButton
                     android:id="@+id/fpa00103"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpa00103" />
 
                 <RadioButton
                     android:id="@+id/fpa00104"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpa00104" />
 
                 <RadioButton
                     android:id="@+id/fpa00105"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpa00105" />
 
             </RadioGroup>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa002"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpa002" />
 
             <EditText
                 android:id="@+id/fpa002"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/fpa002"
+                android:hint="@string/fpa002" />
 
-                android:maxLength="30" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa003"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpa003" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,7 +110,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
                     android:hint="@string/fpa00301"
                     android:maxLength="30" />
 
@@ -142,15 +126,11 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:padding="2dp"
-                android:text="@string/fpa004"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpa004" />
 
             <EditText
                 android:id="@+id/fpa00401"
@@ -163,34 +143,25 @@
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/fldGrpbtn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="32dp"
+                android:visibility="visible">
 
                 <Button
-                    android:id="@+id/btn_End"
+                    android:id="@+id/btnNext"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:onClick="endInterview"
-                    android:padding="10dp"
-                    android:text="@string/end_interview"
-                    android:textColor="#ff1e1e" />
+                    android:onClick="submitSecA"
+                    android:text="@string/next_section"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textSize="24sp" />
 
-                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
 
-                <Button
-                    android:id="@+id/btn_Continue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:onClick="startInterview"
-                    android:padding="10dp"
-                    android:text="@string/start_interview"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:visibility="visible" />
 
                 <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
 
@@ -203,4 +174,4 @@
     </ScrollView>
 
 
-</RelativeLayout>
+

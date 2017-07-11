@@ -5,11 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -19,19 +18,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
 
 public class SectionAActivity extends Activity {
 
     @BindView(R.id.activity_section_a)
-    RelativeLayout activitySectionA;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.textView)
-    TextView textView;
+    ScrollView activitySectionA;
     @BindView(R.id.fpa001)
     RadioGroup fpa001;
     @BindView(R.id.fpa00101)
@@ -52,6 +46,8 @@ public class SectionAActivity extends Activity {
     EditText fpa00302;
     @BindView(R.id.fpa00401)
     EditText fpa00401;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,20 +57,9 @@ public class SectionAActivity extends Activity {
 
     }
 
-    @OnClick(R.id.btn_End)
-    void onBtnEndClick() {
-        Toast.makeText(this, "complete section", Toast.LENGTH_SHORT).show();
 
-        Intent endSec = new Intent(this, SectionIActivity.class);
-        endSec.putExtra("complete", false);
-        startActivity(endSec);
-    }
-
-
-
-
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
+    @OnClick(R.id.btnNext)
+    void onBtnNextClick() {
 
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
@@ -98,11 +83,14 @@ public class SectionAActivity extends Activity {
 
     private boolean updateDb() {
 
+        DatabaseHelper db = new DatabaseHelper(this);
+
         return true;
     }
 
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+
 
         JSONObject js = new JSONObject();
 

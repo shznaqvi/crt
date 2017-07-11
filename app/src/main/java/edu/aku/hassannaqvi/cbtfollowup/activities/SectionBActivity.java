@@ -7,9 +7,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,13 +23,7 @@ import static android.content.ContentValues.TAG;
 public class SectionBActivity extends Activity {
 
     @BindView(R.id.activity_section_b)
-    RelativeLayout activitySectionB;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.textView)
-    TextView textView;
+    ScrollView activitySectionB;
     @BindView(R.id.fpb001)
     RadioGroup fpb001;
     @BindView(R.id.fpb00101)
@@ -66,8 +58,8 @@ public class SectionBActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
+    @OnClick(R.id.btnNext)
+    void onBtnNextClick() {
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {

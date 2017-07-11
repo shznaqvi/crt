@@ -11,9 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -31,27 +29,21 @@ import static edu.aku.hassannaqvi.cbtfollowup.R.string.fpd005;
 public class SectionDActivity extends Activity {
 
     @BindView(R.id.activity_section_d)
-    RelativeLayout activitySectionD;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.fpdGrp001a)
-    LinearLayout fpdGrp001a;
-    @BindView(R.id.fpdGrp001)
-    LinearLayout fpdGrp001;
-    @BindView(R.id.textView)
-    TextView textView;
+    ScrollView activitySectionD;
     @BindView(R.id.fpd001)
     RadioGroup fpd001;
     @BindView(R.id.fpd00101)
     RadioButton fpd00101;
     @BindView(R.id.fpd00102)
     RadioButton fpd00102;
-    @BindView(R.id.fpd00102r)
-    EditText fpd00102r;
     @BindView(R.id.fpd00103)
     RadioButton fpd00103;
+    @BindView(R.id.fpd00102r)
+    EditText fpd00102r;
+    @BindView(R.id.fpdGrp001)
+    LinearLayout fpdGrp001;
+    @BindView(R.id.fpdGrp001a)
+    LinearLayout fpdGrp001a;
     @BindView(R.id.fpd001a)
     RadioGroup fpd001a;
     @BindView(R.id.fpd001a01)
@@ -78,14 +70,16 @@ public class SectionDActivity extends Activity {
     RadioButton fpd00201;
     @BindView(R.id.fpd00288)
     RadioButton fpd00288;
-    @BindView(R.id.fpd00288x)
-    EditText fpd00288x;
     @BindView(R.id.fpd00299)
     RadioButton fpd00299;
+    @BindView(R.id.fpd00288x)
+    EditText fpd00288x;
     @BindView(R.id.fpd003)
     EditText fpd003;
     @BindView(R.id.fpd004)
     EditText fpd004;
+    @BindView(R.id.fpdGrp004)
+    LinearLayout fpdGrp004;
     @BindView(R.id.fpd004a)
     RadioGroup fpd004a;
     @BindView(R.id.fpd004a01)
@@ -114,14 +108,14 @@ public class SectionDActivity extends Activity {
     EditText fpd00601;
     @BindView(R.id.fpd00602)
     EditText fpd00602;
-    @BindView(R.id.fpdGrp007)
-    LinearLayout fpdGrp007;
     @BindView(R.id.fpd007)
     RadioGroup fpd007;
     @BindView(R.id.fpd00701)
     RadioButton fpd00701;
     @BindView(R.id.fpd00702)
     RadioButton fpd00702;
+    @BindView(R.id.fpdGrp007)
+    LinearLayout fpdGrp007;
     @BindView(R.id.fpd008)
     RadioGroup fpd008;
     @BindView(R.id.fpd00801)
@@ -136,14 +130,14 @@ public class SectionDActivity extends Activity {
     RadioButton fpd00888;
     @BindView(R.id.fpd00888x)
     EditText fpd00888x;
-    @BindView(R.id.fpdGrp009)
-    LinearLayout fpdGrp009;
     @BindView(R.id.fpd009)
     RadioGroup fpd009;
     @BindView(R.id.fpd00901)
     RadioButton fpd00901;
     @BindView(R.id.fpd00902)
     RadioButton fpd00902;
+    @BindView(R.id.fpdGrp009)
+    LinearLayout fpdGrp009;
     @BindView(R.id.fpd009a)
     RadioGroup fpd009a;
     @BindView(R.id.fpd009a01)
@@ -168,10 +162,12 @@ public class SectionDActivity extends Activity {
     RadioButton fpd009c03;
     @BindView(R.id.fpd009c88)
     RadioButton fpd009c88;
-    @BindView(R.id.fpd009c88x)
-    EditText fpd009c88x;
     @BindView(R.id.fpd009c99)
     RadioButton fpd009c99;
+    @BindView(R.id.fpd009c88x)
+    EditText fpd009c88x;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -399,8 +395,8 @@ public class SectionDActivity extends Activity {
     }
 
 
-    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
+    @OnClick(R.id.btnNext)
+    void onBtnNextClick() {
         Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {

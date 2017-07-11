@@ -3,34 +3,34 @@ package edu.aku.hassannaqvi.cbtfollowup.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 
+import static android.content.ContentValues.TAG;
+
 public class SectionIActivity extends Activity {
 
     @BindView(R.id.activity_section_i)
-    RelativeLayout activitySectionI;
-    @BindView(R.id.scrollView01)
-    ScrollView scrollView01;
-    @BindView(R.id.app_header)
-    TextView appHeader;
-    @BindView(R.id.textView)
-    TextView textView;
-    @BindView(R.id.fpa001)
-    RadioGroup fpa001;
-    @BindView(R.id.fpa00101)
-    RadioButton fpa00101;
-    @BindView(R.id.fpa00102)
-    RadioButton fpa00102;
+    ScrollView activitySectionI;
+    @BindView(R.id.status)
+    RadioGroup status;
+    @BindView(R.id.status1)
+    RadioButton status1;
+    @BindView(R.id.status2)
+    RadioButton status2;
+    @BindView(R.id.fldGrpbtn)
+    LinearLayout fldGrpbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +48,30 @@ public class SectionIActivity extends Activity {
         startActivity(secA);
     }
 
+    private boolean UpdateDB() {
 
+        return true;
+    }
+
+    private void SaveDraft() throws JSONException {
+        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    private boolean formValidation() {
+        Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
+
+        if (status.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.status), Toast.LENGTH_LONG).show();
+            status2.setError("This data is Required!");
+            Log.i(TAG, "mnd9: This data is Required!");
+            return false;
+        } else {
+            status2.setError(null);
+        }
+        return true;
+    }
 }
+
+

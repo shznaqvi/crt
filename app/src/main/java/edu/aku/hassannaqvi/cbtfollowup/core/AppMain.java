@@ -52,7 +52,9 @@ public class AppMain extends Application {
 
     public static Boolean admin = false;
     public static String interviewerCode;
-    public static String child_name = "TEST";
+    public static String mnb1 = "TEST";
+    public static int chCount = 0;
+    public static int chTotal = 0;
     public static FormsContract fc;
     public static String userName = "0000";
     public static String areaCode;
