@@ -11,6 +11,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,24 +43,40 @@ public class SectionIActivity extends Activity {
 
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        Toast.makeText(this, "complete section", Toast.LENGTH_SHORT).show();
-        Intent secA = new Intent(this, SectionAActivity.class);
-        secA.putExtra("complete", false);
-        startActivity(secA);
+        Toast.makeText(this, "Processing Closing Section", Toast.LENGTH_SHORT).show();
+        if (validateForm()) {
+            try {
+                saveDrafts();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (updateDb()) {
+                finish();
+                Toast.makeText(this, "Closing Form!", Toast.LENGTH_SHORT).show();
+                Intent endSec = new Intent(this, MainActivity.class);
+                //AppMain.mnb1 = "TEST";
+                startActivity(endSec);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+            //}
+        }
     }
 
-    private boolean UpdateDB() {
+
+    private boolean updateDb() {
 
         return true;
     }
 
-    private void SaveDraft() throws JSONException {
+    private void saveDrafts() throws JSONException {
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
+        JSONObject js = new JSONObject();
 
     }
 
-    private boolean formValidation() {
+    private boolean validateForm() {
         Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
         if (status.getCheckedRadioButtonId() == -1) {

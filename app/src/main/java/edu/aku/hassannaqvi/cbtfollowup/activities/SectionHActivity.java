@@ -338,26 +338,7 @@ public class SectionHActivity extends Activity {
     @BindView(R.id.fphGrp008)
     LinearLayout fphGrp008;
 
-    {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
-        if (validateForm()) {
-            try {
-                saveDrafts();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
-                finish();
-                Intent endSec = new Intent(this, SectionIActivity.class);
-                startActivity(endSec);
-
-            } else {
-                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -462,7 +443,24 @@ public class SectionHActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        //TODO implement
+        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        if (validateForm()) {
+            try {
+                saveDrafts();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (updateDb()) {
+                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                finish();
+                Intent endSec = new Intent(this, SectionIActivity.class);
+                startActivity(endSec);
+
+            } else {
+                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private boolean updateDb() {

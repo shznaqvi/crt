@@ -209,19 +209,18 @@ public class SectionDActivity extends Activity {
         });
 
         // =================== Q2 Others ====================
-
-        fpd002.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        fpd00288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                if (fpd00288.isChecked()) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
                     fpd00288x.setVisibility(View.VISIBLE);
                 } else {
                     fpd00288x.setVisibility(View.GONE);
                     fpd00288x.setText(null);
                 }
-
             }
         });
+
 
         // =================== Q4.1 Others ====================
 
@@ -443,7 +442,7 @@ public class SectionDActivity extends Activity {
         js.put("fpd00102r", fpd00102r.getText().toString());
         js.put("fpd001a", fpd001a01.isChecked() ? "1" : fpd001a02.isChecked() ? "2" : fpd001a03.isChecked() ? "3" : fpd001a04.isChecked() ? "4" : fpd001a05.isChecked() ? "5" : fpd001a06.isChecked() ? "6" : fpd001a07.isChecked() ? "7" : fpd001a88.isChecked() ? "88" : "0");
         js.put("fpd001a88x", fpd001a88x.getText().toString());
-        js.put("fpd002", fpd00201.isChecked() ? "1" : fpd00288.isChecked() ? "2" : fpd00299.isChecked() ? "3" : "0");
+        js.put("fpd002", fpd00201.isChecked() ? "1" : fpd00288.isChecked() ? "88" : fpd00299.isChecked() ? "99" : "0");
         js.put("fpd00288x", fpd00288x.getText().toString());
         js.put("fpd003", fpd003.getText().toString());
         js.put("fpd004", fpd004.getText().toString());
@@ -518,15 +517,12 @@ public class SectionDActivity extends Activity {
 
             if (fpd002.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpd002), Toast.LENGTH_SHORT).show();
-
                 fpd00299.setError("This Data is required");
-                Log.d(TAG, "not selected: fpd002 ");
+                Log.i(TAG, "not selected: fpd002");
                 return false;
             } else {
-
                 fpd00299.setError("This Data is required");
             }
-
 
             if (fpd00288.isChecked() && fpd00288x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd002) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
