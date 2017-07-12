@@ -53,6 +53,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormColumns.COLUMN_SA + " TEXT," +
             FormColumns.COLUMN_SB + " TEXT," +
             FormColumns.COLUMN_SC + " TEXT," +
+            FormColumns.COLUMN_SD + " TEXT," +
+            FormColumns.COLUMN_SE + " TEXT," +
+            FormColumns.COLUMN_SF + " TEXT," +
+            FormColumns.COLUMN_SG + " TEXT," +
+            FormColumns.COLUMN_SH + " TEXT," +
             FormColumns.COLUMN_GPSLAT + " TEXT," +
             FormColumns.COLUMN_GPSLNG + " TEXT," +
             FormColumns.COLUMN_GPSTIME + " TEXT," +
@@ -468,6 +473,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_SA,
                 FormColumns.COLUMN_SB,
                 FormColumns.COLUMN_SC,
+                FormColumns.COLUMN_SD,
+                FormColumns.COLUMN_SE,
+                FormColumns.COLUMN_SF,
+                FormColumns.COLUMN_SG,
+                FormColumns.COLUMN_SH,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,
