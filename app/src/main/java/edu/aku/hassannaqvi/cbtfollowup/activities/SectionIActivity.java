@@ -38,7 +38,6 @@ public class SectionIActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_i);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.btn_End)

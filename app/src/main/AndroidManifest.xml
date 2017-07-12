@@ -34,12 +34,12 @@
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionAActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionCActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionEActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionFActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionGActivity" />
-        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity" />
-        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionIActivity" />
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity" />
     </application>
 
 </manifest>

@@ -1,35 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_ending"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layoutDirection="ltr"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorAccent"
+            android:text="@string/status"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/status" />
+
+        <RadioGroup
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/status1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/complete" />
+
+            <RadioButton
+                android:id="@+id/status2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/incomplete" />
+
+
+        </RadioGroup>
+
+        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/fldGrpbtn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="32dp"
+            android:visibility="visible">
+
 
             <Button
                 android:id="@+id/btn_End"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="endInterview"
-                android:padding="2dp"
+                android:onClick="endForm"
                 android:text="@string/end_interview"
-                android:textColor="#ff1e1e" />
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
 
         </LinearLayout>
 
@@ -37,4 +95,5 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</ScrollView>
+

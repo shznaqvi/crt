@@ -53,7 +53,7 @@ public class SectionBActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, SectionIActivity.class);
+        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
         startActivity(endSec);
     }
@@ -115,7 +115,7 @@ public class SectionBActivity extends Activity {
 
         // =================== Q1  ====================
         if (fpb001.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
             fpb00105.setError("This Data is required");
             Log.d(TAG, "not selected: fpb001 ");
             return false;
@@ -134,7 +134,7 @@ public class SectionBActivity extends Activity {
         }
 
         if ((Integer.parseInt(fpb00201.getText().toString()) < 7) || (Integer.parseInt(fpb00201.getText().toString()) > 24)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpb002) + getString(R.string.month), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpb002) + getString(R.string.month), Toast.LENGTH_SHORT).show();
             fpb00201.setError("Range is 7-24 months");
             Log.i(TAG, "fpb00201: Range is 7-24 months");
             return false;
@@ -143,7 +143,7 @@ public class SectionBActivity extends Activity {
         }
 
         if (fpb00202.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
             fpb00202.setError("This data is required");
             Log.d(TAG, "empty: fpa002  ");
             return false;
@@ -152,7 +152,7 @@ public class SectionBActivity extends Activity {
         }
 
         if ((Integer.parseInt(fpb00202.getText().toString()) < 1) || (Integer.parseInt(fpb00202.getText().toString()) > 30)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
             fpb00202.setError("Range is 1-30 days");
             Log.i(TAG, "fpb00202: Range is 1-30 days");
             return false;
