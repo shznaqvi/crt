@@ -30,8 +30,8 @@
             </intent-filter>
         </activity>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.MainActivity"
             android:screenOrientation="portrait"/>
@@ -51,7 +51,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionIActivity"
+        <activity
+            android:name="edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity"
             android:screenOrientation="portrait"/>
     </application>
 

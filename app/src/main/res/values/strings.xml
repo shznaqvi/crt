@@ -11,8 +11,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions." </string>
 
     <!-- String related to form buttons -->
-    <string name="end_interview"> End </string>
-    <string name="next_section"> Next Section</string>
+    <string name="end_interview"> اختتام </string>
+    <string name="next_section"> اگلا سیکشن</string>
 
     <!-- Strings that are fixed for all apps -->
     <string name="title_activity_splashscreen">SplashscreenActivity</string>
