@@ -186,7 +186,7 @@
                     android:background="@color/black_overlay"
                     android:drawableStart="@drawable/ic_cloud_download_black_24dp"
                     android:padding="15dp"
-                    android:text="Sync Users"
+                    android:text="Sync Data"
                     android:textStyle="bold" />
 
                 <Button

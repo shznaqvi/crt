@@ -55,6 +55,9 @@
         <activity
             android:name="edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".core.AndroidDatabaseManager"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>

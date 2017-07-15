@@ -29,6 +29,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
+import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUps;
 
 
 public class MainActivity extends Activity {
@@ -261,7 +262,7 @@ public class MainActivity extends Activity {
         startActivity(cluster_list);
 
     }*/
-  /*  public void syncServer(View view) {
+    public void syncServer(View view) {
 
         String formsUrl = AppMain._HOST_URL + "pssp/api/forms.php";
         String imsUrl = AppMain._HOST_URL + "pssp/api/ims.php";
@@ -271,33 +272,33 @@ public class MainActivity extends Activity {
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-            new SyncForms(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-            new SyncIMs(this).execute();
-            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
-
-            SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = syncPref.edit();
-
-            editor.putString("LastSyncServer", dtToday);
-
-            editor.apply();
+//            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+//            new SyncForms(this).execute();
+//
+//            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
+//            new SyncIMs(this).execute();
+//            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
+//
+//            SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
+//            SharedPreferences.Editor editor = syncPref.edit();
+//
+//            editor.putString("LastSyncServer", dtToday);
+//
+//            editor.apply();
 
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
 
-    }*/
+    }
 
-   /* public void syncDevice(View view) {
+    public void getChildrensFollowUps(View view) {
         if (isNetworkAvailable()) {
 
 
-            GetUsers gu = new GetUsers(this);
-            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
-            gu.execute();
+            GetFollowUps gfp = new GetFollowUps(this);
+            Toast.makeText(getApplicationContext(), "Syncing Follow UP's", Toast.LENGTH_SHORT).show();
+            gfp.execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
@@ -308,7 +309,26 @@ public class MainActivity extends Activity {
             editor.apply();
 
         }
-    }*/
+    }
+
+    public void syncDevice(View view) {
+        if (isNetworkAvailable()) {
+
+
+//            GetUsers gu = new GetUsers(this);
+//            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
+//            gu.execute();
+
+
+            SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = syncPref.edit();
+
+            editor.putString("LastSyncDevice ", dtToday);
+
+            editor.apply();
+
+        }
+    }
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager

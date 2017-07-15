@@ -15,13 +15,13 @@
         android:orientation="vertical">
 
         <View
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@android:color/black" />
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:background="@color/colorAccent"
@@ -36,6 +36,94 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpa003" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--<EditText
+                android:id="@+id/fpa00301"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/fpa00301"
+                android:maxLength="30" />-->
+
+            <EditText
+                android:id="@+id/fpa00302"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:digits="0123456789"
+                android:hint="@string/fpa00302"
+                android:inputType="number"
+                android:maxLength="4" />
+
+            <Button
+                android:id="@+id/checkChildID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@color/black_overlay"
+                android:elevation="2dp"
+                android:padding="5dp"
+                android:text="CHECK"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/foundFollowup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_dark"
+            android:padding="2dp"
+            android:text="No Child Found"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
+
+
+        <LinearLayout
+            android:id="@+id/membersExists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/fpa002" />
+
+            <EditText
+                android:id="@+id/fpa002"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/fpa002" />
+
+            <TextView
+                android:id="@+id/fpa003"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/darker_gray"
+                android:text="Mother Name: " />
 
             <TextView
                 android:layout_width="match_parent"
@@ -80,55 +168,11 @@
 
             </RadioGroup>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/fpa002" />
-
-            <EditText
-                android:id="@+id/fpa002"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/fpa002" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/fpa003" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/fpa00301"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:hint="@string/fpa00301"
-                    android:maxLength="30" />
-
-                <EditText
-                    android:id="@+id/fpa00302"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:hint="@string/fpa00302"
-                    android:inputType="number"
-                    android:maxLength="3" />
-
-            </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/fpa004" />
+                android:layout_marginTop="8dp"
+                android:text="@string/fpa004" />
 
             <EditText
                 android:id="@+id/fpa00401"
@@ -138,38 +182,39 @@
                 android:inputType="number"
                 android:maxLength="3" />
 
-            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+        </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/fldGrpbtn"
-                android:layout_width="match_parent"
+        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+
+        <LinearLayout
+            android:id="@+id/fldGrpbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="32dp"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="32dp"
-                android:visibility="visible">
-
-                <Button
-                    android:id="@+id/btnNext"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:onClick="submitSecA"
-                    android:text="@string/next_section"
-                    android:textColor="@android:color/holo_green_light"
-                    android:textSize="24sp" />
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="submitSecA"
+                android:text="@string/next_section"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp" />
 
 
-
-                <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
-
-            </LinearLayout>
-
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
 
         </LinearLayout>
 
 
-    </ScrollView>
+    </LinearLayout>
+
+
+</ScrollView>
 
 
 

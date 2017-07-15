@@ -11,6 +11,9 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.List;
+
+import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 
 /**
@@ -22,7 +25,7 @@ public class AppMain extends Application {
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
 
-    public static final String _PROJECT_FOLDER = "mapps/form2/api/";
+    public static final String _PROJECT_FOLDER = "cbt/api/";
 
     public static final String _HOST_URL =
             "http://" + _IP
@@ -64,6 +67,8 @@ public class AppMain extends Application {
     public static String currentParticipantName = "";
     protected LocationManager locationManager;
     Location location;
+
+    public static List<FollowUpsContract> followUpList;
 
     @Override
     public void onCreate() {
@@ -143,13 +148,13 @@ public class AppMain extends Application {
 
         // Determine location quality using a combination of timeliness and accuracy
         if (isMoreAccurate) {
-            Toast.makeText(this, "More Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "More Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         } else if (isNewer && !isLessAccurate) {
-            Toast.makeText(this, "Newer Less Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Newer Less Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         } else if (isNewer && !isSignificantlyLessAccurate && isFromSameProvider) {
-            Toast.makeText(this, "Newer Significantly Less Accurate Location", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Newer Significantly Less Accurate Location", Toast.LENGTH_SHORT).show();
             return true;
         }
         return false;

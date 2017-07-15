@@ -127,14 +127,16 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
-            android:onClick="getChildrens"
-            android:text="Get Childrens" />
+            android:onClick="getChildrensFollowUps"
+            android:visibility="gone"
+            android:text="Get Childrens Follow UP's" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <EditText
                 android:id="@+id/clusterNo"

@@ -40,6 +40,19 @@ public class EndingActivity extends Activity {
 
 
         ButterKnife.bind(this);
+
+
+        Boolean check = getIntent().getExtras().getBoolean("complete");
+
+        if (check) {
+            status1.setEnabled(true);
+            status2.setEnabled(false);
+
+        } else {
+            status1.setEnabled(false);
+            status2.setEnabled(true);
+        }
+
     }
 
     @OnClick(R.id.btn_End)
