@@ -57,33 +57,32 @@ public class SectionGActivity extends Activity {
     RadioButton fpg00201;
     @BindView(R.id.fpg00202)
     RadioButton fpg00202;
-    @BindView(R.id.fpg003)
-    RadioGroup fpg003;
+    /*@BindView(R.id.fpg003)
+    RadioGroup fpg003;*/
     @BindView(R.id.fpg00301)
-    RadioButton fpg00301;
+    CheckBox fpg00301;
     @BindView(R.id.fpg00302)
-    RadioButton fpg00302;
+    CheckBox fpg00302;
     @BindView(R.id.fpg00303)
-    RadioButton fpg00303;
+    CheckBox fpg00303;
     @BindView(R.id.fpg00304)
-    RadioButton fpg00304;
+    CheckBox fpg00304;
     @BindView(R.id.fpg00305)
-    RadioButton fpg00305;
+    CheckBox fpg00305;
     @BindView(R.id.fpg00306)
-    RadioButton fpg00306;
+    CheckBox fpg00306;
     @BindView(R.id.fpg00307)
-    RadioButton fpg00307;
+    CheckBox fpg00307;
     @BindView(R.id.fpg00308)
-    RadioButton fpg00308;
+    CheckBox fpg00308;
     @BindView(R.id.fpg00388)
-    RadioButton fpg00388;
+    CheckBox fpg00388;
     @BindView(R.id.fpg00388x)
     EditText fpg00388x;
     @BindView(R.id.fpgGrp001a)
     LinearLayout fpgGrp001a;
     @BindView(R.id.fpgGrp001b)
     LinearLayout fpgGrp001b;
-
 
 
     @Override
@@ -128,7 +127,18 @@ public class SectionGActivity extends Activity {
                 if (isChecked) {
                     fpgGrp001a.setVisibility(View.GONE);
                     fpg002.clearCheck();
-                    fpg003.clearCheck();
+                    //fpg003.clearCheck();
+
+                    fpg00301.setChecked(false);
+                    fpg00302.setChecked(false);
+                    fpg00303.setChecked(false);
+                    fpg00304.setChecked(false);
+                    fpg00305.setChecked(false);
+                    fpg00306.setChecked(false);
+                    fpg00307.setChecked(false);
+                    fpg00308.setChecked(false);
+                    fpg00388.setChecked(false);
+
                     fpgGrp001b.setVisibility(View.GONE);
                     fpg00188x.setText(null);
                     fpg00388x.setText(null);
@@ -177,7 +187,18 @@ public class SectionGActivity extends Activity {
                 if (isChecked) {
 
                     fpgGrp001b.setVisibility(View.GONE);
-                    fpg003.clearCheck();
+                    //fpg003.clearCheck();
+
+                    fpg00301.setChecked(false);
+                    fpg00302.setChecked(false);
+                    fpg00303.setChecked(false);
+                    fpg00304.setChecked(false);
+                    fpg00305.setChecked(false);
+                    fpg00306.setChecked(false);
+                    fpg00307.setChecked(false);
+                    fpg00308.setChecked(false);
+                    fpg00388.setChecked(false);
+
                     fpg00388x.setText(null);
 
                 } else {
@@ -297,7 +318,17 @@ public class SectionGActivity extends Activity {
             if (fpg00201.isChecked()) {
 
                 // ====================== Q 3 ===================
-                if (fpg003.getCheckedRadioButtonId() == -1) {
+
+
+                if (!(fpg00301.isChecked() ||
+                        fpg00302.isChecked() ||
+                        fpg00303.isChecked() ||
+                        fpg00304.isChecked() ||
+                        fpg00305.isChecked() ||
+                        fpg00306.isChecked() ||
+                        fpg00307.isChecked() ||
+                        fpg00308.isChecked() ||
+                        fpg00388.isChecked())) {
                     Toast.makeText(this, "" + getString(R.string.fpg003), Toast.LENGTH_SHORT).show();
                     fpg00388.setError("This Data is required");
                     Log.d(TAG, "not selected: fpg003 ");
@@ -305,6 +336,16 @@ public class SectionGActivity extends Activity {
                 } else {
                     fpg00388.setError(null);
                 }
+
+
+                /*if (fpg003.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "" + getString(R.string.fpg003), Toast.LENGTH_SHORT).show();
+                    fpg00388.setError("This Data is required");
+                    Log.d(TAG, "not selected: fpg003 ");
+                    return false;
+                } else {
+                    fpg00388.setError(null);
+                }*/
 
                 if (fpg00388.isChecked() && fpg00388x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpg003) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -34,45 +35,44 @@ public class SectionFActivity extends Activity {
     RadioButton fpf00101;
     @BindView(R.id.fpf00102)
     RadioButton fpf00102;
-    @BindView(R.id.fpf001a)
-    RadioGroup fpf001a;
+    /*@BindView(R.id.fpf001a)
+    RadioGroup fpf001a;*/
     @BindView(R.id.fpf001a01)
-    RadioButton fpf001a01;
+    CheckBox fpf001a01;
     @BindView(R.id.fpf001a02)
-    RadioButton fpf001a02;
+    CheckBox fpf001a02;
     @BindView(R.id.fpf001a03)
-    RadioButton fpf001a03;
+    CheckBox fpf001a03;
     @BindView(R.id.fpf001a04)
-    RadioButton fpf001a04;
+    CheckBox fpf001a04;
     @BindView(R.id.fpf001a05)
-    RadioButton fpf001a05;
+    CheckBox fpf001a05;
     @BindView(R.id.fpf001a06)
-    RadioButton fpf001a06;
+    CheckBox fpf001a06;
     @BindView(R.id.fpf001a07)
-    RadioButton fpf001a07;
+    CheckBox fpf001a07;
     @BindView(R.id.fpf001a08)
-    RadioButton fpf001a08;
+    CheckBox fpf001a08;
     @BindView(R.id.fpf001a88)
-    RadioButton fpf001a88;
+    CheckBox fpf001a88;
     @BindView(R.id.fpf001a88x)
     EditText fpf001a88x;
-    @BindView(R.id.fpf001b)
-    RadioGroup fpf001b;
+    /*@BindView(R.id.fpf001b)
+    RadioGroup fpf001b;*/
     @BindView(R.id.fpf001b01)
-    RadioButton fpf001b01;
+    CheckBox fpf001b01;
     @BindView(R.id.fpf001b02)
-    RadioButton fpf001b02;
+    CheckBox fpf001b02;
     @BindView(R.id.fpf001b03)
-    RadioButton fpf001b03;
+    CheckBox fpf001b03;
     @BindView(R.id.fpf001b04)
-    RadioButton fpf001b04;
+    CheckBox fpf001b04;
     @BindView(R.id.fpf001b88)
-    RadioButton fpf001b88;
+    CheckBox fpf001b88;
     @BindView(R.id.fpf001b88x)
     EditText fpf001b88x;
     @BindView(R.id.fpfGrp001)
     LinearLayout fpfGrp001;
-
 
 
     @Override
@@ -116,9 +116,27 @@ public class SectionFActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     fpfGrp001.setVisibility(View.GONE);
-                    fpf001a.clearCheck();
+                    //fpf001a.clearCheck();
+
+                    fpf001a01.setChecked(false);
+                    fpf001a02.setChecked(false);
+                    fpf001a03.setChecked(false);
+                    fpf001a04.setChecked(false);
+                    fpf001a05.setChecked(false);
+                    fpf001a06.setChecked(false);
+                    fpf001a07.setChecked(false);
+                    fpf001a08.setChecked(false);
+                    fpf001a88.setChecked(false);
+
                     fpf001a88x.setText(null);
-                    fpf001b.clearCheck();
+                    //fpf001b.clearCheck();
+
+                    fpf001b01.setChecked(false);
+                    fpf001b02.setChecked(false);
+                    fpf001b03.setChecked(false);
+                    fpf001b04.setChecked(false);
+                    fpf001b88.setChecked(false);
+
                     fpf001b88x.setText(null);
 
                 } else {
@@ -205,7 +223,17 @@ public class SectionFActivity extends Activity {
 
         if (fpf00101.isChecked()) {
             // =================== Q1.1 ====================
-            if (fpf001a.getCheckedRadioButtonId() == -1) {
+
+
+            if (!(fpf001a01.isChecked() ||
+                    fpf001a02.isChecked() ||
+                    fpf001a03.isChecked() ||
+                    fpf001a04.isChecked() ||
+                    fpf001a05.isChecked() ||
+                    fpf001a06.isChecked() ||
+                    fpf001a07.isChecked() ||
+                    fpf001a08.isChecked() ||
+                    fpf001a88.isChecked())) {
                 Toast.makeText(this, "" + getString(R.string.fpf001a), Toast.LENGTH_SHORT).show();
                 fpf001a88.setError("This Data is required");
                 Log.d(TAG, "not selected: fpf001a ");
@@ -213,6 +241,16 @@ public class SectionFActivity extends Activity {
             } else {
                 fpf001a88.setError(null);
             }
+
+
+            /*if (fpf001a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpf001a), Toast.LENGTH_SHORT).show();
+                fpf001a88.setError("This Data is required");
+                Log.d(TAG, "not selected: fpf001a ");
+                return false;
+            } else {
+                fpf001a88.setError(null);
+            }*/
 
             if (fpf001a88.isChecked() && fpf001a88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpf001a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -224,7 +262,12 @@ public class SectionFActivity extends Activity {
             }
 
             // =================== Q1.2 ====================
-            if (fpf001b.getCheckedRadioButtonId() == -1) {
+
+            if (!(fpf001b01.isChecked() ||
+                    fpf001b02.isChecked() ||
+                    fpf001b03.isChecked() ||
+                    fpf001b04.isChecked() ||
+                    fpf001b88.isChecked())) {
                 Toast.makeText(this, "" + getString(R.string.fpf001b), Toast.LENGTH_SHORT).show();
                 fpf001b88.setError("This Data is required");
                 Log.d(TAG, "not selected: fpf001b ");
@@ -232,6 +275,16 @@ public class SectionFActivity extends Activity {
             } else {
                 fpf001b88.setError(null);
             }
+
+
+            /*if (fpf001b.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpf001b), Toast.LENGTH_SHORT).show();
+                fpf001b88.setError("This Data is required");
+                Log.d(TAG, "not selected: fpf001b ");
+                return false;
+            } else {
+                fpf001b88.setError(null);
+            }*/
 
             if (fpf001b88.isChecked() && fpf001b88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpf001b) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();

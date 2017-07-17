@@ -52,6 +52,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionIActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity"
             android:screenOrientation="portrait"/>

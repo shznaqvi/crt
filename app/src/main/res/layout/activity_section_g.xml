@@ -43,86 +43,86 @@
             android:layout_marginTop="8dp"
             android:text="@string/fpg001" />
 
-            <CheckBox
-                android:id="@+id/fpg00101"
+        <CheckBox
+            android:id="@+id/fpg00101"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00101" />
+
+        <CheckBox
+            android:id="@+id/fpg00102"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00102" />
+
+        <CheckBox
+            android:id="@+id/fpg00103"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00103" />
+
+        <CheckBox
+            android:id="@+id/fpg00104"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00104" />
+
+        <CheckBox
+            android:id="@+id/fpg00105"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00105" />
+
+        <CheckBox
+            android:id="@+id/fpg00106"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00106" />
+
+        <CheckBox
+            android:id="@+id/fpg00107"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00107" />
+
+        <CheckBox
+            android:id="@+id/fpg00108"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00108" />
+
+        <CheckBox
+            android:id="@+id/fpg00109"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fpg00109" />
+
+        <CheckBox
+            android:id="@+id/fpg00188"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/other" />
+
+        <EditText
+            android:id="@+id/fpg00188x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/other"
+            android:maxLength="30"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/fpgGrp001a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fpg00101" />
-
-            <CheckBox
-                android:id="@+id/fpg00102"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00102" />
-
-            <CheckBox
-                android:id="@+id/fpg00103"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00103" />
-
-            <CheckBox
-                android:id="@+id/fpg00104"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00104" />
-
-            <CheckBox
-                android:id="@+id/fpg00105"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00105" />
-
-            <CheckBox
-                android:id="@+id/fpg00106"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00106" />
-
-            <CheckBox
-                android:id="@+id/fpg00107"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00107" />
-
-            <CheckBox
-                android:id="@+id/fpg00108"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00108" />
-
-            <CheckBox
-                android:id="@+id/fpg00109"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fpg00109" />
-
-            <CheckBox
-                android:id="@+id/fpg00188"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/other" />
-
-            <EditText
-                android:id="@+id/fpg00188x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:maxLength="30"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:id="@+id/fpgGrp001a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/fpg002" />
+                android:layout_marginTop="8dp"
+                android:text="@string/fpg002" />
 
             <RadioGroup
                 android:id="@+id/fpg002"
@@ -143,152 +143,135 @@
 
             </RadioGroup>
 
-                <LinearLayout
-                    android:id="@+id/fpgGrp001b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/fpg003" />
-
-            <TextView
+            <LinearLayout
+                android:id="@+id/fpgGrp001b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#efefef"
-                android:padding="2dp"
-                android:text="@string/fpgsub1"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/fpg003"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/fpg00301"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fpg00301" />
-
-                <RadioButton
-                    android:id="@+id/fpg00302"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpg00302" />
-
-                <RadioButton
-                    android:id="@+id/fpg00303"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpg00303" />
+                    android:layout_marginTop="8dp"
+                    android:text="@string/fpg003" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#efefef"
                     android:padding="2dp"
-                    android:text="@string/fpgsub2"
+                    android:text="@string/fpgsub1"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
-                <RadioButton
+
+                <CheckBox
+                    android:id="@+id/fpg00301"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00301" />
+
+                <CheckBox
+                    android:id="@+id/fpg00302"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00302" />
+
+                <CheckBox
+                    android:id="@+id/fpg00303"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fpg00303" />
+
+                <CheckBox
                     android:id="@+id/fpg00304"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpg00304" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/fpg00305"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpg00305" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/fpg00306"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpg00306" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/fpg00307"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpg00307" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/fpg00308"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fpg00308" />
 
-                <RadioButton
+                <CheckBox
                     android:id="@+id/fpg00388"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/other" />
 
-            </RadioGroup>
-
-            <EditText
-                android:id="@+id/fpg00388x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/other"
-                android:maxLength="30"
-                android:visibility="gone" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
-
-            <LinearLayout
-                android:id="@+id/fldGrpbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="32dp"
-                android:visibility="visible">
-
-                <Button
-                    android:id="@+id/btnNext"
-                    android:layout_width="0dp"
+                <EditText
+                    android:id="@+id/fpg00388x"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:onClick="submitSecA"
-                    android:text="@string/next_section"
-                    android:textColor="@android:color/holo_green_light"
-                    android:textSize="24sp" />
-
-                <Button
-                    android:id="@+id/btn_End"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:onClick="endForm"
-                    android:text="@string/end_interview"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-                <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/other"
+                    android:maxLength="30"
+                    android:visibility="gone" />
 
             </LinearLayout>
+        </LinearLayout>
 
+        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+
+        <LinearLayout
+            android:id="@+id/fldGrpbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="32dp"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="submitSecA"
+                android:text="@string/next_section"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/end_interview"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
 
         </LinearLayout>
 
 
-    </ScrollView>
+    </LinearLayout>
+
+
+</ScrollView>
 

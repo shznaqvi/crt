@@ -93,6 +93,7 @@ public class SectionCActivity extends Activity {
 
 
     }
+
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
@@ -145,71 +146,6 @@ public class SectionCActivity extends Activity {
             }
         }
 
-        if (fpc001m2.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-            fpc001m2.setError("This data is Required!");
-            Log.i(TAG, "fpc001m1: This data is Required!");
-            return false;
-        } else {
-            fpc001m2.setError(null);
-            if (!fpc001m2.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                fpc001m2.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "fpc001m2: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                fpc001m2.setError(null);
-                if (Double.parseDouble(fpc001m2.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                    fpc001m2.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "fpc001m1: Invalid Greater then 0");
-                    return false;
-                } else {
-                    fpc001m2.setError(null);
-                    if (Double.parseDouble(fpc001m2.getText().toString()) < 40 || Double.parseDouble(fpc001m2.getText().toString()) > 100) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                        fpc001m2.setError("Invalid: Range 40.0-100.0");
-                        Log.i(TAG, "fpc001m1: Invalid Range 40.0-100.0");
-                        return false;
-                    } else {
-                        fpc001m2.setError(null);
-                    }
-                }
-            }
-        }
-
-        if (fpc001m3.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-            fpc001m3.setError("This data is Required!");
-            Log.i(TAG, "fpc001m3: This data is Required!");
-            return false;
-        } else {
-            fpc001m3.setError(null);
-            if (!fpc001m3.getText().toString().contains(".")) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                fpc001m3.setError("Invalid: Decimal value is Required!");
-                Log.i(TAG, "fpc001m3: Invalid Decimal value is Required!");
-                return false;
-            } else {
-                fpc001m3.setError(null);
-                if (Double.parseDouble(fpc001m3.getText().toString()) < 1) {
-                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                    fpc001m3.setError("Invalid: Greater then 0");
-                    Log.i(TAG, "fpc001m3: Invalid Greater then 0");
-                    return false;
-                } else {
-                    fpc001m3.setError(null);
-                    if (Double.parseDouble(fpc001m3.getText().toString()) < 40 || Double.parseDouble(fpc001m3.getText().toString()) > 100) {
-                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
-                        fpc001m3.setError("Invalid: Range 40.0-100.0");
-                        Log.i(TAG, "fpc001m3: Invalid Range 40.0-100.0");
-                        return false;
-                    } else {
-                        fpc001m3.setError(null);
-                    }
-                }
-            }
-        }
 
         if (fpc002m1.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc002), Toast.LENGTH_SHORT).show();
@@ -244,6 +180,41 @@ public class SectionCActivity extends Activity {
             }
         }
 
+
+        if (fpc001m2.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+            fpc001m2.setError("This data is Required!");
+            Log.i(TAG, "fpc001m1: This data is Required!");
+            return false;
+        } else {
+            fpc001m2.setError(null);
+            if (!fpc001m2.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                fpc001m2.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "fpc001m2: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                fpc001m2.setError(null);
+                if (Double.parseDouble(fpc001m2.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                    fpc001m2.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "fpc001m1: Invalid Greater then 0");
+                    return false;
+                } else {
+                    fpc001m2.setError(null);
+                    if (Double.parseDouble(fpc001m2.getText().toString()) < 40 || Double.parseDouble(fpc001m2.getText().toString()) > 100) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                        fpc001m2.setError("Invalid: Range 40.0-100.0");
+                        Log.i(TAG, "fpc001m1: Invalid Range 40.0-100.0");
+                        return false;
+                    } else {
+                        fpc001m2.setError(null);
+                    }
+                }
+            }
+        }
+
+
         if (fpc002m2.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc002), Toast.LENGTH_SHORT).show();
             fpc002m2.setError("This data is Required!");
@@ -277,6 +248,41 @@ public class SectionCActivity extends Activity {
             }
         }
 
+
+        if (fpc001m3.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+            fpc001m3.setError("This data is Required!");
+            Log.i(TAG, "fpc001m3: This data is Required!");
+            return false;
+        } else {
+            fpc001m3.setError(null);
+            if (!fpc001m3.getText().toString().contains(".")) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                fpc001m3.setError("Invalid: Decimal value is Required!");
+                Log.i(TAG, "fpc001m3: Invalid Decimal value is Required!");
+                return false;
+            } else {
+                fpc001m3.setError(null);
+                if (Double.parseDouble(fpc001m3.getText().toString()) < 1) {
+                    Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                    fpc001m3.setError("Invalid: Greater then 0");
+                    Log.i(TAG, "fpc001m3: Invalid Greater then 0");
+                    return false;
+                } else {
+                    fpc001m3.setError(null);
+                    if (Double.parseDouble(fpc001m3.getText().toString()) < 40 || Double.parseDouble(fpc001m3.getText().toString()) > 100) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
+                        fpc001m3.setError("Invalid: Range 40.0-100.0");
+                        Log.i(TAG, "fpc001m3: Invalid Range 40.0-100.0");
+                        return false;
+                    } else {
+                        fpc001m3.setError(null);
+                    }
+                }
+            }
+        }
+
+
         if (fpc002m3.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc002), Toast.LENGTH_SHORT).show();
             fpc002m3.setError("This data is Required!");
@@ -309,7 +315,6 @@ public class SectionCActivity extends Activity {
                 }
             }
         }
-
 
 
         return true;
