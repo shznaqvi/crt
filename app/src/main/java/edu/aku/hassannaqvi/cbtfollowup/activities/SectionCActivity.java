@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -97,15 +98,16 @@ public class SectionCActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
+        JSONObject sC = new JSONObject();
 
-        js.put("fpc001m1", fpc001m1.getText().toString());
-        js.put("fpc001m2", fpc001m2.getText().toString());
-        js.put("fpc001m3", fpc001m3.getText().toString());
-        js.put("fpc002m1 ", fpc002m1.getText().toString());
-        js.put("fpc002m2 ", fpc002m1.getText().toString());
-        js.put("fpc002m3 ", fpc002m1.getText().toString());
+        sC.put("fpc001m1", fpc001m1.getText().toString());
+        sC.put("fpc001m2", fpc001m2.getText().toString());
+        sC.put("fpc001m3", fpc001m3.getText().toString());
+        sC.put("fpc002m1 ", fpc002m1.getText().toString());
+        sC.put("fpc002m2 ", fpc002m1.getText().toString());
+        sC.put("fpc002m3 ", fpc002m1.getText().toString());
 
+        AppMain.fc.setsC(String.valueOf(sC));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 

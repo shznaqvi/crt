@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -101,11 +102,13 @@ public class SectionBActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
+        JSONObject sB = new JSONObject();
 
-        js.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3" : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
-        js.put("fpb00201", fpb00201.getText().toString());
-        js.put("fpb00202", fpb00202.getText().toString());
+        sB.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3" : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
+        sB.put("fpb00201", fpb00201.getText().toString());
+        sB.put("fpb00202", fpb00202.getText().toString());
+
+        AppMain.fc.setsB(String.valueOf(sB));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
@@ -159,7 +162,6 @@ public class SectionBActivity extends Activity {
         } else {
             fpb00202.setError(null);
         }
-
 
 
         return true;

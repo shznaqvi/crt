@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -260,22 +261,24 @@ public class SectionGActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
-        js.put("fpg00101", fpg00101.isChecked() ? "1" : "0");
-        js.put("fpg00102", fpg00102.isChecked() ? "2" : "0");
-        js.put("fpg00103", fpg00103.isChecked() ? "3" : "0");
-        js.put("fpg00104", fpg00104.isChecked() ? "4" : "0");
-        js.put("fpg00105", fpg00105.isChecked() ? "5" : "0");
-        js.put("fpg00106", fpg00106.isChecked() ? "6" : "0");
-        js.put("fpg00107", fpg00107.isChecked() ? "7" : "0");
-        js.put("fpg00108", fpg00108.isChecked() ? "8" : "0");
-        js.put("fpg00109", fpg00109.isChecked() ? "9" : "0");
-        js.put("fpg00188", fpg00188.isChecked() ? "88" : "0");
-        js.put("fpg00188x", fpg00188x.getText().toString());
-        js.put("fpg002", fpg00201.isChecked() ? "1" : fpg00202.isChecked() ? "2" : "0");
-        js.put("fpg003", fpg00301.isChecked() ? "1" : fpg00302.isChecked() ? "2" : fpg00303.isChecked() ? "3" : fpg00304.isChecked() ? "4" : fpg00305.isChecked() ? "5" : fpg00306.isChecked() ? "6" : fpg00307.isChecked() ? "7" : fpg00308.isChecked() ? "8" : fpg00388.isChecked() ? "88" : "0");
-        js.put("fpg00388x", fpg00388x.getText().toString());
+        JSONObject sG = new JSONObject();
 
+        sG.put("fpg00101", fpg00101.isChecked() ? "1" : "0");
+        sG.put("fpg00102", fpg00102.isChecked() ? "2" : "0");
+        sG.put("fpg00103", fpg00103.isChecked() ? "3" : "0");
+        sG.put("fpg00104", fpg00104.isChecked() ? "4" : "0");
+        sG.put("fpg00105", fpg00105.isChecked() ? "5" : "0");
+        sG.put("fpg00106", fpg00106.isChecked() ? "6" : "0");
+        sG.put("fpg00107", fpg00107.isChecked() ? "7" : "0");
+        sG.put("fpg00108", fpg00108.isChecked() ? "8" : "0");
+        sG.put("fpg00109", fpg00109.isChecked() ? "9" : "0");
+        sG.put("fpg00188", fpg00188.isChecked() ? "88" : "0");
+        sG.put("fpg00188x", fpg00188x.getText().toString());
+        sG.put("fpg002", fpg00201.isChecked() ? "1" : fpg00202.isChecked() ? "2" : "0");
+        sG.put("fpg003", fpg00301.isChecked() ? "1" : fpg00302.isChecked() ? "2" : fpg00303.isChecked() ? "3" : fpg00304.isChecked() ? "4" : fpg00305.isChecked() ? "5" : fpg00306.isChecked() ? "6" : fpg00307.isChecked() ? "7" : fpg00308.isChecked() ? "8" : fpg00388.isChecked() ? "88" : "0");
+        sG.put("fpg00388x", fpg00388x.getText().toString());
+
+        AppMain.fc.setsG(String.valueOf(sG));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 

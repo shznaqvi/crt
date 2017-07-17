@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -420,7 +421,6 @@ public class SectionHActivity extends Activity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (fph00701.isChecked()) {
                     fphGrp008.setVisibility(View.VISIBLE);
-
                 } else {
                     fphGrp008.setVisibility(View.GONE);
                     fph008.clearCheck();
@@ -482,49 +482,51 @@ public class SectionHActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
-        js.put("fph001", fph00101.isChecked() ? "1" : fph00102.isChecked() ? "2" : fph00199.isChecked() ? "99" : "0");
-        js.put("fph001a", fph001a01.isChecked() ? "1" : fph001a02.isChecked() ? "2" : fph001a99.isChecked() ? "99" : "0");
-        js.put("fph002", fph00201.isChecked() ? "1" : fph00202.isChecked() ? "2" : fph00299.isChecked() ? "99" : "0");
-        js.put("fph003", fph00301.isChecked() ? "1" : fph00302.isChecked() ? "2" : fph00399.isChecked() ? "99" : "0");
-        js.put("fph004a", fph004a01.isChecked() ? "1" : fph004a02.isChecked() ? "2" : fph004a99.isChecked() ? "99" : "0");
-        js.put("fph004b", fph004b01.isChecked() ? "1" : fph004b02.isChecked() ? "2" : fph004b99.isChecked() ? "99" : "0");
-        js.put("fph004bx", fph004bx.getText().toString());
-        js.put("fph004c", fph004c01.isChecked() ? "1" : fph004c02.isChecked() ? "2" : fph004c99.isChecked() ? "99" : "0");
-        js.put("fph004cx", fph004cx.getText().toString());
-        js.put("fph004d", fph004d01.isChecked() ? "1" : fph004d02.isChecked() ? "2" : fph004d99.isChecked() ? "99" : "0");
-        js.put("fph004e", fph004e01.isChecked() ? "1" : fph004e02.isChecked() ? "2" : fph004e99.isChecked() ? "99" : "0");
-        js.put("fph004f", fph004f01.isChecked() ? "1" : fph004f02.isChecked() ? "2" : fph004f99.isChecked() ? "99" : "0");
-        js.put("fph004fx", fph004fx.getText().toString());
-        js.put("fph004g", fph004g01.isChecked() ? "1" : fph004g02.isChecked() ? "2" : fph004g99.isChecked() ? "99" : "0");
-        js.put("fph004h", fph004h01.isChecked() ? "1" : fph004h02.isChecked() ? "2" : fph004h99.isChecked() ? "99" : "0");
-        js.put("fph004i", fph004i01.isChecked() ? "1" : fph004i02.isChecked() ? "2" : fph004i99.isChecked() ? "99" : "0");
-        js.put("fph006a", fph006a01.isChecked() ? "1" : fph006a02.isChecked() ? "2" : fph006a99.isChecked() ? "99" : "0");
-        js.put("fph006b", fph006b01.isChecked() ? "1" : fph006b02.isChecked() ? "2" : fph006b99.isChecked() ? "99" : "0");
-        js.put("fph006c", fph006c01.isChecked() ? "1" : fph006c02.isChecked() ? "2" : fph006c99.isChecked() ? "99" : "0");
-        js.put("fph006d", fph006d01.isChecked() ? "1" : fph006d02.isChecked() ? "2" : fph006d99.isChecked() ? "99" : "0");
-        js.put("fph006e", fph006e01.isChecked() ? "1" : fph006e02.isChecked() ? "2" : fph006e99.isChecked() ? "99" : "0");
-        js.put("fph006f", fph006f01.isChecked() ? "1" : fph006f02.isChecked() ? "2" : fph006f99.isChecked() ? "99" : "0");
-        js.put("fph006g", fph006g01.isChecked() ? "1" : fph006g02.isChecked() ? "2" : fph006g99.isChecked() ? "99" : "0");
-        js.put("fph006h", fph006h01.isChecked() ? "1" : fph006h02.isChecked() ? "2" : fph006h99.isChecked() ? "99" : "0");
-        js.put("fph006i", fph006i01.isChecked() ? "1" : fph006i02.isChecked() ? "2" : fph006i99.isChecked() ? "99" : "0");
-        js.put("fph006j", fph006j01.isChecked() ? "1" : fph006j02.isChecked() ? "2" : fph006j99.isChecked() ? "99" : "0");
-        js.put("fph006k", fph006k01.isChecked() ? "1" : fph006k02.isChecked() ? "2" : fph006k99.isChecked() ? "99" : "0");
-        js.put("fph006l", fph006l01.isChecked() ? "1" : fph006l02.isChecked() ? "2" : fph006l99.isChecked() ? "99" : "0");
-        js.put("fph006m", fph006m01.isChecked() ? "1" : fph006m02.isChecked() ? "2" : fph006m99.isChecked() ? "99" : "0");
-        js.put("fph006n", fph006n01.isChecked() ? "1" : fph006n02.isChecked() ? "2" : fph006n99.isChecked() ? "99" : "0");
-        js.put("fph006o", fph006o01.isChecked() ? "1" : fph006o02.isChecked() ? "2" : fph006o99.isChecked() ? "99" : "0");
-        js.put("fph006p", fph006p01.isChecked() ? "1" : fph006p02.isChecked() ? "2" : fph006p99.isChecked() ? "99" : "0");
-        js.put("fph006q", fph006q01.isChecked() ? "1" : fph006q02.isChecked() ? "2" : fph006q99.isChecked() ? "99" : "0");
-        js.put("fph007", fph00701.isChecked() ? "1" : fph00702.isChecked() ? "2" : fph00799.isChecked() ? "99" : "0");
-        js.put("fph008", fph00801.isChecked() ? "1" : fph00899.isChecked() ? "99" : "0");
-        js.put("fph00801x", fph00801x.getText().toString());
-        js.put("fph009", fph00901.isChecked() ? "1" : fph00902.isChecked() ? "2" : fph00999.isChecked() ? "99" : "0");
-        js.put("fph010", fph01001.isChecked() ? "1" : fph01002.isChecked() ? "2" : fph01099.isChecked() ? "99" : "0");
-        js.put("fph011", fph01101.isChecked() ? "1" : fph01102.isChecked() ? "2" : fph01199.isChecked() ? "99" : "0");
-        js.put("fph012", fph01201.isChecked() ? "1" : fph01202.isChecked() ? "2" : fph01299.isChecked() ? "99" : "0");
-        js.put("fph013", fph01301.isChecked() ? "1" : fph01302.isChecked() ? "2" : fph01399.isChecked() ? "99" : "0");
+        JSONObject sH = new JSONObject();
 
+        sH.put("fph001", fph00101.isChecked() ? "1" : fph00102.isChecked() ? "2" : fph00199.isChecked() ? "99" : "0");
+        sH.put("fph001a", fph001a01.isChecked() ? "1" : fph001a02.isChecked() ? "2" : fph001a99.isChecked() ? "99" : "0");
+        sH.put("fph002", fph00201.isChecked() ? "1" : fph00202.isChecked() ? "2" : fph00299.isChecked() ? "99" : "0");
+        sH.put("fph003", fph00301.isChecked() ? "1" : fph00302.isChecked() ? "2" : fph00399.isChecked() ? "99" : "0");
+        sH.put("fph004a", fph004a01.isChecked() ? "1" : fph004a02.isChecked() ? "2" : fph004a99.isChecked() ? "99" : "0");
+        sH.put("fph004b", fph004b01.isChecked() ? "1" : fph004b02.isChecked() ? "2" : fph004b99.isChecked() ? "99" : "0");
+        sH.put("fph004bx", fph004bx.getText().toString());
+        sH.put("fph004c", fph004c01.isChecked() ? "1" : fph004c02.isChecked() ? "2" : fph004c99.isChecked() ? "99" : "0");
+        sH.put("fph004cx", fph004cx.getText().toString());
+        sH.put("fph004d", fph004d01.isChecked() ? "1" : fph004d02.isChecked() ? "2" : fph004d99.isChecked() ? "99" : "0");
+        sH.put("fph004e", fph004e01.isChecked() ? "1" : fph004e02.isChecked() ? "2" : fph004e99.isChecked() ? "99" : "0");
+        sH.put("fph004f", fph004f01.isChecked() ? "1" : fph004f02.isChecked() ? "2" : fph004f99.isChecked() ? "99" : "0");
+        sH.put("fph004fx", fph004fx.getText().toString());
+        sH.put("fph004g", fph004g01.isChecked() ? "1" : fph004g02.isChecked() ? "2" : fph004g99.isChecked() ? "99" : "0");
+        sH.put("fph004h", fph004h01.isChecked() ? "1" : fph004h02.isChecked() ? "2" : fph004h99.isChecked() ? "99" : "0");
+        sH.put("fph004i", fph004i01.isChecked() ? "1" : fph004i02.isChecked() ? "2" : fph004i99.isChecked() ? "99" : "0");
+        sH.put("fph006a", fph006a01.isChecked() ? "1" : fph006a02.isChecked() ? "2" : fph006a99.isChecked() ? "99" : "0");
+        sH.put("fph006b", fph006b01.isChecked() ? "1" : fph006b02.isChecked() ? "2" : fph006b99.isChecked() ? "99" : "0");
+        sH.put("fph006c", fph006c01.isChecked() ? "1" : fph006c02.isChecked() ? "2" : fph006c99.isChecked() ? "99" : "0");
+        sH.put("fph006d", fph006d01.isChecked() ? "1" : fph006d02.isChecked() ? "2" : fph006d99.isChecked() ? "99" : "0");
+        sH.put("fph006e", fph006e01.isChecked() ? "1" : fph006e02.isChecked() ? "2" : fph006e99.isChecked() ? "99" : "0");
+        sH.put("fph006f", fph006f01.isChecked() ? "1" : fph006f02.isChecked() ? "2" : fph006f99.isChecked() ? "99" : "0");
+        sH.put("fph006g", fph006g01.isChecked() ? "1" : fph006g02.isChecked() ? "2" : fph006g99.isChecked() ? "99" : "0");
+        sH.put("fph006h", fph006h01.isChecked() ? "1" : fph006h02.isChecked() ? "2" : fph006h99.isChecked() ? "99" : "0");
+        sH.put("fph006i", fph006i01.isChecked() ? "1" : fph006i02.isChecked() ? "2" : fph006i99.isChecked() ? "99" : "0");
+        sH.put("fph006j", fph006j01.isChecked() ? "1" : fph006j02.isChecked() ? "2" : fph006j99.isChecked() ? "99" : "0");
+        sH.put("fph006k", fph006k01.isChecked() ? "1" : fph006k02.isChecked() ? "2" : fph006k99.isChecked() ? "99" : "0");
+        sH.put("fph006l", fph006l01.isChecked() ? "1" : fph006l02.isChecked() ? "2" : fph006l99.isChecked() ? "99" : "0");
+        sH.put("fph006m", fph006m01.isChecked() ? "1" : fph006m02.isChecked() ? "2" : fph006m99.isChecked() ? "99" : "0");
+        sH.put("fph006n", fph006n01.isChecked() ? "1" : fph006n02.isChecked() ? "2" : fph006n99.isChecked() ? "99" : "0");
+        sH.put("fph006o", fph006o01.isChecked() ? "1" : fph006o02.isChecked() ? "2" : fph006o99.isChecked() ? "99" : "0");
+        sH.put("fph006p", fph006p01.isChecked() ? "1" : fph006p02.isChecked() ? "2" : fph006p99.isChecked() ? "99" : "0");
+        sH.put("fph006q", fph006q01.isChecked() ? "1" : fph006q02.isChecked() ? "2" : fph006q99.isChecked() ? "99" : "0");
+        sH.put("fph007", fph00701.isChecked() ? "1" : fph00702.isChecked() ? "2" : fph00799.isChecked() ? "99" : "0");
+        sH.put("fph008", fph00801.isChecked() ? "1" : fph00899.isChecked() ? "99" : "0");
+        sH.put("fph00801x", fph00801x.getText().toString());
+        sH.put("fph009", fph00901.isChecked() ? "1" : fph00902.isChecked() ? "2" : fph00999.isChecked() ? "99" : "0");
+        sH.put("fph010", fph01001.isChecked() ? "1" : fph01002.isChecked() ? "2" : fph01099.isChecked() ? "99" : "0");
+        sH.put("fph011", fph01101.isChecked() ? "1" : fph01102.isChecked() ? "2" : fph01199.isChecked() ? "99" : "0");
+        sH.put("fph012", fph01201.isChecked() ? "1" : fph01202.isChecked() ? "2" : fph01299.isChecked() ? "99" : "0");
+        sH.put("fph013", fph01301.isChecked() ? "1" : fph01302.isChecked() ? "2" : fph01399.isChecked() ? "99" : "0");
+
+        AppMain.fc.setsH(String.valueOf(sH));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 

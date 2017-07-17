@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -199,14 +200,15 @@ public class SectionFActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
+        JSONObject sF = new JSONObject();
 
-        js.put("fpf001", fpf00101.isChecked() ? "1" : fpf00102.isChecked() ? "2" : "0");
-        js.put("fpf001a", fpf001a01.isChecked() ? "1" : fpf001a02.isChecked() ? "2" : fpf001a03.isChecked() ? "3" : fpf001a04.isChecked() ? "4" : fpf001a05.isChecked() ? "5" : fpf001a06.isChecked() ? "6" : fpf001a07.isChecked() ? "7" : fpf001a08.isChecked() ? "8" : fpf001a88.isChecked() ? "88" : "0");
-        js.put("fpf001b", fpf001b01.isChecked() ? "1" : fpf001b02.isChecked() ? "2" : fpf001b03.isChecked() ? "3" : fpf001b03.isChecked() ? "3" : fpf001b04.isChecked() ? "4" : fpf001b88.isChecked() ? 88 : "0");
+        sF.put("fpf001", fpf00101.isChecked() ? "1" : fpf00102.isChecked() ? "2" : "0");
+        sF.put("fpf001a", fpf001a01.isChecked() ? "1" : fpf001a02.isChecked() ? "2" : fpf001a03.isChecked() ? "3" : fpf001a04.isChecked() ? "4" : fpf001a05.isChecked() ? "5" : fpf001a06.isChecked() ? "6" : fpf001a07.isChecked() ? "7" : fpf001a08.isChecked() ? "8" : fpf001a88.isChecked() ? "88" : "0");
+        sF.put("fpf001b", fpf001b01.isChecked() ? "1" : fpf001b02.isChecked() ? "2" : fpf001b03.isChecked() ? "3" : fpf001b03.isChecked() ? "3" : fpf001b04.isChecked() ? "4" : fpf001b88.isChecked() ? 88 : "0");
+
+        AppMain.fc.setsF(String.valueOf(sF));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
-
     }
 
     public boolean validateForm() {

@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -249,24 +250,25 @@ public class SectionEActivity extends Activity {
     private void saveDrafts() throws JSONException {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject js = new JSONObject();
+        JSONObject sE = new JSONObject();
 
-        js.put("fpe001", fpe00101.isChecked() ? "1" : fpe00102.isChecked() ? "2" : "0");
-        js.put("fpe001a", fpe001a.getText().toString());
-        js.put("fpe001b", fpe001b.getText().toString());
-        js.put("fpe00201", fpe00201.isChecked() ? "1" : "0");
-        js.put("fpe00201x", fpe00201x.getText().toString());
-        js.put("fpe00202", fpe00202.isChecked() ? "2" : "0");
-        js.put("fpe00202x", fpe00202x.getText().toString());
-        js.put("fpe00203", fpe00203.isChecked() ? "3" : "0");
-        js.put("fpe00203x", fpe00203x.getText().toString());
-        js.put("fpe00204", fpe00204.isChecked() ? "4" : "0");
-        js.put("fpe00204x", fpe00204x.getText().toString());
-        js.put("fpe00205", fpe00205.isChecked() ? "5" : "0");
-        js.put("fpe00205x", fpe00205x.getText().toString());
-        js.put("fpe00288", fpe00288.isChecked() ? "88" : "0");
-        js.put("fpe00288x", fpe00288x.getText().toString());
+        sE.put("fpe001", fpe00101.isChecked() ? "1" : fpe00102.isChecked() ? "2" : "0");
+        sE.put("fpe001a", fpe001a.getText().toString());
+        sE.put("fpe001b", fpe001b.getText().toString());
+        sE.put("fpe00201", fpe00201.isChecked() ? "1" : "0");
+        sE.put("fpe00201x", fpe00201x.getText().toString());
+        sE.put("fpe00202", fpe00202.isChecked() ? "2" : "0");
+        sE.put("fpe00202x", fpe00202x.getText().toString());
+        sE.put("fpe00203", fpe00203.isChecked() ? "3" : "0");
+        sE.put("fpe00203x", fpe00203x.getText().toString());
+        sE.put("fpe00204", fpe00204.isChecked() ? "4" : "0");
+        sE.put("fpe00204x", fpe00204x.getText().toString());
+        sE.put("fpe00205", fpe00205.isChecked() ? "5" : "0");
+        sE.put("fpe00205x", fpe00205x.getText().toString());
+        sE.put("fpe00288", fpe00288.isChecked() ? "88" : "0");
+        sE.put("fpe00288x", fpe00288x.getText().toString());
 
+        AppMain.fc.setsE(String.valueOf(sE));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 

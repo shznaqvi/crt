@@ -502,6 +502,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateEnd() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_ISTATUS, AppMain.fc.getIstatus());
+
+
+        // Which row to update, based on the ID
+        String selection = FormsContract.FormColumns._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormsContract.FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
 
     public Collection<ClustersContract> getAllClusters() {
         SQLiteDatabase db = this.getReadableDatabase();
