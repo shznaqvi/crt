@@ -381,7 +381,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SB, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SB, AppMain.fc.getsB());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";
@@ -399,7 +399,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SC, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SC, AppMain.fc.getsC());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";
@@ -417,7 +417,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SD, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SD, AppMain.fc.getsD());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";
@@ -435,7 +435,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SE, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SE, AppMain.fc.getsE());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";
@@ -471,7 +471,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SG, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SG, AppMain.fc.getsG());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";
@@ -489,7 +489,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SH, AppMain.fc.getsF());
+        values.put(FormColumns.COLUMN_SH, AppMain.fc.getsH());
 
         // Which row to update, based on the ID
         String selection = FormColumns.COLUMN_ID + " = ?";

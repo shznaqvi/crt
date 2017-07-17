@@ -453,7 +453,7 @@ public class SectionHActivity extends Activity {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent endSec = new Intent(this, SectionIActivity.class);
+                Intent endSec = new Intent(this, EndingActivity.class);
                 startActivity(endSec);
 
             } else {
@@ -475,7 +475,6 @@ public class SectionHActivity extends Activity {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
 
     }
 
@@ -529,7 +528,6 @@ public class SectionHActivity extends Activity {
         AppMain.fc.setsH(String.valueOf(sH));
 
         Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
-
     }
 
     public boolean validateForm() {
