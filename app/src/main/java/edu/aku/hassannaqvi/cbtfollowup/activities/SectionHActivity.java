@@ -609,8 +609,8 @@ public class SectionHActivity extends Activity {
                     && Integer.parseInt(fph004bx.getText().toString()) != 99 || (Integer.parseInt(fph004bx.getText().toString()) > 20)
                     && Integer.parseInt(fph004bx.getText().toString()) != 99) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph004b) + getString(R.string.fph00501), Toast.LENGTH_LONG).show();
-                fph004bx.setError("Range is 1-20 times");
-                Log.i(TAG, "fph004b: Range is 1-20 times");
+                fph004bx.setError("Range is 1-20 times and 99 - Dont Know ");
+                Log.i(TAG, "fph004b: Range is 1-20 times and 99 - Dont Know");
                 return false;
             } else {
                 fph004bx.setError(null);
@@ -639,8 +639,8 @@ public class SectionHActivity extends Activity {
             if ((Integer.parseInt(fph004cx.getText().toString().isEmpty() ? "0" : fph004cx.getText().toString()) < 1 && Integer.parseInt(fph004cx.getText().toString()) != 99)
                     || (Integer.parseInt(fph004cx.getText().toString()) > 20) && Integer.parseInt(fph004cx.getText().toString()) != 99) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph004c) + getString(R.string.fph00501), Toast.LENGTH_LONG).show();
-                fph004cx.setError("Range is 1-20 times");
-                Log.i(TAG, "fph004c: Range is 1-20 times");
+                fph004cx.setError("Range is 1-20 times and 99 - Dont Know");
+                Log.i(TAG, "fph004c: Range is 1-20 times and 99 - Dont Know");
                 return false;
             } else {
                 fph004bx.setError(null);
@@ -689,8 +689,8 @@ public class SectionHActivity extends Activity {
             if ((Integer.parseInt(fph004fx.getText().toString().isEmpty() ? "0" : fph004fx.getText().toString()) < 1) && Integer.parseInt(fph004fx.getText().toString()) != 99
                     || (Integer.parseInt(fph004fx.getText().toString()) > 20) && Integer.parseInt(fph004fx.getText().toString()) != 99) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph004f) + getString(R.string.fph00501), Toast.LENGTH_LONG).show();
-                fph004fx.setError("Range is 1-20 times");
-                Log.i(TAG, "fpe001f: Range is 1-20 times");
+                fph004fx.setError("Range is 1-20 times and 99 - Dont Know");
+                Log.i(TAG, "fpe001f: Range is 1-20 times and 99 - Dont Know");
                 return false;
             } else {
                 fph004fx.setError(null);
@@ -931,8 +931,8 @@ public class SectionHActivity extends Activity {
             if (fph00801.isChecked() && ((Integer.parseInt(fph00801x.getText().toString().isEmpty() ? "0" : fph00801x.getText().toString()) < 1) && Integer.parseInt(fph004fx.getText().toString()) != 99 ||
                     (Integer.parseInt(fph00801x.getText().toString()) > 20) && Integer.parseInt(fph004fx.getText().toString()) != 99)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph008) + getString(R.string.fph00801), Toast.LENGTH_LONG).show();
-                fph00801x.setError("Range is 1-20 times");
-                Log.i(TAG, "fph008: Range is 1-20 times");
+                fph00801x.setError("Range is 1-20 times and 99 - Dont Know");
+                Log.i(TAG, "fph008: Range is 1-20 times and 99 - Dont Know");
                 return false;
             } else {
                 fph00801x.setError(null);

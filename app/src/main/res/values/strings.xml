@@ -141,11 +141,12 @@
     <string name="fpf001a02">6 ماہ تک صرف اور صرف ماہ کا دودھ پلانا</string>
     <string name="fpf001a03">6 ماہ کی عمر کے بعد اضافی خوراک شروع کروانا</string>
     <string name="fpf001a04">بچےکو متوازن خوراک کا استعمال کروانا</string>
-    <string name="fpf001a05">واوامم کی افا دیت</string>
-    <string name="fpf001a06">واوامم دوسروں کو نہیں دینا</string>
-    <string name="fpf001a07">صاف پانی ٹائلٹ اور صفا ئی سے متعلق پیغامات</string>
+    <string name="fpf001a05">2 سال تک بچے کو ماں کا دودھ جاری رکھنا</string>
+    <string name="fpf001a06">واوامم کی افا دیت</string>
+    <string name="fpf001a07">واوامم دوسروں کو نہیں دینا</string>
     <string name="fpf001a08">ماں کی خوراک / متوازن خوراک</string>
-    <string name="fpf001a09">Wash</string>
+    <string name="fpf001a09">صاف پانی ٹائلٹ اور صفا ئی سے متعلق پیغامات</string>
+    <string name="fpf001a10">Wash</string>
     <string name="fpf001b">صحت کی آگاہی یا   پیغامات ملنے  کا کیا زریعہ تھا ؟  </string>
     <string name="fpf001b01">میڈیا (ریڈیو/ٹی وی/ پمفلٹ/ چارٹ/انٹرنیٹ)</string>
     <string name="fpf001b02">گھرگھر لیڈی ہیلتھ ورکر کا دورہ</string>
