@@ -12,8 +12,8 @@ import org.json.JSONObject;
 
 public class FormsContract {
 
-    private String projectName = "MaPPS Study";
-    private String surveyType = "Form 02: Enrolment and Baseline Assessment";
+    private String projectName = "CBT FUP";
+    private String surveyType = "Form 02: CBT FollowUp";
     private String _ID;
     private String UID = "";
     private String formDate = ""; // Date

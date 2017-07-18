@@ -62,6 +62,8 @@ public class AppMain extends Application {
     public static String userName = "0000";
     public static String areaCode;
     public static String curCluster;
+    public static boolean flag = false;
+
     //    For participant
     //public static ArrayList<EligibleParticipants> Eparticipant;
     public static String currentParticipantName = "";

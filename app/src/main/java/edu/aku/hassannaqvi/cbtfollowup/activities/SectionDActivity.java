@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -237,6 +239,45 @@ public class SectionDActivity extends Activity {
                 }
             }
         });
+
+
+        fpd004.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!fpd004.getText().toString().isEmpty()) {
+                    if (Integer.parseInt(fpd004.getText().toString()) == 0) {
+
+                        fpd004a01.setChecked(false);
+                        fpd004a02.setChecked(false);
+                        fpd004a03.setChecked(false);
+                        fpd004a04.setChecked(false);
+                        fpd004a05.setChecked(false);
+                        fpd004a06.setChecked(false);
+                        fpd004a07.setChecked(false);
+                        fpd004a88.setChecked(false);
+                        fpd004a88x.setText(null);
+
+                        fpdGrp004.setVisibility(View.GONE);
+                        fpd004a88x.setVisibility(View.GONE);
+
+                    } else {
+                        fpdGrp004.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
         // =================== Q8 Others ====================
 
@@ -648,7 +689,7 @@ public class SectionDActivity extends Activity {
             if ((Integer.parseInt(fpd003.getText().toString().isEmpty() ? "0" : fpd003.getText().toString()) < 1) || (Integer.parseInt(fpd003.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd004), Toast.LENGTH_LONG).show();
                 fpd003.setError("Range is 1-40 ");
-                Log.i(TAG, "fph003: Range is 1-40 ");
+                Log.i(TAG, "fpd003: Range is 1-40 ");
                 return false;
             } else {
                 fpd003.setError(null);
@@ -676,21 +717,29 @@ public class SectionDActivity extends Activity {
             // =================== Q4.1 ====================
 
 
-            if (!(fpd004a01.isChecked() ||
-                    fpd004a02.isChecked() ||
-                    fpd004a03.isChecked() ||
-                    fpd004a04.isChecked() ||
-                    fpd004a05.isChecked() ||
-                    fpd004a06.isChecked() ||
-                    fpd004a07.isChecked() ||
-                    fpd004a88.isChecked())) {
-                Toast.makeText(this, "" + getString(R.string.fpd004a), Toast.LENGTH_SHORT).show();
-                fpd004a07.setError("This Data is required");
-                Log.d(TAG, "not selected: fpd004a ");
-                return false;
-            } else {
-                fpd004a07.setError(null);
+            if (Integer.parseInt(fpd004.getText().toString()) > 0) {
+
+                if (!(fpd004a01.isChecked() ||
+                        fpd004a02.isChecked() ||
+                        fpd004a03.isChecked() ||
+                        fpd004a04.isChecked() ||
+                        fpd004a05.isChecked() ||
+                        fpd004a06.isChecked() ||
+                        fpd004a07.isChecked() ||
+                        fpd004a88.isChecked())) {
+                    Toast.makeText(this, "" + getString(R.string.fpd004a), Toast.LENGTH_SHORT).show();
+                    fpd004a07.setError("This Data is required");
+                    Log.d(TAG, "not selected: fpd004a ");
+                    return false;
+                } else {
+                    fpd004a07.setError(null);
+                }
+
             }
+
+
+
+
 
 
             /*if (fpd004a.getCheckedRadioButtonId() == -1) {

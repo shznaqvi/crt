@@ -116,7 +116,7 @@ public class SectionAActivity extends Activity {
 
     }
 
-/*    @OnClick(R.id.btn_End)
+    /*@OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete section", Toast.LENGTH_SHORT).show();
 
@@ -134,7 +134,7 @@ public class SectionAActivity extends Activity {
 
             if (AppMain.followUpList.size() != 0) {
 
-                if  (getDays(AppMain.followUpList.get(0).getFOLLOWUPDT())) {
+                if (getDays(AppMain.followUpList.get(0).getFOLLOWUPDT())) {
 
                     membersExists.setVisibility(View.VISIBLE);
 
@@ -147,8 +147,7 @@ public class SectionAActivity extends Activity {
                     flag = true;
 
                     Toast.makeText(this, "Child Found", Toast.LENGTH_LONG).show();
-                }
-                else {
+                } else {
                     Toast.makeText(this, "Child Found Follow Up Date Expired", Toast.LENGTH_LONG).show();
                     foundFollowup.setText("Child Found Follow Up Date Expired");
 
@@ -167,7 +166,7 @@ public class SectionAActivity extends Activity {
         }
     }
 
-    public Boolean getDays(String date){
+    public Boolean getDays(String date) {
         SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try {

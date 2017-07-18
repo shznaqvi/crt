@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
@@ -38,12 +39,13 @@ public class EndingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ending);
-
-
         ButterKnife.bind(this);
 
 
-        Boolean check = getIntent().getExtras().getBoolean("complete");
+        status1.setEnabled(getIntent().getBooleanExtra("complete", true));
+
+
+        /*Boolean check = getIntent().getBooleanExtra("complete", true);
 
         if (check) {
             status1.setEnabled(true);
@@ -52,7 +54,7 @@ public class EndingActivity extends Activity {
         } else {
             status1.setEnabled(false);
             status2.setEnabled(true);
-        }
+        }*/
 
     }
 
@@ -99,7 +101,19 @@ public class EndingActivity extends Activity {
 
         JSONObject js = new JSONObject();
 
-        js.put("status", status1.isChecked() ? "1" : status2.isChecked() ? "2" : "0");
+        //js.put("status", status1.isChecked() ? "1" : status2.isChecked() ? "2" : "0");
+
+        switch (status.getCheckedRadioButtonId()) {
+            case R.id.status1:
+                AppMain.fc.setIstatus("1");
+                break;
+            case R.id.status2:
+                AppMain.fc.setIstatus("2");
+                break;
+            default:
+                AppMain.fc.setIstatus("default");
+                break;
+        }
     }
 
     private boolean validateForm() {
