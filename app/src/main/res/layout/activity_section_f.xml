@@ -123,6 +123,12 @@
                 android:text="@string/fpf001a08" />
 
             <CheckBox
+                android:id="@+id/fpf001a09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpf001a09" />
+
+            <CheckBox
                 android:id="@+id/fpf001a88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

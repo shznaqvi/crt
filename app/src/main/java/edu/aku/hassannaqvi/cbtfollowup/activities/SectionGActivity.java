@@ -277,7 +277,15 @@ public class SectionGActivity extends Activity {
         sG.put("fpg00188", fpg00188.isChecked() ? "88" : "0");
         sG.put("fpg00188x", fpg00188x.getText().toString());
         sG.put("fpg002", fpg00201.isChecked() ? "1" : fpg00202.isChecked() ? "2" : "0");
-        sG.put("fpg003", fpg00301.isChecked() ? "1" : fpg00302.isChecked() ? "2" : fpg00303.isChecked() ? "3" : fpg00304.isChecked() ? "4" : fpg00305.isChecked() ? "5" : fpg00306.isChecked() ? "6" : fpg00307.isChecked() ? "7" : fpg00308.isChecked() ? "8" : fpg00388.isChecked() ? "88" : "0");
+        sG.put("fpg00301", fpg00301.isChecked() ? "1" : "0");
+        sG.put("fpg00302", fpg00302.isChecked() ? "2" : "0");
+        sG.put("fpg00303", fpg00303.isChecked() ? "3" : "0");
+        sG.put("fpg00304", fpg00304.isChecked() ? "4" : "0");
+        sG.put("fpg00305", fpg00305.isChecked() ? "5" : "0");
+        sG.put("fpg00306", fpg00306.isChecked() ? "6" : "0");
+        sG.put("fpg00307", fpg00307.isChecked() ? "7" : "0");
+        sG.put("fpg00308", fpg00308.isChecked() ? "8" : "0");
+        sG.put("fpg00388", fpg00388.isChecked() ? "88" : "0");
         sG.put("fpg00388x", fpg00388x.getText().toString());
 
         AppMain.fc.setsG(String.valueOf(sG));

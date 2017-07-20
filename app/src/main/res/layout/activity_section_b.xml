@@ -9,148 +9,148 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorAccent"
+            android:text="@string/section_B"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpb001" />
+
+        <RadioGroup
+            android:id="@+id/fpb001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/fpb00101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpb00101" />
+
+            <RadioButton
+                android:id="@+id/fpb00102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpb00102" />
+
+            <RadioButton
+                android:id="@+id/fpb00103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpb00103" />
+
+            <RadioButton
+                android:id="@+id/fpb00104"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpb00104" />
+
+            <RadioButton
+                android:id="@+id/fpb00105"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpb00105" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpb002" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/black" />
-
-            <TextView
-
+            <EditText
+                android:id="@+id/fpb00201"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorAccent"
-                android:text="@string/section_B"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                tools:typeface="serif" />
+                android:layout_weight="1.5"
+                android:hint="@string/month"
+                android:inputType="number"
+                android:maxLength="2" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/black" />
-
-            <TextView
+            <EditText
+                android:id="@+id/fpb00202"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/fpb001" />
-
-            <RadioGroup
-                android:id="@+id/fpb001"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/fpb00101"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpb00101" />
-
-                <RadioButton
-                    android:id="@+id/fpb00102"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpb00102" />
-
-                <RadioButton
-                    android:id="@+id/fpb00103"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpb00103" />
-
-                <RadioButton
-                    android:id="@+id/fpb00104"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpb00104" />
-
-                <RadioButton
-                    android:id="@+id/fpb00105"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fpb00105" />
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/fpb002" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/fpb00201"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:hint="@string/month"
-                    android:inputType="number"
-                    android:maxLength="2" />
-
-                <EditText
-                    android:id="@+id/fpb00202"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.5"
-                    android:hint="@string/day"
-                    android:inputType="number"
-                    android:maxLength="2" />
-
-
-            </LinearLayout>
-
-            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnNext"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:onClick="submitSecA"
-                    android:text="@string/next_section"
-                    android:textColor="@android:color/holo_green_light"
-                    android:textSize="24sp" />
-                <Button
-                    android:id="@+id/btn_End"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:onClick="endForm"
-                    android:text="@string/end_interview"
-                    android:textColor="@android:color/holo_red_light"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-
-                <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
-
-            </LinearLayout>
+                android:layout_weight="1.5"
+                android:hint="@string/day"
+                android:inputType="number"
+                android:maxLength="2" />
 
 
         </LinearLayout>
 
+        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
-    </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="submitSecA"
+                android:text="@string/next_section"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/end_interview"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
 

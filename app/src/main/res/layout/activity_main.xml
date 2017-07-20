@@ -56,8 +56,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="getChildrensFollowUps"
-            android:visibility="gone"
-            android:text="Get Childrens Follow UP's" />
+            android:text="Get Childrens Follow UP's"
+            android:visibility="gone" />
 
 
         <LinearLayout
@@ -97,7 +97,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:onClick="syncDevice"
-            android:text="Download Data" />
+            android:text="Download Data"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/adminsec"

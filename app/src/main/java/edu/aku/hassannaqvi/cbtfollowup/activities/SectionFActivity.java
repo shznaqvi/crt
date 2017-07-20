@@ -54,6 +54,8 @@ public class SectionFActivity extends Activity {
     CheckBox fpf001a07;
     @BindView(R.id.fpf001a08)
     CheckBox fpf001a08;
+    @BindView(R.id.fpf001a09)
+    CheckBox fpf001a09;
     @BindView(R.id.fpf001a88)
     CheckBox fpf001a88;
     @BindView(R.id.fpf001a88x)
@@ -127,6 +129,7 @@ public class SectionFActivity extends Activity {
                     fpf001a06.setChecked(false);
                     fpf001a07.setChecked(false);
                     fpf001a08.setChecked(false);
+                    fpf001a09.setChecked(false);
                     fpf001a88.setChecked(false);
 
                     fpf001a88x.setText(null);
@@ -205,8 +208,23 @@ public class SectionFActivity extends Activity {
         JSONObject sF = new JSONObject();
 
         sF.put("fpf001", fpf00101.isChecked() ? "1" : fpf00102.isChecked() ? "2" : "0");
-        sF.put("fpf001a", fpf001a01.isChecked() ? "1" : fpf001a02.isChecked() ? "2" : fpf001a03.isChecked() ? "3" : fpf001a04.isChecked() ? "4" : fpf001a05.isChecked() ? "5" : fpf001a06.isChecked() ? "6" : fpf001a07.isChecked() ? "7" : fpf001a08.isChecked() ? "8" : fpf001a88.isChecked() ? "88" : "0");
-        sF.put("fpf001b", fpf001b01.isChecked() ? "1" : fpf001b02.isChecked() ? "2" : fpf001b03.isChecked() ? "3" : fpf001b03.isChecked() ? "3" : fpf001b04.isChecked() ? "4" : fpf001b88.isChecked() ? 88 : "0");
+        sF.put("fpf001a01", fpf001a01.isChecked() ? "1" : "0");
+        sF.put("fpf001a02", fpf001a02.isChecked() ? "2" : "0");
+        sF.put("fpf001a03", fpf001a03.isChecked() ? "3" : "0");
+        sF.put("fpf001a04", fpf001a04.isChecked() ? "4" : "0");
+        sF.put("fpf001a05", fpf001a05.isChecked() ? "5" : "0");
+        sF.put("fpf001a06", fpf001a06.isChecked() ? "6" : "0");
+        sF.put("fpf001a07", fpf001a07.isChecked() ? "7" : "0");
+        sF.put("fpf001a08", fpf001a08.isChecked() ? "8" : "0");
+        sF.put("fpf001a09", fpf001a09.isChecked() ? "9" : "0");
+        sF.put("fpf001a88", fpf001a88.isChecked() ? "88" : "0");
+        sF.put("fpf001a88x", fpf001a88x.getText().toString());
+        sF.put("fpf001b01", fpf001b01.isChecked() ? "1" : "0");
+        sF.put("fpf001b02", fpf001b02.isChecked() ? "2" : "0");
+        sF.put("fpf001b03", fpf001b03.isChecked() ? "3" : "0");
+        sF.put("fpf001b04", fpf001b04.isChecked() ? "4" : "0");
+        sF.put("fpf001b88", fpf001b88.isChecked() ? "88" : "0");
+        sF.put("fpf001b88x", fpf001b88x.getText().toString());
 
         AppMain.fc.setsF(String.valueOf(sF));
 

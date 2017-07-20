@@ -157,10 +157,10 @@ public class SectionBActivity extends Activity {
             fpb00202.setError(null);
         }
 
-        if ((Integer.parseInt(fpb00202.getText().toString()) < 1) || (Integer.parseInt(fpb00202.getText().toString()) > 30)) {
+        if ((Integer.parseInt(fpb00202.getText().toString()) < 0) || (Integer.parseInt(fpb00202.getText().toString()) > 30)) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
-            fpb00202.setError("Range is 1-30 days");
-            Log.i(TAG, "fpb00202: Range is 1-30 days");
+            fpb00202.setError("Range is 0 - 30 days");
+            Log.i(TAG, "fpb00202: Range is 0 - 30 days");
             return false;
         } else {
             fpb00202.setError(null);
