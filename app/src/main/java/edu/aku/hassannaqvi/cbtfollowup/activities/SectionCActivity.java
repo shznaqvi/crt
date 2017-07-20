@@ -70,8 +70,19 @@ public class SectionCActivity extends Activity {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent secD = new Intent(this, SectionDActivity.class);
-                startActivity(secD);
+
+                if (AppMain.arm == 1) {
+                    Intent secD = new Intent(this, SectionGActivity.class);
+                    startActivity(secD);
+                } else if (AppMain.arm == 2 || AppMain.arm == 3) {
+                    Intent secD = new Intent(this, SectionEActivity.class);
+                    startActivity(secD);
+                } else {
+                    Intent secD = new Intent(this, SectionDActivity.class);
+                    startActivity(secD);
+                }
+
+
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
@@ -104,8 +115,8 @@ public class SectionCActivity extends Activity {
         sC.put("fpc001m2", fpc001m2.getText().toString());
         sC.put("fpc001m3", fpc001m3.getText().toString());
         sC.put("fpc002m1 ", fpc002m1.getText().toString());
-        sC.put("fpc002m2 ", fpc002m1.getText().toString());
-        sC.put("fpc002m3 ", fpc002m1.getText().toString());
+        sC.put("fpc002m2 ", fpc002m2.getText().toString());
+        sC.put("fpc002m3 ", fpc002m3.getText().toString());
 
         AppMain.fc.setsC(String.valueOf(sC));
 

@@ -24,20 +24,16 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
-import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
+import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 public class SectionAActivity extends Activity {
 
@@ -245,13 +241,16 @@ public class SectionAActivity extends Activity {
 
         JSONObject sA = new JSONObject();
 
-        sA.put("fpa001", fpa00101.isChecked() ? "1" : fpa00102.isChecked() ? "2" : fpa00103.isChecked() ? "3" : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
+        sA.put("fpa001", fpa00101.isChecked() ? "1" : fpa00102.isChecked() ? "2" : fpa00103.isChecked() ? "3"
+                : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
         sA.put("fpa002", fpa002.getText().toString());
 //        sA.put("fpa00301", fpa00301.getText().toString());
         sA.put("fpa00302 ", fpa00302.getText().toString());
         sA.put("fpa00401  ", fpa00401.getText().toString());
 
         AppMain.fc.setsA(String.valueOf(sA));
+
+        AppMain.arm = fpa001.indexOfChild(findViewById(fpa001.getCheckedRadioButtonId())) + 1;
 
         setGPS();
 

@@ -297,10 +297,10 @@ public class SectionEActivity extends Activity {
                 fpe001a.setError(null);
             }
 
-            if ((Integer.parseInt(fpe001a.getText().toString().isEmpty() ? "0" : fpe001a.getText().toString()) < 1000) || (Integer.parseInt(fpe001a.getText().toString()) > 5000)) {
+            if ((Integer.parseInt(fpe001a.getText().toString().isEmpty() ? "0" : fpe001a.getText().toString()) < 1000) || (Integer.parseInt(fpe001a.getText().toString()) > 15000)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe001a) + getString(R.string.fpe001a01), Toast.LENGTH_LONG).show();
-                fpe001a.setError("Range is 1000 - 5000 rupees ");
-                Log.i(TAG, "fpd00501: Range is 1000 - 5000 rupees");
+                fpe001a.setError("Range is 1000 - 15000 rupees ");
+                Log.i(TAG, "fpd00501: Range is 1000 - 15000 rupees");
                 return false;
             } else {
                 fpe001a.setError(null);

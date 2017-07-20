@@ -52,6 +52,7 @@ public class AppMain extends Application {
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
     public static int NoMembers = 7;
     public static String deviceId;
+    public static int arm = 0;
 
     public static Boolean admin = false;
     public static String interviewerCode;
@@ -67,10 +68,9 @@ public class AppMain extends Application {
     //    For participant
     //public static ArrayList<EligibleParticipants> Eparticipant;
     public static String currentParticipantName = "";
+    public static List<FollowUpsContract> followUpList;
     protected LocationManager locationManager;
     Location location;
-
-    public static List<FollowUpsContract> followUpList;
 
     @Override
     public void onCreate() {
