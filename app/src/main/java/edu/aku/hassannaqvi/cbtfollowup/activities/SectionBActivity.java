@@ -100,7 +100,7 @@ public class SectionBActivity extends Activity {
                     Intent secC = new Intent(this, SectionCActivity.class);
                     startActivity(secC);
                 } else {
-                    Intent secC = new Intent(this, SectionIActivity.class);
+                    Intent secC = new Intent(this, EndingActivity.class);
                     startActivity(secC);
                 }
 
