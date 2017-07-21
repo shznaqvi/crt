@@ -80,6 +80,12 @@
 
         </RadioGroup>
 
+        <LinearLayout
+            android:id="@+id/fldGrpfpb002"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,6 +115,7 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
+        </LinearLayout>
 
         </LinearLayout>
 

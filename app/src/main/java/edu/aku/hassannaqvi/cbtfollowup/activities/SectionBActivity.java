@@ -3,8 +3,11 @@ package edu.aku.hassannaqvi.cbtfollowup.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -42,12 +45,27 @@ public class SectionBActivity extends Activity {
     EditText fpb00201;
     @BindView(R.id.fpb00202)
     EditText fpb00202;
+    @BindView(R.id.fldGrpfpb002)
+    LinearLayout fldGrpfpb002;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_b);
         ButterKnife.bind(this);
+
+        fpb001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (fpb00101.isChecked()) {
+                    fldGrpfpb002.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrpfpb002.setVisibility(View.GONE);
+                    fpb00201.setText(null);
+                    fpb00202.setText(null);
+                }
+            }
+        });
 
     }
 
@@ -77,8 +95,16 @@ public class SectionBActivity extends Activity {
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent secC = new Intent(this, SectionCActivity.class);
-                startActivity(secC);
+
+                if (fpb00101.isChecked()) {
+                    Intent secC = new Intent(this, SectionCActivity.class);
+                    startActivity(secC);
+                } else {
+                    Intent secC = new Intent(this, EndingActivity.class);
+                    secC.putExtra("complete", false);
+                    startActivity(secC);
+                }
+
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
@@ -129,41 +155,54 @@ public class SectionBActivity extends Activity {
             fpb00105.setError(null);
         }
 
-        // =================== Q2  ====================
-        if (fpb00201.getText().toString().isEmpty()) {
-            Toast.makeText(this, "" + getString(R.string.month), Toast.LENGTH_SHORT).show();
-            fpb00201.setError("This data is required");
-            Log.d(TAG, "empty: fpa002  ");
-            return false;
-        } else {
-            fpb00201.setError(null);
-        }
+        if (fpb00101.isChecked()) {
 
-        if ((Integer.parseInt(fpb00201.getText().toString()) < 7) || (Integer.parseInt(fpb00201.getText().toString()) > 24)) {
-            Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpb002) + getString(R.string.month), Toast.LENGTH_SHORT).show();
-            fpb00201.setError("Range is 7-24 months");
-            Log.i(TAG, "fpb00201: Range is 7-24 months");
-            return false;
-        } else {
-            fpb00201.setError(null);
-        }
+            // =================== Q2  ====================
+            if (fpb00201.getText().toString().isEmpty()) {
+                Toast.makeText(this, "" + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                fpb00201.setError("This data is required");
+                Log.d(TAG, "empty: fpa002  ");
+                return false;
+            } else {
+                fpb00201.setError(null);
+            }
 
-        if (fpb00202.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
-            fpb00202.setError("This data is required");
-            Log.d(TAG, "empty: fpa002  ");
-            return false;
-        } else {
-            fpb00202.setError(null);
-        }
+            if ((Integer.parseInt(fpb00201.getText().toString()) < 7) || (Integer.parseInt(fpb00201.getText().toString()) > 24)) {
+                Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpb002) + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                fpb00201.setError("Range is 7-24 months");
+                Log.i(TAG, "fpb00201: Range is 7-24 months");
+                return false;
+            } else {
+                fpb00201.setError(null);
+            }
 
-        if ((Integer.parseInt(fpb00202.getText().toString()) < 0) || (Integer.parseInt(fpb00202.getText().toString()) > 30)) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
-            fpb00202.setError("Range is 0 - 30 days");
-            Log.i(TAG, "fpb00202: Range is 0 - 30 days");
-            return false;
-        } else {
-            fpb00202.setError(null);
+            if (fpb00202.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                fpb00202.setError("This data is required");
+                Log.d(TAG, "empty: fpa002  ");
+                return false;
+            } else {
+                fpb00202.setError(null);
+            }
+
+            if ((Integer.parseInt(fpb00202.getText().toString()) < 0) || (Integer.parseInt(fpb00202.getText().toString()) > 29)) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                fpb00202.setError("Range is 0 - 29 days");
+                Log.i(TAG, "fpb00202: Range is 0 - 29 days");
+                return false;
+            } else {
+                fpb00202.setError(null);
+            }
+
+            /*if(Integer.valueOf(fpb00201.getText().toString()) == 6 && Integer.valueOf(fpb00202.getText().toString()) > 25)
+            {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb002) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                fpb00202.setError("Minimum Range is 6 Months and 25 days only");
+                Log.i(TAG, "fpb00202: Minimum Range is 6 Months and 25 days only");
+                return false;
+            }else{
+                fpb00202.setError(null);
+            }*/
         }
 
 

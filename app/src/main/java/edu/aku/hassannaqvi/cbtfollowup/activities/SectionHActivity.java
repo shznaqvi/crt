@@ -17,7 +17,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
@@ -26,7 +29,7 @@ import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
 
 import static android.content.ContentValues.TAG;
 
-public class SectionHActivity extends Activity {
+public class SectionHActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
 
     @BindView(R.id.activity_section_h)
     ScrollView activitySectionH;
@@ -339,6 +342,21 @@ public class SectionHActivity extends Activity {
     @BindView(R.id.fphGrp008)
     LinearLayout fphGrp008;
 
+    @BindViews({R.id.fph006a, R.id.fph006b, R.id.fph006c, R.id.fph006d, R.id.fph006e, R.id.fph006f, R.id.fph006g,
+            R.id.fph006h, R.id.fph006i, R.id.fph006j, R.id.fph006k, R.id.fph006l, R.id.fph006m, R.id.fph006n, R.id.fph006o,
+            R.id.fph006p, R.id.fph006q})
+    List<RadioGroup> fph006;
+
+    @BindViews({R.id.fph006a02, R.id.fph006b02, R.id.fph006c02, R.id.fph006d02, R.id.fph006e02, R.id.fph006f02, R.id.fph006g02,
+            R.id.fph006h02, R.id.fph006i02, R.id.fph006j02, R.id.fph006k02, R.id.fph006l02, R.id.fph006m02, R.id.fph006n02, R.id.fph006o02,
+            R.id.fph006p02, R.id.fph006q02})
+    List<RadioButton> fph00602;
+
+    @BindViews({R.id.fph006a99, R.id.fph006b99, R.id.fph006c99, R.id.fph006d99, R.id.fph006e99, R.id.fph006f99, R.id.fph006g99,
+            R.id.fph006h99, R.id.fph006i99, R.id.fph006j99, R.id.fph006k99, R.id.fph006l99, R.id.fph006m99, R.id.fph006n99, R.id.fph006o99,
+            R.id.fph006p99, R.id.fph006q99})
+    List<RadioButton> fph00699;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -415,7 +433,7 @@ public class SectionHActivity extends Activity {
             }
         });
 
-        // ====================== Q 8 Skip Pattern =========================
+        /*// ====================== Q 8 Skip Pattern =========================
         fph007.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -427,7 +445,11 @@ public class SectionHActivity extends Activity {
                     fph00801x.setText(null);
                 }
             }
-        });
+        });*/
+
+        for (RadioGroup rg : fph006) {
+            rg.setOnCheckedChangeListener(this);
+        }
 
 
     }
@@ -898,17 +920,39 @@ public class SectionHActivity extends Activity {
             fph006q99.setError(null);
         }
 
-        // ====================== Q 7 ===================
-        if (fph007.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.fph007), Toast.LENGTH_SHORT).show();
-            fph00799.setError("This Data is required");
-            Log.d(TAG, "not selected: fph007 ");
-            return false;
-        } else {
-            fph00799.setError(null);
+        if (is06AllNo()) {
+
+            // ====================== Q 7 ===================
+            if (fph007.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fph007), Toast.LENGTH_SHORT).show();
+                fph00799.setError("This Data is required");
+                Log.d(TAG, "not selected: fph007 ");
+                return false;
+            } else {
+                fph00799.setError(null);
+            }
+
+            if (is06AllNo() && fph00701.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fph006a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
+                fph00701.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.fph007));
+                Log.i(TAG, "fph006: This data is Required!");
+                return false;
+            } else {
+                fph00701.setError(null);
+            }
+
+            if (!is06AllNo() && fph00702.isChecked()) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fph007) + "Can not be no", Toast.LENGTH_SHORT).show();
+                fph00701.setError("Can not be no in " + getString(R.string.fph007));
+                Log.i(TAG, "crf08: This data is Required!");
+                return false;
+            } else {
+                fph00701.setError(null);
+            }
+
         }
 
-        if (fph00701.isChecked()) {
+        if (!is06AllNo()) {
 
             // ====================== Q 8 ===================
             if (fph008.getCheckedRadioButtonId() == -1) {
@@ -940,6 +984,7 @@ public class SectionHActivity extends Activity {
                 fph00801x.setError(null);
             }
         }
+
         // ====================== Q 9 ===================
         if (fph009.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fph009), Toast.LENGTH_SHORT).show();
@@ -995,4 +1040,32 @@ public class SectionHActivity extends Activity {
     }
 
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+
+        if (is06AllNo()) {
+            // Show answer here
+            fphGrp007.setVisibility(View.VISIBLE);
+            fphGrp008.setVisibility(View.GONE);
+            fph00801x.setText(null);
+            fph008.clearCheck();
+
+        } else {
+            fphGrp007.setVisibility(View.GONE);
+            fphGrp008.setVisibility(View.VISIBLE);
+            fph007.clearCheck();
+        }
+    }
+
+    public boolean is06AllNo() {
+
+        int i = 0;
+        for (RadioButton rg : fph00602) {
+            if (rg.isChecked())
+                i++;
+        }
+
+        // Show answer here
+        return i == fph00602.size();
+    }
 }
