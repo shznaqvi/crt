@@ -101,6 +101,7 @@ public class SectionBActivity extends Activity {
                     startActivity(secC);
                 } else {
                     Intent secC = new Intent(this, EndingActivity.class);
+                    secC.putExtra("complete", false);
                     startActivity(secC);
                 }
 
