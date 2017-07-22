@@ -345,7 +345,7 @@ public class FormsContract {
     public static abstract class FormColumns implements BaseColumns {
 
         public static final String TABLE_NAME = "forms";
-        public static final String SYNC_URL = "/forms-fup.php";
+        public static final String _URL = "/forms-fup.php";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
 
         public static final String COLUMN_PROJECTNAME = "projectname";

@@ -20,10 +20,10 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.cbtfollowup.contracts.ClustersContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract.singleFollowUps;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract.FormColumns;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract.*;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -598,6 +598,70 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_SYNCED_DATE,
         };
         String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormColumns._ID + " ASC";
+
+        Collection<FormsContract> allFC = new ArrayList<FormsContract>();
+        try {
+            c = db.query(
+                    FormColumns.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormsContract fc = new FormsContract();
+                allFC.add(fc.Hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<FormsContract> getUnsyncedForms() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FormColumns.COLUMN_PROJECTNAME,
+                FormColumns.COLUMN_SURVEYTYPE,
+                FormColumns.COLUMN_ID,
+                FormColumns.COLUMN_UID,
+                FormColumns.COLUMN_FORMDATE,
+                FormColumns.COLUMN_USER,
+                FormColumns.COLUMN_DEVICETAGID,
+                FormColumns.COLUMN_CLUSTERCODE,
+                FormColumns.COLUMN_VILLAGEACODE,
+                FormColumns.COLUMN_HOUSEHOLD,
+                FormColumns.COLUMN_ISTATUS,
+                FormColumns.COLUMN_SA,
+                FormColumns.COLUMN_SB,
+                FormColumns.COLUMN_SC,
+                FormColumns.COLUMN_SD,
+                FormColumns.COLUMN_SE,
+                FormColumns.COLUMN_SF,
+                FormColumns.COLUMN_SG,
+                FormColumns.COLUMN_SH,
+                FormColumns.COLUMN_GPSLAT,
+                FormColumns.COLUMN_GPSLNG,
+                FormColumns.COLUMN_GPSTIME,
+                FormColumns.COLUMN_GPSACC,
+                FormColumns.COLUMN_DEVICEID,
+
+        };
+        String whereClause = FormsContract.FormColumns.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;

@@ -30,6 +30,7 @@ import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUps;
+import edu.aku.hassannaqvi.cbtfollowup.sync.SyncForms;
 
 
 public class MainActivity extends Activity {
@@ -264,16 +265,14 @@ public class MainActivity extends Activity {
     }*/
     public void syncServer(View view) {
 
-        String formsUrl = AppMain._HOST_URL + "pssp/api/forms.php";
-        String imsUrl = AppMain._HOST_URL + "pssp/api/ims.php";
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-//            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-//            new SyncForms(this).execute();
+            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
+            new SyncForms(this).execute();
 //
 //            Toast.makeText(getApplicationContext(), "Syncing IMs", Toast.LENGTH_SHORT).show();
 //            new SyncIMs(this).execute();
