@@ -477,8 +477,7 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
                 Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent endSec = new Intent(this, EndingActivity.class);
-                startActivity(endSec);
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
 
             } else {
                 Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();

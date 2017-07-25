@@ -570,7 +570,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormColumns.COLUMN_PROJECTNAME,
                 FormColumns.COLUMN_SURVEYTYPE,
                 FormColumns.COLUMN_ID,
                 FormColumns.COLUMN_UID,

@@ -275,7 +275,6 @@ public class FormsContract {
     }
 
     public FormsContract Hydrate(Cursor cursor) {
-        this.projectName = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_PROJECTNAME));
         this.surveyType = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SURVEYTYPE));
         this._ID = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_ID));
         this.UID = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_UID));
@@ -311,7 +310,6 @@ public class FormsContract {
 
         JSONObject json = new JSONObject();
 
-        json.put(FormColumns.COLUMN_PROJECTNAME, this.projectName == null ? JSONObject.NULL : this.projectName);
         json.put(FormColumns.COLUMN_SURVEYTYPE, this.surveyType == null ? JSONObject.NULL : this.surveyType);
         json.put(FormColumns.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(FormColumns.COLUMN_UID, this.UID == null ? JSONObject.NULL : this.UID);
