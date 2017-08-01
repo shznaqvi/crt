@@ -73,6 +73,8 @@ public class SectionDActivity extends Activity {
     RadioGroup fpd002;
     @BindView(R.id.fpd00201)
     RadioButton fpd00201;
+    @BindView(R.id.fpd00202)
+    RadioButton fpd00202;
     @BindView(R.id.fpd00288)
     RadioButton fpd00288;
     @BindView(R.id.fpd00299)
@@ -173,6 +175,9 @@ public class SectionDActivity extends Activity {
     EditText fpd009c88x;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.fpd00104)
+    RadioButton fpd00104;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,6 +214,57 @@ public class SectionDActivity extends Activity {
 
                     fpd00102r.setVisibility(View.GONE);
                     fpdGrp001a.setVisibility(View.VISIBLE);
+                } else if (fpd00104.isChecked()) {
+                    fpdGrp001.setVisibility(View.GONE);
+                    fpd001a01.setChecked(false);
+                    fpd001a02.setChecked(false);
+                    fpd001a03.setChecked(false);
+                    fpd001a04.setChecked(false);
+                    fpd001a05.setChecked(false);
+                    fpd001a06.setChecked(false);
+                    fpd001a07.setChecked(false);
+                    fpd001a88.setChecked(false);
+                    fpd001a88x.setText(null);
+                    fpd002.clearCheck();
+                    fpd00288x.setText(null);
+                    fpd003.setText(null);
+                    fpd004.setText(null);
+                    fpd004a01.setChecked(false);
+                    fpd004a02.setChecked(false);
+                    fpd004a03.setChecked(false);
+                    fpd004a04.setChecked(false);
+                    fpd004a05.setChecked(false);
+                    fpd004a06.setChecked(false);
+                    fpd004a07.setChecked(false);
+                    fpd004a88.setChecked(false);
+                    fpd004a88x.setText(null);
+                    fpd00501.setText(null);
+                    fpd00502.setText(null);
+                    fpd00601.setText(null);
+                    fpd00602.setText(null);
+                    fpd007.clearCheck();
+                    fpd00801.setChecked(false);
+                    fpd00802.setChecked(false);
+                    fpd00803.setChecked(false);
+                    fpd00804.setChecked(false);
+                    fpd00888.setChecked(false);
+                    fpd00888x.setText(null);
+                    fpd009.clearCheck();
+                    fpd009a01.setChecked(false);
+                    fpd009a02.setChecked(false);
+                    fpd009a03.setChecked(false);
+                    fpd009a88.setChecked(false);
+                    fpd009a88x.setText(null);
+                    fpd009b.setText(null);
+                    fpd009c01.setChecked(false);
+                    fpd009c02.setChecked(false);
+                    fpd009c03.setChecked(false);
+                    fpd009c88.setChecked(false);
+                    fpd009c99.setChecked(false);
+                    fpd009c88x.setText(null);
+
+
+
                 }
             }
         });
@@ -621,7 +677,8 @@ public class SectionDActivity extends Activity {
 
         JSONObject sD = new JSONObject();
 
-        sD.put("fpd001", fpd00101.isChecked() ? "1" : fpd00102.isChecked() ? "2" : fpd00103.isChecked() ? "3" : "0");
+        sD.put("fpd001", fpd00101.isChecked() ? "1" : fpd00102.isChecked() ? "2" : fpd00103.isChecked() ? "3"
+                : fpd00104.isChecked() ? "4" : "0");
         sD.put("fpd00102r", fpd00102r.getText().toString());
         sD.put("fpd001a01", fpd001a01.isChecked() ? "1" : "0");
         sD.put("fpd001a02", fpd001a02.isChecked() ? "2" : "0");
@@ -632,7 +689,8 @@ public class SectionDActivity extends Activity {
         sD.put("fpd001a07", fpd001a07.isChecked() ? "7" : "0");
         sD.put("fpd001a88", fpd001a88.isChecked() ? "88" : "0");
         sD.put("fpd001a88x", fpd001a88x.getText().toString());
-        sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00288.isChecked() ? "88" : fpd00299.isChecked() ? "99" : "0");
+        sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00202.isChecked() ? "2" : fpd00288.isChecked() ? "88"
+                : fpd00299.isChecked() ? "99" : "0");
         sD.put("fpd00288x", fpd00288x.getText().toString());
         sD.put("fpd003", fpd003.getText().toString());
         sD.put("fpd004", fpd004.getText().toString());
@@ -681,11 +739,11 @@ public class SectionDActivity extends Activity {
         // =================== Q1  ====================
         if (fpd001.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fpd001), Toast.LENGTH_SHORT).show();
-            fpd00103.setError("This Data is required");
+            fpd00104.setError("This Data is required");
             Log.d(TAG, "not selected: fpd001 ");
             return false;
         } else {
-            fpd00103.setError(null);
+            fpd00104.setError(null);
         }
 
         //if (fpd00103.isChecked() && fpd00102r.getText().toString().isEmpty()) {
@@ -698,7 +756,7 @@ public class SectionDActivity extends Activity {
             fpd00102r.setError(null);
         }
 
-        if (fpd00101.isChecked() || fpd00103.isChecked()) {
+        if (fpd00101.isChecked() || fpd00103.isChecked() || !fpd00104.isChecked()) {
 
             if (fpd00103.isChecked()) {
                 // =================== Q1.1  ====================

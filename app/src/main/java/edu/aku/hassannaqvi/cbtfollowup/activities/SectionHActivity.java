@@ -934,19 +934,23 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
             if (is06AllNo() && fph00701.isChecked()) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph006a) + "Atleast one should be Yes", Toast.LENGTH_SHORT).show();
                 fph00701.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.fph007));
+                fph006a01.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.fph007));
                 Log.i(TAG, "fph006: This data is Required!");
                 return false;
             } else {
                 fph00701.setError(null);
+                fph006a01.setError(null);
             }
 
             if (!is06AllNo() && fph00702.isChecked()) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fph007) + "Can not be no", Toast.LENGTH_SHORT).show();
                 fph00701.setError("Can not be no in " + getString(R.string.fph007));
+                fph006a01.setError("Atlease one should be yes Other wise Select no in " + getString(R.string.fph007));
                 Log.i(TAG, "crf08: This data is Required!");
                 return false;
             } else {
                 fph00701.setError(null);
+                fph006a01.setError(null);
             }
 
         }

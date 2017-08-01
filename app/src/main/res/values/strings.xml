@@ -63,7 +63,7 @@
     <string name="fpa00401">فالواپ نمبر </string>
     <string name="fpb001">کیا بچہ انٹر ویو کے لیے موجود تھا ؟ </string>
     <string name="fpb00101">موجود ہے </string>
-    <string name="fpb00102"> غیر حاضیر</string>
+    <string name="fpb00102"> غیر حاضر</string>
     <string name="fpb00103">مستقل ہجرت</string>
     <string name="fpb00104">انکار</string>
     <string name="fpb00105">بچے کی وفات</string>
@@ -76,6 +76,7 @@
     <string name="fpc003">Left mid-upper arm circumference(MUAC)</string>
     <string name="fpd001">  کیا  آپ  نے گزشتہ ایک ماہ کے دوران وا وامم موصول کی ۔   وا وامم کا ساشے دکھائیں</string>
     <string name="fpd00103">وصول کرنے سے انکار کیا</string>
+    <string name="never"> ہرگز نہیں وصول کیا</string>
     <string name="fpd00102r">سبب </string>
     <string name="fpd001a">اگر انکار کیا  تو کیا وجہ تھی ؟</string>
     <string name="fpd001a01"> ذائقہ اچھا نہیں / خراب ذائقہ </string>
@@ -87,10 +88,11 @@
     <string name="fpd001a07"> یہ خاندانی منصوبہ بندی کے لیے ہے </string>
     <string name="fpd002">آپ کو کس نے واوامم دیے؟ </string>
     <string name="fpd00201">لیڈی ہیلتھ ورکر </string>
+    <string name="fpd00202">AKU Team </string>
     <string name="fpd003">آپ نے گزشتہ ایک ماہ میں اپنے بچے کے لیے کتنے دن واوامم کے ساشے موصول کیے ؟ </string>
-    <string name="fpd00301">کتنے واوامم کے ساششے موصول کیے</string>
+    <string name="fpd00301">کتنے واوامم کے ساشے موصول کیے</string>
     <string name="fpd004">ایک دن میں آپ کے بچے نے کتنے ساششے استعمال کیے؟</string>
-    <string name="fpd00401">ساششے</string>
+    <string name="fpd00401">ساشے</string>
     <string name="fpd00402">نہیں استعمال کیے /روک دیے استعمال کرنے سے </string>
     <string name="fpd004a">اگر نہیں استعمال کیے یا روک دیے تو اس کی کیا وجوہات تھی؟ </string>
     <string name="fpd004a01">ذائقہ اچھا نہیں / خراب ذائقہ </string>
@@ -101,8 +103,8 @@
     <string name="fpd004a06">مذہب میں منع ہے</string>
     <string name="fpd004a07"> یہ خاندانی منصوبہ بندی کے لیے ہے</string>
     <string name="fpd005">آپ کے بچےنے گزشتہ ایک ماہ میں کتنے دن اور کتنے واوامم استعمال کیے؟ </string>
-    <string name="fpd00501">ساششے</string>
-    <string name="fpd006">یا آپ مجھے استعمال شدہ اور غیر استعمال شدہ   واوامم سپلیمینٹ کے  ساشے دیکھا سکتے ہیں؟ (اگر موجود نہیں تو  (00) لکھیں </string>
+    <string name="fpd00501">ساشے</string>
+    <string name="fpd006">یا آپ مجھے استعمال شدہ اور غیر استعمال شدہ   واوامم سپلیمینٹ کے  ساشے دیکھا سکتے ہیں؟ اگر موجود نہیں تو  (00) لکھیں </string>
     <string name="fpd00601">استعمال شدہ پیکٹ دیکھائے      </string>
     <string name="fpd00602">بغیر استعمال شدہ پیکٹ دیکھائے  </string>
     <string name="fpd007">کیا آپ نے گزشتہ ایک ماہ میں واوامم سپلیمینٹ کے کوئی منفی اثرات دیکھے؟     </string>
@@ -110,7 +112,7 @@
     <string name="fpd00801">دست  </string>
     <string name="fpd00802">قے </string>
     <string name="fpd00803">پیٹ کا درد </string>
-    <string name="fpd00804"> جسم پے دان دان  </string>
+    <string name="fpd00804"> جسم پے دانے  </string>
     <string name="fpd009">گزشتہ ایک ماہ کے دوران کیا آپ نے  واوامم  کسی اور کے ساتھ تقسیم  کیا ؟  </string>
     <string name="fpd009a">اگر ہاں تو کس کے ساتھ  تقسیم  کیا؟ </string>
     <string name="fpd009a01">بھائی /بہنوں سے </string>
@@ -122,7 +124,7 @@
     <string name="fpd009c01">منع نہیں کر سکتے  </string>
     <string name="fpd009c02">ذائقہ اچھا تھا  </string>
     <string name="fpd009c03">مجھے یقین تھا یہ دوسرے بچوں/بڑوں کے لئے فائدہ مند ہے۔</string>
-    <string name="fpe001"> آپ کے کسی خاندان کےکسی فرد کو بینظیر انکم سپورٹ پروگرام کی طرف سے پچھلے ایک ماہ کے دوران رقم ملی؟</string>
+    <string name="fpe001"> آپ یا آپ کے خاندان کے کسی فرد کو بینظیر انکم سپورٹ پروگرام کی طرف سے پچھلے ایک ماہ کے دوران رقم ملی؟</string>
     <string name="fpe001a">اگر ہاں تو پچھلے ماہ میں کتنی رقم ملی؟ </string>
     <string name="fpe001a01">PKR :  </string>
     <string name="fpe001b">اگر نہیں تو آخری دفعہ آپ کو   بینظیر انکم سپورٹ پروگرام کی طرف سے کب  رقم ملی تھی ۔  </string>
@@ -155,7 +157,7 @@
     <string name="fpg001"> گزشتہ ایک ماہ کے دوران آپ کے بچے کو  ان  بیماریوں میں سے کوئی بیماری ہوئی؟ہر ایک پڑھ کے بتائیں اور لکھیں کوئی اور بیماری ؟</string>
     <string name="fpg00101">. تیز بخار </string>
     <string name="fpg00102"> اسہال</string>
-    <string name="fpg00103"> کھانس/زکام </string>
+    <string name="fpg00103"> کھانسی/زکام </string>
     <string name="fpg00104"> سانس لینے میں  تکلیف</string>
     <string name="fpg00105">سینہ</string>
     <string name="fpg00106"> جلد کی بیماری</string>
@@ -163,7 +165,7 @@
     <string name="fpg00108">دھبے </string>
     <string name="fpg00109">کوئی بھی نہیں </string>
     <string name="fpg002">کیا آپ نے گزشتہ ایک ماہ میں ان بیماریوں کا علاج کروایا؟  </string>
-    <string name="fpg003">ٓپ نےگزشتہ ماہ بیماریوں کا علاج کس  سےکروایا؟</string>
+    <string name="fpg003">آپ نےگزشتہ ماہ بیماریوں کا علاج کس  سےکروایا؟</string>
     <string name="fpgsub1">Health Personnel </string>
     <string name="fpgsub2">Other Person</string>
     <string name="fpg00301">ڈاکٹر</string>
@@ -179,7 +181,7 @@
     <string name="fph001aNote">کبھی کبھی بچہ مختلف طریقوں سے ماں کا دودھ پیتا ہے؟ مثال طور: چمچ، کپ یا بوتل کے ذریعے، ایسا تب ہو تا کہ جب ماں ہر وقت بچے کے ساتھ نہیں ہوتی۔ کبھی کبھی بچے کو کوئی دوسری عورت بھی دودھ پلاتی ہے یا ماں کا دودھ چمچ ، کپ، بوتل یا کسی اور طریقے سے پلایا جاتا ہے ایسا اس وقت ہوتا ہے جب ماں دودھ پلانے کے حالت میں نہیں ہوتی </string>
     <string name="fph002"> ابھی میں آپ سے ادویات اور طاقت (وٹامن ) کے حوالے سے پوچھوں گی/گا، جو بچوں کو کبھی کبھی دیے جاتے ہیں. پچھلے ایک دن یا رات سے کیا   بچے کو وٹامن  کے قطرے یا کسی  دوسری دوائیوں کے قطرے دئے گئے۔ </string>
     <string name="fph003">کیا بچے کو کل دن اور رات کے دوران اور آر ایس یا نمکول  دیا تھا؟ </string>
-    <string name="fph004">ابھی میں آپ سے کچھ پانی والی اشیاء کا پوچھوں گی۔ جو (بچے کا نام) کل دن اور رات کے دوران استعمال کی ہیں؟ کیا (بچے کا نام) لسٹ  والی اشیاء استعمال کی۔لسٹ پڑھ کے بتاو اور سادہ پانی سے شروع کرو</string>
+    <string name="fph004">ابھی میں آپ سے کچھ پانی والی اشیاء کا پوچھوں گی۔ جو (بچے کا نام) کل دن اور رات کے دوران استعمال کی ہیں؟ کیا (بچے کا نام) لسٹ  والی اشیاء استعمال کی۔لسٹ پڑھ کے بتائیں اور سادہ پانی سے شروع کریں</string>
     <string name="fph004a">سادہ پانی  </string>
     <string name="fph004b">بچوں کے لیے تیارکردہ دودھ   </string>
     <string name="fph004c"> ڈبے والا دودھ،خشک دودھ جانوروں کا تازہ دودھ</string>
@@ -187,7 +189,7 @@
     <string name="fph004e"> واضح شوربے / سوپ  </string>
     <string name="fph004f">دہی  </string>
     <string name="fph004g">پتلا دلیہ  </string>
-    <string name="fph004h"> کوئی دیگر مائعات جیسے کے (گرائپ واٹر، چائے، چاول والا پانی</string>
+    <string name="fph004h"> کوئی دیگر مائعات جیسے کے (گرائپ واٹر، چائے، چاول والا پانی)</string>
     <string name="fph004i">   کوئی دیگر مائع جات </string>
     <string name="fph005"> گزشتہ دن اور رات کے دوران کتنی دفعہ استعمال کیا؟ </string>
     <string name="fph00501">اوقات </string>
@@ -205,7 +207,7 @@
     <string name="fph006k">پھلیاں، مٹر، دال، گری دار میوے،  بیج یا ان سے کی جانے والی کھانے کی اشیاء (تل کے بیج، سونف کے بیج/ سونف، سیاہ جیرا وغیرہ) </string>
     <string name="fph006l"> دودھ،  پنیر، دہی یا دودھ سے بنی دیگر مصنوعات </string>
     <string name="fph006m"> تیل، چربی یا مکھن کھانا پکانے کے لئے استعمال کیا گیا ہو</string>
-    <string name="fph006n">  شکر/چینی، شہد، میٹھی سوڈا، میٹھی رس یا میٹھی کھانے کی اشیاء جیسا کہ(چاکلیٹ، کینڈی، بسکٹ اور کیک)  </string>
+    <string name="fph006n">  شکر/چینی، شہد، میٹھا سوڈا، میٹھا رس یا میٹھی کھانے کی اشیاء جیسا کہ(چاکلیٹ، کینڈی، بسکٹ اور کیک)  </string>
     <string name="fph006o">تیز مصالحے (کالی مرچ، نمک)، مصالحہ جات (سویا کی چٹنی، گرم چٹنی، کافی، چائے   </string>
     <string name="fph006p"> کیڑے مکوڑے یا گھونگے </string>
     <string name="fph006q">سرخ پام آئل، سرخ کھجور نٹ، یا سرخ کھجور نٹ گودا چٹنی کے ساتھ فوڈز </string>

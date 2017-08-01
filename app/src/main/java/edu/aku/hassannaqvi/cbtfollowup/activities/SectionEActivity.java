@@ -69,6 +69,10 @@ public class SectionEActivity extends Activity {
     LinearLayout fpeGrp001a;
     @BindView(R.id.fpeGrp001b)
     LinearLayout fpeGrp001b;
+    @BindView(R.id.fpe00103)
+    RadioButton fpe00103;
+    @BindView(R.id.fpeGrp001)
+    LinearLayout fpeGrp001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,6 +201,32 @@ public class SectionEActivity extends Activity {
             }
         });
 
+        fpe00103.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    fpeGrp001.setVisibility(View.GONE);
+                    fpe001a.setText(null);
+                    fpe001b.setText(null);
+                    fpe00201.setChecked(false);
+                    fpe00201x.setText(null);
+                    fpe00202.setChecked(false);
+                    fpe00202x.setText(null);
+                    fpe00203.setChecked(false);
+                    fpe00203x.setText(null);
+                    fpe00204.setChecked(false);
+                    fpe00204x.setText(null);
+                    fpe00205.setChecked(false);
+                    fpe00205x.setText(null);
+                    fpe00288.setChecked(false);
+                    fpe00288x.setText(null);
+
+                } else {
+                    fpeGrp001.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_End)
@@ -254,7 +284,7 @@ public class SectionEActivity extends Activity {
 
         JSONObject sE = new JSONObject();
 
-        sE.put("fpe001", fpe00101.isChecked() ? "1" : fpe00102.isChecked() ? "2" : "0");
+        sE.put("fpe001", fpe00101.isChecked() ? "1" : fpe00102.isChecked() ? "2" : fpe00103.isChecked() ? "3" : "0");
         sE.put("fpe001a", fpe001a.getText().toString());
         sE.put("fpe001b", fpe001b.getText().toString());
         sE.put("fpe00201", fpe00201.isChecked() ? "1" : "0");
@@ -281,121 +311,123 @@ public class SectionEActivity extends Activity {
         // =================== Q1  ====================
         if (fpe001.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fpe001), Toast.LENGTH_SHORT).show();
-            fpe00102.setError("This Data is required");
+            fpe00103.setError("This Data is required");
             Log.d(TAG, "not selected: fpe001 ");
             return false;
         } else {
-            fpe00102.setError(null);
+            fpe00103.setError(null);
         }
 
-        if (fpe00101.isChecked()) {
-            // =================== Q1.1 ====================
-            if (fpe001a.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.fpe001a), Toast.LENGTH_SHORT).show();
-                fpe001a.setError("This data is required");
-                Log.d(TAG, "empty: fpe001a  ");
+        if (!fpe00103.isChecked()) {
+            if (fpe00101.isChecked()) {
+                // =================== Q1.1 ====================
+                if (fpe001a.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "" + getString(R.string.fpe001a), Toast.LENGTH_SHORT).show();
+                    fpe001a.setError("This data is required");
+                    Log.d(TAG, "empty: fpe001a  ");
+                    return false;
+                } else {
+                    fpe001a.setError(null);
+                }
+
+                if ((Integer.parseInt(fpe001a.getText().toString().isEmpty() ? "0" : fpe001a.getText().toString()) < 1000) || (Integer.parseInt(fpe001a.getText().toString()) > 15000)) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.fpe001a) + getString(R.string.fpe001a01), Toast.LENGTH_LONG).show();
+                    fpe001a.setError("Range is 1000 - 15000 rupees ");
+                    Log.i(TAG, "fpd00501: Range is 1000 - 15000 rupees");
+                    return false;
+                } else {
+                    fpe001a.setError(null);
+                }
+
+            } else {
+                if (fpe001b.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "" + getString(R.string.fpe001b), Toast.LENGTH_SHORT).show();
+                    fpe001b.setError("This data is required");
+                    Log.d(TAG, "empty: fpe001b  ");
+                    return false;
+                } else {
+                    fpe001b.setError(null);
+                }
+
+                if ((Integer.parseInt(fpe001b.getText().toString().isEmpty() ? "0" : fpe001b.getText().toString()) < 1) || (Integer.parseInt(fpe001b.getText().toString()) > 24)) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.fpe001b) + getString(R.string.month), Toast.LENGTH_LONG).show();
+                    fpe001b.setError("Range is 1-24 months");
+                    Log.i(TAG, "fpe001b: Range is 1-24 months");
+                    return false;
+                } else {
+                    fpe001b.setError(null);
+                }
+            }
+            // ====================== Q 2 ===================
+            if (!(fpe00201.isChecked() || fpe00202.isChecked() || fpe00203.isChecked() || fpe00204.isChecked()
+                    || fpe00205.isChecked() || fpe00288.isChecked())) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00288.setError("This data is Required!");    // Set Error on last radio button
+
+                Log.i(TAG, "fpe002: This data is Required!");
                 return false;
             } else {
-                fpe001a.setError(null);
+                fpe00288.setError(null);
             }
 
-            if ((Integer.parseInt(fpe001a.getText().toString().isEmpty() ? "0" : fpe001a.getText().toString()) < 1000) || (Integer.parseInt(fpe001a.getText().toString()) > 15000)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.fpe001a) + getString(R.string.fpe001a01), Toast.LENGTH_LONG).show();
-                fpe001a.setError("Range is 1000 - 15000 rupees ");
-                Log.i(TAG, "fpd00501: Range is 1000 - 15000 rupees");
+            // ====================== Q 2a Amount ===================
+            if (fpe00201.isChecked() && ((Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) < 100) || (Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00201x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00201: Range is 100-5000");
                 return false;
             } else {
-                fpe001a.setError(null);
+                fpe00201x.setError(null);
             }
-
-        } else {
-            if (fpe001b.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.fpe001b), Toast.LENGTH_SHORT).show();
-                fpe001b.setError("This data is required");
-                Log.d(TAG, "empty: fpe001b  ");
+            // ====================== Q 2b Amount ===================
+            if (fpe00202.isChecked() && ((Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) < 100) || (Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00202x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00202: Range is 100-5000");
                 return false;
             } else {
-                fpe001b.setError(null);
+                fpe00202x.setError(null);
             }
 
-            if ((Integer.parseInt(fpe001b.getText().toString().isEmpty() ? "0" : fpe001b.getText().toString()) < 1) || (Integer.parseInt(fpe001b.getText().toString()) > 24)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.fpe001b) + getString(R.string.month), Toast.LENGTH_LONG).show();
-                fpe001b.setError("Range is 1-24 months");
-                Log.i(TAG, "fpe001b: Range is 1-24 months");
+            // ====================== Q 2c Amount ===================
+            if (fpe00203.isChecked() && ((Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) < 100) || (Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00203x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00203: Range is 100-5000");
                 return false;
             } else {
-                fpe001b.setError(null);
+                fpe00203x.setError(null);
             }
-        }
-        // ====================== Q 2 ===================
-        if (!(fpe00201.isChecked() || fpe00202.isChecked() || fpe00203.isChecked() || fpe00204.isChecked()
-                || fpe00205.isChecked() || fpe00288.isChecked())) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00288.setError("This data is Required!");    // Set Error on last radio button
 
-            Log.i(TAG, "fpe002: This data is Required!");
-            return false;
-        } else {
-            fpe00288.setError(null);
-        }
+            // ====================== Q 2d Amount ===================
+            if (fpe00204.isChecked() && ((Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) < 100) || (Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00204x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00204: Range is 100-5000");
+                return false;
+            } else {
+                fpe00204x.setError(null);
+            }
 
-        // ====================== Q 2a Amount ===================
-        if (fpe00201.isChecked() && ((Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) < 100) || (Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00201x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00201: Range is 100-5000");
-            return false;
-        } else {
-            fpe00201x.setError(null);
-        }
-        // ====================== Q 2b Amount ===================
-        if (fpe00202.isChecked() && ((Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) < 100) || (Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00202x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00202: Range is 100-5000");
-            return false;
-        } else {
-            fpe00202x.setError(null);
-        }
+            // ====================== Q 2e Amount ===================
+            if (fpe00205.isChecked() && ((Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) < 100) || (Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00205x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00205: Range is 100-5000");
+                return false;
+            } else {
+                fpe00205x.setError(null);
+            }
 
-        // ====================== Q 2c Amount ===================
-        if (fpe00203.isChecked() && ((Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) < 100) || (Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00203x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00203: Range is 100-5000");
-            return false;
-        } else {
-            fpe00203x.setError(null);
-        }
-
-        // ====================== Q 2d Amount ===================
-        if (fpe00204.isChecked() && ((Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) < 100) || (Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00204x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00204: Range is 100-5000");
-            return false;
-        } else {
-            fpe00204x.setError(null);
-        }
-
-        // ====================== Q 2e Amount ===================
-        if (fpe00205.isChecked() && ((Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) < 100) || (Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00205x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00205: Range is 100-5000");
-            return false;
-        } else {
-            fpe00205x.setError(null);
-        }
-
-        // ====================== Q 2 Others ===================
-        if (fpe00288.isChecked() && ((Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) < 100) || (Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) > 5000))) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-            fpe00288x.setError("Range is 100-5000");
-            Log.i(TAG, "fpe00288: Range is 100-5000");
-            return false;
-        } else {
-            fpe00288x.setError(null);
+            // ====================== Q 2 Others ===================
+            if (fpe00288.isChecked() && ((Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) < 100) || (Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) > 5000))) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
+                fpe00288x.setError("Range is 100-5000");
+                Log.i(TAG, "fpe00288: Range is 100-5000");
+                return false;
+            } else {
+                fpe00288x.setError(null);
+            }
         }
 
 

@@ -72,7 +72,7 @@ public class SectionCActivity extends Activity {
 
                 finish();
 
-                if (AppMain.arm == 1) {
+                /*if (AppMain.arm == 1) {
                     Intent secD = new Intent(this, SectionGActivity.class);
                     startActivity(secD);
                 } else if (AppMain.arm == 2 || AppMain.arm == 3) {
@@ -81,7 +81,10 @@ public class SectionCActivity extends Activity {
                 } else {
                     Intent secD = new Intent(this, SectionDActivity.class);
                     startActivity(secD);
-                }
+                }*/
+
+                Intent secD = new Intent(this, SectionDActivity.class);
+                startActivity(secD);
 
 
             } else {
@@ -270,31 +273,34 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             fpc001m3.setError(null);
-            if (!fpc001m3.getText().toString().contains(".")) {
+            /*if (!fpc001m3.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
                 fpc001m3.setError("Invalid: Decimal value is Required!");
                 Log.i(TAG, "fpc001m3: Invalid Decimal value is Required!");
                 return false;
             } else {
-                fpc001m3.setError(null);
-                if (Double.parseDouble(fpc001m3.getText().toString()) < 1) {
+                fpc001m3.setError(null);*/
+                /*if (Double.parseDouble(fpc001m3.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
                     fpc001m3.setError("Invalid: Greater then 0");
                     Log.i(TAG, "fpc001m3: Invalid Greater then 0");
                     return false;
                 } else {
                     fpc001m3.setError(null);
-                    if (Double.parseDouble(fpc001m3.getText().toString()) < 40 || Double.parseDouble(fpc001m3.getText().toString()) > 100) {
+                */
+            if (Double.parseDouble(fpc001m3.getText().toString()) != 0
+                    && (Double.parseDouble(fpc001m3.getText().toString()) < 40)
+                    || Double.parseDouble(fpc001m3.getText().toString()) > 100) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc001), Toast.LENGTH_SHORT).show();
                         fpc001m3.setError("Invalid: Range 40.0-100.0");
                         Log.i(TAG, "fpc001m3: Invalid Range 40.0-100.0");
                         return false;
-                    } else {
+            } else {
                         fpc001m3.setError(null);
                     }
                 }
-            }
-        }
+        //}
+
 
 
         if (fpc002m3.getText().toString().isEmpty()) {
@@ -304,7 +310,7 @@ public class SectionCActivity extends Activity {
             return false;
         } else {
             fpc002m3.setError(null);
-            if (!fpc002m3.getText().toString().contains(".")) {
+            /*if (!fpc002m3.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc002), Toast.LENGTH_SHORT).show();
                 fpc002m3.setError("Invalid: Decimal value is Required!");
                 Log.i(TAG, "fpc002m3: Invalid Decimal value is Required!");
@@ -317,8 +323,8 @@ public class SectionCActivity extends Activity {
                     Log.i(TAG, "fpc002m3: Invalid Greater then 0");
                     return false;
                 } else {
-                    fpc002m3.setError(null);
-                    if (Double.parseDouble(fpc002m3.getText().toString()) < 1 || Double.parseDouble(fpc002m3.getText().toString()) > 20) {
+                    fpc002m3.setError(null);*/
+            if (Double.parseDouble(fpc002m3.getText().toString()) < 0 || Double.parseDouble(fpc002m3.getText().toString()) > 20) {
                         Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpc002), Toast.LENGTH_SHORT).show();
                         fpc002m3.setError("Invalid: Range 1.0-20.0");
                         Log.i(TAG, "fpc002m1: Invalid Range 1.0-20.0");
@@ -327,8 +333,8 @@ public class SectionCActivity extends Activity {
                         fpc002m3.setError(null);
                     }
                 }
-            }
-        }
+        //}
+        //}
 
 
         return true;

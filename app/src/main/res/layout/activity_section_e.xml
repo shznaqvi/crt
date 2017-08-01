@@ -60,7 +60,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/no" />
 
+            <RadioButton
+                android:id="@+id/fpe00103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/never" />
+
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/fpeGrp001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/fpeGrp001a"
@@ -80,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/fpe001a01"
                 android:inputType="number"
-                android:maxLength="4" />
+                android:maxLength="5" />
 
         </LinearLayout>
 
@@ -212,6 +224,8 @@
             android:inputType="number"
             android:maxLength="4"
             android:visibility="gone" />
+
+        </LinearLayout>
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
