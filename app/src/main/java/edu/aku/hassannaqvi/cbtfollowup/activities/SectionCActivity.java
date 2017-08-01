@@ -118,9 +118,9 @@ public class SectionCActivity extends Activity {
         sC.put("fpc001m1", fpc001m1.getText().toString());
         sC.put("fpc001m2", fpc001m2.getText().toString());
         sC.put("fpc001m3", fpc001m3.getText().toString());
-        sC.put("fpc002m1 ", fpc002m1.getText().toString());
-        sC.put("fpc002m2 ", fpc002m2.getText().toString());
-        sC.put("fpc002m3 ", fpc002m3.getText().toString());
+        sC.put("fpc002m1", fpc002m1.getText().toString());
+        sC.put("fpc002m2", fpc002m2.getText().toString());
+        sC.put("fpc002m3", fpc002m3.getText().toString());
 
         AppMain.fc.setsC(String.valueOf(sC));
 

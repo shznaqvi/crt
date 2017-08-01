@@ -245,8 +245,8 @@ public class SectionAActivity extends Activity {
                 : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
         sA.put("fpa002", fpa002.getText().toString());
 //        sA.put("fpa00301", fpa00301.getText().toString());
-        sA.put("fpa00302 ", fpa00302.getText().toString());
-        sA.put("fpa00401  ", fpa00401.getText().toString());
+        sA.put("fpa00302", fpa00302.getText().toString());
+        sA.put("fpa00401", fpa00401.getText().toString());
 
         AppMain.fc.setsA(String.valueOf(sA));
 
