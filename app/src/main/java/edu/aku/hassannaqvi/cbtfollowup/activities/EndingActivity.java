@@ -42,10 +42,10 @@ public class EndingActivity extends Activity {
         ButterKnife.bind(this);
 
 
-        status1.setEnabled(getIntent().getBooleanExtra("complete", true));
+        //status1.setEnabled(getIntent().getBooleanExtra("complete", true));
 
 
-        /*Boolean check = getIntent().getBooleanExtra("complete", true);
+        Boolean check = getIntent().getBooleanExtra("complete", true);
 
         if (check) {
             status1.setEnabled(true);
@@ -54,7 +54,7 @@ public class EndingActivity extends Activity {
         } else {
             status1.setEnabled(false);
             status2.setEnabled(true);
-        }*/
+        }
 
     }
 
@@ -122,7 +122,7 @@ public class EndingActivity extends Activity {
         if (status.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Empty)" + getString(R.string.status), Toast.LENGTH_SHORT).show();
             status2.setError("This data is Required!");
-            Log.i(TAG, "mnd9: This data is Required!");
+            Log.i(TAG, "status: This data is Required!");
             return false;
         } else {
             status2.setError(null);
