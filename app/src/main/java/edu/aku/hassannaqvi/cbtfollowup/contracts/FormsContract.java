@@ -321,36 +321,69 @@ public class FormsContract {
         json.put(FormColumns.COLUMN_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
         json.put(FormColumns.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
 
+        try {
         if (!this.sA.equals("")) {
             json.put(FormColumns.COLUMN_SA, this.sA == null ? JSONObject.NULL : new JSONObject(this.sA));
         }
+        } catch (Exception e) {
 
+        }
+
+        try {
         if (!this.sB.equals("")) {
             json.put(FormColumns.COLUMN_SB, this.sB == null ? JSONObject.NULL : new JSONObject(this.sB));
         }
+        } catch (Exception e) {
 
-        if (!this.sC.equals("")) {
-            json.put(FormColumns.COLUMN_SC, this.sC == null ? JSONObject.NULL : new JSONObject(this.sC));
         }
+
+        try {
+            if (!this.sC.equals("")) {
+            json.put(FormColumns.COLUMN_SC, this.sC == null ? JSONObject.NULL : new JSONObject(this.sC));
+            }
+        } catch (Exception e) {
+
+        }
+
+        try {
 
         if (!this.sD.equals("")) {
             json.put(FormColumns.COLUMN_SD, this.sD == null ? JSONObject.NULL : new JSONObject(this.sD));
         }
+        } catch (Exception e) {
 
-        if (!this.sE.equals("")) {
+        }
+
+        try {
+            if (!this.sE.equals("")) {
             json.put(FormColumns.COLUMN_SE, this.sE == null ? JSONObject.NULL : new JSONObject(this.sE));
+            }
+        } catch (Exception e) {
+
         }
 
-        if (!this.sF.equals("")) {
+        try {
+            if (!this.sF.equals("")) {
             json.put(FormColumns.COLUMN_SF, this.sF == null ? JSONObject.NULL : new JSONObject(this.sF));
+            }
+        } catch (Exception e) {
+
         }
 
-        if (!this.sG.equals("")) {
+        try {
+            if (!this.sG.equals("")) {
             json.put(FormColumns.COLUMN_SG, this.sG == null ? JSONObject.NULL : new JSONObject(this.sG));
+            }
+        } catch (Exception e) {
+
         }
 
+        try {
         if (!this.sH.equals("")) {
             json.put(FormColumns.COLUMN_SH, this.sH == null ? JSONObject.NULL : new JSONObject(this.sH));
+        }
+        } catch (Exception e) {
+
         }
 
         json.put(FormColumns.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
