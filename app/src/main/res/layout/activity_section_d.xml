@@ -79,7 +79,8 @@
             android:layout_height="wrap_content"
             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="@string/fpd00102r"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/fpdGrp001"
@@ -159,6 +160,12 @@
                     android:visibility="gone" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fldGrpfpd002"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -579,6 +586,8 @@
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
                     android:visibility="gone" />
+
+            </LinearLayout>
 
             </LinearLayout>
 
