@@ -177,6 +177,9 @@ public class SectionDActivity extends Activity {
     LinearLayout fldGrpbtn;
     @BindView(R.id.fpd00104)
     RadioButton fpd00104;
+    @BindView(R.id.fldGrpfpd002)
+    LinearLayout fldGrpfpd002;
+
 
 
     @Override
@@ -185,36 +188,16 @@ public class SectionDActivity extends Activity {
         setContentView(R.layout.activity_section_d);
         ButterKnife.bind(this);
 
-
-// =================== Q1 Reason ====================
-
         fpd001.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-
                 if (fpd00101.isChecked()) {
-
-                    Log.i(TAG, "onCheckedChanged: " + "1 - " + fpd00101.isChecked());
-
+                    fpdGrp001.setVisibility(View.VISIBLE);
+                    fldGrpfpd002.setVisibility(View.VISIBLE);
                     fpd00102r.setText(null);
                     fpd00102r.setVisibility(View.GONE);
                     fpdGrp001a.setVisibility(View.GONE);
-
                 } else if (fpd00102.isChecked()) {
-
-                    Log.i(TAG, "onCheckedChanged: " + "2 - " + fpd00102.isChecked());
-
-                    fpd00102r.setVisibility(View.VISIBLE);
-                    fpdGrp001a.setVisibility(View.GONE);
-                    fpd00102r.requestFocus();
-
-                } else if (fpd00103.isChecked()) {
-
-                    Log.i(TAG, "onCheckedChanged: " + "3 - " + fpd00103.isChecked());
-
-                    fpd00102r.setVisibility(View.GONE);
-                    fpdGrp001a.setVisibility(View.VISIBLE);
-                } else if (fpd00104.isChecked()) {
                     fpdGrp001.setVisibility(View.GONE);
                     fpd001a01.setChecked(false);
                     fpd001a02.setChecked(false);
@@ -262,13 +245,105 @@ public class SectionDActivity extends Activity {
                     fpd009c88.setChecked(false);
                     fpd009c99.setChecked(false);
                     fpd009c88x.setText(null);
+                    fpd00102r.setVisibility(View.VISIBLE);
+                } else if (fpd00103.isChecked()) {
+                    fpd00102r.setText(null);
+                    fpd00102r.setVisibility(View.GONE);
+                    fpdGrp001.setVisibility(View.VISIBLE);
+                    fpdGrp001a.setVisibility(View.VISIBLE);
+                    fldGrpfpd002.setVisibility(View.GONE);
+                    fpd002.clearCheck();
+                    fpd00288x.setText(null);
+                    fpd003.setText(null);
+                    fpd004.setText(null);
+                    fpd004a01.setChecked(false);
+                    fpd004a02.setChecked(false);
+                    fpd004a03.setChecked(false);
+                    fpd004a04.setChecked(false);
+                    fpd004a05.setChecked(false);
+                    fpd004a06.setChecked(false);
+                    fpd004a07.setChecked(false);
+                    fpd004a88.setChecked(false);
+                    fpd004a88x.setText(null);
+                    fpd00501.setText(null);
+                    fpd00502.setText(null);
+                    fpd00601.setText(null);
+                    fpd00602.setText(null);
+                    fpd007.clearCheck();
+                    fpd00801.setChecked(false);
+                    fpd00802.setChecked(false);
+                    fpd00803.setChecked(false);
+                    fpd00804.setChecked(false);
+                    fpd00888.setChecked(false);
+                    fpd00888x.setText(null);
+                    fpd009.clearCheck();
+                    fpd009a01.setChecked(false);
+                    fpd009a02.setChecked(false);
+                    fpd009a03.setChecked(false);
+                    fpd009a88.setChecked(false);
+                    fpd009a88x.setText(null);
+                    fpd009b.setText(null);
+                    fpd009c01.setChecked(false);
+                    fpd009c02.setChecked(false);
+                    fpd009c03.setChecked(false);
+                    fpd009c88.setChecked(false);
+                    fpd009c88x.setText(null);
+                    fpd009c99.setChecked(false);
 
-
-
+                } else if (fpd00104.isChecked()) {
+                    fpdGrp001a.setVisibility(View.GONE);
+                    fldGrpfpd002.setVisibility(View.GONE);
+                    fpd00102r.setVisibility(View.GONE);
+                    fpd00102r.setText(null);
+                    fpd001a01.setChecked(false);
+                    fpd001a02.setChecked(false);
+                    fpd001a03.setChecked(false);
+                    fpd001a04.setChecked(false);
+                    fpd001a05.setChecked(false);
+                    fpd001a06.setChecked(false);
+                    fpd001a07.setChecked(false);
+                    fpd001a88.setChecked(false);
+                    fpd001a88x.setText(null);
+                    fpd002.clearCheck();
+                    fpd00288x.setText(null);
+                    fpd003.setText(null);
+                    fpd004.setText(null);
+                    fpd004a01.setChecked(false);
+                    fpd004a02.setChecked(false);
+                    fpd004a03.setChecked(false);
+                    fpd004a04.setChecked(false);
+                    fpd004a05.setChecked(false);
+                    fpd004a06.setChecked(false);
+                    fpd004a07.setChecked(false);
+                    fpd004a88.setChecked(false);
+                    fpd004a88x.setText(null);
+                    fpd00501.setText(null);
+                    fpd00502.setText(null);
+                    fpd00601.setText(null);
+                    fpd00602.setText(null);
+                    fpd007.clearCheck();
+                    fpd00801.setChecked(false);
+                    fpd00802.setChecked(false);
+                    fpd00803.setChecked(false);
+                    fpd00804.setChecked(false);
+                    fpd00888.setChecked(false);
+                    fpd00888x.setText(null);
+                    fpd009.clearCheck();
+                    fpd009a01.setChecked(false);
+                    fpd009a02.setChecked(false);
+                    fpd009a03.setChecked(false);
+                    fpd009a88.setChecked(false);
+                    fpd009a88x.setText(null);
+                    fpd009b.setText(null);
+                    fpd009c01.setChecked(false);
+                    fpd009c02.setChecked(false);
+                    fpd009c03.setChecked(false);
+                    fpd009c88.setChecked(false);
+                    fpd009c99.setChecked(false);
+                    fpd009c88x.setText(null);
                 }
             }
         });
-
         // =================== Q1.1 Others ====================
 
         fpd001a88.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -447,124 +522,6 @@ public class SectionDActivity extends Activity {
             }
         });
 
-
-        // ====================== Q 1 Skip Pattern =========================
-        fpd00101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fpdGrp001.setVisibility(View.VISIBLE);
-                    fpdGrp001a.setVisibility(View.GONE);
-
-                    fpd001a01.setChecked(false);
-                    fpd001a02.setChecked(false);
-                    fpd001a03.setChecked(false);
-                    fpd001a04.setChecked(false);
-                    fpd001a05.setChecked(false);
-                    fpd001a06.setChecked(false);
-                    fpd001a07.setChecked(false);
-                    fpd001a88.setChecked(false);
-
-                    fpd001a88x.setText(null);
-                } else {
-
-                    fpd00102r.setText(null);
-                    fpd00102r.setVisibility(View.GONE);
-                }
-            }
-        });
-
-        fpd00103.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fpdGrp001.setVisibility(View.VISIBLE);
-                    fpdGrp001a.setVisibility(View.VISIBLE);
-                } else {
-
-                    fpd00102r.setText(null);
-                    fpd00102r.setVisibility(View.GONE);
-                }
-            }
-        });
-
-        fpd00102.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    fpd00102r.setVisibility(View.VISIBLE);
-
-                    fpdGrp001.setVisibility(View.GONE);
-                    fpdGrp001a.setVisibility(View.GONE);
-
-                    fpd001a01.setChecked(false);
-                    fpd001a02.setChecked(false);
-                    fpd001a03.setChecked(false);
-                    fpd001a04.setChecked(false);
-                    fpd001a05.setChecked(false);
-                    fpd001a06.setChecked(false);
-                    fpd001a07.setChecked(false);
-                    fpd001a88.setChecked(false);
-
-                    fpd001a88x.setText(null);
-                    fpd002.clearCheck();
-                    fpd00288x.setText(null);
-                    fpd003.setText(null);
-                    fpd004.setText(null);
-
-                    //fpd004a.clearCheck();
-
-                    fpd004a01.setChecked(false);
-                    fpd004a02.setChecked(false);
-                    fpd004a03.setChecked(false);
-                    fpd004a04.setChecked(false);
-                    fpd004a05.setChecked(false);
-                    fpd004a06.setChecked(false);
-                    fpd004a07.setChecked(false);
-                    fpd004a88.setChecked(false);
-
-                    fpd004a88x.setText(null);
-                    fpd00501.setText(null);
-                    fpd00502.setText(null);
-                    fpd00601.setText(null);
-                    fpd00602.setText(null);
-                    fpd007.clearCheck();
-                    //fpd008.clearCheck();
-
-                    fpd00801.setChecked(false);
-                    fpd00802.setChecked(false);
-                    fpd00803.setChecked(false);
-                    fpd00804.setChecked(false);
-                    fpd00888.setChecked(false);
-
-                    fpd00888x.setText(null);
-                    fpd009.clearCheck();
-                    //fpd009a.clearCheck();
-
-                    fpd009a01.setChecked(false);
-                    fpd009a02.setChecked(false);
-                    fpd009a03.setChecked(false);
-                    fpd009a88.setChecked(false);
-
-                    fpd009a88x.setText(null);
-                    //fpd009c.clearCheck();
-
-                    fpd009c01.setChecked(false);
-                    fpd009c02.setChecked(false);
-                    fpd009c03.setChecked(false);
-                    fpd009c88.setChecked(false);
-
-                    fpd009c88x.setText(null);
-
-                } else {
-
-                    fpd00102r.setVisibility(View.GONE);
-                    fpd00102r.setText(null);
-                    fpdGrp001.setVisibility(View.VISIBLE);
-                    fpdGrp001a.setVisibility(View.VISIBLE);
-                }
-            }
-        });
 
 
         // ====================== Q 7 Skip Pattern =========================
@@ -746,7 +703,6 @@ public class SectionDActivity extends Activity {
             fpd00104.setError(null);
         }
 
-        //if (fpd00103.isChecked() && fpd00102r.getText().toString().isEmpty()) {
         if (fpd00102.isChecked() && fpd00102r.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd001) + " - " + getString(R.string.fpd00102r), Toast.LENGTH_LONG).show();
             fpd00102r.setError("This data is Required!");    // Set Error on last radio button
@@ -756,48 +712,37 @@ public class SectionDActivity extends Activity {
             fpd00102r.setError(null);
         }
 
-        if (fpd00101.isChecked() || fpd00103.isChecked() || !fpd00104.isChecked()) {
-
-            if (fpd00103.isChecked()) {
+        if (fpd00103.isChecked()) {
                 // =================== Q1.1  ====================
 
-                if (!(fpd001a01.isChecked() ||
-                        fpd001a02.isChecked() ||
-                        fpd001a03.isChecked() ||
-                        fpd001a04.isChecked() ||
-                        fpd001a05.isChecked() ||
-                        fpd001a06.isChecked() ||
-                        fpd001a07.isChecked() ||
-                        fpd001a88.isChecked())) {
-                    Toast.makeText(this, "" + getString(R.string.fpd001a), Toast.LENGTH_SHORT).show();
-                    fpd001a07.setError("This Data is required");
-                    Log.d(TAG, "not selected: fpd001a ");
-                    return false;
-                } else {
-                    fpd001a07.setError(null);
-                }
-
-
-                /*if (fpd001a.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.fpd001a), Toast.LENGTH_SHORT).show();
-                    fpd001a07.setError("This Data is required");
-                    Log.d(TAG, "not selected: fpd001a ");
-                    return false;
-                } else {
-                    fpd001a07.setError(null);
-                }*/
-
-
-                if (fpd001a88.isChecked() && fpd001a88x.getText().toString().isEmpty()) {
-                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd001a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
-                    fpd001a88x.setError("This data is Required!");    // Set Error on last radio button
-                    Log.d(TAG, "fpd001a88x: This data is Required!");
-                    return false;
-                } else {
-                    fpd001a88x.setError(null);
-                }
+            if (!(fpd001a01.isChecked() ||
+                    fpd001a02.isChecked() ||
+                    fpd001a03.isChecked() ||
+                    fpd001a04.isChecked() ||
+                    fpd001a05.isChecked() ||
+                    fpd001a06.isChecked() ||
+                    fpd001a07.isChecked() ||
+                    fpd001a88.isChecked())) {
+                Toast.makeText(this, "" + getString(R.string.fpd001a), Toast.LENGTH_SHORT).show();
+                fpd001a07.setError("This Data is required");
+                Log.d(TAG, "not selected: fpd001a ");
+                return false;
+            } else {
+                fpd001a07.setError(null);
             }
 
+
+            if (fpd001a88.isChecked() && fpd001a88x.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd001a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                fpd001a88x.setError("This data is Required!");    // Set Error on last radio button
+                Log.d(TAG, "fpd001a88x: This data is Required!");
+                return false;
+            } else {
+                fpd001a88x.setError(null);
+            }
+        }
+
+        if (fpd00101.isChecked()) {
 
             // =================== Q2 ====================
 
@@ -889,14 +834,14 @@ public class SectionDActivity extends Activity {
 
 
 
-            /*if (fpd004a.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.fpd004a), Toast.LENGTH_SHORT).show();
-                fpd004a07.setError("This Data is required");
-                Log.d(TAG, "not selected: fpd004a ");
-                return false;
-            } else {
-                fpd004a07.setError(null);
-            }*/
+        /*if (fpd004a.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.fpd004a), Toast.LENGTH_SHORT).show();
+            fpd004a07.setError("This Data is required");
+            Log.d(TAG, "not selected: fpd004a ");
+            return false;
+        } else {
+            fpd004a07.setError(null);
+        }*/
 
             if (fpd004a88.isChecked() && fpd004a88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd004a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -1010,14 +955,14 @@ public class SectionDActivity extends Activity {
                     fpd00804.setError(null);
                 }
 
-                /*if (fpd008.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.fpd008), Toast.LENGTH_SHORT).show();
-                    fpd00804.setError("This Data is required");
-                    Log.d(TAG, "not selected: fpd008 ");
-                    return false;
-                } else {
-                    fpd00804.setError(null);
-                }*/
+            /*if (fpd008.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpd008), Toast.LENGTH_SHORT).show();
+                fpd00804.setError("This Data is required");
+                Log.d(TAG, "not selected: fpd008 ");
+                return false;
+            } else {
+                fpd00804.setError(null);
+            }*/
 
                 if (fpd00888.isChecked() && fpd00888x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd008) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -1057,14 +1002,14 @@ public class SectionDActivity extends Activity {
                 }
 
 
-                /*if (fpd009a.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.fpd009a), Toast.LENGTH_SHORT).show();
-                    fpd009a03.setError("This Data is required");
-                    Log.d(TAG, "not selected: fpd009a ");
-                    return false;
-                } else {
-                    fpd009a03.setError(null);
-                }*/
+            /*if (fpd009a.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpd009a), Toast.LENGTH_SHORT).show();
+                fpd009a03.setError("This Data is required");
+                Log.d(TAG, "not selected: fpd009a ");
+                return false;
+            } else {
+                fpd009a03.setError(null);
+            }*/
 
                 if (fpd009a88.isChecked() && fpd009a88x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd009a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -1112,14 +1057,14 @@ public class SectionDActivity extends Activity {
                     fpd009c88.setError(null);
                 }
 
-                /*if (fpd009c.getCheckedRadioButtonId() == -1) {
-                    Toast.makeText(this, "" + getString(R.string.fpd009c), Toast.LENGTH_SHORT).show();
-                    fpd009c03.setError("This Data is required");
-                    Log.d(TAG, "not selected: fpd009c ");
-                    return false;
-                } else {
-                    fpd009c03.setError(null);
-                }*/
+            /*if (fpd009c.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpd009c), Toast.LENGTH_SHORT).show();
+                fpd009c03.setError("This Data is required");
+                Log.d(TAG, "not selected: fpd009c ");
+                return false;
+            } else {
+                fpd009c03.setError(null);
+            }*/
 
                 if (fpd009c88.isChecked() && fpd009c88x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd009c) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();

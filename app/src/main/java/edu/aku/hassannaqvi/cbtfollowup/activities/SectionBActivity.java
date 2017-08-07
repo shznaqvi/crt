@@ -133,7 +133,8 @@ public class SectionBActivity extends Activity {
 
         JSONObject sB = new JSONObject();
 
-        sB.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3" : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
+        sB.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3"
+                : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
         sB.put("fpb00201", fpb00201.getText().toString());
         sB.put("fpb00202", fpb00202.getText().toString());
 
