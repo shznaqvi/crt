@@ -371,59 +371,66 @@ public class SectionEActivity extends Activity {
             }
 
             // ====================== Q 2a Amount ===================
-            if (fpe00201.isChecked() && ((Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) < 100) || (Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) > 5000))) {
+            if (fpe00201.isChecked() && ((Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0"
+                    : fpe00201x.getText().toString()) < 0) || (Integer.parseInt(fpe00201x.getText().toString().isEmpty() ? "0" : fpe00201x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00201x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00201: Range is 100-5000");
+                fpe00201x.setError("Range is 0-5000");
+                Log.i(TAG, "fpe00201: Range is 0-5000");
                 return false;
             } else {
                 fpe00201x.setError(null);
             }
             // ====================== Q 2b Amount ===================
-            if (fpe00202.isChecked() && ((Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) < 100) || (Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) > 5000))) {
+            if (fpe00202.isChecked() && ((Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0"
+                    : fpe00202x.getText().toString()) < 0)
+                    || (Integer.parseInt(fpe00202x.getText().toString().isEmpty() ? "0" : fpe00202x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00202x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00202: Range is 100-5000");
+                fpe00202x.setError("Range is 0-5000");
+                Log.i(TAG, "fpe00202: Range is 0-5000");
                 return false;
             } else {
                 fpe00202x.setError(null);
             }
 
             // ====================== Q 2c Amount ===================
-            if (fpe00203.isChecked() && ((Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) < 100) || (Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) > 5000))) {
+            if (fpe00203.isChecked() && ((Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0"
+                    : fpe00203x.getText().toString()) < 0) || (Integer.parseInt(fpe00203x.getText().toString().isEmpty() ? "0" : fpe00203x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00203x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00203: Range is 100-5000");
+                fpe00203x.setError("Range is 0-5000");
+                Log.i(TAG, "fpe00203: Range is 0-5000");
                 return false;
             } else {
                 fpe00203x.setError(null);
             }
 
             // ====================== Q 2d Amount ===================
-            if (fpe00204.isChecked() && ((Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) < 100) || (Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) > 5000))) {
+            if (fpe00204.isChecked() && ((Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0"
+                    : fpe00204x.getText().toString()) < 0) || (Integer.parseInt(fpe00204x.getText().toString().isEmpty() ? "0" : fpe00204x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00204x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00204: Range is 100-5000");
+                fpe00204x.setError("Range is 0-5000");
+                Log.i(TAG, "fpe00204: Range is 0-5000");
                 return false;
             } else {
                 fpe00204x.setError(null);
             }
 
             // ====================== Q 2e Amount ===================
-            if (fpe00205.isChecked() && ((Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) < 100) || (Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) > 5000))) {
+            if (fpe00205.isChecked() && ((Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0"
+                    : fpe00205x.getText().toString()) < 0) || (Integer.parseInt(fpe00205x.getText().toString().isEmpty() ? "0" : fpe00205x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00205x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00205: Range is 100-5000");
+                fpe00205x.setError("Range is 0-5000");
+                Log.i(TAG, "fpe00205: Range is 0-5000");
                 return false;
             } else {
                 fpe00205x.setError(null);
             }
 
             // ====================== Q 2 Others ===================
-            if (fpe00288.isChecked() && ((Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) < 100) || (Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) > 5000))) {
+            if (fpe00288.isChecked() && ((Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0"
+                    : fpe00288x.getText().toString()) < 0) || (Integer.parseInt(fpe00288x.getText().toString().isEmpty() ? "0" : fpe00288x.getText().toString()) > 5000))) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpe002), Toast.LENGTH_LONG).show();
-                fpe00288x.setError("Range is 100-5000");
-                Log.i(TAG, "fpe00288: Range is 100-5000");
+                fpe00288x.setError("Range is 0 -5000");
+                Log.i(TAG, "fpe00288: Range is 0-5000");
                 return false;
             } else {
                 fpe00288x.setError(null);
