@@ -32,10 +32,7 @@ public class AppMain extends Application {
 
     public static final String _PROJECT_FOLDER = "cbt/api/";
 
-    public static final String _HOST_URL =
-            "http://" + _IP
-                    + ":" + _PORT
-                    + "/" + _PROJECT_FOLDER;
+    public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + "/" + _PROJECT_FOLDER;
     // Retrieve FileName.php from Contract class Abstract _URI
 
 
@@ -77,27 +74,6 @@ public class AppMain extends Application {
     protected LocationManager locationManager;
     Location location;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/JameelNooriNastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
-
-        deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID);
-
-
-        // Requires Permission for GPS -- android.permission.ACCESS_FINE_LOCATION
-        // Requires Additional permission for 5.0 -- android.hardware.location.gps
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER,
-                MINIMUM_TIME_BETWEEN_UPDATES,
-                MINIMUM_DISTANCE_CHANGE_FOR_UPDATES,
-                new MyLocationListener()
-        );
-
-    }
-
     public static void endActivity(final Context context, final Activity activity){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
@@ -124,6 +100,26 @@ public class AppMain extends Application {
         alert.show();
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/JameelNooriNastaleeq.ttf"); // font from assets: "assets/fonts/Roboto-Regular.ttf
+
+        deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
+
+        // Requires Permission for GPS -- android.permission.ACCESS_FINE_LOCATION
+        // Requires Additional permission for 5.0 -- android.hardware.location.gps
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                MINIMUM_TIME_BETWEEN_UPDATES,
+                MINIMUM_DISTANCE_CHANGE_FOR_UPDATES,
+                new MyLocationListener()
+        );
+
+    }
 
     protected void showCurrentLocation() {
 

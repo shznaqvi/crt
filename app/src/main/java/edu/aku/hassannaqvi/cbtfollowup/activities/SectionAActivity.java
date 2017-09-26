@@ -196,8 +196,8 @@ public class SectionAActivity extends Activity {
                     Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                     finish();
-                    Intent secB = new Intent(this, SectionBActivity.class);
-                    startActivity(secB);
+                    Intent secC = new Intent(this, SectionCActivity.class);
+                    startActivity(secC);
                 } else {
                     Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
                 }
