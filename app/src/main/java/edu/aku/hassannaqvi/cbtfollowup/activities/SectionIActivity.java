@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
@@ -110,3 +111,4 @@ public class SectionIActivity extends Activity {
 }
 
 
+*/

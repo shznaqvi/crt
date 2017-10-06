@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
@@ -232,9 +233,11 @@ public class SectionEActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+*/
 /*        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);*/
+        startActivity(endSec);*//*
+
 
         AppMain.endActivity(this, this);
     }
@@ -443,3 +446,4 @@ public class SectionEActivity extends Activity {
 
 
 }
+*/

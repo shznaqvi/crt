@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
@@ -433,7 +434,9 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
             }
         });
 
-        /*// ====================== Q 8 Skip Pattern =========================
+        */
+/*//*
+/ ====================== Q 8 Skip Pattern =========================
         fph007.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -445,7 +448,8 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
                     fph00801x.setText(null);
                 }
             }
-        });*/
+        });*//*
+
 
         for (RadioGroup rg : fph006) {
             rg.setOnCheckedChangeListener(this);
@@ -457,9 +461,11 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+*/
 /*        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);*/
+        startActivity(endSec);*//*
+
 
         AppMain.endActivity(this, this);
     }
@@ -1072,3 +1078,4 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
         return i == fph00602.size();
     }
 }
+*/

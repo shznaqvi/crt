@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_section_h"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity">
+    android:paddingRight="@dimen/activity_horizontal_margin">
+   <!-- tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionHActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -1310,7 +1309,7 @@
         </RadioGroup>
 
 
-        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+        &lt;!&ndash;  = = = = =  END OF FORM FIELDS  = = = = = &ndash;&gt;
 
         <LinearLayout
             android:id="@+id/fldGrpbtn"
@@ -1342,12 +1341,12 @@
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+            &lt;!&ndash;'onClick' for btn_Continue will call next section form e.g.: openSection2&ndash;&gt;
 
         </LinearLayout>
 
 
     </LinearLayout>
-
+-->
 
 </ScrollView>

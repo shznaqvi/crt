@@ -56,7 +56,7 @@ public class SectionAActivity extends Activity {
     RadioButton fpa00105;
     @BindView(R.id.fpa002)
     EditText fpa002;
-    @BindView(R.id.fpa003)
+    // @BindView(R.id.fpa003)
     TextView fpa003;
 
     @BindView(R.id.foundFollowup)
@@ -196,8 +196,8 @@ public class SectionAActivity extends Activity {
                     Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                     finish();
-                    Intent secC = new Intent(this, SectionCActivity.class);
-                    startActivity(secC);
+                    Intent secB = new Intent(this, SectionBActivity.class);
+                    startActivity(secB);
                 } else {
                     Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
                 }

@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
@@ -58,8 +59,10 @@ public class SectionGActivity extends Activity {
     RadioButton fpg00201;
     @BindView(R.id.fpg00202)
     RadioButton fpg00202;
-    /*@BindView(R.id.fpg003)
-    RadioGroup fpg003;*/
+    */
+/*@BindView(R.id.fpg003)
+    RadioGroup fpg003;*//*
+
     @BindView(R.id.fpg00301)
     CheckBox fpg00301;
     @BindView(R.id.fpg00302)
@@ -214,9 +217,11 @@ public class SectionGActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+*/
 /*        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);*/
+        startActivity(endSec);*//*
+
 
         AppMain.endActivity(this, this);
     }
@@ -351,14 +356,16 @@ public class SectionGActivity extends Activity {
                 }
 
 
-                /*if (fpg003.getCheckedRadioButtonId() == -1) {
+                */
+/*if (fpg003.getCheckedRadioButtonId() == -1) {
                     Toast.makeText(this, "" + getString(R.string.fpg003), Toast.LENGTH_SHORT).show();
                     fpg00388.setError("This Data is required");
                     Log.d(TAG, "not selected: fpg003 ");
                     return false;
                 } else {
                     fpg00388.setError(null);
-                }*/
+                }*//*
+
 
                 if (fpg00388.isChecked() && fpg00388x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpg003) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -376,3 +383,4 @@ public class SectionGActivity extends Activity {
 
 
 }
+*/

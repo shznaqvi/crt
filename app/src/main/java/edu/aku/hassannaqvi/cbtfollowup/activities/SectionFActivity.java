@@ -1,3 +1,4 @@
+/*
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
 import android.app.Activity;
@@ -36,8 +37,10 @@ public class SectionFActivity extends Activity {
     RadioButton fpf00101;
     @BindView(R.id.fpf00102)
     RadioButton fpf00102;
-    /*@BindView(R.id.fpf001a)
-    RadioGroup fpf001a;*/
+    */
+/*@BindView(R.id.fpf001a)
+    RadioGroup fpf001a;*//*
+
     @BindView(R.id.fpf001a01)
     CheckBox fpf001a01;
     @BindView(R.id.fpf001a02)
@@ -60,8 +63,10 @@ public class SectionFActivity extends Activity {
     CheckBox fpf001a88;
     @BindView(R.id.fpf001a88x)
     EditText fpf001a88x;
-    /*@BindView(R.id.fpf001b)
-    RadioGroup fpf001b;*/
+    */
+/*@BindView(R.id.fpf001b)
+    RadioGroup fpf001b;*//*
+
     @BindView(R.id.fpf001b01)
     CheckBox fpf001b01;
     @BindView(R.id.fpf001b02)
@@ -156,9 +161,11 @@ public class SectionFActivity extends Activity {
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+*/
 /*        Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);*/
+        startActivity(endSec);*//*
+
 
         AppMain.endActivity(this, this);
     }
@@ -265,14 +272,16 @@ public class SectionFActivity extends Activity {
             }
 
 
-            /*if (fpf001a.getCheckedRadioButtonId() == -1) {
+            */
+/*if (fpf001a.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpf001a), Toast.LENGTH_SHORT).show();
                 fpf001a88.setError("This Data is required");
                 Log.d(TAG, "not selected: fpf001a ");
                 return false;
             } else {
                 fpf001a88.setError(null);
-            }*/
+            }*//*
+
 
             if (fpf001a88.isChecked() && fpf001a88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpf001a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -299,14 +308,16 @@ public class SectionFActivity extends Activity {
             }
 
 
-            /*if (fpf001b.getCheckedRadioButtonId() == -1) {
+            */
+/*if (fpf001b.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpf001b), Toast.LENGTH_SHORT).show();
                 fpf001b88.setError("This Data is required");
                 Log.d(TAG, "not selected: fpf001b ");
                 return false;
             } else {
                 fpf001b88.setError(null);
-            }*/
+            }*//*
+
 
             if (fpf001b88.isChecked() && fpf001b88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpf001b) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
@@ -322,3 +333,4 @@ public class SectionFActivity extends Activity {
 
 
 }
+*/

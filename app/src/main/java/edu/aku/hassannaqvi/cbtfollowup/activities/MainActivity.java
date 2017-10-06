@@ -214,7 +214,7 @@ public class MainActivity extends Activity {
         startActivity(iC);
     }
 
-    public void openD(View v) {
+   /* public void openD(View v) {
         Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);
     }
@@ -250,7 +250,7 @@ public class MainActivity extends Activity {
     public void openEnd(View v) {
         Intent iEnd = new Intent(this, EndingActivity.class);
         startActivity(iEnd);
-    }
+    }*/
 
     public void openDB(View v) {
         Intent dbmanager = new Intent(getApplicationContext(), AndroidDatabaseManager.class);
