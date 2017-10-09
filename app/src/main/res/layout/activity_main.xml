@@ -124,109 +124,109 @@
                 android:onClick="openB"
                 android:text="Section B" />
 
-            <Button
-                android:id="@+id/openC"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openC"
-                android:text="Section C" />
+            <!-- <Button
+                 android:id="@+id/openC"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openC"
+                 android:text="Section C" />
 
-            <Button
-                android:id="@+id/openD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openD"
-                android:text="Section D" />
+             <Button
+                 android:id="@+id/openD"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openD"
+                 android:text="Section D" />
 
-            <Button
-                android:id="@+id/openIM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openIM"
-                android:text="Section IM" />
+             <Button
+                 android:id="@+id/openIM"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openIM"
+                 android:text="Section IM" />
 
-            <Button
-                android:id="@+id/openE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openE"
-                android:text="Section E" />
+             <Button
+                 android:id="@+id/openE"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openE"
+                 android:text="Section E" />
 
-            <Button
-                android:id="@+id/openF"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openF"
+             <Button
+                 android:id="@+id/openF"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openF"
 
-                android:text="Section F" />
+                 android:text="Section F" />
 
-            <Button
-                android:id="@+id/openG"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openG"
-                android:text="Section G" />
-
-
-            <Button
-                android:id="@+id/openH"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openH"
-                android:text="Section H" />
+             <Button
+                 android:id="@+id/openG"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openG"
+                 android:text="Section G" />
 
 
-            <Button
-                android:id="@+id/openK"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openK"
-                android:text="Section K" />
+             <Button
+                 android:id="@+id/openH"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openH"
+                 android:text="Section H" />
 
 
-            <Button
-                android:id="@+id/openL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openL"
-                android:text="Section L" />
+             <Button
+                 android:id="@+id/openK"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openK"
+                 android:text="Section K" />
 
 
-            <Button
-                android:id="@+id/openM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openM"
-                android:text="Section M" />
+             <Button
+                 android:id="@+id/openL"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openL"
+                 android:text="Section L" />
 
-            <Button
-                android:id="@+id/openEnd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="openEnd"
-                android:text="Section End" />
+
+             <Button
+                 android:id="@+id/openM"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openM"
+                 android:text="Section M" />
+
+             <Button
+                 android:id="@+id/openEnd"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_marginTop="16dp"
+                 android:onClick="openEnd"
+                 android:text="Section End" />-->
 
             <Button
                 android:id="@+id/openDB"

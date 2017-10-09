@@ -67,18 +67,18 @@
                 android:inputType="number"
                 android:maxLength="4" />
 
-            <Button
-                android:id="@+id/checkChildID"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="5dp"
-                android:layout_weight="1"
-                android:background="@color/black_overlay"
-                android:elevation="2dp"
-                android:padding="5dp"
-                android:text="CHECK"
-                android:textColor="@color/white" />
+            <!-- <Button
+                 android:id="@+id/checkChildID"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="2dp"
+                 android:layout_marginStart="5dp"
+                 android:layout_weight="1"
+                 android:background="@color/black_overlay"
+                 android:elevation="2dp"
+                 android:padding="5dp"
+                 android:text="CHECK"
+                 android:textColor="@color/white" />-->
 
         </LinearLayout>
 
@@ -102,8 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
-
+            android:visibility="visible">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/fpb002" />
+                android:text="@string/fpa004" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,7 +128,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/fpb00201"
+                    android:id="@+id/fpa00401"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
@@ -138,7 +137,7 @@
                     android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/fpb00202"
+                    android:id="@+id/fpa00402"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
@@ -191,19 +190,19 @@
 
             </RadioGroup>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/fpa004" />
+            <!--  <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:text="@string/fpa004" />
 
-            <EditText
-                android:id="@+id/fpa00401"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fpa00401"
-                android:inputType="number"
-                android:maxLength="3" />
+              <EditText
+                  android:id="@+id/fpa00401"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/fpa00401"
+                  android:inputType="number"
+                  android:maxLength="3" />-->
 
         </LinearLayout>
 

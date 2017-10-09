@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
         // Reset working variables
-        //   AppMain.childName = "Test";
+        AppMain.childName = "Test";
         AppMain.chCount = 0;
         AppMain.chTotal = 0;
 
@@ -209,10 +209,10 @@ public class MainActivity extends Activity {
         startActivity(iB);
     }
 
-    public void openC(View v) {
-        Intent iC = new Intent(this, SectionCActivity.class);
+    /*public void openC(View v) {
+        Intent iC = new Intent(this, SectionBActivity.class);
         startActivity(iC);
-    }
+    }*/
 
    /* public void openD(View v) {
         Intent iD = new Intent(this, SectionDActivity.class);

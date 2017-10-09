@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -58,6 +55,10 @@ public class SectionAActivity extends Activity {
     EditText fpa002;
     // @BindView(R.id.fpa003)
     TextView fpa003;
+    @BindView(R.id.fpa00401)
+    EditText fpa00401;
+    @BindView(R.id.fpa00402)
+    EditText fpa00402;
 
     @BindView(R.id.foundFollowup)
     TextView foundFollowup;
@@ -66,8 +67,8 @@ public class SectionAActivity extends Activity {
 //    EditText fpa00301;
     @BindView(R.id.fpa00302)
     EditText fpa00302;
-    @BindView(R.id.fpa00401)
-    EditText fpa00401;
+    /* @BindView(R.id.fpa00401)
+     EditText fpa00401;*/
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
@@ -86,11 +87,11 @@ public class SectionAActivity extends Activity {
 
         db = new DatabaseHelper(this);
 
-        fpa002.setEnabled(false);
-        fpa00401.setEnabled(false);
+        // fpa002.setEnabled(false);
+        //  fpa00401.setEnabled(false);
 
 
-        fpa00302.addTextChangedListener(new TextWatcher() {
+   /*     fpa00302.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -108,7 +109,7 @@ public class SectionAActivity extends Activity {
             public void afterTextChanged(Editable editable) {
 
             }
-        });
+        });*/
 
     }
 
@@ -121,11 +122,11 @@ public class SectionAActivity extends Activity {
         startActivity(endSec);
     }*/
 
-    @OnClick(R.id.checkChildID)
+   /* @OnClick(R.id.checkChildID)
     void onCheckChildIDClick() {
 
-        if (!fpa00302.getText().toString().isEmpty()) {
-            fpa00302.setError(null);
+       if (!fpa00302.getText().toString().isEmpty()) {
+          fpa00302.setError(null);
             AppMain.followUpList = db.getFollowUpByChildID(fpa00302.getText().toString().toUpperCase());
 
             if (AppMain.followUpList.size() != 0) {
@@ -138,7 +139,7 @@ public class SectionAActivity extends Activity {
 
                     fpa002.setText(AppMain.followUpList.get(0).getCHILDNAME().toUpperCase());
                     fpa003.setText(fpa003.getText() + AppMain.followUpList.get(0).getMOTHERNAME().toUpperCase());
-                    fpa00401.setText(AppMain.followUpList.get(0).getFOLLOWUPRND());
+                 //   fpa00401.setText(AppMain.followUpList.get(0).getFOLLOWUPRND());
 
                     flag = true;
 
@@ -160,7 +161,7 @@ public class SectionAActivity extends Activity {
         } else {
             fpa00302.setError("This data is Required!");
         }
-    }
+    }*/
 
     public Boolean getDays(String date) {
         SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -185,7 +186,7 @@ public class SectionAActivity extends Activity {
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
 
-            if (flag) {
+            //   if (flag) {
                 try {
                     saveDrafts();
                 } catch (JSONException e) {
@@ -201,9 +202,9 @@ public class SectionAActivity extends Activity {
                 } else {
                     Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
                 }
-            } else {
+           /* } else {
                 Toast.makeText(this, "Click on Check Button", Toast.LENGTH_SHORT).show();
-            }
+            }*/
         }
     }
 
@@ -247,6 +248,7 @@ public class SectionAActivity extends Activity {
 //        sA.put("fpa00301", fpa00301.getText().toString());
         sA.put("fpa00302", fpa00302.getText().toString());
         sA.put("fpa00401", fpa00401.getText().toString());
+        sA.put("fpa00402", fpa00402.getText().toString());
 
         AppMain.fc.setsA(String.valueOf(sA));
 
@@ -303,16 +305,9 @@ public class SectionAActivity extends Activity {
             fpa00302.setError(null);
         }
 
-        if (flag) {
+        // if (flag) {
 
-            if (fpa001.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "" + getString(R.string.fpa001), Toast.LENGTH_SHORT).show();
-                fpa00105.setError("This Data is required");
-                Log.d(TAG, "not selected: fpa001 ");
-                return false;
-            } else {
-                fpa00105.setError(null);
-            }
+
 
             if (fpa002.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpa002), Toast.LENGTH_SHORT).show();
@@ -322,6 +317,51 @@ public class SectionAActivity extends Activity {
             } else {
                 fpa002.setError(null);
             }
+
+        if (fpa00401.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(empty): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+            fpa00401.setError("This data is Required!");
+            Log.i(TAG, "fpa00401: This data is Required!");
+            return false;
+        } else {
+            fpa00401.setError(null);
+
+            if ((Integer.parseInt(fpa00401.getText().toString()) < 6) || (Integer.parseInt(fpa00401.getText().toString()) > 24)) {
+                Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpa004) + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                fpa00401.setError("Range is 6-24 months");
+                Log.i(TAG, "fpb00201: Range is 6-24 months");
+                return false;
+            } else {
+                fpa00401.setError(null);
+            }
+
+            if (fpa00402.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                fpa00402.setError("This data is required");
+                Log.d(TAG, "empty: fpa00402");
+                return false;
+            } else {
+                fpa00402.setError(null);
+            }
+
+            if ((Integer.parseInt(fpa00402.getText().toString()) < 0) || (Integer.parseInt(fpa00402.getText().toString()) > 29)) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpa004) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                fpa00402.setError("Range is 0 - 29 days");
+                Log.i(TAG, "fpb00202: Range is 0 - 29 days");
+                return false;
+            } else {
+                fpa00402.setError(null);
+            }
+        }
+
+        if (fpa001.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "" + getString(R.string.fpa001), Toast.LENGTH_SHORT).show();
+            fpa00105.setError("This Data is required");
+            Log.d(TAG, "not selected: fpa001 ");
+            return false;
+        } else {
+            fpa00105.setError(null);
+        }
 
 //        if (fpa00301.getText().toString().isEmpty()) {
 //            Toast.makeText(this, "" + getString(R.string.fpa00301), Toast.LENGTH_SHORT).show();
@@ -342,7 +382,7 @@ public class SectionAActivity extends Activity {
 //            fpa00302.setError(null);
 //        }
 
-            if (fpa00401.getText().toString().isEmpty()) {
+           /* if (fpa00401.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpa00401), Toast.LENGTH_SHORT).show();
                 fpa00401.setError("This data is required");
                 Log.d(TAG, "empty: fpa00401  ");
@@ -358,8 +398,8 @@ public class SectionAActivity extends Activity {
                 return false;
             } else {
                 fpa00401.setError(null);
-            }
-        }
+            }*/
+        //  }
 
         return true;
     }

@@ -125,6 +125,6 @@ public class FollowUpsContract {
         public static final String COLUMN_CHILDNAME = "crb01";
         public static final String COLUMN_MOTHERNAME = "cra09";
 
-        public static final String _URI = "getfollowups.php";
+        public static final String _URI = "/*getfollowups*/.php";
     }
 }

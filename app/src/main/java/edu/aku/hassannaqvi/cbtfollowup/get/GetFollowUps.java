@@ -54,8 +54,8 @@ public class GetFollowUps extends AsyncTask<String, String, String>{
         try {
             url = new URL(AppMain._HOST_URL + FollowUpsContract.singleFollowUps._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000 /* milliseconds */);
-            urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            urlConnection.setReadTimeout(10000  /* milliseconds */);
+            urlConnection.setConnectTimeout(15000  /* milliseconds */);
             Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
@@ -96,7 +96,7 @@ public class GetFollowUps extends AsyncTask<String, String, String>{
                     FollowUpsArrayList = new ArrayList<FollowUpsContract>();
                     //JSONObject jsonObject = new JSONObject(json);
                     JSONArray jsonArray = new JSONArray(json);
-                    db.syncFollowUps(jsonArray);
+                    //   db.syncFollowUps(jsonArray);
                     pd.setMessage("Received: " + jsonArray.length());
                     pd.show();
                 } catch (JSONException e) {

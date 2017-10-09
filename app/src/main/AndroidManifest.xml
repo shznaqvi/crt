@@ -40,8 +40,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionCActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionEActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionFActivity"

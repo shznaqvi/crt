@@ -38,8 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersContract.singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + UsersContract.singleUser.ROW_USERNAME + " TEXT,"
             + UsersContract.singleUser.ROW_PASSWORD + " TEXT );";
-    public static final String DATABASE_NAME = "cbtfollowup.db";
-    public static final String DB_NAME = "cbtfollowup_copy.db";
+    public static final String DATABASE_NAME = "cbtvalidation.db";
+    public static final String DB_NAME = "cbtvalidation_copy.db";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormColumns.TABLE_NAME + "(" +
@@ -56,12 +56,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormColumns.COLUMN_ISTATUS + " TEXT," +
             FormColumns.COLUMN_SA + " TEXT," +
             FormColumns.COLUMN_SB + " TEXT," +
-            FormColumns.COLUMN_SC + " TEXT," +
-            FormColumns.COLUMN_SD + " TEXT," +
-            FormColumns.COLUMN_SE + " TEXT," +
-            FormColumns.COLUMN_SF + " TEXT," +
-            FormColumns.COLUMN_SG + " TEXT," +
-            FormColumns.COLUMN_SH + " TEXT," +
             FormColumns.COLUMN_GPSLAT + " TEXT," +
             FormColumns.COLUMN_GPSLNG + " TEXT," +
             FormColumns.COLUMN_GPSTIME + " TEXT," +
@@ -394,113 +388,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public int updateC() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SC, AppMain.fc.getsC());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-
-    public int updateD() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SD, AppMain.fc.getsD());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-
-    public int updateE() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SE, AppMain.fc.getsE());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-
-    public int updateF() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SF, AppMain.fc.getsF());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-
-    public int updateG() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SG, AppMain.fc.getsG());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-
-    public int updateH() {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(FormColumns.COLUMN_SH, AppMain.fc.getsH());
-
-        // Which row to update, based on the ID
-        String selection = FormColumns.COLUMN_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
-
-        int count = db.update(FormColumns.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
 
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -582,12 +469,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_ISTATUS,
                 FormColumns.COLUMN_SA,
                 FormColumns.COLUMN_SB,
-                FormColumns.COLUMN_SC,
-                FormColumns.COLUMN_SD,
-                FormColumns.COLUMN_SE,
-                FormColumns.COLUMN_SF,
-                FormColumns.COLUMN_SG,
-                FormColumns.COLUMN_SH,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,
@@ -647,12 +528,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_ISTATUS,
                 FormColumns.COLUMN_SA,
                 FormColumns.COLUMN_SB,
-                FormColumns.COLUMN_SC,
-                FormColumns.COLUMN_SD,
-                FormColumns.COLUMN_SE,
-                FormColumns.COLUMN_SF,
-                FormColumns.COLUMN_SG,
-                FormColumns.COLUMN_SH,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,

@@ -16,9 +16,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
 
 /**
  * Created by hassan.naqvi on 4/28/2016.
@@ -90,7 +90,7 @@ public class GetUsers extends AsyncTask<String, String, String> {
                 userArrayList = new ArrayList<UsersContract>();
                 //JSONObject jsonObject = new JSONObject(json);
                 JSONArray jsonArray = new JSONArray(json);
-                db.syncUser(jsonArray);
+                //   db.syncUser(jsonArray);
                 pd.setMessage("Received: " + jsonArray.length());
                 pd.show();
             } catch (JSONException e) {

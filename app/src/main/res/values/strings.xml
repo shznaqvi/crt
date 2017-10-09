@@ -37,15 +37,15 @@
 
     <!-- String related to section headings -->
     <string name="section_A">Identification Information </string>
-    <string name="section_B">Child Current Status</string>
-    <string name="section_C">Indicators for Validation</string>
+    <string name="section_B">Indicators for validation </string>
+    <!--<string name="section_C">Indicators for Validation</string>
     <string name="section_D">Compliance Assessment of specialized Nutriious Food(SNF)-[For Arm 4 and 5]</string>
     <string name="section_E">Bisp Cash Transfer-[For Arms 2-5]</string>
     <string name="section_F">Behaviour Change Communication(BCC)</string>
     <string name="section_G">Child Morbidity and care Seeking</string>
     <string name="section_H">Infant and Young Child Feeding(IYCF)</string>
     <string name="section_I">Form Completion</string>
-    <string name="section_J">Supervisory Checks</string>
+    <string name="section_J">Supervisory Checks</string>-->
 
     <!-- Strings related to Sections Below -->
 
@@ -59,48 +59,41 @@
     <string name="fpa003">بچے کا شناخت نمبر </string>
     <string name="fpa00301">Arm </string>
     <string name="fpa00302">Child # </string>
-    <string name="fpa004">بچے کا ماہانہ فالواپ نمبر</string>
-    <string name="fpa00401">فالواپ نمبر </string>
-    <string name="fpb001">کیا بچہ انٹر ویو کے لیے موجود تھا ؟ </string>
-    <string name="fpb00101">موجود ہے </string>
-    <string name="fpb00102"> غیر حاضر</string>
-    <string name="fpb00103">مستقل ہجرت</string>
-    <string name="fpb00104">انکار</string>
-    <string name="fpb00105">بچے کی وفات</string>
-    <string name="fpb002"> validation کے وقت  عمر </string>
-    <string name="fpc001">Length/Height: </string>
-    <string name="fpcsubM1"> Measurement 1 </string>
-    <string name="fpcsubM2"> Measurement 2 </string>
-    <string name="fpcsubM3"> Measurement 3 </string>
-    <string name="fpc002">Weight : </string>
-    <string name="fpc003">Left mid-upper arm circumference(MUAC)</string>
-    <string name="fpc004">  کیا  آپ  نے گزشتہ ایک ماہ کے دوران وا وامم موصول کی ۔   وا وامم کا ساشے دکھائیں</string>
-    <string name="fpc00401">وصول کرنے سے انکار کیا</string>
-    <string name="fpc005">آپ کو کس نے واوامم دیے؟ </string>
-    <string name="fpc00501">لیڈی ہیلتھ ورکر </string>
-    <string name="fpc006">آپ نے گزشتہ ایک ماہ میں اپنے بچے کے لیے کتنے دن واوامم کے ساشے موصول کیے ؟ </string>
-    <string name="fpc00601">numbers</string>
-    <string name="fpc00602">not applicable</string>
-    <string name="fpc007">آپ کے بچےنے گزشتہ ایک ماہ میں کتنے دن اور کتنے واوامم استعمال کیے؟ </string>
-    <string name="fpc00701">ساشے</string>
-    <string name="fpc008">یا آپ مجھے استعمال شدہ اور غیر استعمال شدہ   واوامم سپلیمینٹ کے  ساشے دیکھا سکتے ہیں؟ اگر موجود نہیں تو  (00) لکھیں </string>
-    <string name="fpc00801">استعمال شدہ پیکٹ دیکھائے      </string>
-    <string name="fpc00802">بغیر استعمال شدہ پیکٹ دیکھائے  </string>
-    <string name="fpc009">کیا آپ نے گزشتہ ایک ماہ میں واوامم سپلیمینٹ کے کوئی منفی اثرات دیکھے؟     </string>
-    <string name="fpc010"> اگر ہاں تو منفی  اثرات کیا تھے؟   </string>
-    <string name="fpc01001">دست  </string>
-    <string name="fpc01002">قے </string>
-    <string name="fpc01003">پیٹ کا درد </string>
-    <string name="fpc01004"> جسم پے دانے  </string>
-    <string name="fpc011"> آپ یا آپ کے خاندان کے کسی فرد کو بینظیر انکم سپورٹ پروگرام کی طرف سے پچھلے ایک ماہ کے دوران رقم ملی؟</string>
-    <string name="fpc012">اگر ہاں تو پچھلے ماہ میں کتنی رقم ملی؟ </string>
-    <string name="fpc01201">PKR :  </string>
-    <string name="fpc013">اگر نہیں تو آخری دفعہ آپ کو   بینظیر انکم سپورٹ پروگرام کی طرف سے کب  رقم ملی تھی ۔  </string>
-    <string name="fpc01301">مہینے پہلے </string>
-    <string name="fpc014">آپ کو پچھلے مہینے کے دوران صحت کی آگاہی کے حوالے سے کوئی پیغامات ملے؟  </string>
-    <string name="fpc015">How many days ago AKU team visited your house?  </string>
-    <string name="fpc01501">never visited  </string>
-    <string name="fpc016">Household ID was marked on door or at any visible place?  </string>
+    <string name="fpa004">validation کے وقت  عمر </string>
+
+    <string name="fpb001">Length/Height: </string>
+    <string name="fpbsubM1"> Measurement 1 </string>
+    <string name="fpbsubM2"> Measurement 2 </string>
+    <string name="fpbsubM3"> Measurement 3 </string>
+    <string name="fpb002">Weight : </string>
+    <string name="fpb003">Left mid-upper arm circumference(MUAC)</string>
+    <string name="fpb004">  کیا  آپ  نے گزشتہ ایک ماہ کے دوران وا وامم موصول کی ۔   وا وامم کا ساشے دکھائیں</string>
+    <string name="fpb00401">وصول کرنے سے انکار کیا</string>
+    <string name="fpb005">آپ کو کس نے واوامم دیے؟ </string>
+    <string name="fpb00501">لیڈی ہیلتھ ورکر </string>
+    <string name="fpb006">آپ نے گزشتہ ایک ماہ میں اپنے بچے کے لیے کتنے دن واوامم کے ساشے موصول کیے ؟ </string>
+    <string name="fpb00601">numbers</string>
+    <string name="fpb00602">not applicable</string>
+    <string name="fpb007">آپ کے بچےنے گزشتہ ایک ماہ میں کتنے دن اور کتنے واوامم استعمال کیے؟ </string>
+    <string name="fpb00701">ساشے</string>
+    <string name="fpb008">یا آپ مجھے استعمال شدہ اور غیر استعمال شدہ   واوامم سپلیمینٹ کے  ساشے دیکھا سکتے ہیں؟ اگر موجود نہیں تو  (00) لکھیں </string>
+    <string name="fpb00801">استعمال شدہ پیکٹ دیکھائے      </string>
+    <string name="fpb00802">بغیر استعمال شدہ پیکٹ دیکھائے  </string>
+    <string name="fpb009">کیا آپ نے گزشتہ ایک ماہ میں واوامم سپلیمینٹ کے کوئی منفی اثرات دیکھے؟     </string>
+    <string name="fpb010"> اگر ہاں تو منفی  اثرات کیا تھے؟   </string>
+    <string name="fpb01001">دست  </string>
+    <string name="fpb01002">قے </string>
+    <string name="fpb01003">پیٹ کا درد </string>
+    <string name="fpb01004"> جسم پے دانے  </string>
+    <string name="fpb011"> آپ یا آپ کے خاندان کے کسی فرد کو بینظیر انکم سپورٹ پروگرام کی طرف سے پچھلے ایک ماہ کے دوران رقم ملی؟</string>
+    <string name="fpb012">اگر ہاں تو پچھلے ماہ میں کتنی رقم ملی؟ </string>
+    <string name="fpb01201">PKR :  </string>
+    <string name="fpb013">اگر نہیں تو آخری دفعہ آپ کو   بینظیر انکم سپورٹ پروگرام کی طرف سے کب  رقم ملی تھی ۔  </string>
+    <string name="fpb01301">مہینے پہلے </string>
+    <string name="fpb014">آپ کو پچھلے مہینے کے دوران صحت کی آگاہی کے حوالے سے کوئی پیغامات ملے؟  </string>
+    <string name="fpb015">How many days ago AKU team visited your house?  </string>
+    <string name="fpb01501">never visited  </string>
+    <string name="fpb016">Household ID was marked on door or at any visible place?  </string>
 
 
     <!--<string name="fpf001a">اگر ہاں تو کس طرح کے پیغامات ملے؟</string>
