@@ -1,18 +1,12 @@
 package edu.aku.hassannaqvi.cbtfollowup.contracts;
 
-import android.database.Cursor;
-import android.provider.BaseColumns;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * Created by hassan.naqvi on 11/30/2016.
  */
 
 public class FollowUpsContract {
 
-    private static final String TAG = "FollowUps_CONTRACT";
+  /*  private static final String TAG = "FollowUps_CONTRACT";
     Long _ID;
     String CHILDNAME;
     String CHILDID;
@@ -125,6 +119,6 @@ public class FollowUpsContract {
         public static final String COLUMN_CHILDNAME = "crb01";
         public static final String COLUMN_MOTHERNAME = "cra09";
 
-        public static final String _URI = "/*getfollowups*/.php";
-    }
+        public static final String _URI = "*//*getfollowups*//*.php";
+    }*/
 }

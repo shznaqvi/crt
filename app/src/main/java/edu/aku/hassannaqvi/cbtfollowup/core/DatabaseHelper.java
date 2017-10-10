@@ -16,11 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import edu.aku.hassannaqvi.cbtfollowup.contracts.ClustersContract;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract.singleFollowUps;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract.FormColumns;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
@@ -73,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ClustersContract.singleCluster.COLUMN_CLUSTERCODE + " TEXT" +
             " );";
 
-    private static final String SQL_CREATE_FOLLOWUPS = "CREATE TABLE "
+   /* private static final String SQL_CREATE_FOLLOWUPS = "CREATE TABLE "
             + FollowUpsContract.singleFollowUps.TABLE_NAME + "(" +
             FollowUpsContract.singleFollowUps._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FollowUpsContract.singleFollowUps.COLUMN_CHILDID + " TEXT," +
@@ -81,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FollowUpsContract.singleFollowUps.COLUMN_MOTHERNAME + " TEXT," +
             FollowUpsContract.singleFollowUps.COLUMN_FOLLOWUPDT + " TEXT," +
             FollowUpsContract.singleFollowUps.COLUMN_FOLLOWUPRND + " TEXT" +
-            " );";
+            " );";*/
     /**
      * DELETE STRINGS
      */
@@ -94,8 +91,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_FORMS =
             "DROP TABLE IF EXISTS " + FormsContract.FormColumns.TABLE_NAME;
 
-    private static final String SQL_DELETE_FOLLOWUPS =
-            "DROP TABLE IF EXISTS " + FollowUpsContract.singleFollowUps.TABLE_NAME;
+   /* private static final String SQL_DELETE_FOLLOWUPS =
+            "DROP TABLE IF EXISTS " + FollowUpsContract.singleFollowUps.TABLE_NAME;*/
 
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
@@ -110,7 +107,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_USERS);
         db.execSQL(SQL_CREATE_CLUSTERS);
         db.execSQL(SQL_CREATE_FORMS);
-        db.execSQL(SQL_CREATE_FOLLOWUPS);
+        /*db.execSQL(SQL_CREATE_FOLLOWUPS);*/
     }
 
     @Override
@@ -118,7 +115,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_CLUSTERS);
         db.execSQL(SQL_DELETE_FORMS);
-        db.execSQL(SQL_DELETE_FOLLOWUPS);
+        //    db.execSQL(SQL_DELETE_FOLLOWUPS);
     }
 
     public void syncUser(JSONArray userlist) {
@@ -175,7 +172,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void syncFollowUps(JSONArray Followupslist) {
+  /*  public void syncFollowUps(JSONArray Followupslist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(FollowUpsContract.singleFollowUps.TABLE_NAME, null, null);
         try {
@@ -248,7 +245,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return followUpList;
-    }
+    }*/
 
     public ArrayList<UsersContract> getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();

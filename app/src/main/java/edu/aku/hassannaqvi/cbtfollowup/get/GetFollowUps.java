@@ -1,30 +1,10 @@
 package edu.aku.hassannaqvi.cbtfollowup.get;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
-import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
-import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
-
 /**
  * Created by ali.azaz on 7/14/2017.
  */
 
-public class GetFollowUps extends AsyncTask<String, String, String>{
+public class GetFollowUps {/*extends AsyncTask<String, String, String>{
     
     private final String TAG = "GetFollowUps()";
     HttpURLConnection urlConnection;
@@ -54,8 +34,8 @@ public class GetFollowUps extends AsyncTask<String, String, String>{
         try {
             url = new URL(AppMain._HOST_URL + FollowUpsContract.singleFollowUps._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000  /* milliseconds */);
-            urlConnection.setConnectTimeout(15000  /* milliseconds */);
+            urlConnection.setReadTimeout(10000  *//* milliseconds *//*);
+            urlConnection.setConnectTimeout(15000  *//* milliseconds *//*);
             Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
@@ -112,6 +92,6 @@ public class GetFollowUps extends AsyncTask<String, String, String>{
             pd.setMessage("Server not found!");
             pd.show();
         }
-    }
+    }*/
 
 }

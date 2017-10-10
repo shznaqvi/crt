@@ -56,11 +56,10 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
-import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUps;
 import edu.aku.hassannaqvi.cbtfollowup.get.GetUsers;
-import edu.aku.hassannaqvi.cbtfollowup.R;
 
 
 /**
@@ -570,8 +569,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
                     new GetUsers(mContext).execute();
 
-                    Toast.makeText(getApplicationContext(), "Syncing Follow UP's", Toast.LENGTH_SHORT).show();
-                    new GetFollowUps(mContext).execute();
 
                 }
             });

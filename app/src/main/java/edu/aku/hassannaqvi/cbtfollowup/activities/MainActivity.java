@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
-import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUps;
+import edu.aku.hassannaqvi.cbtfollowup.get.GetUsers;
 import edu.aku.hassannaqvi.cbtfollowup.sync.SyncForms;
 
 
@@ -291,7 +291,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void getChildrensFollowUps(View view) {
+   /* public void getChildrensFollowUps(View view) {
         if (isNetworkAvailable()) {
 
 
@@ -308,15 +308,15 @@ public class MainActivity extends Activity {
             editor.apply();
 
         }
-    }
+    }*/
 
     public void syncDevice(View view) {
         if (isNetworkAvailable()) {
 
 
-//            GetUsers gu = new GetUsers(this);
-//            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
-//            gu.execute();
+            GetUsers gu = new GetUsers(this);
+            Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
+            gu.execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
