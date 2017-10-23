@@ -16,7 +16,7 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.cbtfollowup"
+            applicationId "edu.aku.hassannaqvi.cbtvalidation"
             minSdkVersion 22
             targetSdkVersion 22
             versionCode code
