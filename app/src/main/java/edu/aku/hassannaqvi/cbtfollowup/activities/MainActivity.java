@@ -29,6 +29,7 @@ import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
+import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUpsDone;
 import edu.aku.hassannaqvi.cbtfollowup.get.GetUsers;
 import edu.aku.hassannaqvi.cbtfollowup.sync.SyncForms;
 
@@ -317,6 +318,10 @@ public class MainActivity extends Activity {
             GetUsers gu = new GetUsers(this);
             Toast.makeText(getApplicationContext(), "Syncing Users", Toast.LENGTH_SHORT).show();
             gu.execute();
+
+            GetFollowUpsDone gfu = new GetFollowUpsDone(this);
+            Toast.makeText(getApplicationContext(), "Syncing fup done", Toast.LENGTH_SHORT).show();
+            gfu.execute();
 
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo(DOWN)", Context.MODE_PRIVATE);
