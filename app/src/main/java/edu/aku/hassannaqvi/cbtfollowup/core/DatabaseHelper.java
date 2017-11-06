@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.cbtfollowup.contracts.ClustersContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
@@ -76,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FollowUpsDoneContract.singleFollowUpsDone._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " TEXT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDNAME + " TEXT," +
-            FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND + " TEXT" +
+            FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND + " TEXT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN__LUID + " TEXT" +
             " );";
     /**
@@ -201,30 +202,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-  /*  public List<FollowUpsContract> getFollowUpByChildID(String childID) {
+    public Collection<FollowUpsDoneContract> getFollowUpdoneByChildID(String childID) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleFollowUps.COLUMN_CHILDID,
-                singleFollowUps.COLUMN_CHILDNAME,
-                singleFollowUps.COLUMN_FOLLOWUPDT,
-                singleFollowUps.COLUMN_FOLLOWUPRND,
-                singleFollowUps.COLUMN_MOTHERNAME
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDNAME,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN__LUID,
+
         };
 
-        String whereClause = singleFollowUps.COLUMN_CHILDID + " = ?";
+        String whereClause = FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " = ?";
         String[] whereArgs = new String[]{childID};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                singleFollowUps.COLUMN_CHILDID + " ASC";
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " ASC";
 
-        List<FollowUpsContract> followUpList = new ArrayList<>();
+        List<FollowUpsDoneContract> followUpdoneList = new ArrayList<>();
         try {
             c = db.query(
-                    singleFollowUps.TABLE_NAME,  // The table to query
+                    FollowUpsDoneContract.singleFollowUpsDone.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -233,8 +234,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                FollowUpsContract fpc = new FollowUpsContract();
-                followUpList.add(fpc.Hydrate(c));
+                FollowUpsDoneContract fpc = new FollowUpsDoneContract();
+                followUpdoneList.add(fpc.Hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -244,8 +245,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return followUpList;
-    }*/
+        return followUpdoneList;
+    }
 
     public ArrayList<UsersContract> getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();

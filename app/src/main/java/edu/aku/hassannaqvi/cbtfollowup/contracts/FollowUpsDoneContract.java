@@ -44,7 +44,7 @@ public class FollowUpsDoneContract {
     }
 
     public FollowUpsDoneContract Hydrate(Cursor cursor) {
-        this._ID = cursor.getLong(cursor.getColumnIndex(singleFollowUpsDone._ID));
+
         this.CHILDNAME = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_CHILDNAME));
         this.CHILDID = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_CHILDID));
         this.FOLLOWUPRND = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_FOLLOWUPRND));

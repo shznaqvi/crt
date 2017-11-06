@@ -15,10 +15,10 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.List;
+import java.util.Collection;
 
 import edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 
 /**
@@ -72,7 +72,7 @@ public class AppMain extends Application {
     //    For participant
     //public static ArrayList<EligibleParticipants> Eparticipant;
     public static String currentParticipantName = "";
-    public static List<FollowUpsContract> followUpList;
+    public static Collection<FollowUpsDoneContract> followUpdoneList;
     protected LocationManager locationManager;
     Location location;
 
