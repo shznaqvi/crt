@@ -309,6 +309,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return cursorCount > 0;
 
+
     }
 
     public Long addForm(FormsContract fc) {
