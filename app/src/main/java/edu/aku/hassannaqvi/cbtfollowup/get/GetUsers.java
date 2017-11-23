@@ -90,13 +90,13 @@ public class GetUsers extends AsyncTask<String, String, String> {
                 userArrayList = new ArrayList<UsersContract>();
                 //JSONObject jsonObject = new JSONObject(json);
                 JSONArray jsonArray = new JSONArray(json);
-                //   db.syncUser(jsonArray);
+                db.syncUser(jsonArray);
                 pd.setMessage("Received: " + jsonArray.length());
                 pd.show();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            // db.getAllUsers();
+            db.getAllUsers();
         } else {
             pd.setMessage("Received: " + json.length() + "");
             pd.show();
