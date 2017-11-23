@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract.FormColumns;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract.UsersTable;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -33,10 +34,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * CREATE STRINGS
      */
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.singleUser.TABLE_NAME + "("
-            + UsersContract.singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UsersContract.singleUser.ROW_USERNAME + " TEXT,"
-            + UsersContract.singleUser.ROW_PASSWORD + " TEXT );";
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("
+            + UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UsersTable.ROW_USERNAME + " TEXT,"
+            + UsersTable.ROW_PASSWORD + " TEXT );";
     public static final String DATABASE_NAME = "cbtvalidation.db";
     public static final String DB_NAME = "cbtvalidation_copy.db";
     private static final int DATABASE_VERSION = 1;
@@ -84,7 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * DELETE STRINGS
      */
     private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersContract.singleUser.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
 
     private static final String SQL_DELETE_CLUSTERS =
             "DROP TABLE IF EXISTS " + ClustersContract.singleCluster.TABLE_NAME;
@@ -121,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(UsersContract.singleUser.TABLE_NAME, null, null);
+        db.delete(UsersTable.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = userlist;
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -132,9 +133,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.Sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(UsersContract.singleUser.ROW_USERNAME, user.getUserName());
-                values.put(UsersContract.singleUser.ROW_PASSWORD, user.getPassword());
-                db.insert(UsersContract.singleUser.TABLE_NAME, null, values);
+                values.put(UsersTable.ROW_USERNAME, user.getUserName());
+                values.put(UsersTable.ROW_PASSWORD, user.getPassword());
+                db.insert(UsersTable.TABLE_NAME, null, values);
             }
 
 
@@ -253,7 +254,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<UsersContract> userList = null;
         try {
             userList = new ArrayList<UsersContract>();
-            String QUERY = "SELECT * FROM " + UsersContract.singleUser.TABLE_NAME;
+            String QUERY = "SELECT * FROM " + UsersTable.TABLE_NAME;
             Cursor cursor = db.rawQuery(QUERY, null);
             int num = cursor.getCount();
             if (!cursor.isLast()) {
@@ -274,17 +275,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean Login(String username, String password) throws SQLException {
+
+        // Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.UsersTable.TABLE_NAME + " WHERE " + UsersContract.UsersTable.ROW_USERNAME +
+        // "= ? AND " + UsersContract.UsersTable.ROW_PASSWORD + "=?", new String[]{username, password});
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.singleUser.TABLE_NAME + " WHERE " + UsersContract.singleUser.ROW_USERNAME + "=? AND " + UsersContract.singleUser.ROW_PASSWORD + "=?", new String[]{username, password});
+// New value for one column
+        String[] columns = {
+                UsersTable._ID
+        };
 
-        if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-                return true;
-            }
-        }
+// Which row to update, based on the ID
+        String selection = UsersTable.ROW_USERNAME + " = ?" + " AND " + UsersTable.ROW_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+        Cursor cursor = db.query(UsersTable.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
         db.close();
-        return false;
+        return cursorCount > 0;
     }
 
     public Long addForm(FormsContract fc) {

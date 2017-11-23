@@ -51,17 +51,17 @@ public class UsersContract {
     }
 
     public UsersContract Sync(JSONObject jsonObject) throws JSONException {
-        //this._ID= jsonObject.getLong(singleUser._ID);
-        this.ROW_USERNAME = jsonObject.getString(singleUser.ROW_USERNAME);
-        this.ROW_PASSWORD = jsonObject.getString(singleUser.ROW_PASSWORD);
+        //this._ID= jsonObject.getLong(UsersTable._ID);
+        this.ROW_USERNAME = jsonObject.getString(UsersTable.ROW_USERNAME);
+        this.ROW_PASSWORD = jsonObject.getString(UsersTable.ROW_PASSWORD);
         return this;
 
     }
 
     public UsersContract Hydrate(Cursor cursor) {
-        this._ID = cursor.getLong(cursor.getColumnIndex(singleUser._ID));
-        this.ROW_USERNAME = cursor.getString(cursor.getColumnIndex(singleUser.ROW_USERNAME));
-        this.ROW_PASSWORD = cursor.getString(cursor.getColumnIndex(singleUser.ROW_PASSWORD));
+        this._ID = cursor.getLong(cursor.getColumnIndex(UsersTable._ID));
+        this.ROW_USERNAME = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_USERNAME));
+        this.ROW_PASSWORD = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_PASSWORD));
         return this;
 
     }
@@ -70,14 +70,14 @@ public class UsersContract {
     public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
-        json.put(singleUser._ID, this._ID == null ? JSONObject.NULL : this._ID);
-        json.put(singleUser.ROW_USERNAME, this.ROW_USERNAME == null ? JSONObject.NULL : this.ROW_USERNAME);
-        json.put(singleUser.ROW_PASSWORD, this.ROW_PASSWORD == null ? JSONObject.NULL : this.ROW_PASSWORD);
+        json.put(UsersTable._ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(UsersTable.ROW_USERNAME, this.ROW_USERNAME == null ? JSONObject.NULL : this.ROW_USERNAME);
+        json.put(UsersTable.ROW_PASSWORD, this.ROW_PASSWORD == null ? JSONObject.NULL : this.ROW_PASSWORD);
         return json;
     }
 
 
-    public static abstract class singleUser implements BaseColumns {
+    public static abstract class UsersTable implements BaseColumns {
 
         public static final String TABLE_NAME = "users";
         public static final String _ID = "id";
