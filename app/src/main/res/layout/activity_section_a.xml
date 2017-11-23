@@ -67,7 +67,7 @@
                 android:inputType="number"
                 android:maxLength="4" />
 
-            <!-- <Button
+            <Button
                  android:id="@+id/checkChildID"
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                  android:elevation="2dp"
                  android:padding="5dp"
                  android:text="CHECK"
-                 android:textColor="@color/white" />-->
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -102,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,13 +122,26 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/fpa004" />
 
+            <Spinner
+                android:id="@+id/fpa00401"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:hint="@string/fpa004" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/fpa005" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/fpa00401"
+                    android:id="@+id/fpa00501"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
@@ -137,7 +150,7 @@
                     android:maxLength="2" />
 
                 <EditText
-                    android:id="@+id/fpa00402"
+                    android:id="@+id/fpa00502"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.5"
@@ -222,7 +235,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="submitSecA"
                 android:text="@string/next_section"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="24sp" />

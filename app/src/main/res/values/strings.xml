@@ -59,7 +59,8 @@
     <string name="fpa003">بچے کا شناخت نمبر </string>
     <string name="fpa00301">Arm </string>
     <string name="fpa00302">Child # </string>
-    <string name="fpa004">validation کے وقت  عمر </string>
+    <string name="fpa005">validation کے وقت  عمر </string>
+    <string name="fpa004">followup round </string>
 
     <string name="fpb001">Length/Height: </string>
     <string name="fpbsubM1"> Measurement 1 </string>

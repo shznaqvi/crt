@@ -4,30 +4,38 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
@@ -53,12 +61,14 @@ public class SectionAActivity extends Activity {
     RadioButton fpa00105;
     @BindView(R.id.fpa002)
     EditText fpa002;
+    @BindView(R.id.fpa00401)
+    Spinner fpa00401;
     // @BindView(R.id.fpa003)
     TextView fpa003;
-    @BindView(R.id.fpa00401)
-    EditText fpa00401;
-    @BindView(R.id.fpa00402)
-    EditText fpa00402;
+    @BindView(R.id.fpa00501)
+    EditText fpa00501;
+    @BindView(R.id.fpa00502)
+    EditText fpa00502;
 
     @BindView(R.id.foundFollowup)
     TextView foundFollowup;
@@ -75,6 +85,9 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.membersExists)
     LinearLayout membersExists;
 
+    Map<String, String> getAllfuprndMap;
+    List<String> fuprnd;
+
     DatabaseHelper db;
 
     Boolean flag = false;
@@ -87,11 +100,11 @@ public class SectionAActivity extends Activity {
 
         db = new DatabaseHelper(this);
 
-        // fpa002.setEnabled(false);
-        //  fpa00401.setEnabled(false);
+        fpa002.setEnabled(false);
+        //fpa00401.setEnabled(false);
 
 
-   /*     fpa00302.addTextChangedListener(new TextWatcher() {
+        fpa00302.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -109,7 +122,7 @@ public class SectionAActivity extends Activity {
             public void afterTextChanged(Editable editable) {
 
             }
-        });*/
+        });
 
     }
 
@@ -122,34 +135,37 @@ public class SectionAActivity extends Activity {
         startActivity(endSec);
     }*/
 
-   /* @OnClick(R.id.checkChildID)
+    @OnClick(R.id.checkChildID)
     void onCheckChildIDClick() {
 
-       if (!fpa00302.getText().toString().isEmpty()) {
-          fpa00302.setError(null);
-            AppMain.followUpList = db.getFollowUpByChildID(fpa00302.getText().toString().toUpperCase());
+        if (!fpa00302.getText().toString().isEmpty()) {
+            fpa00302.setError(null);
+            AppMain.followUpdoneList = db.getFollowUpdoneByChildID(fpa00302.getText().toString().toUpperCase());
 
-            if (AppMain.followUpList.size() != 0) {
+            if (AppMain.followUpdoneList.size() != 0) {
 
-                if (getDays(AppMain.followUpList.get(0).getFOLLOWUPDT())) {
+                membersExists.setVisibility(View.VISIBLE);
 
-                    membersExists.setVisibility(View.VISIBLE);
+                foundFollowup.setVisibility(View.GONE);
 
-                    foundFollowup.setVisibility(View.GONE);
+//                    fpa002.setText(AppMain.followUpdoneList.get(0).getCHILDNAME().toUpperCase());
 
-                    fpa002.setText(AppMain.followUpList.get(0).getCHILDNAME().toUpperCase());
-                    fpa003.setText(fpa003.getText() + AppMain.followUpList.get(0).getMOTHERNAME().toUpperCase());
-                 //   fpa00401.setText(AppMain.followUpList.get(0).getFOLLOWUPRND());
+                fuprnd = new ArrayList<>();
 
-                    flag = true;
-
-                    Toast.makeText(this, "Child Found", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "Child Found Follow Up Date Expired", Toast.LENGTH_LONG).show();
-                    foundFollowup.setText("Child Found Follow Up Date Expired");
-
-                    foundFollowup.setVisibility(View.VISIBLE);
+                fuprnd.add("....");
+                for (FollowUpsDoneContract aNGO : AppMain.followUpdoneList) {
+                    //              getAllfuprndMap.put(aNGO, aNGO.getSourceId());
+                    fuprnd.add(aNGO.getFOLLOWUPRND());
+                    fpa002.setText(aNGO.getCHILDNAME());
                 }
+
+
+                fpa00401.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, fuprnd));
+
+                flag = true;
+
+                Toast.makeText(this, "Child Found", Toast.LENGTH_LONG).show();
+
             } else {
 
                 foundFollowup.setText("No Child Found");
@@ -161,9 +177,9 @@ public class SectionAActivity extends Activity {
         } else {
             fpa00302.setError("This data is Required!");
         }
-    }*/
+    }
 
-    public Boolean getDays(String date) {
+   /* public Boolean getDays(String date) {
         SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try {
@@ -177,7 +193,7 @@ public class SectionAActivity extends Activity {
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 
 
     @OnClick(R.id.btnNext)
@@ -186,7 +202,7 @@ public class SectionAActivity extends Activity {
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
 
-            //   if (flag) {
+            if (flag) {
                 try {
                     saveDrafts();
                 } catch (JSONException e) {
@@ -202,9 +218,9 @@ public class SectionAActivity extends Activity {
                 } else {
                     Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
                 }
-           /* } else {
+            } else {
                 Toast.makeText(this, "Click on Check Button", Toast.LENGTH_SHORT).show();
-            }*/
+            }
         }
     }
 
@@ -245,10 +261,13 @@ public class SectionAActivity extends Activity {
         sA.put("fpa001", fpa00101.isChecked() ? "1" : fpa00102.isChecked() ? "2" : fpa00103.isChecked() ? "3"
                 : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
         sA.put("fpa002", fpa002.getText().toString());
+
+        sA.put("fpa00401", fpa00401.getSelectedItem().toString());
+
 //        sA.put("fpa00301", fpa00301.getText().toString());
         sA.put("fpa00302", fpa00302.getText().toString());
-        sA.put("fpa00401", fpa00401.getText().toString());
-        sA.put("fpa00402", fpa00402.getText().toString());
+        sA.put("fpa00501", fpa00501.getText().toString());
+        sA.put("fpa00502", fpa00502.getText().toString());
 
         AppMain.fc.setsA(String.valueOf(sA));
 
@@ -305,8 +324,7 @@ public class SectionAActivity extends Activity {
             fpa00302.setError(null);
         }
 
-        // if (flag) {
-
+        if (flag) {
 
 
             if (fpa002.getText().toString().isEmpty()) {
@@ -318,50 +336,61 @@ public class SectionAActivity extends Activity {
                 fpa002.setError(null);
             }
 
-        if (fpa00401.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
-            fpa00401.setError("This data is Required!");
-            Log.i(TAG, "fpa00401: This data is Required!");
-            return false;
-        } else {
-            fpa00401.setError(null);
-
-            if ((Integer.parseInt(fpa00401.getText().toString()) < 6) || (Integer.parseInt(fpa00401.getText().toString()) > 24)) {
-                Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpa004) + getString(R.string.month), Toast.LENGTH_SHORT).show();
-                fpa00401.setError("Range is 6-24 months");
-                Log.i(TAG, "fpb00201: Range is 6-24 months");
+            if (fpa00401.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpa004), Toast.LENGTH_SHORT).show();
+                ((TextView) fpa00401.getSelectedView()).setText("This Data is Required");
+                ((TextView) fpa00401.getSelectedView()).setTextColor(Color.RED);
+                fpa00401.requestFocus();
+                Log.i(TAG, "fpa00401: This Data is Required!");
                 return false;
             } else {
-                fpa00401.setError(null);
+                ((TextView) fpa00401.getSelectedView()).setError(null);
             }
 
-            if (fpa00402.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
-                fpa00402.setError("This data is required");
-                Log.d(TAG, "empty: fpa00402");
+            if (fpa00501.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                fpa00501.setError("This data is Required!");
+                Log.i(TAG, "fpa00501: This data is Required!");
                 return false;
             } else {
-                fpa00402.setError(null);
+                fpa00501.setError(null);
+
+                if ((Integer.parseInt(fpa00501.getText().toString()) < 6) || (Integer.parseInt(fpa00501.getText().toString()) > 24)) {
+                    Toast.makeText(this, "ERROR(Empty) " + getString(R.string.fpa005) + getString(R.string.month), Toast.LENGTH_SHORT).show();
+                    fpa00501.setError("Range is 6-24 months");
+                    Log.i(TAG, "fpb00501: Range is 6-24 months");
+                    return false;
+                } else {
+                    fpa00501.setError(null);
+                }
+
+                if (fpa00502.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                    fpa00502.setError("This data is required");
+                    Log.d(TAG, "empty: fpa00502");
+                    return false;
+                } else {
+                    fpa00502.setError(null);
+                }
+
+                if ((Integer.parseInt(fpa00502.getText().toString()) < 0) || (Integer.parseInt(fpa00502.getText().toString()) > 29)) {
+                    Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpa005) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                    fpa00502.setError("Range is 0 - 29 days");
+                    Log.i(TAG, "fpb00502: Range is 0 - 29 days");
+                    return false;
+                } else {
+                    fpa00502.setError(null);
+                }
             }
 
-            if ((Integer.parseInt(fpa00402.getText().toString()) < 0) || (Integer.parseInt(fpa00402.getText().toString()) > 29)) {
-                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpa004) + getString(R.string.day), Toast.LENGTH_LONG).show();
-                fpa00402.setError("Range is 0 - 29 days");
-                Log.i(TAG, "fpb00202: Range is 0 - 29 days");
+            if (fpa001.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpa001), Toast.LENGTH_SHORT).show();
+                fpa00105.setError("This Data is required");
+                Log.d(TAG, "not selected: fpa001 ");
                 return false;
             } else {
-                fpa00402.setError(null);
+                fpa00105.setError(null);
             }
-        }
-
-        if (fpa001.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.fpa001), Toast.LENGTH_SHORT).show();
-            fpa00105.setError("This Data is required");
-            Log.d(TAG, "not selected: fpa001 ");
-            return false;
-        } else {
-            fpa00105.setError(null);
-        }
 
 //        if (fpa00301.getText().toString().isEmpty()) {
 //            Toast.makeText(this, "" + getString(R.string.fpa00301), Toast.LENGTH_SHORT).show();
@@ -399,9 +428,10 @@ public class SectionAActivity extends Activity {
             } else {
                 fpa00401.setError(null);
             }*/
-        //  }
+        }
 
         return true;
     }
+
 
 }

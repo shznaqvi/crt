@@ -59,6 +59,7 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
+import edu.aku.hassannaqvi.cbtfollowup.get.GetFollowUpsDone;
 import edu.aku.hassannaqvi.cbtfollowup.get.GetUsers;
 
 
@@ -568,6 +569,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
                     Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
                     new GetUsers(mContext).execute();
+
+                    Toast.makeText(LoginActivity.this, "Sync Followups done", Toast.LENGTH_LONG).show();
+                    new GetFollowUpsDone(mContext).execute();
 
 
                 }
