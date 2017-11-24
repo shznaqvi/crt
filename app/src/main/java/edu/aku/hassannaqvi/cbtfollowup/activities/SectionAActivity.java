@@ -1,12 +1,12 @@
 package edu.aku.hassannaqvi.cbtfollowup.activities;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
@@ -27,6 +27,8 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -39,14 +41,24 @@ import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
-public class SectionAActivity extends Activity {
+public class SectionAActivity extends AppCompatActivity {
 
     private static final String TAG = SectionAActivity.class.getSimpleName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
     @BindView(R.id.activity_section_a)
     ScrollView activitySectionA;
+
+    @BindView(R.id.fpaHH)
+    EditText fpaHH;
+    @BindView(R.id.fpaResp)
+    EditText fpaResp;
+    @BindView(R.id.fpaAdd)
+    EditText fpaAdd;
+    @BindView(R.id.fpaDob)
+    DatePickerInputEditText fpaDob;
     @BindView(R.id.fpa001)
     RadioGroup fpa001;
     @BindView(R.id.fpa00101)
@@ -82,6 +94,11 @@ public class SectionAActivity extends Activity {
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
 
+    Calendar now = Calendar.getInstance();
+    int year = now.get(Calendar.YEAR);
+    int month = now.get(Calendar.MONTH);
+    int day = now.get(Calendar.DATE);
+
     @BindView(R.id.membersExists)
     LinearLayout membersExists;
 
@@ -97,6 +114,23 @@ public class SectionAActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
+
+
+        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        String maxDate6Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
+        String minDate24Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_24_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
+
+        fpaDob.setManager(getSupportFragmentManager());
+        fpaDob.setMaxDate(maxDate6Months);
+        fpaDob.setMinDate(minDate24Months);
+
+
+        fpaDob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fpaDob.onFocusChange(v, true);
+            }
+        });
 
         db = new DatabaseHelper(this);
 
@@ -157,6 +191,7 @@ public class SectionAActivity extends Activity {
                     //              getAllfuprndMap.put(aNGO, aNGO.getSourceId());
                     fuprnd.add(aNGO.getFOLLOWUPRND());
                     fpa002.setText(aNGO.getCHILDNAME());
+                    Collections.sort(fuprnd);
                 }
 
 
@@ -261,6 +296,10 @@ public class SectionAActivity extends Activity {
         sA.put("fpa001", fpa00101.isChecked() ? "1" : fpa00102.isChecked() ? "2" : fpa00103.isChecked() ? "3"
                 : fpa00104.isChecked() ? "4" : fpa00105.isChecked() ? "5" : "0");
         sA.put("fpa002", fpa002.getText().toString());
+        sA.put("fpaHH", fpaHH.getText().toString());
+        sA.put("fpaResp", fpaResp.getText().toString());
+        sA.put("fpaAdd", fpaAdd.getText().toString());
+        sA.put("fpaDob", fpaDob.getText().toString());
 
         sA.put("fpa00401", fpa00401.getSelectedItem().toString());
 
@@ -326,7 +365,6 @@ public class SectionAActivity extends Activity {
 
         if (flag) {
 
-
             if (fpa002.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpa002), Toast.LENGTH_SHORT).show();
                 fpa002.setError("This data is required");
@@ -334,6 +372,42 @@ public class SectionAActivity extends Activity {
                 return false;
             } else {
                 fpa002.setError(null);
+            }
+
+            if (fpaHH.getText().toString().isEmpty()) {
+                Toast.makeText(this, "" + getString(R.string.fpaHH), Toast.LENGTH_SHORT).show();
+                fpaHH.setError("This data is required");
+                Log.d(TAG, "empty: fpaHH  ");
+                return false;
+            } else {
+                fpaHH.setError(null);
+            }
+
+            if (fpaResp.getText().toString().isEmpty()) {
+                Toast.makeText(this, "" + getString(R.string.fpaResp), Toast.LENGTH_SHORT).show();
+                fpaResp.setError("This data is required");
+                Log.d(TAG, "empty: fpaResp");
+                return false;
+            } else {
+                fpaResp.setError(null);
+            }
+
+            if (fpaAdd.getText().toString().isEmpty()) {
+                Toast.makeText(this, "" + getString(R.string.fpaAdd), Toast.LENGTH_SHORT).show();
+                fpaAdd.setError("This data is required");
+                Log.d(TAG, "empty: fpaAdd");
+                return false;
+            } else {
+                fpaAdd.setError(null);
+            }
+
+            if (fpaDob.getText().toString().isEmpty()) {
+                Toast.makeText(this, "" + getString(R.string.fpaDob), Toast.LENGTH_SHORT).show();
+                fpaDob.setError("This data is required");
+                Log.d(TAG, "empty: Dob");
+                return false;
+            } else {
+                fpaDob.setError(null);
             }
 
             if (fpa00401.getSelectedItemPosition() == 0) {

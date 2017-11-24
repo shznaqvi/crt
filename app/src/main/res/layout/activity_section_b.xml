@@ -347,11 +347,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/no" />
 
-                <RadioButton
-                    android:id="@+id/fpb00977"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/na" />
+
 
             </RadioGroup>
 
@@ -575,6 +571,46 @@
 
         </RadioGroup>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpb017" />
+
+        <EditText
+            android:id="@+id/fpb017"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/fpb017" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpb018" />
+
+        <EditText
+            android:id="@+id/fpb018"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fpb018"
+            android:inputType="text"
+            android:maxLength="13" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fpb019" />
+
+        <EditText
+            android:id="@+id/fpb019"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/fpb019" />
+
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
@@ -590,7 +626,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="submitSecA"
+
                 android:text="@string/next_section"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="24sp" />
@@ -601,7 +637,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="endForm"
+
                 android:text="@string/end_interview"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="24sp"
