@@ -37,7 +37,8 @@
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionAActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionBActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="edu.aku.hassannaqvi.cbtfollowup.activities.SectionEActivity"

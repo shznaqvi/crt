@@ -80,8 +80,7 @@ public class SectionBActivity extends Activity {
     RadioButton fpb00901;
     @BindView(R.id.fpb00902)
     RadioButton fpb00902;
-    @BindView(R.id.fpb00977)
-    RadioButton fpb00977;
+
     @BindView(R.id.fldGrp009)
     LinearLayout fldGrp009;
     @BindView(R.id.fpb01001)
@@ -133,6 +132,12 @@ public class SectionBActivity extends Activity {
     RadioButton fpb01601;
     @BindView(R.id.fpb01602)
     RadioButton fpb01602;
+    @BindView(R.id.fpb017)
+    EditText fpb017;
+    @BindView(R.id.fpb018)
+    EditText fpb018;
+    @BindView(R.id.fpb019)
+    EditText fpb019;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,14 +237,15 @@ public class SectionBActivity extends Activity {
                     fldGrp013.setVisibility(View.GONE);
                     fpb013.setText(null);
 
-                } else if (fpb01102.isChecked() || fpb01177.isChecked()) {
+                } else if (fpb01102.isChecked()) {
                     fldGrp013.setVisibility(View.VISIBLE);
                     fldGrp012.setVisibility(View.GONE);
                     fpb012.setText(null);
-                } else if (fpb01102.isChecked() || fpb01177.isChecked()) {
-                    fldGrp013.setVisibility(View.VISIBLE);
+                } else {
+                    fldGrp013.setVisibility(View.GONE);
                     fldGrp012.setVisibility(View.GONE);
                     fpb012.setText(null);
+                    fpb013.setText(null);
                 }
 
             }
@@ -357,7 +363,7 @@ public class SectionBActivity extends Activity {
         sB.put("fpb00702", fpb00702.getText().toString());
         sB.put("fpb00801", fpb00801.getText().toString());
         sB.put("fpb00802", fpb00802.getText().toString());
-        sB.put("fpb009", fpb00901.isChecked() ? "1" : fpb00902.isChecked() ? "2" : fpb00977.isChecked() ? "77" : "0");
+        sB.put("fpb009", fpb00901.isChecked() ? "1" : fpb00902.isChecked() ? "2" : "0");
         sB.put("fpb010", fpb01001.isChecked() ? "1" : fpb01002.isChecked() ? "2" : fpb01003.isChecked() ? "3" : fpb01004.isChecked() ? "4" : fpb01088.isChecked() ? "88" : "0");
         sB.put("fpb01088x", fpb01088x.getText().toString());
         sB.put("fpb011", fpb01101.isChecked() ? "1" : fpb01102.isChecked() ? "2" : fpb01177.isChecked() ? "77" : "0");
@@ -366,6 +372,9 @@ public class SectionBActivity extends Activity {
         sB.put("fpb014", fpb01401.isChecked() ? "1" : fpb01402.isChecked() ? "2" : fpb01477.isChecked() ? "77" : "0");
         sB.put("fpb015", fpb01502.isChecked() ? "02" : fpb01501.getText().toString());
         sB.put("fpb016", fpb01601.isChecked() ? "1" : fpb01602.isChecked() ? "2" : "0");
+        sB.put("fpb017", fpb017.getText().toString());
+        sB.put("fpb018", fpb018.getText().toString());
+        sB.put("fpb019", fpb019.getText().toString());
 
         AppMain.fc.setsB(String.valueOf(sB));
 
@@ -518,34 +527,33 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             fpb001m3.setError(null);
-            /*if (!fpb001m3.getText().toString().contains(".")) {
+            if (!fpb001m3.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
                 fpb001m3.setError("Invalid: Decimal value is Required!");
                 Log.i(TAG, "fpb001m3: Invalid Decimal value is Required!");
                 return false;
             } else {
-                fpb001m3.setError(null);*/
-                /*if (Double.parseDouble(fpb001m3.getText().toString()) < 1) {
+                fpb001m3.setError(null);
+                if (Double.parseDouble(fpb001m3.getText().toString()) < 1) {
                     Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
                     fpb001m3.setError("Invalid: Greater then 0");
                     Log.i(TAG, "fpb001m3: Invalid Greater then 0");
                     return false;
                 } else {
                     fpb001m3.setError(null);
-                */
-            if (Double.parseDouble(fpb001m3.getText().toString()) != 0
-                    && (Double.parseDouble(fpb001m3.getText().toString()) < 40)
-                    || Double.parseDouble(fpb001m3.getText().toString()) > 100) {
-                Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
-                fpb001m3.setError("Invalid: Range 40.0-100.0");
-                Log.i(TAG, "fpb001m3: Invalid Range 40.0-100.0");
+                    if (Double.parseDouble(fpb001m3.getText().toString()) != 0
+                            && (Double.parseDouble(fpb001m3.getText().toString()) < 40)
+                            || Double.parseDouble(fpb001m3.getText().toString()) > 100) {
+                        Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpb001), Toast.LENGTH_SHORT).show();
+                        fpb001m3.setError("Invalid: Range 40.0-100.0");
+                        Log.i(TAG, "fpb001m3: Invalid Range 40.0-100.0");
                         return false;
-            } else {
-                fpb001m3.setError(null);
+                    } else {
+                        fpb001m3.setError(null);
                     }
                 }
-        //}
-
+            }
+        }
 
         if (fpb002m3.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpb002), Toast.LENGTH_SHORT).show();
@@ -554,7 +562,7 @@ public class SectionBActivity extends Activity {
             return false;
         } else {
             fpb002m3.setError(null);
-            /*if (!fpb002m3.getText().toString().contains(".")) {
+            if (!fpb002m3.getText().toString().contains(".")) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpb002), Toast.LENGTH_SHORT).show();
                 fpb002m3.setError("Invalid: Decimal value is Required!");
                 Log.i(TAG, "fpb002m3: Invalid Decimal value is Required!");
@@ -567,7 +575,7 @@ public class SectionBActivity extends Activity {
                     Log.i(TAG, "fpb002m3: Invalid Greater then 0");
                     return false;
                 } else {
-                    fpb002m3.setError(null);*/
+                    fpb002m3.setError(null);
             if (Double.parseDouble(fpb002m3.getText().toString()) < 0 || Double.parseDouble(fpb002m3.getText().toString()) > 20) {
                 Toast.makeText(this, "ERROR(invalid): " + getString(R.string.fpb002), Toast.LENGTH_SHORT).show();
                 fpb002m3.setError("Invalid: Range 1.0-20.0");
@@ -577,8 +585,8 @@ public class SectionBActivity extends Activity {
                 fpb002m3.setError(null);
                     }
                 }
-        //}
-        //}
+            }
+        }
 
         if (fpb004.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fpb004), Toast.LENGTH_SHORT).show();
@@ -618,6 +626,15 @@ public class SectionBActivity extends Activity {
                 } else {
                     fpb00601.setError(null);
                 }
+
+                if ((Integer.parseInt(fpb00601.getText().toString().isEmpty() ? "0" : fpb00601.getText().toString()) < 1) || (Integer.parseInt(fpb00702.getText().toString()) > 40)) {
+                    Toast.makeText(this, "ERROR: " + getString(R.string.fpb00601), Toast.LENGTH_LONG).show();
+                    fpb00601.setError("Range is 1-40 ");
+                    Log.i(TAG, "fpb00601: Range is 1-40 ");
+                    return false;
+                } else {
+                    fpb00601.setError(null);
+                }
             }
 
             if (fpb00701.getText().toString().isEmpty()) {
@@ -629,10 +646,10 @@ public class SectionBActivity extends Activity {
                 fpb00701.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00701.getText().toString()) < 0) || (Integer.parseInt(fpb00701.getText().toString()) > 30)) {
+            if ((Integer.parseInt(fpb00701.getText().toString()) < 0) || (Integer.parseInt(fpb00701.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(fpb007) + getString(R.string.day), Toast.LENGTH_LONG).show();
-                fpb00701.setError("Range is 0-30 days");
-                Log.i(TAG, "fpb00701: Range is 0-30 days");
+                fpb00701.setError("Range is 0-40 days");
+                Log.i(TAG, "fpb00701: Range is 0-40 days");
                 return false;
             } else {
                 fpb00701.setError(null);
@@ -647,10 +664,10 @@ public class SectionBActivity extends Activity {
                 fpb00702.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00702.getText().toString().isEmpty() ? "0" : fpb00702.getText().toString()) < 1) || (Integer.parseInt(fpb00702.getText().toString()) > 40)) {
+            if ((Integer.parseInt(fpb00702.getText().toString()) < 0) || (Integer.parseInt(fpb00702.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(fpb007) + getString(R.string.fpb00701), Toast.LENGTH_LONG).show();
-                fpb00702.setError("Range is 1-40 ");
-                Log.i(TAG, "fph005: Range is 1-40 ");
+                fpb00702.setError("Range is 0-40 ");
+                Log.i(TAG, "fph005: Range is 0-40 ");
                 return false;
             } else {
                 fpb00702.setError(null);
@@ -665,10 +682,10 @@ public class SectionBActivity extends Activity {
                 fpb00801.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00801.getText().toString().isEmpty() ? "0" : fpb00801.getText().toString()) < 0) || (Integer.parseInt(fpb00801.getText().toString()) > 40)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.fpb008), Toast.LENGTH_LONG).show();
-                fpb00801.setError("Range is 0-40 ");
-                Log.i(TAG, "fpd00601: Range is 0-40 ");
+            if ((Integer.parseInt(fpb00801.getText().toString()) < 0) || (Integer.parseInt(fpb00801.getText().toString()) > 30)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpb008) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                fpb00801.setError("Range is 0-30 ");
+                Log.i(TAG, "fpd00601: Range is 0-30 ");
                 return false;
             } else {
                 fpb00801.setError(null);
@@ -683,7 +700,7 @@ public class SectionBActivity extends Activity {
                 fpb00802.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00802.getText().toString().isEmpty() ? "0" : fpb00802.getText().toString()) < 0) || (Integer.parseInt(fpb00802.getText().toString()) > 40)) {
+            if ((Integer.parseInt(fpb00802.getText().toString()) < 0) || (Integer.parseInt(fpb00802.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpb008), Toast.LENGTH_LONG).show();
                 fpb00802.setError("Range is 0-40 ");
                 Log.i(TAG, "fpb00802: Range is 0-40 ");
@@ -694,11 +711,11 @@ public class SectionBActivity extends Activity {
 
             if (fpb009.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpb009), Toast.LENGTH_SHORT).show();
-                fpb00977.setError("This Data is required");
+                fpb00902.setError("This Data is required");
                 Log.i(TAG, "not selected: fpb009");
                 return false;
             } else {
-                fpb00977.setError(null);
+                fpb00902.setError(null);
             }
 
             if (fpb00901.isChecked()) {
@@ -756,7 +773,7 @@ public class SectionBActivity extends Activity {
             } else {
                 fpb012.setError(null);
             }
-        } else {
+        } else if (fpb01102.isChecked()) {
             if (fpb013.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpb013), Toast.LENGTH_SHORT).show();
                 fpb013.setError("This data is required");
@@ -774,17 +791,17 @@ public class SectionBActivity extends Activity {
             } else {
                 fpb013.setError(null);
             }
-        }
-
-        if (fpb014.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "" + getString(R.string.fpb014), Toast.LENGTH_SHORT).show();
-            fpb01477.setError("This Data is required");
-            Log.i(TAG, "not selected: fpb014");
-            return false;
         } else {
-            fpb01477.setError(null);
-        }
 
+            if (fpb014.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "" + getString(R.string.fpb014), Toast.LENGTH_SHORT).show();
+                fpb01477.setError("This Data is required");
+                Log.i(TAG, "not selected: fpb014");
+                return false;
+            } else {
+                fpb01477.setError(null);
+            }
+        }
         if (!fpb01401.isChecked()) {
             if (!fpb01502.isChecked()) {
                 if (fpb01501.getText().toString().isEmpty()) {
@@ -806,6 +823,46 @@ public class SectionBActivity extends Activity {
         } else {
             fpb01602.setError(null);
         }
+
+        if (fpb017.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb017), Toast.LENGTH_SHORT).show();
+            fpb017.setError("This data is Required!");
+
+            Log.i(TAG, "fpb017: This Data is Required!");
+            return false;
+        } else {
+            fpb017.setError(null);
+        }
+
+        if (fpb018.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb018), Toast.LENGTH_SHORT).show();
+            fpb018.setError("This data is Required!");
+
+            Log.i(TAG, "fpb018: This Data is Required!");
+            return false;
+        } else {
+            fpb018.setError(null);
+        }
+
+        if ((Integer.parseInt(fpb018.getText().toString()) < 1)) {
+            Toast.makeText(this, "ERROR: " + getString(R.string.fpb018), Toast.LENGTH_LONG).show();
+            fpb018.setError("cannot be 0 ");
+            Log.i(TAG, "cannot be 0 ");
+            return false;
+        } else {
+            fpb018.setError(null);
+        }
+
+        if (fpb019.getText().toString().isEmpty()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb019), Toast.LENGTH_SHORT).show();
+            fpb019.setError("This data is Required!");
+
+            Log.i(TAG, "fpb019: This Data is Required!");
+            return false;
+        } else {
+            fpb019.setError(null);
+        }
+
 
 
         return true;

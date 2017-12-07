@@ -61,6 +61,10 @@
     <string name="fpa00302">Child # </string>
     <string name="fpa005">validation کے وقت  عمر </string>
     <string name="fpa004">followup round </string>
+    <string name="fpaHH">Name of Household Head</string>
+    <string name="fpaResp">Name of Respondent </string>
+    <string name="fpaAdd">Address  </string>
+    <string name="fpaDob">Date of birth of child </string>
 
     <string name="fpb001">Length/Height: </string>
     <string name="fpbsubM1"> Measurement 1 </string>
@@ -95,6 +99,9 @@
     <string name="fpb015">How many days ago AKU team visited your house?  </string>
     <string name="fpb01501">never visited  </string>
     <string name="fpb016">Household ID was marked on door or at any visible place?  </string>
+    <string name="fpb017">Name of BISP beneficiary </string>
+    <string name="fpb018">CNIC of BISP beneficiary  </string>
+    <string name="fpb019">Other Observations </string>
 
 
     <!--<string name="fpf001a">اگر ہاں تو کس طرح کے پیغامات ملے؟</string>

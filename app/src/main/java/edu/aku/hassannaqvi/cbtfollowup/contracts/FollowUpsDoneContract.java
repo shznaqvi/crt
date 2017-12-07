@@ -29,7 +29,6 @@ public class FollowUpsDoneContract {
         this.CHILDNAME = fpc.getCHILDNAME();
         this.FOLLOWUPRND = fpc.getFOLLOWUPRND();
         this._LUID = fpc.getFOLLOWUPRND();
-
     }
 
     public FollowUpsDoneContract Sync(JSONObject jsonObject) throws JSONException {
