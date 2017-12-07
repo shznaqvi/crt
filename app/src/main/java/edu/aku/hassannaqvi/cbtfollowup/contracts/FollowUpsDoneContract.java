@@ -29,7 +29,6 @@ public class FollowUpsDoneContract {
         this.CHILDNAME = fpc.getCHILDNAME();
         this.FOLLOWUPRND = fpc.getFOLLOWUPRND();
         this._LUID = fpc.getFOLLOWUPRND();
-
     }
 
     public FollowUpsDoneContract Sync(JSONObject jsonObject) throws JSONException {
@@ -44,7 +43,7 @@ public class FollowUpsDoneContract {
     }
 
     public FollowUpsDoneContract Hydrate(Cursor cursor) {
-        this._ID = cursor.getLong(cursor.getColumnIndex(singleFollowUpsDone._ID));
+
         this.CHILDNAME = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_CHILDNAME));
         this.CHILDID = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_CHILDID));
         this.FOLLOWUPRND = cursor.getString(cursor.getColumnIndex(singleFollowUpsDone.COLUMN_FOLLOWUPRND));

@@ -16,12 +16,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.cbtfollowup.contracts.ClustersContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract.FormColumns;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.UsersContract.UsersTable;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -32,10 +34,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * CREATE STRINGS
      */
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.singleUser.TABLE_NAME + "("
-            + UsersContract.singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + UsersContract.singleUser.ROW_USERNAME + " TEXT,"
-            + UsersContract.singleUser.ROW_PASSWORD + " TEXT );";
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersTable.TABLE_NAME + "("
+            + UsersTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + UsersTable.ROW_USERNAME + " TEXT,"
+            + UsersTable.ROW_PASSWORD + " TEXT );";
     public static final String DATABASE_NAME = "cbtvalidation.db";
     public static final String DB_NAME = "cbtvalidation_copy.db";
     private static final int DATABASE_VERSION = 1;
@@ -76,14 +78,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FollowUpsDoneContract.singleFollowUpsDone._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " TEXT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDNAME + " TEXT," +
-            FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND + " TEXT" +
+            FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND + " TEXT," +
             FollowUpsDoneContract.singleFollowUpsDone.COLUMN__LUID + " TEXT" +
             " );";
     /**
      * DELETE STRINGS
      */
     private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + UsersContract.singleUser.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
 
     private static final String SQL_DELETE_CLUSTERS =
             "DROP TABLE IF EXISTS " + ClustersContract.singleCluster.TABLE_NAME;
@@ -120,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(UsersContract.singleUser.TABLE_NAME, null, null);
+        db.delete(UsersTable.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = userlist;
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -131,9 +133,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.Sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(UsersContract.singleUser.ROW_USERNAME, user.getUserName());
-                values.put(UsersContract.singleUser.ROW_PASSWORD, user.getPassword());
-                db.insert(UsersContract.singleUser.TABLE_NAME, null, values);
+                values.put(UsersTable.ROW_USERNAME, user.getUserName());
+                values.put(UsersTable.ROW_PASSWORD, user.getPassword());
+                db.insert(UsersTable.TABLE_NAME, null, values);
             }
 
 
@@ -201,30 +203,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-  /*  public List<FollowUpsContract> getFollowUpByChildID(String childID) {
+    public Collection<FollowUpsDoneContract> getFollowUpdoneByChildID(String childID) {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                singleFollowUps.COLUMN_CHILDID,
-                singleFollowUps.COLUMN_CHILDNAME,
-                singleFollowUps.COLUMN_FOLLOWUPDT,
-                singleFollowUps.COLUMN_FOLLOWUPRND,
-                singleFollowUps.COLUMN_MOTHERNAME
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDNAME,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_FOLLOWUPRND,
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN__LUID,
+
         };
 
-        String whereClause = singleFollowUps.COLUMN_CHILDID + " = ?";
+        String whereClause = FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " = ?";
         String[] whereArgs = new String[]{childID};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                singleFollowUps.COLUMN_CHILDID + " ASC";
+                FollowUpsDoneContract.singleFollowUpsDone.COLUMN_CHILDID + " ASC";
 
-        List<FollowUpsContract> followUpList = new ArrayList<>();
+        List<FollowUpsDoneContract> followUpdoneList = new ArrayList<>();
         try {
             c = db.query(
-                    singleFollowUps.TABLE_NAME,  // The table to query
+                    FollowUpsDoneContract.singleFollowUpsDone.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -233,8 +235,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                FollowUpsContract fpc = new FollowUpsContract();
-                followUpList.add(fpc.Hydrate(c));
+                FollowUpsDoneContract fpc = new FollowUpsDoneContract();
+                followUpdoneList.add(fpc.Hydrate(c));
             }
         } finally {
             if (c != null) {
@@ -244,15 +246,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return followUpList;
-    }*/
+        return followUpdoneList;
+    }
 
     public ArrayList<UsersContract> getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<UsersContract> userList = null;
         try {
             userList = new ArrayList<UsersContract>();
-            String QUERY = "SELECT * FROM " + UsersContract.singleUser.TABLE_NAME;
+            String QUERY = "SELECT * FROM " + UsersTable.TABLE_NAME;
             Cursor cursor = db.rawQuery(QUERY, null);
             int num = cursor.getCount();
             if (!cursor.isLast()) {
@@ -273,17 +275,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean Login(String username, String password) throws SQLException {
+
+        // Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.UsersTable.TABLE_NAME + " WHERE " + UsersContract.UsersTable.ROW_USERNAME +
+        // "= ? AND " + UsersContract.UsersTable.ROW_PASSWORD + "=?", new String[]{username, password});
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.singleUser.TABLE_NAME + " WHERE " + UsersContract.singleUser.ROW_USERNAME + "=? AND " + UsersContract.singleUser.ROW_PASSWORD + "=?", new String[]{username, password});
+// New value for one column
+        String[] columns = {
+                UsersTable._ID
+        };
 
-        if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-                return true;
-            }
-        }
+// Which row to update, based on the ID
+        String selection = UsersTable.ROW_USERNAME + " = ?" + " AND " + UsersTable.ROW_PASSWORD + " = ?";
+        String[] selectionArgs = {username, password};
+        Cursor cursor = db.query(UsersTable.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
         db.close();
-        return false;
+        return cursorCount > 0;
     }
 
     public Long addForm(FormsContract fc) {

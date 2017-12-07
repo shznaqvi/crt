@@ -15,10 +15,10 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.List;
+import java.util.Collection;
 
 import edu.aku.hassannaqvi.cbtfollowup.activities.EndingActivity;
-import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsContract;
+import edu.aku.hassannaqvi.cbtfollowup.contracts.FollowUpsDoneContract;
 import edu.aku.hassannaqvi.cbtfollowup.contracts.FormsContract;
 
 /**
@@ -52,6 +52,16 @@ public class AppMain extends Application {
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
     private static final long DAYS_IN_YEAR = 365;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
+    private static final long DAYS_IN_6_MONTHS = 183;
+    public static final long MILLISECONDS_IN_6_MONTHS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_6_MONTHS;
+    private static final long DAYS_IN_24_MONTHS = 730;
+    public static final long MILLISECONDS_IN_24_MONTHS = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_24_MONTHS;
+    private static final long DAYS_IN_5Years = 1826;
+    public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5Years;
+    private static final long DAYS_IN_49Years = 17885;
+    public static final long MILLISECONDS_IN_49Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_49Years;
+    private static final long DAYS_IN_15Years = 5475;
+    public static final long MILLISECONDS_IN_15Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_15Years;
     public static int NoMembers = 7;
     public static String deviceId;
     public static int arm = 0;
@@ -72,7 +82,7 @@ public class AppMain extends Application {
     //    For participant
     //public static ArrayList<EligibleParticipants> Eparticipant;
     public static String currentParticipantName = "";
-    public static List<FollowUpsContract> followUpList;
+    public static Collection<FollowUpsDoneContract> followUpdoneList;
     protected LocationManager locationManager;
     Location location;
 
