@@ -627,7 +627,8 @@ public class SectionBActivity extends Activity {
                     fpb00601.setError(null);
                 }
 
-                if ((Integer.parseInt(fpb00601.getText().toString().isEmpty() ? "0" : fpb00601.getText().toString()) < 1) || (Integer.parseInt(fpb00702.getText().toString()) > 40)) {
+                if (Integer.valueOf(fpb00601.getText().toString()) < 1
+                        || Integer.valueOf(fpb00601.getText().toString()) > 40) {
                     Toast.makeText(this, "ERROR: " + getString(R.string.fpb00601), Toast.LENGTH_LONG).show();
                     fpb00601.setError("Range is 1-40 ");
                     Log.i(TAG, "fpb00601: Range is 1-40 ");
@@ -635,6 +636,7 @@ public class SectionBActivity extends Activity {
                 } else {
                     fpb00601.setError(null);
                 }
+
             }
 
             if (fpb00701.getText().toString().isEmpty()) {
@@ -646,7 +648,8 @@ public class SectionBActivity extends Activity {
                 fpb00701.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00701.getText().toString()) < 0) || (Integer.parseInt(fpb00701.getText().toString()) > 40)) {
+            if ((Integer.valueOf(fpb00701.getText().toString()) < 0)
+                    || (Integer.valueOf(fpb00701.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(fpb007) + getString(R.string.day), Toast.LENGTH_LONG).show();
                 fpb00701.setError("Range is 0-40 days");
                 Log.i(TAG, "fpb00701: Range is 0-40 days");
@@ -664,7 +667,8 @@ public class SectionBActivity extends Activity {
                 fpb00702.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00702.getText().toString()) < 0) || (Integer.parseInt(fpb00702.getText().toString()) > 40)) {
+            if ((Integer.valueOf(fpb00702.getText().toString()) < 0)
+                    || (Integer.valueOf(fpb00702.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(fpb007) + getString(R.string.fpb00701), Toast.LENGTH_LONG).show();
                 fpb00702.setError("Range is 0-40 ");
                 Log.i(TAG, "fph005: Range is 0-40 ");
@@ -682,10 +686,10 @@ public class SectionBActivity extends Activity {
                 fpb00801.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00801.getText().toString()) < 0) || (Integer.parseInt(fpb00801.getText().toString()) > 30)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.fpb008) + getString(R.string.day), Toast.LENGTH_LONG).show();
-                fpb00801.setError("Range is 0-30 ");
-                Log.i(TAG, "fpd00601: Range is 0-30 ");
+            if ((Integer.valueOf(fpb00801.getText().toString()) < 0) || (Integer.valueOf(fpb00801.getText().toString()) > 40)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpb00801), Toast.LENGTH_LONG).show();
+                fpb00801.setError("Range is 0-40 ");
+                Log.i(TAG, "fpd00801: Range is 0-40 ");
                 return false;
             } else {
                 fpb00801.setError(null);
@@ -700,8 +704,8 @@ public class SectionBActivity extends Activity {
                 fpb00802.setError(null);
             }
 
-            if ((Integer.parseInt(fpb00802.getText().toString()) < 0) || (Integer.parseInt(fpb00802.getText().toString()) > 40)) {
-                Toast.makeText(this, "ERROR: " + getString(R.string.fpb008), Toast.LENGTH_LONG).show();
+            if ((Integer.valueOf(fpb00802.getText().toString()) < 0) || (Integer.valueOf(fpb00802.getText().toString()) > 40)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpb00802), Toast.LENGTH_LONG).show();
                 fpb00802.setError("Range is 0-40 ");
                 Log.i(TAG, "fpb00802: Range is 0-40 ");
                 return false;
@@ -765,7 +769,7 @@ public class SectionBActivity extends Activity {
             }
 
 
-            if ((Integer.parseInt(fpb012.getText().toString().isEmpty() ? "0" : fpb012.getText().toString()) < 1000) || (Integer.parseInt(fpb012.getText().toString()) > 15000)) {
+            if ((Integer.valueOf(fpb012.getText().toString().isEmpty() ? "0" : fpb012.getText().toString()) < 1000) || (Integer.valueOf(fpb012.getText().toString()) > 15000)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpb012) + getString(R.string.fpb012), Toast.LENGTH_LONG).show();
                 fpb012.setError("Range is 1000 - 15000 rupees ");
                 Log.i(TAG, "fpb012: Range is 1000 - 15000 rupees");
@@ -783,7 +787,7 @@ public class SectionBActivity extends Activity {
                 fpb013.setError(null);
             }
 
-            if ((Integer.parseInt(fpb013.getText().toString().isEmpty() ? "0" : fpb013.getText().toString()) < 1) || (Integer.parseInt(fpb013.getText().toString()) > 24)) {
+            if ((Integer.valueOf(fpb013.getText().toString().isEmpty() ? "0" : fpb013.getText().toString()) < 1) || (Integer.valueOf(fpb013.getText().toString()) > 24)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpb013) + getString(R.string.month), Toast.LENGTH_LONG).show();
                 fpb013.setError("Range is 1-24 months");
                 Log.i(TAG, "fpb013: Range is 1-24 months");
@@ -844,7 +848,7 @@ public class SectionBActivity extends Activity {
             fpb018.setError(null);
         }
 
-        if ((Integer.parseInt(fpb018.getText().toString()) < 1)) {
+        if ((Integer.valueOf(fpb018.getText().toString()) < 1)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.fpb018), Toast.LENGTH_LONG).show();
             fpb018.setError("cannot be 0 ");
             Log.i(TAG, "cannot be 0 ");
