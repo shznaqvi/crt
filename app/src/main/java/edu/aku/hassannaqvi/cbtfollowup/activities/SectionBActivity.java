@@ -64,8 +64,8 @@ public class SectionBActivity extends Activity {
     EditText fpb00588x;
     @BindView(R.id.fpb00601)
     EditText fpb00601;
-    @BindView(R.id.fpb00677)
-    CheckBox fpb00677;
+    /*@BindView(R.id.fpb00677)
+    CheckBox fpb00677;*/
     @BindView(R.id.fpb00701)
     EditText fpb00701;
     @BindView(R.id.fpb00702)
@@ -138,6 +138,8 @@ public class SectionBActivity extends Activity {
     EditText fpb018;
     @BindView(R.id.fpb019)
     EditText fpb019;
+    @BindView(R.id.fldGrpbnf)
+    LinearLayout fldGrpbnf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,7 +159,7 @@ public class SectionBActivity extends Activity {
             }
         });
 
-        fpb00677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*fpb00677.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
@@ -167,7 +169,7 @@ public class SectionBActivity extends Activity {
                     fpb00601.setVisibility(View.VISIBLE);
                 }
             }
-        });
+        });*/
 
 
         fpb004.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -180,7 +182,7 @@ public class SectionBActivity extends Activity {
                     fpb005.clearCheck();
                     fpb00588x.setText(null);
                     fpb00601.setText(null);
-                    fpb00677.setChecked(false);
+                    //fpb00677.setChecked(false);
                     fpb00702.setText(null);
                     fpb00701.setText(null);
                     fpb00802.setText(null);
@@ -252,7 +254,7 @@ public class SectionBActivity extends Activity {
         });
 
 
-        fpb014.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*fpb014.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (fpb01401.isChecked()) {
@@ -264,7 +266,7 @@ public class SectionBActivity extends Activity {
 
                 }
             }
-        });
+        });*/
 
         fpb01502.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -277,6 +279,14 @@ public class SectionBActivity extends Activity {
                 }
             }
         });
+
+        if (AppMain.arm == 1) {
+            fldGrpbnf.setVisibility(View.GONE);
+            fpb017.setText(null);
+            fpb018.setText(null);
+        } else {
+            fldGrpbnf.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -358,7 +368,7 @@ public class SectionBActivity extends Activity {
         sB.put("fpb004", fpb00401.isChecked() ? "1" : fpb00402.isChecked() ? "2" : fpb00477.isChecked() ? "77" : "0");
         sB.put("fpb005", fpb00501.isChecked() ? "1" : fpb00588.isChecked() ? "88" : "0");
         sB.put("fpb00588x", fpb00588x.getText().toString());
-        sB.put("fpb006", fpb00677.isChecked() ? "77" : fpb00601.getText().toString());
+        sB.put("fpb006", fpb00601.getText().toString());
         sB.put("fpb00701", fpb00701.getText().toString());
         sB.put("fpb00702", fpb00702.getText().toString());
         sB.put("fpb00801", fpb00801.getText().toString());
@@ -616,7 +626,7 @@ public class SectionBActivity extends Activity {
                 fpb00588x.setError(null);
             }
 
-            if (!fpb00677.isChecked()) {
+            //if (!fpb00677.isChecked()) {
                 if (fpb00601.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb00601) + " - " + getString(R.string.na), Toast.LENGTH_SHORT).show();
                     fpb00601.setError("This data is Required!");
@@ -637,7 +647,7 @@ public class SectionBActivity extends Activity {
                     fpb00601.setError(null);
                 }
 
-            }
+            //}
 
             if (fpb00701.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.day), Toast.LENGTH_SHORT).show();
@@ -671,7 +681,7 @@ public class SectionBActivity extends Activity {
                     || (Integer.valueOf(fpb00702.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(fpb007) + getString(R.string.fpb00701), Toast.LENGTH_LONG).show();
                 fpb00702.setError("Range is 0-40 ");
-                Log.i(TAG, "fph005: Range is 0-40 ");
+                Log.i(TAG, "fph00702: Range is 0-40 ");
                 return false;
             } else {
                 fpb00702.setError(null);
@@ -806,7 +816,7 @@ public class SectionBActivity extends Activity {
                 fpb01477.setError(null);
             }
         }
-        if (!fpb01401.isChecked()) {
+        //if (!fpb01401.isChecked()) {
             if (!fpb01502.isChecked()) {
                 if (fpb01501.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb01501) + " - " + getString(R.string.na), Toast.LENGTH_SHORT).show();
@@ -818,7 +828,7 @@ public class SectionBActivity extends Activity {
                     fpb01501.setError(null);
                 }
             }
-        }
+        //}
         if (fpb016.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fpb016), Toast.LENGTH_SHORT).show();
             fpb01602.setError("This Data is required");
@@ -828,33 +838,35 @@ public class SectionBActivity extends Activity {
             fpb01602.setError(null);
         }
 
-        if (fpb017.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb017), Toast.LENGTH_SHORT).show();
-            fpb017.setError("This data is Required!");
+        if (AppMain.arm != 1) {
+            if (fpb017.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb017), Toast.LENGTH_SHORT).show();
+                fpb017.setError("This data is Required!");
 
-            Log.i(TAG, "fpb017: This Data is Required!");
-            return false;
-        } else {
-            fpb017.setError(null);
-        }
+                Log.i(TAG, "fpb017: This Data is Required!");
+                return false;
+            } else {
+                fpb017.setError(null);
+            }
 
-        if (fpb018.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb018), Toast.LENGTH_SHORT).show();
-            fpb018.setError("This data is Required!");
+            if (fpb018.getText().toString().isEmpty()) {
+                Toast.makeText(this, "ERROR(Empty)" + getString(R.string.fpb018), Toast.LENGTH_SHORT).show();
+                fpb018.setError("This data is Required!");
 
-            Log.i(TAG, "fpb018: This Data is Required!");
-            return false;
-        } else {
-            fpb018.setError(null);
-        }
+                Log.i(TAG, "fpb018: This Data is Required!");
+                return false;
+            } else {
+                fpb018.setError(null);
+            }
 
-        if (!(fpb018.getText().toString().length() == 15)) {
-            Toast.makeText(this, "ERROR: " + getString(R.string.fpb018), Toast.LENGTH_LONG).show();
-            fpb018.setError("cannot be less then 15 digit ");
-            Log.i(TAG, "cannot be less then 15 digit ");
-            return false;
-        } else {
-            fpb018.setError(null);
+            if (!(fpb018.getText().toString().length() == 15)) {
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpb018), Toast.LENGTH_LONG).show();
+                fpb018.setError("cannot be less then 15 digit ");
+                Log.i(TAG, "cannot be less then 15 digit ");
+                return false;
+            } else {
+                fpb018.setError(null);
+            }
         }
 
         if (fpb019.getText().toString().isEmpty()) {

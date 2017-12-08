@@ -274,11 +274,11 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <CheckBox
+            <!--<CheckBox
                 android:id="@+id/fpb00677"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/na" />
+                android:text="@string/na" />-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -292,7 +292,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/day"
                 android:inputType="number"
-                android:maxLength="1" />
+                android:maxLength="2"/>
 
             <EditText
                 android:id="@+id/fpb00702"
@@ -571,33 +571,42 @@
 
         </RadioGroup>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/fldGrpbnf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/fpb017" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/fpb017"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            android:hint="@string/fpb017" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/fpb018" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/fpb017" />
 
-        <EditText
-            android:id="@+id/fpb018"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/fpb018"
-            android:inputType="text"
-            android:digits="0123456789-"
-            android:maxLength="15" />
+            <EditText
+                android:id="@+id/fpb017"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/fpb017" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/fpb018" />
+
+            <EditText
+                android:id="@+id/fpb018"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789-"
+                android:hint="@string/fpb018"
+                android:inputType="text"
+                android:maxLength="15" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

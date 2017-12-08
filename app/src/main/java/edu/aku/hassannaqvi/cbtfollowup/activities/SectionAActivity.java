@@ -108,6 +108,7 @@ public class SectionAActivity extends AppCompatActivity {
     DatabaseHelper db;
 
     Boolean flag = false;
+    String minDate24Months;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,22 +116,28 @@ public class SectionAActivity extends AppCompatActivity {
         setContentView(R.layout.activity_section_a);
         ButterKnife.bind(this);
 
+        try {
+            String s1 = "2016-10-28";
+            Date d = (new SimpleDateFormat("yyyy-MM-dd")).parse(s1);
+            minDate24Months = (new SimpleDateFormat("dd/MM/yyyy")).format(d);
 
-        String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        Calendar c = Calendar.getInstance();
+        c.set(2016, Calendar.OCTOBER, 28);
+
+
+
         String maxDate6Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_6_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
-        String minDate24Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_24_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
+        //String minDate24Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((AppMain.MILLISECONDS_IN_24_MONTHS) + (AppMain.MILLISECONDS_IN_DAY)));
 
         fpaDob.setManager(getSupportFragmentManager());
         fpaDob.setMaxDate(maxDate6Months);
         fpaDob.setMinDate(minDate24Months);
 
-
-        fpaDob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fpaDob.onFocusChange(v, true);
-            }
-        });
 
         db = new DatabaseHelper(this);
 
