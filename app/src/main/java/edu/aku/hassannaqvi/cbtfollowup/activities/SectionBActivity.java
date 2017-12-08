@@ -374,7 +374,11 @@ public class SectionBActivity extends Activity {
         sB.put("fpb00801", fpb00801.getText().toString());
         sB.put("fpb00802", fpb00802.getText().toString());
         sB.put("fpb009", fpb00901.isChecked() ? "1" : fpb00902.isChecked() ? "2" : "0");
-        sB.put("fpb010", fpb01001.isChecked() ? "1" : fpb01002.isChecked() ? "2" : fpb01003.isChecked() ? "3" : fpb01004.isChecked() ? "4" : fpb01088.isChecked() ? "88" : "0");
+        sB.put("fpb01001", fpb01001.isChecked() ? "1" : "0");
+        sB.put("fpb01002", fpb01002.isChecked() ? "2" : "0");
+        sB.put("fpb01003", fpb01003.isChecked() ? "3" : "0");
+        sB.put("fpb01004", fpb01004.isChecked() ? "4" : "0");
+        sB.put("fpb01088", fpb01088.isChecked() ? "88" : "0");
         sB.put("fpb01088x", fpb01088x.getText().toString());
         sB.put("fpb011", fpb01101.isChecked() ? "1" : fpb01102.isChecked() ? "2" : fpb01177.isChecked() ? "77" : "0");
         sB.put("fpb012", fpb012.getText().toString());
