@@ -848,10 +848,10 @@ public class SectionBActivity extends Activity {
             fpb018.setError(null);
         }
 
-        if ((Integer.valueOf(fpb018.getText().toString()) < 1)) {
+        if (!(fpb018.getText().toString().length() == 15)) {
             Toast.makeText(this, "ERROR: " + getString(R.string.fpb018), Toast.LENGTH_LONG).show();
-            fpb018.setError("cannot be 0 ");
-            Log.i(TAG, "cannot be 0 ");
+            fpb018.setError("cannot be less then 15 digit ");
+            Log.i(TAG, "cannot be less then 15 digit ");
             return false;
         } else {
             fpb018.setError(null);
