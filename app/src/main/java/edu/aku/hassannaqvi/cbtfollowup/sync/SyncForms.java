@@ -74,7 +74,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         String line = "No Response";
 
         DatabaseHelper db = new DatabaseHelper(mContext);
-        Collection<FormsContract> Forms = db.getAllForms();
+        Collection<FormsContract> Forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(Forms.size()));
 
         if (Forms.size() > 0) {

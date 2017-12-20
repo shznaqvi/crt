@@ -489,7 +489,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_GPSACC,
                 FormColumns.COLUMN_DEVICEID,
                 FormColumns.COLUMN_SYNCED,
-                FormColumns.COLUMN_SYNCED_DATE,
+                FormColumns.COLUMN_SYNCED_DATE
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -529,7 +529,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                FormColumns.COLUMN_PROJECTNAME,
                 FormColumns.COLUMN_SURVEYTYPE,
                 FormColumns.COLUMN_ID,
                 FormColumns.COLUMN_UID,
@@ -547,7 +546,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_GPSTIME,
                 FormColumns.COLUMN_GPSACC,
                 FormColumns.COLUMN_DEVICEID,
-
+                FormColumns.COLUMN_SYNCED,
+                FormColumns.COLUMN_SYNCED_DATE
         };
         String whereClause = FormsContract.FormColumns.COLUMN_SYNCED + " is null";
         String[] whereArgs = null;
