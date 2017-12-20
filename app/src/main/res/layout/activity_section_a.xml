@@ -175,7 +175,7 @@
                 android:id="@+id/fpaAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890,.-"
                 android:hint="@string/fpaAdd" />
 
             <TextView
