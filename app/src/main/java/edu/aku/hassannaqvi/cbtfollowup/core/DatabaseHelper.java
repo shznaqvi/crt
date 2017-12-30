@@ -50,9 +50,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormColumns.COLUMN_FORMDATE + " TEXT," +
             FormColumns.COLUMN_USER + " TEXT," +
             FormColumns.COLUMN_DEVICETAGID + " TEXT," +
-            FormColumns.COLUMN_CLUSTERCODE + " TEXT," +
+            /*FormColumns.COLUMN_CLUSTERCODE + " TEXT," +
             FormColumns.COLUMN_VILLAGEACODE + " TEXT," +
-            FormColumns.COLUMN_HOUSEHOLD + " TEXT," +
+            FormColumns.COLUMN_HOUSEHOLD + " TEXT," +*/
             FormColumns.COLUMN_ISTATUS + " TEXT," +
             FormColumns.COLUMN_SA + " TEXT," +
             FormColumns.COLUMN_SB + " TEXT," +
@@ -317,9 +317,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormColumns.COLUMN_FORMDATE, fc.getFormDate());
         values.put(FormColumns.COLUMN_USER, fc.getUser());
         values.put(FormColumns.COLUMN_DEVICETAGID, fc.getDevicetagId());
-        values.put(FormColumns.COLUMN_CLUSTERCODE, fc.getClustercode());
+        /*values.put(FormColumns.COLUMN_CLUSTERCODE, fc.getClustercode());
         values.put(FormColumns.COLUMN_VILLAGEACODE, fc.getVillageacode());
-        values.put(FormColumns.COLUMN_HOUSEHOLD, fc.getHousehold());
+        values.put(FormColumns.COLUMN_HOUSEHOLD, fc.getHousehold());*/
         values.put(FormColumns.COLUMN_ISTATUS, fc.getIstatus());
         values.put(FormColumns.COLUMN_SA, fc.getsA());
         values.put(FormColumns.COLUMN_GPSLAT, fc.getGpsLat());
@@ -477,9 +477,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_FORMDATE,
                 FormColumns.COLUMN_USER,
                 FormColumns.COLUMN_DEVICETAGID,
-                FormColumns.COLUMN_CLUSTERCODE,
+                /*FormColumns.COLUMN_CLUSTERCODE,
                 FormColumns.COLUMN_VILLAGEACODE,
-                FormColumns.COLUMN_HOUSEHOLD,
+                FormColumns.COLUMN_HOUSEHOLD,*/
                 FormColumns.COLUMN_ISTATUS,
                 FormColumns.COLUMN_SA,
                 FormColumns.COLUMN_SB,
@@ -535,9 +535,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_FORMDATE,
                 FormColumns.COLUMN_USER,
                 FormColumns.COLUMN_DEVICETAGID,
-                FormColumns.COLUMN_CLUSTERCODE,
+                /*FormColumns.COLUMN_CLUSTERCODE,
                 FormColumns.COLUMN_VILLAGEACODE,
-                FormColumns.COLUMN_HOUSEHOLD,
+                FormColumns.COLUMN_HOUSEHOLD,*/
                 FormColumns.COLUMN_ISTATUS,
                 FormColumns.COLUMN_SA,
                 FormColumns.COLUMN_SB,
@@ -590,12 +590,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 FormsContract.FormColumns._ID,
-                FormColumns.COLUMN_CLUSTERCODE,
+                /*FormColumns.COLUMN_CLUSTERCODE,
                 FormColumns.COLUMN_VILLAGEACODE,
-                FormColumns.COLUMN_HOUSEHOLD,
+                FormColumns.COLUMN_HOUSEHOLD,*/
         };
 
-        String whereClause = FormColumns.COLUMN_CLUSTERCODE + " LIKE ?";
+        String whereClause = FormColumns._ID + " LIKE ?";
         String[] whereArgs = {spDateT};
         String groupBy = null;
         String having = null;

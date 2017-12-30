@@ -197,9 +197,9 @@ public class FormsContract {
         this.formDate = jsonObject.getString(FormColumns.COLUMN_FORMDATE);
         this.user = jsonObject.getString(FormColumns.COLUMN_USER);
         this.devicetagId = jsonObject.getString(FormColumns.COLUMN_DEVICETAGID);
-        this.clustercode = jsonObject.getString(FormColumns.COLUMN_CLUSTERCODE);
+        /*this.clustercode = jsonObject.getString(FormColumns.COLUMN_CLUSTERCODE);
         this.villageacode = jsonObject.getString(FormColumns.COLUMN_VILLAGEACODE);
-        this.household = jsonObject.getString(FormColumns.COLUMN_HOUSEHOLD);
+        this.household = jsonObject.getString(FormColumns.COLUMN_HOUSEHOLD);*/
         this.istatus = jsonObject.getString(FormColumns.COLUMN_ISTATUS);
         this.sA = jsonObject.getString(FormColumns.COLUMN_SA);
         this.sB = jsonObject.getString(FormColumns.COLUMN_SB);
@@ -222,9 +222,9 @@ public class FormsContract {
         this.formDate = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_FORMDATE));
         this.user = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_USER));
         this.devicetagId = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_DEVICETAGID));
-        this.clustercode = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_CLUSTERCODE));
+        /*this.clustercode = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_CLUSTERCODE));
         this.villageacode = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_VILLAGEACODE));
-        this.household = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_HOUSEHOLD));
+        this.household = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_HOUSEHOLD));*/
         this.istatus = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_ISTATUS));
         this.sA = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SA));
         this.sB = cursor.getString(cursor.getColumnIndex(FormColumns.COLUMN_SB));
@@ -251,9 +251,9 @@ public class FormsContract {
         json.put(FormColumns.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(FormColumns.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
         json.put(FormColumns.COLUMN_DEVICETAGID, this.devicetagId == null ? JSONObject.NULL : this.devicetagId);
-        json.put(FormColumns.COLUMN_CLUSTERCODE, this.clustercode == null ? JSONObject.NULL : this.clustercode);
+        /*json.put(FormColumns.COLUMN_CLUSTERCODE, this.clustercode == null ? JSONObject.NULL : this.clustercode);
         json.put(FormColumns.COLUMN_VILLAGEACODE, this.villageacode == null ? JSONObject.NULL : this.villageacode);
-        json.put(FormColumns.COLUMN_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);
+        json.put(FormColumns.COLUMN_HOUSEHOLD, this.household == null ? JSONObject.NULL : this.household);*/
         json.put(FormColumns.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
 
         try {
@@ -296,9 +296,9 @@ public class FormsContract {
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_DEVICETAGID = "devicetagId";
-        public static final String COLUMN_CLUSTERCODE = "clustercode";
-        public static final String COLUMN_VILLAGEACODE = "villageacode";
-        public static final String COLUMN_HOUSEHOLD = "household";
+        //public static final String COLUMN_CLUSTERCODE = "clustercode";
+        //public static final String COLUMN_VILLAGEACODE = "villageacode";
+        //public static final String COLUMN_HOUSEHOLD = "household";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_SA = "sa";
         public static final String COLUMN_SB = "sb";
