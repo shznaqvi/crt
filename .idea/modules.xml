@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/crt.iml" filepath="$PROJECT_DIR$/crt.iml" />
       <module fileurl="file://E:\Android\crt1\crt.iml" filepath="E:\Android\crt1\crt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crt1.iml" filepath="$PROJECT_DIR$/crt1.iml" />
       <module fileurl="file://E:\Hassan\Android\crt\crt1.iml" filepath="E:\Hassan\Android\crt\crt1.iml" />
       <module fileurl="file://C:\Ali Work\Projects\crt\crt1.iml" filepath="C:\Ali Work\Projects\crt\crt1.iml" />
       <module fileurl="file://C:\Users\sidra.nizam\AndroidStudioProjects\crt\crt1.iml" filepath="C:\Users\sidra.nizam\AndroidStudioProjects\crt\crt1.iml" />
