@@ -195,7 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="openK"
+                android:onClick="openI"
                 android:text="Section K" />
 
 

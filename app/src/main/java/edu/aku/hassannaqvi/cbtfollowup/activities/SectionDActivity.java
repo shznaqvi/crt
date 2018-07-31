@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -169,6 +171,23 @@ public class SectionDActivity extends Activity {
     EditText fpd009c88x;
     @BindView(R.id.fldGrpbtn)
     LinearLayout fldGrpbtn;
+    @BindView(R.id.fpdGrp005)
+    LinearLayout fpdGrp005;
+    @BindView(R.id.fpd005)
+    RadioGroup fpd005;
+    @BindView(R.id.fpd005a)
+    RadioButton fpd005a;
+    @BindView(R.id.fpd005b)
+    RadioButton fpd005b;
+    @BindView(R.id.fpd005c)
+    RadioButton fpd005c;
+    @BindView(R.id.fpd005d)
+    RadioButton fpd005d;
+    @BindView(R.id.fpd005e)
+    RadioButton fpd005e;
+    @BindView(R.id.fpd005f)
+    EditText fpd005f;
+    int sachet=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -233,6 +252,43 @@ public class SectionDActivity extends Activity {
                     fpd004a88x.setVisibility(View.GONE);
                     fpd004a88x.setText(null);
                 }
+            }
+        });
+
+
+        //=================== Q5 check===========================
+        fpd00502.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if(!charSequence.toString().equalsIgnoreCase("")){
+
+                    sachet = Integer.parseInt(charSequence.toString());
+                }else {
+                    sachet = 0;
+                }
+                if(sachet < 30 && sachet != 0){
+
+                    fpdGrp005.setVisibility(View.VISIBLE);
+                }else {
+
+                    fpdGrp005.setVisibility(View.GONE);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+
+
             }
         });
 
@@ -450,6 +506,10 @@ public class SectionDActivity extends Activity {
         js.put("fpd004a88x", fpd004a88x.getText().toString());
         js.put("fpd00501", fpd00501.getText().toString());
         js.put("fpd00502", fpd00502.getText().toString());
+        if(sachet < 30){
+            js.put("fpd005aa",fpd005f.getText().toString());
+            js.put("fpd005aa", fpd005a.isChecked()? "1" : fpd005b.isChecked()? "2" : fpd005c.isChecked()? "3" : fpd005d.isChecked()? "4" : fpd005e.isChecked()? "5" : "0");
+        }
         js.put("fpd00601 ", fpd00601.getText().toString());
         js.put("fpd00602 ", fpd00602.getText().toString());
         js.put("fpd007", fpd00701.isChecked() ? "1" : fpd00702.isChecked() ? "2" : "0");
@@ -557,10 +617,12 @@ public class SectionDActivity extends Activity {
             if (fpd004.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd004), Toast.LENGTH_SHORT).show();
                 fpd004.setError("This data is required");
+                fpd004.requestFocus();
                 Log.d(TAG, "empty: fpd004  ");
                 return false;
             } else {
                 fpd004.setError(null);
+                fpd004.clearFocus();
             }
 
             if ((Integer.parseInt(fpd004.getText().toString().isEmpty() ? "0" : fpd004.getText().toString()) < 1) || (Integer.parseInt(fpd004.getText().toString()) > 5)) {
@@ -583,7 +645,7 @@ public class SectionDActivity extends Activity {
             }
 
             if (fpd004a88.isChecked() && fpd004a88x.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd004a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd004) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 fpd004a88x.setError("This data is Required!");    // Set Error on last radio button
                 Log.d(TAG, "fpd004a88: This data is Required!");
                 return false;
@@ -593,7 +655,7 @@ public class SectionDActivity extends Activity {
 
             // =================== Q5 ====================
             if (fpd00501.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.day), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "" + getString(R.string.fpd005), Toast.LENGTH_SHORT).show();
                 fpd00501.setError("This data is required");
                 Log.d(TAG, "empty: fpd00501  ");
                 return false;
@@ -601,8 +663,23 @@ public class SectionDActivity extends Activity {
                 fpd00501.setError(null);
             }
 
+            if(sachet < 30){
+
+                if (fpd005.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "" + getString(R.string.fpd005aa), Toast.LENGTH_SHORT).show();
+                    fpd005a.setError("This Data is required");
+                    Log.d(TAG, "not selected: fpd004a ");
+                    fpd005a.requestFocus();
+                    return false;
+                } else {
+                    fpd005a.setError(null);
+                    fpd005a.clearFocus();
+                }
+
+            }
+
             if ((Integer.parseInt(fpd00501.getText().toString()) < 0) || (Integer.parseInt(fpd00501.getText().toString()) > 30)) {
-                Toast.makeText(this, "ERROR: " + getString(fpd005) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpd00501) + getString(R.string.day), Toast.LENGTH_LONG).show();
                 fpd00501.setError("Range is 1-30 days");
                 Log.i(TAG, "fpd00501: Range is 1-30 days");
                 return false;
@@ -620,7 +697,7 @@ public class SectionDActivity extends Activity {
             }
 
             if ((Integer.parseInt(fpd00502.getText().toString().isEmpty() ? "0" : fpd00502.getText().toString()) < 1) || (Integer.parseInt(fpd00502.getText().toString()) > 40)) {
-                Toast.makeText(this, "ERROR: " + getString(fpd005) + getString(R.string.fpd00501), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpd005) + getString(R.string.fpd00501), Toast.LENGTH_LONG).show();
                 fpd00502.setError("Range is 1-40 ");
                 Log.i(TAG, "fph005: Range is 1-40 ");
                 return false;
@@ -759,8 +836,6 @@ public class SectionDActivity extends Activity {
                 }
             }
         }
-
-
 
         return true;
     }

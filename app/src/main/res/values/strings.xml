@@ -101,6 +101,13 @@
     <string name="fpd004a06">مذہب میں منع ہے</string>
     <string name="fpd004a07"> یہ خاندانی منصوبہ بندی کے لیے ہے</string>
     <string name="fpd005">آپ کے بچےنے گزشتہ ایک ماہ میں کتنے دن اور کتنے واوامم استعمال کیے؟ </string>
+    <string name="fpd005aa">اگر بچہ گزشتہ تیس دنوں کے دوران  تیس سے کم واوامم کھا تا ہے تو با قی دنوں کے با رے میں پوچھیں </string>
+    <string name="fpd005a">بچے کی بیماری کی وجہ سے</string>
+    <string name="fpd005b">بچہ روزانہ کھانے سے منع کرتا ھے </string>
+    <string name="fpd005c">ماں/کخیال رکھنے والے کی لاپروائ</string>
+    <string name="fpd005d">بچہ آدھے ساشے کھاتا ہے </string>
+    <string name="fpd005e">ماں اور بچہ گھر میں نہیں تھے</string>
+    <string name="fpd005f">وضاحت</string>
     <string name="fpd00501">ساششے</string>
     <string name="fpd006">یا آپ مجھے استعمال شدہ اور غیر استعمال شدہ   واوامم سپلیمینٹ کے  ساشے دیکھا سکتے ہیں؟ (اگر موجود نہیں تو  (00) لکھیں </string>
     <string name="fpd00601">استعمال شدہ پیکٹ دیکھائے      </string>
@@ -151,6 +158,8 @@
     <string name="fpf001b02">گھرگھر لیڈی ہیلتھ ورکر کا دورہ</string>
     <string name="fpf001b03">گروپ میٹینگ لیڈی ہیلتھ ورکر کا سیشن /</string>
     <string name="fpf001b04">این جی او کی طرف سے آگاہی </string>
+    <string name="fpf001b05">مو بائل پر زبا نی پیغام</string>
+    <string name="fpf001b06">وڈیو سیشن </string>
     <string name="fpg001"> گزشتہ ایک ماہ کے دوران آپ کے بچے کو  ان  بیماریوں میں سے کوئی بیماری ہوئی؟ہر ایک پڑھ کے بتائیں اور لکھیں کوئی اور بیماری ؟</string>
     <string name="fpg00101">. تیز بخار </string>
     <string name="fpg00102"> اسہال</string>

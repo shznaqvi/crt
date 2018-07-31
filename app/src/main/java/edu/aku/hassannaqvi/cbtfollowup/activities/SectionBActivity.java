@@ -61,24 +61,51 @@ public class SectionBActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
-        if (validateForm()) {
-            try {
-                saveDrafts();
-            } catch (JSONException e) {
-                e.printStackTrace();
+
+
+        if(!fpb00105.isChecked()){
+
+            Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                    finish();
+                    Intent secC = new Intent(this, SectionCActivity.class);
+                    startActivity(secC);
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
             }
 
-            if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
-                finish();
-                Intent secC = new Intent(this, SectionCActivity.class);
-                startActivity(secC);
-            } else {
-                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+        }else {
+
+            Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent secC = new Intent(this, SectionGActivity.class);
+                    startActivity(secC);
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+
     }
 
     private boolean updateDb() {
@@ -107,7 +134,7 @@ public class SectionBActivity extends Activity {
         js.put("fpb00201", fpb00201.getText().toString());
         js.put("fpb00202", fpb00202.getText().toString());
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "validation successfull", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -350,6 +350,66 @@
 
             </LinearLayout>
 
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/fpdGrp005"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/fpd005aa" />
+
+                    <RadioGroup
+                        android:id="@+id/fpd005"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/fpd005a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fpd005a" />
+
+                        <RadioButton
+                            android:id="@+id/fpd005b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fpd005b" />
+                        <RadioButton
+                            android:id="@+id/fpd005c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fpd005c" />
+                        <RadioButton
+                            android:id="@+id/fpd005d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fpd005d" />
+                        <RadioButton
+                            android:id="@+id/fpd005e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fpd005e" />
+
+                        <EditText
+                            android:id="@+id/fpd005f"
+                            android:gravity="end"
+                            android:hint="@string/fpd005f"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+
+
+
+                </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

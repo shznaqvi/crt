@@ -72,6 +72,10 @@ public class SectionFActivity extends Activity {
     EditText fpf001b88x;
     @BindView(R.id.fpfGrp001)
     LinearLayout fpfGrp001;
+    @BindView(R.id.fpf001b05)
+    RadioButton fpf001b05;
+    @BindView(R.id.fpf001b06)
+    RadioButton fpf001b06;
 
 
 
@@ -185,9 +189,10 @@ public class SectionFActivity extends Activity {
 
         js.put("fpf001", fpf00101.isChecked() ? "1" : fpf00102.isChecked() ? "2" : "0");
         js.put("fpf001a", fpf001a01.isChecked() ? "1" : fpf001a02.isChecked() ? "2" : fpf001a03.isChecked() ? "3" : fpf001a04.isChecked() ? "4" : fpf001a05.isChecked() ? "5" : fpf001a06.isChecked() ? "6" : fpf001a07.isChecked() ? "7" : fpf001a08.isChecked() ? "8" : fpf001a88.isChecked() ? "88" : "0");
-        js.put("fpf001b", fpf001b01.isChecked() ? "1" : fpf001b02.isChecked() ? "2" : fpf001b03.isChecked() ? "3" : fpf001b03.isChecked() ? "3" : fpf001b04.isChecked() ? "4" : fpf001b88.isChecked() ? 88 : "0");
+        js.put("fpf001b", fpf001b01.isChecked() ? "1" : fpf001b02.isChecked() ? "2" : fpf001b03.isChecked() ? "3" : fpf001b03.isChecked() ? "3" : fpf001b04.isChecked() ? "4" : fpf001b05.isChecked()? "5" : fpf001b06.isChecked()? "6" : fpf001b88.isChecked()? "88" :"0");
+        js.put("fpf001b",fpf001b88x.getText().toString());
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 
     }
 
