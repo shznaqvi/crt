@@ -224,23 +224,44 @@ public class SectionGActivity extends Activity {
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
         Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
-        if (validateForm()) {
-            try {
-                saveDrafts();
-            } catch (JSONException e) {
-                e.printStackTrace();
+        if(SectionBActivity.isChildDeath){
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                    finish();
+                    Intent secH = new Intent(this, EndingActivity.class);
+                    startActivity(secH);
+
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
             }
-            if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+        }else{
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
-                finish();
-                Intent secH = new Intent(this, SectionHActivity.class);
-                startActivity(secH);
+                    finish();
+                    Intent secH = new Intent(this, SectionHActivity.class);
+                    startActivity(secH);
 
-            } else {
-                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+
     }
 
     private boolean updateDb() {
@@ -264,7 +285,6 @@ public class SectionGActivity extends Activity {
         Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sG = new JSONObject();
-
         sG.put("fpg00101", fpg00101.isChecked() ? "1" : "0");
         sG.put("fpg00102", fpg00102.isChecked() ? "2" : "0");
         sG.put("fpg00103", fpg00103.isChecked() ? "3" : "0");
@@ -290,7 +310,7 @@ public class SectionGActivity extends Activity {
 
         AppMain.fc.setsG(String.valueOf(sG));
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 
     }
 

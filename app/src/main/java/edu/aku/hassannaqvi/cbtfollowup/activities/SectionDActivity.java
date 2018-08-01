@@ -73,12 +73,8 @@ public class SectionDActivity extends Activity {
     RadioGroup fpd002;
     @BindView(R.id.fpd00201)
     RadioButton fpd00201;
-    @BindView(R.id.fpd00202)
-    RadioButton fpd00202;
     @BindView(R.id.fpd00288)
     RadioButton fpd00288;
-    @BindView(R.id.fpd00299)
-    RadioButton fpd00299;
     @BindView(R.id.fpd00288x)
     EditText fpd00288x;
     @BindView(R.id.fpd003)
@@ -179,7 +175,25 @@ public class SectionDActivity extends Activity {
     RadioButton fpd00104;
     @BindView(R.id.fldGrpfpd002)
     LinearLayout fldGrpfpd002;
-
+    @BindView(R.id.fpdGrp005)
+    LinearLayout fpdGrp005;
+    @BindView(R.id.fpd005)
+    RadioGroup fpd005;
+    @BindView(R.id.fpd005a)
+    RadioButton fpd005a;
+    @BindView(R.id.fpd005b)
+    RadioButton fpd005b;
+    @BindView(R.id.fpd005c)
+    RadioButton fpd005c;
+    @BindView(R.id.fpd005d)
+    RadioButton fpd005d;
+    @BindView(R.id.fpd005e)
+    RadioButton fpd005e;
+    @BindView(R.id.fpd005f)
+    RadioButton fpd005f;
+    @BindView(R.id.fpd005fx)
+    EditText fpd005fx;
+    int sachet = 0;
 
 
     @Override
@@ -425,6 +439,59 @@ public class SectionDActivity extends Activity {
             }
         });
 
+        //=================== Q5 check===========================
+        fpd00502.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!charSequence.toString().equalsIgnoreCase("")) {
+
+                    sachet = Integer.parseInt(charSequence.toString());
+                } else {
+                    sachet = 0;
+                }
+                if (sachet < 30 && sachet != 0) {
+
+                    fpdGrp005.setVisibility(View.VISIBLE);
+                } else {
+
+                    fpdGrp005.setVisibility(View.GONE);
+                    fpd005.clearCheck();
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+
+            }
+        });
+
+
+        fpd005.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == R.id.fpd005f) {
+
+                    fpd005fx.setVisibility(View.VISIBLE);
+
+                } else {
+
+                    fpd005fx.setVisibility(View.GONE);
+                    fpd005fx.setText(null);
+
+                }
+            }
+        });
+
 
         // =================== Q8 Others ====================
 
@@ -521,7 +588,6 @@ public class SectionDActivity extends Activity {
                 }
             }
         });
-
 
 
         // ====================== Q 7 Skip Pattern =========================
@@ -646,8 +712,8 @@ public class SectionDActivity extends Activity {
         sD.put("fpd001a07", fpd001a07.isChecked() ? "7" : "0");
         sD.put("fpd001a88", fpd001a88.isChecked() ? "88" : "0");
         sD.put("fpd001a88x", fpd001a88x.getText().toString());
-        sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00202.isChecked() ? "2" : fpd00288.isChecked() ? "88"
-                : fpd00299.isChecked() ? "99" : "0");
+        //sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00202.isChecked() ? "2" : fpd00288.isChecked() ? "88"
+        //: fpd00299.isChecked() ? "99" : "0");
         sD.put("fpd00288x", fpd00288x.getText().toString());
         sD.put("fpd003", fpd003.getText().toString());
         sD.put("fpd004", fpd004.getText().toString());
@@ -662,6 +728,10 @@ public class SectionDActivity extends Activity {
         sD.put("fpd004a88x", fpd004a88x.getText().toString());
         sD.put("fpd00501", fpd00501.getText().toString());
         sD.put("fpd00502", fpd00502.getText().toString());
+        if (sachet < 30) {
+            sD.put("fpd005aa", fpd005fx.getText().toString());
+            sD.put("fpd005aa", fpd005a.isChecked() ? "1" : fpd005b.isChecked() ? "2" : fpd005c.isChecked() ? "3" : fpd005d.isChecked() ? "4" : fpd005e.isChecked() ? "5" : fpd005e.isChecked() ? "96" : "0");
+        }
         sD.put("fpd00601 ", fpd00601.getText().toString());
         sD.put("fpd00602 ", fpd00602.getText().toString());
         sD.put("fpd007", fpd00701.isChecked() ? "1" : fpd00702.isChecked() ? "2" : "0");
@@ -687,7 +757,7 @@ public class SectionDActivity extends Activity {
 
         AppMain.fc.setsD(String.valueOf(sD));
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -713,7 +783,7 @@ public class SectionDActivity extends Activity {
         }
 
         if (fpd00103.isChecked()) {
-                // =================== Q1.1  ====================
+            // =================== Q1.1  ====================
 
             if (!(fpd001a01.isChecked() ||
                     fpd001a02.isChecked() ||
@@ -748,11 +818,11 @@ public class SectionDActivity extends Activity {
 
             if (fpd002.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpd002), Toast.LENGTH_SHORT).show();
-                fpd00299.setError("This Data is required");
+                fpd00201.setError("This Data is required");
                 Log.i(TAG, "not selected: fpd002");
                 return false;
             } else {
-                fpd00299.setError("This Data is required");
+                fpd00201.setError("This Data is required");
             }
 
             if (fpd00288.isChecked() && fpd00288x.getText().toString().isEmpty()) {
@@ -862,8 +932,37 @@ public class SectionDActivity extends Activity {
                 fpd00501.setError(null);
             }
 
+            if (sachet < 30) {
+
+                if (fpd005.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "" + getString(R.string.fpd005aa), Toast.LENGTH_SHORT).show();
+                    fpd005a.setError("This Data is required");
+                    Log.d(TAG, "not selected: fpd004a ");
+                    fpd005a.requestFocus();
+                    return false;
+                } else {
+                    fpd005a.setError(null);
+                    fpd005a.clearFocus();
+                }
+
+            }
+
+            if (fpd005f.isChecked()) {
+
+                if (fpd005fx.getText().toString().isEmpty()) {
+
+                    Toast.makeText(this, getString(R.string.fpd005), Toast.LENGTH_SHORT).show();
+                    fpd005fx.setError("This field is required");
+                    fpd005fx.requestFocus();
+                } else {
+                    fpd005fx.clearFocus();
+
+                }
+            }
+
+
             if ((Integer.parseInt(fpd00501.getText().toString()) < 0) || (Integer.parseInt(fpd00501.getText().toString()) > 30)) {
-                Toast.makeText(this, "ERROR: " + getString(fpd005) + getString(R.string.day), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpd005) + getString(R.string.day), Toast.LENGTH_LONG).show();
                 fpd00501.setError("Range is 0-30 days");
                 Log.i(TAG, "fpd00501: Range is 0-30 days");
                 return false;
@@ -881,7 +980,7 @@ public class SectionDActivity extends Activity {
             }
 
             if ((Integer.parseInt(fpd00502.getText().toString().isEmpty() ? "0" : fpd00502.getText().toString()) < 1) || (Integer.parseInt(fpd00502.getText().toString()) > 40)) {
-                Toast.makeText(this, "ERROR: " + getString(fpd005) + getString(R.string.fpd00501), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ERROR: " + getString(R.string.fpd005) + getString(R.string.fpd00501), Toast.LENGTH_LONG).show();
                 fpd00502.setError("Range is 1-40 ");
                 Log.i(TAG, "fph005: Range is 1-40 ");
                 return false;
@@ -892,7 +991,7 @@ public class SectionDActivity extends Activity {
 
             // =================== Q6 ====================
             if (fpd00601.getText().toString().isEmpty()) {
-                Toast.makeText(this, "" + getString(R.string.fpd00601), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "" + getString(R.string.fpd006), Toast.LENGTH_SHORT).show();
                 fpd00601.setError("This data is required");
                 Log.d(TAG, "empty: fpd00601  ");
                 return false;

@@ -174,6 +174,18 @@
                 android:text="@string/fpf001b04" />
 
             <CheckBox
+                android:id="@+id/fpf001b05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpf001b05" />
+
+            <CheckBox
+                android:id="@+id/fpf001b06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fpf001b06" />
+
+            <CheckBox
                 android:id="@+id/fpf001b88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

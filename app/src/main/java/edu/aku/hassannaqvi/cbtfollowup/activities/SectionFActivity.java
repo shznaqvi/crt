@@ -70,6 +70,10 @@ public class SectionFActivity extends Activity {
     CheckBox fpf001b03;
     @BindView(R.id.fpf001b04)
     CheckBox fpf001b04;
+    @BindView(R.id.fpf001b05)
+    CheckBox fpf001b05;
+    @BindView(R.id.fpf001b06)
+    CheckBox fpf001b06;
     @BindView(R.id.fpf001b88)
     CheckBox fpf001b88;
     @BindView(R.id.fpf001b88x)
@@ -94,6 +98,7 @@ public class SectionFActivity extends Activity {
                 } else {
                     fpf001a88x.setVisibility(View.GONE);
                     fpf001a88x.setText(null);
+                    fpf001a88x.setError(null);
                 }
             }
         });
@@ -108,6 +113,7 @@ public class SectionFActivity extends Activity {
                 } else {
                     fpf001b88x.setVisibility(View.GONE);
                     fpf001b88x.setText(null);
+                    fpf001b88x.setError(null);
                 }
             }
         });
@@ -223,6 +229,8 @@ public class SectionFActivity extends Activity {
         sF.put("fpf001b02", fpf001b02.isChecked() ? "2" : "0");
         sF.put("fpf001b03", fpf001b03.isChecked() ? "3" : "0");
         sF.put("fpf001b04", fpf001b04.isChecked() ? "4" : "0");
+        sF.put("fpf001b05", fpf001b05.isChecked() ? "5" : "0");
+        sF.put("fpf001b06", fpf001b06.isChecked() ? "6" : "0");
         sF.put("fpf001b88", fpf001b88.isChecked() ? "88" : "0");
         sF.put("fpf001b88x", fpf001b88x.getText().toString());
 

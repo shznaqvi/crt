@@ -47,6 +47,7 @@ public class SectionBActivity extends Activity {
     EditText fpb00202;
     @BindView(R.id.fldGrpfpb002)
     LinearLayout fldGrpfpb002;
+    public static boolean isChildDeath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,31 +85,56 @@ public class SectionBActivity extends Activity {
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
-        if (validateForm()) {
-            try {
-                saveDrafts();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
-
-                finish();
-
-                if (fpb00101.isChecked()) {
-                    Intent secC = new Intent(this, SectionCActivity.class);
-                    startActivity(secC);
-                } else {
-                    Intent secC = new Intent(this, EndingActivity.class);
-                    secC.putExtra("complete", false);
-                    startActivity(secC);
+        if(fpb00105.isChecked()){
+            isChildDeath = true;
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
-            } else {
-                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                    finish();
+                    Intent secC = new Intent(this, SectionGActivity.class);
+                    startActivity(secC);
+
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        }else {
+
+            if (validateForm()) {
+                try {
+                    saveDrafts();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if (updateDb()) {
+                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+
+                    finish();
+
+                    if (fpb00101.isChecked()) {
+                        Intent secC = new Intent(this, SectionCActivity.class);
+                        startActivity(secC);
+                    } else {
+                        Intent secC = new Intent(this, EndingActivity.class);
+                        secC.putExtra("complete", false);
+                        startActivity(secC);
+                    }
+
+                } else {
+                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
+                }
             }
         }
+
     }
 
     private boolean updateDb() {
