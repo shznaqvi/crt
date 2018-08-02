@@ -768,19 +768,23 @@ public class SectionDActivity extends Activity {
         if (fpd001.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "" + getString(R.string.fpd001), Toast.LENGTH_SHORT).show();
             fpd00104.setError("This Data is required");
+            fpd00104.requestFocus();
             Log.d(TAG, "not selected: fpd001 ");
             return false;
         } else {
             fpd00104.setError(null);
+            fpd00104.clearFocus();
         }
 
         if (fpd00102.isChecked() && fpd00102r.getText().toString().isEmpty()) {
             Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd001) + " - " + getString(R.string.fpd00102r), Toast.LENGTH_LONG).show();
-            fpd00102r.setError("This data is Required!");    // Set Error on last radio button
+            fpd00102r.setError("This data is Required!");// Set Error on last radio button
+            fpd00102r.requestFocus();
             Log.d(TAG, "fpd00102: This data is Required!");
             return false;
         } else {
             fpd00102r.setError(null);
+            fpd00102r.clearFocus();
         }
 
         if (fpd00103.isChecked()) {
@@ -796,20 +800,24 @@ public class SectionDActivity extends Activity {
                     fpd001a88.isChecked())) {
                 Toast.makeText(this, "" + getString(R.string.fpd001a), Toast.LENGTH_SHORT).show();
                 fpd001a07.setError("This Data is required");
+                fpd001a07.requestFocus();
                 Log.d(TAG, "not selected: fpd001a ");
                 return false;
             } else {
                 fpd001a07.setError(null);
+                fpd001a07.clearFocus();
             }
 
 
             if (fpd001a88.isChecked() && fpd001a88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd001a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 fpd001a88x.setError("This data is Required!");    // Set Error on last radio button
+                fpd001a88x.requestFocus();
                 Log.d(TAG, "fpd001a88x: This data is Required!");
                 return false;
             } else {
                 fpd001a88x.setError(null);
+                fpd001a88x.clearFocus();
             }
         }
 
@@ -820,58 +828,70 @@ public class SectionDActivity extends Activity {
             if (fpd002.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpd002), Toast.LENGTH_SHORT).show();
                 fpd00201.setError("This Data is required");
+                fpd00201.requestFocus();
                 Log.i(TAG, "not selected: fpd002");
                 return false;
             } else {
                 fpd00201.setError("This Data is required");
+                fpd00201.clearFocus();
             }
 
             if (fpd00288.isChecked() && fpd00288x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd002) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 fpd00288x.setError("This data is Required!");    // Set Error on last radio button
+                fpd00288x.requestFocus();
                 Log.d(TAG, "fpd00288: This data is Required!");
                 return false;
             } else {
                 fpd00288x.setError(null);
+                fpd00288x.clearFocus();
             }
 
             // =================== Q3 ====================
             if (fpd003.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd003), Toast.LENGTH_SHORT).show();
                 fpd003.setError("This data is required");
+                fpd003.requestFocus();
                 Log.d(TAG, "empty: fpd003  ");
                 return false;
             } else {
                 fpd003.setError(null);
+                fpd003.clearFocus();
             }
 
 
             if ((Integer.parseInt(fpd003.getText().toString().isEmpty() ? "0" : fpd003.getText().toString()) < 1) || (Integer.parseInt(fpd003.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd004), Toast.LENGTH_LONG).show();
                 fpd003.setError("Range is 1-40 ");
+                fpd003.requestFocus();
                 Log.i(TAG, "fpd003: Range is 1-40 ");
                 return false;
             } else {
                 fpd003.setError(null);
+                fpd003.clearFocus();
             }
 
             // =================== Q4 ====================
             if (fpd004.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd004), Toast.LENGTH_SHORT).show();
                 fpd004.setError("This data is required");
+                fpd004.requestFocus();
                 Log.d(TAG, "empty: fpd004  ");
                 return false;
             } else {
                 fpd004.setError(null);
+                fpd004.clearFocus();
             }
 
             if ((Integer.parseInt(fpd004.getText().toString().isEmpty() ? "0" : fpd004.getText().toString()) < 0) || (Integer.parseInt(fpd004.getText().toString()) > 5)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd004), Toast.LENGTH_LONG).show();
                 fpd004.setError("Range is 0 - 5 ");
+                fpd004.requestFocus();
                 Log.i(TAG, "fpd004: Range is 0 - 5 ");
                 return false;
             } else {
                 fpd004.setError(null);
+                fpd004.clearFocus();
             }
 
             // =================== Q4.1 ====================
@@ -891,10 +911,12 @@ public class SectionDActivity extends Activity {
                             fpd004a88.isChecked())) {
                         Toast.makeText(this, "" + getString(R.string.fpd004a), Toast.LENGTH_SHORT).show();
                         fpd004a07.setError("This Data is required");
+                        fpd004a07.requestFocus();
                         Log.d(TAG, "not selected: fpd004a ");
                         return false;
                     } else {
                         fpd004a07.setError(null);
+                        fpd004a07.clearFocus();
                     }
 
                 }
@@ -917,20 +939,24 @@ public class SectionDActivity extends Activity {
             if (fpd004a88.isChecked() && fpd004a88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd004a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                 fpd004a88x.setError("This data is Required!");    // Set Error on last radio button
+                fpd004a88x.requestFocus();
                 Log.d(TAG, "fpd004a88: This data is Required!");
                 return false;
             } else {
                 fpd004a88x.setError(null);
+                fpd004a88x.clearFocus();
             }
 
             // =================== Q5 ====================
             if (fpd00501.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.day), Toast.LENGTH_SHORT).show();
                 fpd00501.setError("This data is required");
+                fpd00501.requestFocus();
                 Log.d(TAG, "empty: fpd00501  ");
                 return false;
             } else {
                 fpd00501.setError(null);
+                fpd00501.clearFocus();
             }
 
             if (sachet < 30) {
@@ -956,6 +982,7 @@ public class SectionDActivity extends Activity {
                     fpd005fx.setError("This field is required");
                     fpd005fx.requestFocus();
                 } else {
+                    fpd005fx.setError(null);
                     fpd005fx.clearFocus();
 
                 }
@@ -965,28 +992,34 @@ public class SectionDActivity extends Activity {
             if ((Integer.parseInt(fpd00501.getText().toString()) < 0) || (Integer.parseInt(fpd00501.getText().toString()) > 30)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd005) + getString(R.string.day), Toast.LENGTH_LONG).show();
                 fpd00501.setError("Range is 0-30 days");
+                fpd00501.requestFocus();
                 Log.i(TAG, "fpd00501: Range is 0-30 days");
                 return false;
             } else {
                 fpd00501.setError(null);
+                fpd00501.clearFocus();
             }
 
             if (fpd00502.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd00501), Toast.LENGTH_SHORT).show();
                 fpd00502.setError("This data is required");
+                fpd00502.requestFocus();
                 Log.d(TAG, "empty: fpd00502  ");
                 return false;
             } else {
                 fpd00502.setError(null);
+                fpd00502.clearFocus();
             }
 
             if ((Integer.parseInt(fpd00502.getText().toString().isEmpty() ? "0" : fpd00502.getText().toString()) < 1) || (Integer.parseInt(fpd00502.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd005) + getString(R.string.fpd00501), Toast.LENGTH_LONG).show();
                 fpd00502.setError("Range is 1-40 ");
+                fpd00502.requestFocus();
                 Log.i(TAG, "fph005: Range is 1-40 ");
                 return false;
             } else {
                 fpd00502.setError(null);
+                fpd00502.clearFocus();
             }
 
 
@@ -994,47 +1027,57 @@ public class SectionDActivity extends Activity {
             if (fpd00601.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd006), Toast.LENGTH_SHORT).show();
                 fpd00601.setError("This data is required");
+                fpd00601.requestFocus();
                 Log.d(TAG, "empty: fpd00601  ");
                 return false;
             } else {
                 fpd00601.setError(null);
+                fpd00601.clearFocus();
             }
 
             if ((Integer.parseInt(fpd00601.getText().toString().isEmpty() ? "0" : fpd00601.getText().toString()) < 0) || (Integer.parseInt(fpd00601.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd006), Toast.LENGTH_LONG).show();
                 fpd00601.setError("Range is 0-40 ");
+                fpd00601.requestFocus();
                 Log.i(TAG, "fpd00601: Range is 0-40 ");
                 return false;
             } else {
                 fpd00601.setError(null);
+                fpd00601.clearFocus();
             }
 
             if (fpd00602.getText().toString().isEmpty()) {
                 Toast.makeText(this, "" + getString(R.string.fpd00602), Toast.LENGTH_SHORT).show();
                 fpd00602.setError("This data is required");
+                fpd00602.requestFocus();
                 Log.d(TAG, "empty: fpd00602  ");
                 return false;
             } else {
                 fpd00602.setError(null);
+                fpd00602.clearFocus();
             }
 
             if ((Integer.parseInt(fpd00602.getText().toString().isEmpty() ? "0" : fpd00602.getText().toString()) < 0) || (Integer.parseInt(fpd00602.getText().toString()) > 40)) {
                 Toast.makeText(this, "ERROR: " + getString(R.string.fpd006), Toast.LENGTH_LONG).show();
                 fpd00602.setError("Range is 0-40 ");
+                fpd00602.requestFocus();
                 Log.i(TAG, "fpd00601: Range is 0-40 ");
                 return false;
             } else {
                 fpd00602.setError(null);
+                fpd00602.clearFocus();
             }
 
             // =================== Q7 ====================
             if (fpd007.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpd007), Toast.LENGTH_SHORT).show();
                 fpd00702.setError("This Data is required");
+                fpd00702.requestFocus();
                 Log.d(TAG, "not selected: fpd007 ");
                 return false;
             } else {
                 fpd00702.setError(null);
+                fpd00702.clearFocus();
             }
 
             if (fpd00701.isChecked()) {
@@ -1049,10 +1092,12 @@ public class SectionDActivity extends Activity {
                         fpd00888.isChecked())) {
                     Toast.makeText(this, "" + getString(R.string.fpd008), Toast.LENGTH_SHORT).show();
                     fpd00804.setError("This Data is required");
+                    fpd00804.requestFocus();
                     Log.d(TAG, "not selected: fpd008 ");
                     return false;
                 } else {
                     fpd00804.setError(null);
+                    fpd00804.clearFocus();
                 }
 
             /*if (fpd008.getCheckedRadioButtonId() == -1) {
@@ -1067,10 +1112,12 @@ public class SectionDActivity extends Activity {
                 if (fpd00888.isChecked() && fpd00888x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd008) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     fpd00888x.setError("This data is Required!");    // Set Error on last radio button
+                    fpd00888x.requestFocus();
                     Log.d(TAG, "fpd00888: This data is Required!");
                     return false;
                 } else {
                     fpd00888x.setError(null);
+                    fpd00888x.clearFocus();
                 }
             }
 
@@ -1078,10 +1125,12 @@ public class SectionDActivity extends Activity {
             if (fpd009.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "" + getString(R.string.fpd009), Toast.LENGTH_SHORT).show();
                 fpd00902.setError("This Data is required");
+                fpd00902.requestFocus();
                 Log.d(TAG, "not selected: fpd009 ");
                 return false;
             } else {
                 fpd00902.setError(null);
+                fpd00902.clearFocus();
             }
 
             if (fpd00901.isChecked()) {
@@ -1095,10 +1144,12 @@ public class SectionDActivity extends Activity {
                         fpd009a88.isChecked())) {
                     Toast.makeText(this, "" + getString(R.string.fpd009a), Toast.LENGTH_SHORT).show();
                     fpd009a03.setError("This Data is required");
+                    fpd009a03.requestFocus();
                     Log.d(TAG, "not selected: fpd009a ");
                     return false;
                 } else {
                     fpd009a03.setError(null);
+                    fpd009a03.clearFocus();
                 }
 
 
@@ -1114,20 +1165,24 @@ public class SectionDActivity extends Activity {
                 if (fpd009a88.isChecked() && fpd009a88x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd009a) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     fpd009a88x.setError("This data is Required!");    // Set Error on last radio button
+                    fpd009a88x.requestFocus();
                     Log.d(TAG, "fpd009a88: This data is Required!");
                     return false;
                 } else {
                     fpd009a88x.setError(null);
+                    fpd009a88x.clearFocus();
                 }
 
                 // =================== Q9.2 ====================
                 if (fpd009b.getText().toString().isEmpty()) {
                     Toast.makeText(this, "" + getString(R.string.fpd009b), Toast.LENGTH_SHORT).show();
                     fpd009b.setError("This data is required");
+                    fpd009b.requestFocus();
                     Log.d(TAG, "empty: fpd009b  ");
                     return false;
                 } else {
                     fpd009b.setError(null);
+                    fpd009b.clearFocus();
                 }
 
 
@@ -1135,10 +1190,12 @@ public class SectionDActivity extends Activity {
                         (Integer.parseInt(fpd009b.getText().toString()) > 120)) {
                     Toast.makeText(this, "" + getString(R.string.fpd009b), Toast.LENGTH_SHORT).show();
                     fpd009b.setError("Range is 1 - 120 ");
+                    fpd009b.requestFocus();
                     Log.i(TAG, "fpd009b: Range is 1 - 120 ");
                     return false;
                 } else {
                     fpd009b.setError(null);
+                    fpd009b.clearFocus();
                 }
 
 
@@ -1151,10 +1208,12 @@ public class SectionDActivity extends Activity {
                         !fpd009c99.isChecked()) {
                     Toast.makeText(this, "" + getString(R.string.fpd009c), Toast.LENGTH_SHORT).show();
                     fpd009c88.setError("This Data is required");
+                    fpd009c88.requestFocus();
                     Log.d(TAG, "not selected: fpd009c ");
                     return false;
                 } else {
                     fpd009c88.setError(null);
+                    fpd009c88.clearFocus();
                 }
 
             /*if (fpd009c.getCheckedRadioButtonId() == -1) {
@@ -1169,10 +1228,12 @@ public class SectionDActivity extends Activity {
                 if (fpd009c88.isChecked() && fpd009c88x.getText().toString().isEmpty()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.fpd009c) + " - " + getString(R.string.other), Toast.LENGTH_LONG).show();
                     fpd009c88x.setError("This data is Required!");    // Set Error on last radio button
+                    fpd009c88x.requestFocus();
                     Log.d(TAG, "fpd009c88: This data is Required!");
                     return false;
                 } else {
                     fpd009c88x.setError(null);
+                    fpd009c88x.clearFocus();
                 }
             }
         }

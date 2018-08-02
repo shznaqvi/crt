@@ -10,6 +10,7 @@
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionDActivity">
 
     <LinearLayout
+        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -184,12 +185,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/fpd00201" />
 
-                    <RadioButton
-                        android:id="@+id/fpd00202"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fpd00202" />
-
 
                     <RadioButton
                         android:id="@+id/fpd00288"
@@ -204,6 +199,12 @@
                         android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         android:hint="@string/other"
                         android:visibility="gone" />
+
+                    <RadioButton
+                        android:id="@+id/fpd00202"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fpd00202" />
 
 
                 </RadioGroup>
