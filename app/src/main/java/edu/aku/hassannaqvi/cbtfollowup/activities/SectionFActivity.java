@@ -297,7 +297,9 @@ public class SectionFActivity extends Activity {
                     fpf001b02.isChecked() ||
                     fpf001b03.isChecked() ||
                     fpf001b04.isChecked() ||
-                    fpf001b88.isChecked())) {
+                    fpf001b88.isChecked() ||
+                    fpf001b05.isChecked() ||
+                    fpf001b06.isChecked())) {
                 Toast.makeText(this, "" + getString(R.string.fpf001b), Toast.LENGTH_SHORT).show();
                 fpf001b88.setError("This Data is required");
                 Log.d(TAG, "not selected: fpf001b ");
