@@ -75,6 +75,8 @@ public class SectionDActivity extends Activity {
     RadioButton fpd00201;
     @BindView(R.id.fpd00202)
     RadioButton fpd00202;
+    @BindView(R.id.fpd00203)
+    RadioButton fpd00203;
     @BindView(R.id.fpd00288)
     RadioButton fpd00288;
     @BindView(R.id.fpd00288x)
@@ -714,7 +716,7 @@ public class SectionDActivity extends Activity {
         sD.put("fpd001a07", fpd001a07.isChecked() ? "7" : "0");
         sD.put("fpd001a88", fpd001a88.isChecked() ? "88" : "0");
         sD.put("fpd001a88x", fpd001a88x.getText().toString());
-        sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00202.isChecked() ? "2" : fpd00288.isChecked() ? "99" : "0");
+        sD.put("fpd002", fpd00201.isChecked() ? "1" : fpd00202.isChecked() ? "2" : fpd00203.isChecked() ? "3" : fpd00288.isChecked() ? "99" : "0");
         sD.put("fpd00288x", fpd00288x.getText().toString());
         sD.put("fpd003", fpd003.getText().toString());
         sD.put("fpd004", fpd004.getText().toString());
