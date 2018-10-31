@@ -41,6 +41,8 @@ public class SectionBActivity extends Activity {
     RadioButton fpb00104;
     @BindView(R.id.fpb00105)
     RadioButton fpb00105;
+    @BindView(R.id.fpb00106)
+    RadioButton fpb00106;
     @BindView(R.id.fpb00201)
     EditText fpb00201;
     @BindView(R.id.fpb00202)
@@ -85,53 +87,34 @@ public class SectionBActivity extends Activity {
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
         Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
-        if(fpb00105.isChecked()){
-            isChildDeath = true;
-            if (validateForm()) {
-                try {
-                    saveDrafts();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                if (updateDb()) {
-                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
-
+        if (validateForm()){
+            try {
+                saveDrafts();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (updateDb()) {
+                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                if (fpb00105.isChecked()) {
+                    isChildDeath = true;
                     finish();
                     Intent secC = new Intent(this, SectionGActivity.class);
                     startActivity(secC);
-
-                } else {
-                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        }else {
-
-            if (validateForm()) {
-                try {
-                    saveDrafts();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                }else if(fpb00101.isChecked()){
+                    Intent secC = new Intent(this, SectionCActivity.class);
+                    startActivity(secC);
+                }else if(fpb00106.isChecked()){
+                    Intent secC = new Intent(this, SectionIActivity.class);
+                    startActivity(secC);
+                }else{
+                    Intent secC = new Intent(this, EndingActivity.class);
+                    secC.putExtra("complete", false);
+                    startActivity(secC);
                 }
 
-                if (updateDb()) {
-                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
-                    finish();
-
-                    if (fpb00101.isChecked()) {
-                        Intent secC = new Intent(this, SectionCActivity.class);
-                        startActivity(secC);
-                    } else {
-                        Intent secC = new Intent(this, EndingActivity.class);
-                        secC.putExtra("complete", false);
-                        startActivity(secC);
-                    }
-
-                } else {
-                    Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
-                }
+            } else {
+                Toast.makeText(this, "Failed to update Database", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -160,7 +143,7 @@ public class SectionBActivity extends Activity {
         JSONObject sB = new JSONObject();
 
         sB.put("fpb001", fpb00101.isChecked() ? "1" : fpb00102.isChecked() ? "2" : fpb00103.isChecked() ? "3"
-                : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : "0");
+                : fpb00104.isChecked() ? "4" : fpb00105.isChecked() ? "5" : fpb00106.isChecked() ? "6" : "0");
         sB.put("fpb00201", fpb00201.getText().toString());
         sB.put("fpb00202", fpb00202.getText().toString());
 
