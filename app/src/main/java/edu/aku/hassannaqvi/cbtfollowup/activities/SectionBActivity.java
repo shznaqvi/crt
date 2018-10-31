@@ -101,12 +101,15 @@ public class SectionBActivity extends Activity {
                     Intent secC = new Intent(this, SectionGActivity.class);
                     startActivity(secC);
                 }else if(fpb00101.isChecked()){
+                    finish();
                     Intent secC = new Intent(this, SectionCActivity.class);
                     startActivity(secC);
                 }else if(fpb00106.isChecked()){
+                    finish();
                     Intent secC = new Intent(this, SectionIActivity.class);
                     startActivity(secC);
                 }else{
+                    finish();
                     Intent secC = new Intent(this, EndingActivity.class);
                     secC.putExtra("complete", false);
                     startActivity(secC);
