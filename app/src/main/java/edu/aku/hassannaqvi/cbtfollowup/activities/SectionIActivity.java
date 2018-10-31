@@ -72,7 +72,7 @@ public class SectionIActivity extends Activity {
         int updcount = db.updateEnd();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -82,7 +82,7 @@ public class SectionIActivity extends Activity {
 
     private void saveDrafts() throws JSONException {
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
         switch (status.getCheckedRadioButtonId()) {
             case R.id.status1:
@@ -95,7 +95,7 @@ public class SectionIActivity extends Activity {
     }
 
     private boolean validateForm() {
-        Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Validating Closing Section", Toast.LENGTH_SHORT).show();
 
         if (status.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(not selected): " + getResources().getResourceTypeName(R.string.status), Toast.LENGTH_LONG).show();
@@ -106,6 +106,13 @@ public class SectionIActivity extends Activity {
             status2.setError(null);
         }
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 }
 

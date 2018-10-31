@@ -86,7 +86,7 @@ public class SectionBActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()){
             try {
                 saveDrafts();
@@ -94,7 +94,7 @@ public class SectionBActivity extends Activity {
                 e.printStackTrace();
             }
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
                 if (fpb00105.isChecked()) {
                     isChildDeath = true;
                     finish();
@@ -127,7 +127,7 @@ public class SectionBActivity extends Activity {
         int updcount = db.updateB();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -138,7 +138,7 @@ public class SectionBActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sB = new JSONObject();
 
@@ -149,7 +149,7 @@ public class SectionBActivity extends Activity {
 
         AppMain.fc.setsB(String.valueOf(sB));
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -220,4 +220,10 @@ public class SectionBActivity extends Activity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 }

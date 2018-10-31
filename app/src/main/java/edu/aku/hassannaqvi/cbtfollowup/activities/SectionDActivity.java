@@ -662,7 +662,7 @@ public class SectionDActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {
                 saveDrafts();
@@ -670,7 +670,7 @@ public class SectionDActivity extends Activity {
                 e.printStackTrace();
             }
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 Intent secE = new Intent(this, SectionEActivity.class);
@@ -689,7 +689,7 @@ public class SectionDActivity extends Activity {
         int updcount = db.updateD();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -700,7 +700,7 @@ public class SectionDActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sD = new JSONObject();
 
@@ -760,7 +760,7 @@ public class SectionDActivity extends Activity {
 
         AppMain.fc.setsD(String.valueOf(sD));
 
-        Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -1245,4 +1245,10 @@ public class SectionDActivity extends Activity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 }

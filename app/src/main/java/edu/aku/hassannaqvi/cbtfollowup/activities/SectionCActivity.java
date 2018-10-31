@@ -113,7 +113,7 @@ public class SectionCActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {
                 saveDrafts();
@@ -122,7 +122,7 @@ public class SectionCActivity extends Activity {
             }
 
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -154,7 +154,7 @@ public class SectionCActivity extends Activity {
         int updcount = db.updateC();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -165,7 +165,7 @@ public class SectionCActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sC = new JSONObject();
 
@@ -179,7 +179,7 @@ public class SectionCActivity extends Activity {
 
         AppMain.fc.setsC(String.valueOf(sC));
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -397,5 +397,12 @@ public class SectionCActivity extends Activity {
         return true;
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 
 }

@@ -223,7 +223,7 @@ public class SectionGActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if(SectionBActivity.isChildDeath){
             if (validateForm()) {
                 try {
@@ -232,7 +232,7 @@ public class SectionGActivity extends Activity {
                     e.printStackTrace();
                 }
                 if (updateDb()) {
-                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                     finish();
                     Intent secH = new Intent(this, EndingActivity.class);
@@ -250,7 +250,7 @@ public class SectionGActivity extends Activity {
                     e.printStackTrace();
                 }
                 if (updateDb()) {
-                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                     finish();
                     Intent secH = new Intent(this, SectionHActivity.class);
@@ -271,7 +271,7 @@ public class SectionGActivity extends Activity {
         int updcount = db.updateG();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -282,7 +282,7 @@ public class SectionGActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sG = new JSONObject();
         sG.put("fpg00101", fpg00101.isChecked() ? "1" : "0");
@@ -310,7 +310,7 @@ public class SectionGActivity extends Activity {
 
         AppMain.fc.setsG(String.valueOf(sG));
 
-        Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -394,5 +394,11 @@ public class SectionGActivity extends Activity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 
 }

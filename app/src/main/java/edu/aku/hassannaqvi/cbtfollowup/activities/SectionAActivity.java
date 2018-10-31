@@ -182,7 +182,7 @@ public class SectionAActivity extends Activity {
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
 
-        Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, "Processing thi section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
 
             if (flag) {
@@ -193,7 +193,7 @@ public class SectionAActivity extends Activity {
                 }
 
                 if (updateDb()) {
-                    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                     finish();
                     Intent secB = new Intent(this, SectionBActivity.class);
@@ -213,7 +213,7 @@ public class SectionAActivity extends Activity {
         AppMain.fc.setID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             AppMain.fc.setUID(
                     (AppMain.fc.getDeviceID() + AppMain.fc.getID()));
@@ -227,7 +227,7 @@ public class SectionAActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -254,7 +254,7 @@ public class SectionAActivity extends Activity {
 
         setGPS();
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -284,7 +284,7 @@ public class SectionAActivity extends Activity {
 //            AppMain.fc.setGpsTime(GPSPref.getString(date, "0")); // Timestamp is converted to date above
             AppMain.fc.setGpsTime(date); // Timestamp is converted to date above
 
-            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             Log.e(TAG, "setGPS: " + e.getMessage());
@@ -363,5 +363,6 @@ public class SectionAActivity extends Activity {
 
         return true;
     }
+
 
 }
