@@ -190,6 +190,15 @@
             android:inputType="numberDecimal"
             android:maxLength="5" />
 
+        <CheckBox
+            android:layout_marginTop="1dp"
+            android:id="@+id/fpc97"
+            android:text="@string/secC01"
+            android:padding="10dp"
+            style="@style/chkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 

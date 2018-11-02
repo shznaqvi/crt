@@ -466,7 +466,7 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {
                 saveDrafts();
@@ -474,7 +474,7 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
                 e.printStackTrace();
             }
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
@@ -492,7 +492,7 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
         int updcount = db.updateH();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -1071,4 +1071,12 @@ public class SectionHActivity extends Activity implements RadioGroup.OnCheckedCh
         // Show answer here
         return i == fph00602.size();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+
+    }
+
 }

@@ -242,7 +242,7 @@ public class SectionEActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {
                 saveDrafts();
@@ -250,7 +250,7 @@ public class SectionEActivity extends Activity {
                 e.printStackTrace();
             }
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 Intent secF = new Intent(this, SectionFActivity.class);
@@ -269,7 +269,7 @@ public class SectionEActivity extends Activity {
         int updcount = db.updateE();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -441,5 +441,10 @@ public class SectionEActivity extends Activity {
         return true;
     }
 
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 
 }

@@ -31,6 +31,7 @@
     <string name="day">دن</string>
     <string name="cm"> cm </string>
     <string name="kg"> kg </string>
+    <string name="secC01"> جلد کی بیماریاں </string>
     <string name="complete">complete</string>
     <string name="incomplete">Incomplete</string>
     <string name="status">Interview status</string>
@@ -67,6 +68,7 @@
     <string name="fpb00103">مستقل ہجرت</string>
     <string name="fpb00104">انکار</string>
     <string name="fpb00105">بچے کی وفات</string>
+    <string name="fpb00106">عارضی ہجرت</string>
     <string name="fpb002"> فالواپ کے وقت  عمر </string>
     <string name="fpc001">Length/Height: </string>
     <string name="fpcsubM1"> Measurement 1 </string>

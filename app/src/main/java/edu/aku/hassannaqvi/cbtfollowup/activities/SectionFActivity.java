@@ -171,7 +171,7 @@ public class SectionFActivity extends Activity {
 
     @OnClick(R.id.btnNext)
     void onBtnNextClick() {
-        Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Processing this section", Toast.LENGTH_SHORT).show();
         if (validateForm()) {
             try {
                 saveDrafts();
@@ -179,7 +179,7 @@ public class SectionFActivity extends Activity {
                 e.printStackTrace();
             }
             if (updateDb()) {
-                Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 Intent secG = new Intent(this, SectionGActivity.class);
@@ -209,7 +209,7 @@ public class SectionFActivity extends Activity {
     }
 
     private void saveDrafts() throws JSONException {
-        Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
         JSONObject sF = new JSONObject();
 
@@ -236,7 +236,7 @@ public class SectionFActivity extends Activity {
 
         AppMain.fc.setsF(String.valueOf(sF));
 
-        Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "validation succecful", Toast.LENGTH_SHORT).show();
     }
 
     public boolean validateForm() {
@@ -330,5 +330,10 @@ public class SectionFActivity extends Activity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
 
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 }
