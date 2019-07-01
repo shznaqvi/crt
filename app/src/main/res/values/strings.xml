@@ -251,29 +251,33 @@
     <string name="hpj02d"> کوئی کارڈ یا دستاویزات نہیں دیکھے </string>
 
     <string name="hpj03"> حفاظتی ٹیکوں کی تفصیل </string>
+    <string name="hpj03ra"> ہاں </string>
+    <string name="hpj03rb"> نہیں </string>
+    <string name="hpj03sa"> Card </string>
+    <string name="hpj03sb"> Recall </string>
 
     <string name="hpj04"> 9مہینے کی عمر میں </string>
-    <string name="hpj04a"> 9مہینے کی عمر میں </string>
-    <string name="hpj04a01"> ہاں </string>
-    <string name="hpj04a02"> نہیں </string>
-    <string name="hpj04ac1"> Card = 1 </string>
-    <string name="hpj04ac2"> Recall = 2 </string>
+    <string name="hpj04h"> Measles- I </string>
+    <string name="hpj04ra"> ہاں </string>
+    <string name="hpj04rb"> نہیں </string>
+    <string name="hpj04sa"> Card </string>
+    <string name="hpj04sb"> Recall </string>
 
-    <string name="hpj05"> 15مہینے کی عمر میں </string>
-    <string name="hpj05a"> 15مہینے کی عمر میں </string>
-    <string name="hpj05a01"> ہاں </string>
-    <string name="hpj05a02"> نہیں </string>
-    <string name="hpj05ac1"> Card = 1 </string>
-    <string name="hpj05ac2"> Recall = 2 </string>
+    <string name="hpj05"> 15 مہینے کی عمر میں </string>
+    <string name="hpj05h"> Measles-II </string>
+    <string name="hpj05ra"> ہاں </string>
+    <string name="hpj05rb"> نہیں </string>
+    <string name="hpj05sa"> Card </string>
+    <string name="hpj05sb"> Recall </string>
 
     <string name="hpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
-    <string name="hpj0601"> ہاں </string>
-    <string name="hpj0602"> نہیں </string>
+    <string name="hpj06a"> ہاں </string>
+    <string name="hpj06b"> نہیں </string>
     <string name="hpj0698"> معلوم نہیں </string>
 
     <string name="hpj07"> کیابچے (نام) کو پچھلی پولیو مہم میں پولیو کے قطرے پلائے گئے تھے؟ </string>
-    <string name="hpj0701"> ہاں </string>
-    <string name="hpj0702"> نہیں </string>
+    <string name="hpj07a"> ہاں </string>
+    <string name="hpj07b"> نہیں </string>
 
     <string name="hpjh1"> ہیموگلوبن کے نتائج </string>
 

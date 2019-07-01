@@ -146,11 +146,11 @@
     <style name="Q_CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">3dp</item>
-        <item name="android:layout_marginRight">10dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginBottom">3dp</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginTop">1.5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginBottom">1.5dp</item>
+        <item name="android:padding">5dp</item>
     </style>
     <!-- Q_CardView ENDS Here. -->
 
@@ -167,8 +167,21 @@
     <!-- Q_Linerlayout_v   Ends. -->
 
 
-    <!-- Q_Linerlayout_new   starts. -->
-    <style name="Q_Linerlayout_new">
+    <!-- Q_CardView1 STARTS Here. -->
+    <style name="Q_CardView1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!-- Q_CardView1 ENDS Here. -->
+
+
+    <!-- Q_Linerlayout_new_Old   starts. -->
+    <style name="Q_Linerlayout_new_Old">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">11dp</item>
@@ -177,6 +190,21 @@
         <item name="android:layout_marginRight">10dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:padding">20dp</item>
+    </style>
+    <!-- Q_Linerlayout_new_Old   Ends. -->
+
+
+    <!-- Q_Linerlayout_new   starts. -->
+    <style name="Q_Linerlayout_new">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layoutDirection">rtl</item>
     </style>
     <!-- Q_Linerlayout_new   Ends. -->
 
