@@ -240,5 +240,44 @@
     <string name="fpj001">Name of Supervisor  </string>
     <string name="fpj002">Signature and Date  </string>
 
+    <string name="hpjh"> حفاظتی ٹیکہ جات کی معلومات </string>
+
+    <string name="hpj01"> کیاآپ کے پاس قومی حفاظتی ٹیکوں کاکارڈ یا کسی نجی ادارے کی طرف سے دیاگیا حفاظتی ٹیکوں کا ریکارڈ موجود ہے ؟ </string>
+
+    <string name="hpj02"> کیا میں کارڈ یا دوسرے دستاویزات دیکھ سکتا ہوں؟ </string>
+    <string name="hpj02a"> ہاں ،صرف کارڈ دیکھاہے </string>
+    <string name="hpj02b"> ہاں ،صرف دستاویزات دیکھے ہیں </string>
+    <string name="hpj02c"> ہاں ، کارڈ اور دستاویزات دونوں دیکھےہیں </string>
+    <string name="hpj02d"> کوئی کارڈ یا دستاویزات نہیں دیکھے </string>
+
+    <string name="hpj03"> حفاظتی ٹیکوں کی تفصیل </string>
+
+    <string name="hpj04"> 9مہینے کی عمر میں </string>
+    <string name="hpj04a"> 9مہینے کی عمر میں </string>
+    <string name="hpj04a01"> ہاں </string>
+    <string name="hpj04a02"> نہیں </string>
+    <string name="hpj04ac1"> Card = 1 </string>
+    <string name="hpj04ac2"> Recall = 2 </string>
+
+    <string name="hpj05"> 15مہینے کی عمر میں </string>
+    <string name="hpj05a"> 15مہینے کی عمر میں </string>
+    <string name="hpj05a01"> ہاں </string>
+    <string name="hpj05a02"> نہیں </string>
+    <string name="hpj05ac1"> Card = 1 </string>
+    <string name="hpj05ac2"> Recall = 2 </string>
+
+    <string name="hpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
+    <string name="hpj0601"> ہاں </string>
+    <string name="hpj0602"> نہیں </string>
+    <string name="hpj0698"> معلوم نہیں </string>
+
+    <string name="hpj07"> کیابچے (نام) کو پچھلی پولیو مہم میں پولیو کے قطرے پلائے گئے تھے؟ </string>
+    <string name="hpj0701"> ہاں </string>
+    <string name="hpj0702"> نہیں </string>
+
+    <string name="hpjh1"> ہیموگلوبن کے نتائج </string>
+
+    <string name="hpj08"> خون کی مقدار کا نتیجہ </string>
+
 
 </resources>

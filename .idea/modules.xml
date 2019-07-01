@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/crt.iml" filepath="$PROJECT_DIR$/crt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crt.iml" filepath="$PROJECT_DIR$/crt.iml" />
       <module fileurl="file://E:/Hassan/Android/crt/crt1.iml" filepath="E:/Hassan/Android/crt/crt1.iml" />
     </modules>
   </component>
