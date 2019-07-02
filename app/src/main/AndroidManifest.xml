@@ -21,8 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SectionJActivity"></activity>
-        <activity android:name=".activities.SplashscreenActivity">
+
+
+        <activity android:name=".activities.SectionJActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,6 +65,11 @@
         <activity
             android:name=".activities.SectionIActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.SplashscreenActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activities.EndingActivity"
             android:screenOrientation="portrait" />

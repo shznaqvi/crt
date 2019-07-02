@@ -131,6 +131,10 @@
                 </RadioGroup>
 
 
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj03s" />
+
                 <RadioGroup
                     android:id="@+id/hpj03s"
                     style="@style/RadioGroup">
@@ -185,6 +189,10 @@
                 </RadioGroup>
 
 
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj03s" />
+
                 <RadioGroup
                     android:id="@+id/hpj04s"
                     style="@style/RadioGroup">
@@ -238,6 +246,10 @@
 
                 </RadioGroup>
 
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj03s" />
 
                 <RadioGroup
                     android:id="@+id/hpj05s"
@@ -331,6 +343,42 @@
         <!-- Radio Buttons hpj07 Ends -->
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorAccent"
+            android:text="@string/hpjh1"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <!-- Radio Buttons hpj08 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj08"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj08" />
+
+                <EditText
+                    android:id="@+id/hpj08"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj08 Ends -->
+
+
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 
         <LinearLayout
@@ -345,7 +393,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="submitSecJ"
                 android:text="@string/next_section"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="24sp" />
@@ -356,7 +403,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:onClick="endForm"
                 android:text="@string/end_interview"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="24sp"

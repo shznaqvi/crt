@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -105,12 +106,16 @@ public class SectionJActivity extends AppCompatActivity {
     RadioButton hpj0698;
     @BindView(R.id.cvhpj07)
     CardView cvhpj07;
+    @BindView(R.id.cvhpj08)
+    CardView cvhpj08;
     @BindView(R.id.hpj07)
     RadioGroup hpj07;
     @BindView(R.id.hpj07a)
     RadioButton hpj07a;
     @BindView(R.id.hpj07b)
     RadioButton hpj07b;
+    @BindView(R.id.hpj08)
+    EditText hpj08;
     @BindView(R.id.btnNext)
     Button btnNext;
     @BindView(R.id.btn_End)
@@ -149,9 +154,12 @@ public class SectionJActivity extends AppCompatActivity {
 
                 if (checkedId != hpj06b.getId()) {
                     cvhpj07.setVisibility(View.VISIBLE);
+                    cvhpj08.setVisibility(View.VISIBLE);
                 } else {
                     ClearAllC(cvhpj07);
+                    ClearAllC(cvhpj08);
                     cvhpj07.setVisibility(View.GONE);
+                    cvhpj08.setVisibility(View.GONE);
                 }
             }
         });
