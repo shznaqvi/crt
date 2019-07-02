@@ -11,7 +11,10 @@
 
     <LinearLayout
         android:id="@+id/llJ"
-        style="@style/Q_Linerlayout_new">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"

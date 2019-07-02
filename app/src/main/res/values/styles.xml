@@ -143,7 +143,7 @@
 
 
     <!-- Q_CardView STARTS Here. -->
-    <style name="Q_CardView">
+    <style name="Q_CardView1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">1.5dp</item>
@@ -161,14 +161,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:orientation">vertical</item>
         <item name="android:padding">10dp</item>
     </style>
     <!-- Q_Linerlayout_v   Ends. -->
 
 
     <!-- Q_CardView1 STARTS Here. -->
-    <style name="Q_CardView1">
+    <style name="Q_CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">3dp</item>
@@ -204,7 +203,6 @@
         <item name="android:layout_marginRight">5dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:padding">10dp</item>
-        <item name="android:layoutDirection">rtl</item>
     </style>
     <!-- Q_Linerlayout_new   Ends. -->
 
