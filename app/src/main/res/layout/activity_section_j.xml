@@ -10,10 +10,10 @@
     tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionJActivity">
 
     <LinearLayout
+        android:layoutDirection="rtl"
         android:id="@+id/llJ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layoutDirection="ltr"
         android:orientation="vertical">
 
         <TextView
@@ -138,12 +138,12 @@
                     <RadioButton
                         android:id="@+id/hpj03sa"
                         style="@style/RadioButton"
-                        android:text="@string/hpj03sa" />
+                        android:text="@string/hpj05sa" />
 
                     <RadioButton
                         android:id="@+id/hpj03sb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj03sb" />
+                        android:text="@string/hpj05sb" />
 
                 </RadioGroup>
 
@@ -192,12 +192,12 @@
                     <RadioButton
                         android:id="@+id/hpj04sa"
                         style="@style/RadioButton"
-                        android:text="@string/hpj04sa" />
+                        android:text="@string/hpj05sa" />
 
                     <RadioButton
                         android:id="@+id/hpj04sb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj04sb" />
+                        android:text="@string/hpj05sb" />
 
                 </RadioGroup>
 

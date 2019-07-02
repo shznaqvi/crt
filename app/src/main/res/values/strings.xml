@@ -267,8 +267,8 @@
     <string name="hpj05h"> Measles-II </string>
     <string name="hpj05ra"> ہاں </string>
     <string name="hpj05rb"> نہیں </string>
-    <string name="hpj05sa"> Card </string>
-    <string name="hpj05sb"> Recall </string>
+    <string name="hpj05sa"> ڪارڊ </string>
+    <string name="hpj05sb"> ياداشت </string>
 
     <string name="hpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
     <string name="hpj06a"> ہاں </string>
