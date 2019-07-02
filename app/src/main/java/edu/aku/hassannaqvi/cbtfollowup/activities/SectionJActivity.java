@@ -143,6 +143,19 @@ public class SectionJActivity extends AppCompatActivity {
             }
         });
 
+        hpj06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (checkedId != hpj06b.getId()) {
+                    cvhpj07.setVisibility(View.VISIBLE);
+                } else {
+                    ClearAllC(cvhpj07);
+                    cvhpj07.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
 
@@ -261,8 +274,6 @@ public class SectionJActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-
         Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 
