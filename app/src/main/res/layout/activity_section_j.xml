@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_section_j"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="edu.aku.hassannaqvi.cbtfollowup.activities.SectionJActivity">
+
+    <LinearLayout
+        android:id="@+id/llJ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorAccent"
+            android:text="@string/hpjh"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:typeface="serif" />
+
+        <!-- Radio Buttons hpj01 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj01"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj01" />
+
+                <RadioGroup
+                    android:id="@+id/hpj01"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj01a"
+                        style="@style/RadioButton"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/hpj01b"
+                        style="@style/RadioButton"
+                        android:text="@string/no" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj01 Ends -->
+
+        <!-- Radio Buttons hpj02 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj02"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj02" />
+
+                <RadioGroup
+                    android:id="@+id/hpj02"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj02a"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj02a" />
+
+                    <RadioButton
+                        android:id="@+id/hpj02b"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj02b" />
+
+                    <RadioButton
+                        android:id="@+id/hpj02c"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj02c" />
+
+                    <RadioButton
+                        android:id="@+id/hpj02d"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj02d" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj02 Ends -->
+
+        <!-- Radio Buttons hpj03 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj03"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj03" />
+
+                <RadioGroup
+                    android:id="@+id/hpj03r"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj03ra"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj03ra" />
+
+                    <RadioButton
+                        android:id="@+id/hpj03rb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj03rb" />
+
+                </RadioGroup>
+
+
+                <RadioGroup
+                    android:id="@+id/hpj03s"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj03sa"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj03sa" />
+
+                    <RadioButton
+                        android:id="@+id/hpj03sb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj03sb" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj03 Ends -->
+
+        <!-- Radio Buttons hpj04 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj04"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj04" />
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj04h" />
+
+                <RadioGroup
+                    android:id="@+id/hpj04r"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj04ra"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj04ra" />
+
+                    <RadioButton
+                        android:id="@+id/hpj04rb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj04rb" />
+
+                </RadioGroup>
+
+
+                <RadioGroup
+                    android:id="@+id/hpj04s"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj04sa"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj04sa" />
+
+                    <RadioButton
+                        android:id="@+id/hpj04sb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj04sb" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj04 Ends -->
+
+        <!-- Radio Buttons hpj05 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj05"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj05" />
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj05h" />
+
+                <RadioGroup
+                    android:id="@+id/hpj05r"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj05ra"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj05ra" />
+
+                    <RadioButton
+                        android:id="@+id/hpj05rb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj05rb" />
+
+                </RadioGroup>
+
+
+                <RadioGroup
+                    android:id="@+id/hpj05s"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj05sa"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj05sa" />
+
+                    <RadioButton
+                        android:id="@+id/hpj05sb"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj05sb" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj05 Ends -->
+
+        <!-- Radio Buttons hpj06 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj06"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj06" />
+
+                <RadioGroup
+                    android:id="@+id/hpj06"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj06a"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj06a" />
+
+                    <RadioButton
+                        android:id="@+id/hpj06b"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj06b" />
+
+                    <RadioButton
+                        android:id="@+id/hpj0698"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj0698" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj06 Ends -->
+
+        <!-- Radio Buttons hpj07 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvhpj07"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/hpj07" />
+
+                <RadioGroup
+                    android:id="@+id/hpj07"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/hpj07a"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj07a" />
+
+                    <RadioButton
+                        android:id="@+id/hpj07b"
+                        style="@style/RadioButton"
+                        android:text="@string/hpj07b" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons hpj07 Ends -->
+
+
+        <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="submitSecJ"
+                android:text="@string/next_section"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:onClick="endForm"
+                android:text="@string/end_interview"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+

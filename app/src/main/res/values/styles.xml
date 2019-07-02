@@ -141,4 +141,118 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+
+    <!-- Q_CardView STARTS Here. -->
+    <style name="Q_CardView1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">1.5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginBottom">1.5dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <!-- Q_CardView ENDS Here. -->
+
+
+    <!-- Q_Linerlayout_v   starts. -->
+    <style name="Q_Linerlayout_v">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!-- Q_Linerlayout_v   Ends. -->
+
+
+    <!-- Q_CardView1 STARTS Here. -->
+    <style name="Q_CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!-- Q_CardView1 ENDS Here. -->
+
+
+    <!-- Q_Linerlayout_new_Old   starts. -->
+    <style name="Q_Linerlayout_new_Old">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">11dp</item>
+        <item name="android:layout_marginBottom">11dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <!-- Q_Linerlayout_new_Old   Ends. -->
+
+
+    <!-- Q_Linerlayout_new   starts. -->
+    <style name="Q_Linerlayout_new">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!-- Q_Linerlayout_new   Ends. -->
+
+
+    <!-- TextView   Starts. -->
+    <style name="TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- TextView   Ends. -->
+
+
+    <!-- TextView_Hint   Starts. -->
+    <style name="TextView_Hint">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    <!-- TextView_Hint   Ends. -->
+
+
+    <!-- RadioGroup Starts. -->
+    <style name="RadioGroup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- RadioGroup Ends. -->
+
+
+    <!-- RadioButton   Starts. -->
+    <style name="RadioButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+    <!-- RadioButton   Ends. -->
+
 </resources>
