@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -28,8 +27,6 @@ import static edu.aku.hassannaqvi.cbtfollowup.validation.ClearAllcontrol.ClearAl
 
 public class SectionJActivity extends AppCompatActivity {
 
-    @BindView(R.id.activity_section_j)
-    ScrollView activitySectionJ;
     @BindView(R.id.llJ)
     LinearLayout llJ;
     @BindView(R.id.cvhpj01)
@@ -122,7 +119,6 @@ public class SectionJActivity extends AppCompatActivity {
     Button btnEnd;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,7 +187,7 @@ public class SectionJActivity extends AppCompatActivity {
                 //    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent secE = new Intent(this, SectionEActivity.class);
+                Intent secE = new Intent(this, EndingActivity.class).putExtra("complete", true);
                 startActivity(secE);
 
             } else {
