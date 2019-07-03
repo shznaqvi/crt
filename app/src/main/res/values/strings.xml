@@ -251,24 +251,25 @@
     <string name="hpj02d"> کوئی کارڈ یا دستاویزات نہیں دیکھے </string>
 
     <string name="hpj03"> حفاظتی ٹیکوں کی تفصیل </string>
+    <string name="hpj03s"> تصديق جو ذريعو </string>
     <string name="hpj03ra"> ہاں </string>
     <string name="hpj03rb"> نہیں </string>
-    <string name="hpj03sa"> Card </string>
-    <string name="hpj03sb"> Recall </string>
+    <string name="hpj03sa"> ڪارڊ </string>
+    <string name="hpj03sb"> ياداشت </string>
 
     <string name="hpj04"> 9مہینے کی عمر میں </string>
-    <string name="hpj04h"> Measles- I </string>
+    <string name="hpj04h"> خسرہ - I </string>
     <string name="hpj04ra"> ہاں </string>
     <string name="hpj04rb"> نہیں </string>
-    <string name="hpj04sa"> Card </string>
-    <string name="hpj04sb"> Recall </string>
+    <string name="hpj04sa"> ڪارڊ </string>
+    <string name="hpj04sb"> ياداشت </string>
 
     <string name="hpj05"> 15 مہینے کی عمر میں </string>
-    <string name="hpj05h"> Measles-II </string>
+    <string name="hpj05h"> خسرہ - II </string>
     <string name="hpj05ra"> ہاں </string>
     <string name="hpj05rb"> نہیں </string>
     <string name="hpj05sa"> Card </string>
-    <string name="hpj05sb"> Recall </string>
+    <string name="hpj05sb">Recall </string>
 
     <string name="hpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
     <string name="hpj06a"> ہاں </string>

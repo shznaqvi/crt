@@ -53,7 +53,7 @@ public class ClearAllcontrol {
 
     public static void ClearAllC(CardView cv) {
 
-        /// Checkbox Celar*************************************
+        /// Checkbox Clear*************************************
 
         try {
 

@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -21,14 +21,11 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
+import edu.aku.hassannaqvi.cbtfollowup.validation.ClearClass;
 import edu.aku.hassannaqvi.cbtfollowup.validation.ValidatorClass;
-
-import static edu.aku.hassannaqvi.cbtfollowup.validation.ClearAllcontrol.ClearAllC;
 
 public class SectionJActivity extends AppCompatActivity {
 
-    @BindView(R.id.activity_section_j)
-    ScrollView activitySectionJ;
     @BindView(R.id.llJ)
     LinearLayout llJ;
     @BindView(R.id.cvhpj01)
@@ -105,17 +102,20 @@ public class SectionJActivity extends AppCompatActivity {
     RadioButton hpj0698;
     @BindView(R.id.cvhpj07)
     CardView cvhpj07;
+    @BindView(R.id.cvhpj08)
+    CardView cvhpj08;
     @BindView(R.id.hpj07)
     RadioGroup hpj07;
     @BindView(R.id.hpj07a)
     RadioButton hpj07a;
     @BindView(R.id.hpj07b)
     RadioButton hpj07b;
+    @BindView(R.id.hpj08)
+    EditText hpj08;
     @BindView(R.id.btnNext)
     Button btnNext;
     @BindView(R.id.btn_End)
     Button btnEnd;
-
 
 
     @Override
@@ -137,8 +137,24 @@ public class SectionJActivity extends AppCompatActivity {
                 if (checkedId == hpj01a.getId()) {
                     cvhpj02.setVisibility(View.VISIBLE);
                 } else {
-                    ClearAllC(cvhpj02);
+                    ClearClass.ClearAllFields(cvhpj02, null);
                     cvhpj02.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        hpj06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (checkedId != hpj06b.getId()) {
+                    cvhpj07.setVisibility(View.VISIBLE);
+                    cvhpj08.setVisibility(View.VISIBLE);
+                } else {
+                    ClearClass.ClearAllFields(cvhpj07, null);
+                    ClearClass.ClearAllFields(cvhpj08, null);
+                    cvhpj07.setVisibility(View.GONE);
+                    cvhpj08.setVisibility(View.GONE);
                 }
             }
         });
@@ -170,7 +186,7 @@ public class SectionJActivity extends AppCompatActivity {
                 //    Toast.makeText(this, "starting next section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                Intent secE = new Intent(this, SectionEActivity.class);
+                Intent secE = new Intent(this, EndingActivity.class).putExtra("complete", true);
                 startActivity(secE);
 
             } else {
@@ -246,6 +262,9 @@ public class SectionJActivity extends AppCompatActivity {
                 : hpj07b.isChecked() ? "2"
                 : "0");
 
+        //hpj08
+        sD.put("hpj08", hpj08.getText().toString().length() > 0 ? hpj08.getText().toString().trim() : "0");
+
         AppMain.fc.setsD(String.valueOf(sD));
 
         //Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
@@ -261,8 +280,6 @@ public class SectionJActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-
         Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 
