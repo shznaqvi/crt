@@ -21,9 +21,8 @@ import butterknife.OnClick;
 import edu.aku.hassannaqvi.cbtfollowup.R;
 import edu.aku.hassannaqvi.cbtfollowup.core.AppMain;
 import edu.aku.hassannaqvi.cbtfollowup.core.DatabaseHelper;
+import edu.aku.hassannaqvi.cbtfollowup.validation.ClearClass;
 import edu.aku.hassannaqvi.cbtfollowup.validation.ValidatorClass;
-
-import static edu.aku.hassannaqvi.cbtfollowup.validation.ClearAllcontrol.ClearAllC;
 
 public class SectionJActivity extends AppCompatActivity {
 
@@ -138,7 +137,7 @@ public class SectionJActivity extends AppCompatActivity {
                 if (checkedId == hpj01a.getId()) {
                     cvhpj02.setVisibility(View.VISIBLE);
                 } else {
-                    ClearAllC(cvhpj02);
+                    ClearClass.ClearAllFields(cvhpj02, null);
                     cvhpj02.setVisibility(View.GONE);
                 }
             }
@@ -152,8 +151,8 @@ public class SectionJActivity extends AppCompatActivity {
                     cvhpj07.setVisibility(View.VISIBLE);
                     cvhpj08.setVisibility(View.VISIBLE);
                 } else {
-                    ClearAllC(cvhpj07);
-                    ClearAllC(cvhpj08);
+                    ClearClass.ClearAllFields(cvhpj07, null);
+                    ClearClass.ClearAllFields(cvhpj08, null);
                     cvhpj07.setVisibility(View.GONE);
                     cvhpj08.setVisibility(View.GONE);
                 }
@@ -262,6 +261,9 @@ public class SectionJActivity extends AppCompatActivity {
         sD.put("hpj07", hpj07a.isChecked() ? "1"
                 : hpj07b.isChecked() ? "2"
                 : "0");
+
+        //hpj08
+        sD.put("hpj08", hpj08.getText().toString().length() > 0 ? hpj08.getText().toString().trim() : "0");
 
         AppMain.fc.setsD(String.valueOf(sD));
 

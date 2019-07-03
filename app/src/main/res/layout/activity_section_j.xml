@@ -371,6 +371,7 @@
                     android:id="@+id/hpj08"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLength="4"
                     android:inputType="numberDecimal" />
 
             </LinearLayout>
