@@ -200,7 +200,7 @@ public class SectionJActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateD();
+        int updcount = db.updateJ();
 
         if (updcount == 1) {
             // Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -217,55 +217,55 @@ public class SectionJActivity extends AppCompatActivity {
     private void saveDrafts() throws JSONException {
         //Toast.makeText(this, "saving Drafts", Toast.LENGTH_SHORT).show();
 
-        JSONObject sD = new JSONObject();
+        JSONObject sJ = new JSONObject();
 
-        sD.put("hpj01", hpj01a.isChecked() ? "1"
+        sJ.put("hpj01", hpj01a.isChecked() ? "1"
                 : hpj01b.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj02", hpj02a.isChecked() ? "1"
+        sJ.put("hpj02", hpj02a.isChecked() ? "1"
                 : hpj02b.isChecked() ? "2"
                 : hpj02c.isChecked() ? "3"
                 : hpj02d.isChecked() ? "4"
                 : "0");
 
-        sD.put("hpj03r", hpj03ra.isChecked() ? "1"
+        sJ.put("hpj03r", hpj03ra.isChecked() ? "1"
                 : hpj03rb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj03s", hpj03sa.isChecked() ? "1"
+        sJ.put("hpj03s", hpj03sa.isChecked() ? "1"
                 : hpj03sb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj04r", hpj04ra.isChecked() ? "1"
+        sJ.put("hpj04r", hpj04ra.isChecked() ? "1"
                 : hpj04rb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj04s", hpj04sa.isChecked() ? "1"
+        sJ.put("hpj04s", hpj04sa.isChecked() ? "1"
                 : hpj04sb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj05r", hpj05ra.isChecked() ? "1"
+        sJ.put("hpj05r", hpj05ra.isChecked() ? "1"
                 : hpj05rb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj05s", hpj05sa.isChecked() ? "1"
+        sJ.put("hpj05s", hpj05sa.isChecked() ? "1"
                 : hpj05sb.isChecked() ? "2"
                 : "0");
 
-        sD.put("hpj06", hpj06a.isChecked() ? "1"
+        sJ.put("hpj06", hpj06a.isChecked() ? "1"
                 : hpj06b.isChecked() ? "2"
                 : hpj0698.isChecked() ? "98"
                 : "0");
 
-        sD.put("hpj07", hpj07a.isChecked() ? "1"
+        sJ.put("hpj07", hpj07a.isChecked() ? "1"
                 : hpj07b.isChecked() ? "2"
                 : "0");
 
         //hpj08
-        sD.put("hpj08", hpj08.getText().toString().length() > 0 ? hpj08.getText().toString().trim() : "0");
+        sJ.put("hpj08", hpj08.getText().toString().length() > 0 ? hpj08.getText().toString().trim() : "0");
 
-        AppMain.fc.setsD(String.valueOf(sD));
+        AppMain.fc.setsJ(String.valueOf(sJ));
 
         //Toast.makeText(this, "validation successful", Toast.LENGTH_SHORT).show();
 

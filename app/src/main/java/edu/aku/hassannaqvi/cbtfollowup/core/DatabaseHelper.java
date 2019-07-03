@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + UsersContract.singleUser.ROW_PASSWORD + " TEXT );";
     public static final String DATABASE_NAME = "cbtfollowup.db";
     public static final String DB_NAME = "cbtfollowup_copy.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormColumns.TABLE_NAME + "(" +
             FormColumns.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -62,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormColumns.COLUMN_SF + " TEXT," +
             FormColumns.COLUMN_SG + " TEXT," +
             FormColumns.COLUMN_SH + " TEXT," +
+            FormColumns.COLUMN_SJ + " TEXT," +
             FormColumns.COLUMN_GPSLAT + " TEXT," +
             FormColumns.COLUMN_GPSLNG + " TEXT," +
             FormColumns.COLUMN_GPSTIME + " TEXT," +
@@ -70,6 +71,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormColumns.COLUMN_SYNCED + " TEXT," +
             FormColumns.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+    private static final String SQL_ALTER_FORM = "ALTER TABLE "
+            + FormColumns.TABLE_NAME + " ADD COLUMN "
+            + FormColumns.COLUMN_SJ + " TEXT;";
 
 
     private static final String SQL_CREATE_CLUSTERS = "CREATE TABLE "
@@ -121,10 +125,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+        /*db.execSQL(SQL_DELETE_USERS);
         db.execSQL(SQL_DELETE_CLUSTERS);
         db.execSQL(SQL_DELETE_FORMS);
-        db.execSQL(SQL_DELETE_FOLLOWUPS);
+        db.execSQL(SQL_DELETE_FOLLOWUPS);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_ALTER_FORM);
+        }
     }
 
     public void syncUser(JSONArray userlist) {
@@ -336,7 +345,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormColumns.COLUMN_GPSTIME, fc.getGpsTime());
         values.put(FormColumns.COLUMN_GPSACC, fc.getGpsAcc());
         values.put(FormColumns.COLUMN_DEVICEID, fc.getDeviceID());
-        
+
         /* * * * * NO NEED TO USE THESE IN 'INSERT' * * * * */
         /*
         values.put(FormColumns.COLUMN_SYNCED, fc.getSynced());
@@ -519,6 +528,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateJ() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormColumns.COLUMN_SJ, AppMain.fc.getsJ());
+
+        // Which row to update, based on the ID
+        String selection = FormColumns.COLUMN_ID + " = ?";
+        String[] selectionArgs = {String.valueOf(AppMain.fc.getID())};
+
+        int count = db.update(FormColumns.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
     public int updateEnd() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -605,6 +632,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_SF,
                 FormColumns.COLUMN_SG,
                 FormColumns.COLUMN_SH,
+                FormColumns.COLUMN_SJ,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,
@@ -670,6 +698,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormColumns.COLUMN_SF,
                 FormColumns.COLUMN_SG,
                 FormColumns.COLUMN_SH,
+                FormColumns.COLUMN_SJ,
                 FormColumns.COLUMN_GPSLAT,
                 FormColumns.COLUMN_GPSLNG,
                 FormColumns.COLUMN_GPSTIME,
