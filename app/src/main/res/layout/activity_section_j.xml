@@ -22,35 +22,35 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="@color/colorAccent"
-            android:text="@string/hpjh"
+            android:text="@string/fpjh"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
 
-        <!-- Radio Buttons hpj01 Starts -->
+        <!-- Radio Buttons fpj01 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj01"
+            android:id="@+id/cvfpj01"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj01" />
+                    android:text="@string/fpj01" />
 
                 <RadioGroup
-                    android:id="@+id/hpj01"
+                    android:id="@+id/fpj01"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj01a"
+                        android:id="@+id/fpj01a"
                         style="@style/RadioButton"
                         android:text="@string/yes" />
 
                     <RadioButton
-                        android:id="@+id/hpj01b"
+                        android:id="@+id/fpj01b"
                         style="@style/RadioButton"
                         android:text="@string/no" />
 
@@ -59,153 +59,95 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj01 Ends -->
+        <!-- Radio Buttons fpj01 Ends -->
 
-        <!-- Radio Buttons hpj02 Starts -->
+        <!-- Radio Buttons fpj02 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj02"
+            android:id="@+id/cvfpj02"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj02" />
+                    android:text="@string/fpj02" />
 
                 <RadioGroup
-                    android:id="@+id/hpj02"
+                    android:id="@+id/fpj02"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj02a"
+                        android:id="@+id/fpj02a"
                         style="@style/RadioButton"
-                        android:text="@string/hpj02a" />
+                        android:text="@string/fpj02a" />
 
                     <RadioButton
-                        android:id="@+id/hpj02b"
+                        android:id="@+id/fpj02b"
                         style="@style/RadioButton"
-                        android:text="@string/hpj02b" />
+                        android:text="@string/fpj02b" />
 
                     <RadioButton
-                        android:id="@+id/hpj02c"
+                        android:id="@+id/fpj02c"
                         style="@style/RadioButton"
-                        android:text="@string/hpj02c" />
+                        android:text="@string/fpj02c" />
 
                     <RadioButton
-                        android:id="@+id/hpj02d"
+                        android:id="@+id/fpj02d"
                         style="@style/RadioButton"
-                        android:text="@string/hpj02d" />
+                        android:text="@string/fpj02d" />
 
                 </RadioGroup>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj02 Ends -->
+        <!-- Radio Buttons fpj02 Ends -->
 
-        <!-- Radio Buttons hpj03 Starts -->
+        <!-- Radio Buttons fpj03 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj03"
+            android:id="@+id/cvfpj03"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj03" />
+                    android:text="@string/fpj03" />
 
                 <RadioGroup
-                    android:id="@+id/hpj03r"
+                    android:id="@+id/fpj03r"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj03ra"
+                        android:id="@+id/fpj03ra"
                         style="@style/RadioButton"
-                        android:text="@string/hpj03ra" />
+                        android:text="@string/fpj03ra" />
 
                     <RadioButton
-                        android:id="@+id/hpj03rb"
+                        android:id="@+id/fpj03rb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj03rb" />
+                        android:text="@string/fpj03rb" />
 
                 </RadioGroup>
 
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj03s" />
+                    android:text="@string/fpj03s" />
 
                 <RadioGroup
-                    android:id="@+id/hpj03s"
+                    android:id="@+id/fpj03s"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj03sa"
+                        android:id="@+id/fpj03sa"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05sa" />
+                        android:text="@string/fpj05sa" />
 
                     <RadioButton
-                        android:id="@+id/hpj03sb"
+                        android:id="@+id/fpj03sb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05sb" />
-
-                </RadioGroup>
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj03 Ends -->
-
-        <!-- Radio Buttons hpj04 Starts -->
-        <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj04"
-            style="@style/Q_CardView">
-
-            <LinearLayout style="@style/Q_Linerlayout_new">
-
-                <TextView
-                    style="@style/TextView"
-                    android:text="@string/hpj04" />
-
-                <TextView
-                    style="@style/TextView"
-                    android:text="@string/hpj04h" />
-
-                <RadioGroup
-                    android:id="@+id/hpj04r"
-                    style="@style/RadioGroup">
-
-                    <RadioButton
-                        android:id="@+id/hpj04ra"
-                        style="@style/RadioButton"
-                        android:text="@string/hpj04ra" />
-
-                    <RadioButton
-                        android:id="@+id/hpj04rb"
-                        style="@style/RadioButton"
-                        android:text="@string/hpj04rb" />
-
-                </RadioGroup>
-
-
-                <TextView
-                    style="@style/TextView"
-                    android:text="@string/hpj03s" />
-
-                <RadioGroup
-                    android:id="@+id/hpj04s"
-                    style="@style/RadioGroup">
-
-                    <RadioButton
-                        android:id="@+id/hpj04sa"
-                        style="@style/RadioButton"
-                        android:text="@string/hpj05sa" />
-
-                    <RadioButton
-                        android:id="@+id/hpj04sb"
-                        style="@style/RadioButton"
-                        android:text="@string/hpj05sb" />
+                        android:text="@string/fpj05sb" />
 
                 </RadioGroup>
 
@@ -213,57 +155,57 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj04 Ends -->
+        <!-- Radio Buttons fpj03 Ends -->
 
-        <!-- Radio Buttons hpj05 Starts -->
+        <!-- Radio Buttons fpj04 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj05"
+            android:id="@+id/cvfpj04"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj05" />
+                    android:text="@string/fpj04" />
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj05h" />
+                    android:text="@string/fpj04h" />
 
                 <RadioGroup
-                    android:id="@+id/hpj05r"
+                    android:id="@+id/fpj04r"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj05ra"
+                        android:id="@+id/fpj04ra"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05ra" />
+                        android:text="@string/fpj04ra" />
 
                     <RadioButton
-                        android:id="@+id/hpj05rb"
+                        android:id="@+id/fpj04rb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05rb" />
+                        android:text="@string/fpj04rb" />
 
                 </RadioGroup>
 
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj03s" />
+                    android:text="@string/fpj03s" />
 
                 <RadioGroup
-                    android:id="@+id/hpj05s"
+                    android:id="@+id/fpj04s"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj05sa"
+                        android:id="@+id/fpj04sa"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05sa" />
+                        android:text="@string/fpj05sa" />
 
                     <RadioButton
-                        android:id="@+id/hpj05sb"
+                        android:id="@+id/fpj04sb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj05sb" />
+                        android:text="@string/fpj05sb" />
 
                 </RadioGroup>
 
@@ -271,76 +213,134 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj05 Ends -->
+        <!-- Radio Buttons fpj04 Ends -->
 
-        <!-- Radio Buttons hpj06 Starts -->
+        <!-- Radio Buttons fpj05 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj06"
+            android:id="@+id/cvfpj05"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj06" />
+                    android:text="@string/fpj05" />
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/fpj05h" />
 
                 <RadioGroup
-                    android:id="@+id/hpj06"
+                    android:id="@+id/fpj05r"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj06a"
+                        android:id="@+id/fpj05ra"
                         style="@style/RadioButton"
-                        android:text="@string/hpj06a" />
+                        android:text="@string/fpj05ra" />
 
                     <RadioButton
-                        android:id="@+id/hpj06b"
+                        android:id="@+id/fpj05rb"
                         style="@style/RadioButton"
-                        android:text="@string/hpj06b" />
-
-                    <RadioButton
-                        android:id="@+id/hpj0698"
-                        style="@style/RadioButton"
-                        android:text="@string/hpj0698" />
+                        android:text="@string/fpj05rb" />
 
                 </RadioGroup>
+
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/fpj03s" />
+
+                <RadioGroup
+                    android:id="@+id/fpj05s"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/fpj05sa"
+                        style="@style/RadioButton"
+                        android:text="@string/fpj05sa" />
+
+                    <RadioButton
+                        android:id="@+id/fpj05sb"
+                        style="@style/RadioButton"
+                        android:text="@string/fpj05sb" />
+
+                </RadioGroup>
+
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj06 Ends -->
+        <!-- Radio Buttons fpj05 Ends -->
 
-        <!-- Radio Buttons hpj07 Starts -->
+        <!-- Radio Buttons fpj06 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj07"
+            android:id="@+id/cvfpj06"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj07" />
+                    android:text="@string/fpj06" />
 
                 <RadioGroup
-                    android:id="@+id/hpj07"
+                    android:id="@+id/fpj06"
                     style="@style/RadioGroup">
 
                     <RadioButton
-                        android:id="@+id/hpj07a"
+                        android:id="@+id/fpj06a"
                         style="@style/RadioButton"
-                        android:text="@string/hpj07a" />
+                        android:text="@string/fpj06a" />
 
                     <RadioButton
-                        android:id="@+id/hpj07b"
+                        android:id="@+id/fpj06b"
                         style="@style/RadioButton"
-                        android:text="@string/hpj07b" />
+                        android:text="@string/fpj06b" />
+
+                    <RadioButton
+                        android:id="@+id/fpj0698"
+                        style="@style/RadioButton"
+                        android:text="@string/fpj0698" />
 
                 </RadioGroup>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj07 Ends -->
+        <!-- Radio Buttons fpj06 Ends -->
+
+        <!-- Radio Buttons fpj07 Starts -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvfpj07"
+            style="@style/Q_CardView">
+
+            <LinearLayout style="@style/Q_Linerlayout_new">
+
+                <TextView
+                    style="@style/TextView"
+                    android:text="@string/fpj07" />
+
+                <RadioGroup
+                    android:id="@+id/fpj07"
+                    style="@style/RadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/fpj07a"
+                        style="@style/RadioButton"
+                        android:text="@string/fpj07a" />
+
+                    <RadioButton
+                        android:id="@+id/fpj07b"
+                        style="@style/RadioButton"
+                        android:text="@string/fpj07b" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <!-- Radio Buttons fpj07 Ends -->
 
 
         <TextView
@@ -349,26 +349,26 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="@color/colorAccent"
-            android:text="@string/hpjh1"
+            android:text="@string/fpjh1"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:typeface="serif" />
 
-        <!-- Radio Buttons hpj08 Starts -->
+        <!-- Radio Buttons fpj08 Starts -->
         <android.support.v7.widget.CardView
-            android:id="@+id/cvhpj08"
+            android:id="@+id/cvfpj08"
             style="@style/Q_CardView">
 
             <LinearLayout style="@style/Q_Linerlayout_new">
 
                 <TextView
                     style="@style/TextView"
-                    android:text="@string/hpj08" />
+                    android:text="@string/fpj08" />
 
                 <EditText
-                    android:id="@+id/hpj08"
+                    android:id="@+id/fpj08"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLength="4"
@@ -377,7 +377,7 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <!-- Radio Buttons hpj08 Ends -->
+        <!-- Radio Buttons fpj08 Ends -->
 
 
         <!--  = = = = =  END OF FORM FIELDS  = = = = = -->

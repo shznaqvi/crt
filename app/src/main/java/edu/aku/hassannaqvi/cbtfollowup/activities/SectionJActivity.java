@@ -28,90 +28,88 @@ public class SectionJActivity extends AppCompatActivity {
 
     @BindView(R.id.llJ)
     LinearLayout llJ;
-    @BindView(R.id.cvhpj01)
-    CardView cvhpj01;
-    @BindView(R.id.hpj01)
-    RadioGroup hpj01;
-    @BindView(R.id.hpj01a)
-    RadioButton hpj01a;
-    @BindView(R.id.hpj01b)
-    RadioButton hpj01b;
-    @BindView(R.id.cvhpj02)
-    CardView cvhpj02;
-    @BindView(R.id.hpj02)
-    RadioGroup hpj02;
-    @BindView(R.id.hpj02a)
-    RadioButton hpj02a;
-    @BindView(R.id.hpj02b)
-    RadioButton hpj02b;
-    @BindView(R.id.hpj02c)
-    RadioButton hpj02c;
-    @BindView(R.id.hpj02d)
-    RadioButton hpj02d;
-    @BindView(R.id.cvhpj03)
-    CardView cvhpj03;
-    @BindView(R.id.hpj03r)
-    RadioGroup hpj03r;
-    @BindView(R.id.hpj03ra)
-    RadioButton hpj03ra;
-    @BindView(R.id.hpj03rb)
-    RadioButton hpj03rb;
-    @BindView(R.id.hpj03s)
-    RadioGroup hpj03s;
-    @BindView(R.id.hpj03sa)
-    RadioButton hpj03sa;
-    @BindView(R.id.hpj03sb)
-    RadioButton hpj03sb;
-    @BindView(R.id.cvhpj04)
-    CardView cvhpj04;
-    @BindView(R.id.hpj04r)
-    RadioGroup hpj04r;
-    @BindView(R.id.hpj04ra)
-    RadioButton hpj04ra;
-    @BindView(R.id.hpj04rb)
-    RadioButton hpj04rb;
-    @BindView(R.id.hpj04s)
-    RadioGroup hpj04s;
-    @BindView(R.id.hpj04sa)
-    RadioButton hpj04sa;
-    @BindView(R.id.hpj04sb)
-    RadioButton hpj04sb;
-    @BindView(R.id.cvhpj05)
-    CardView cvhpj05;
-    @BindView(R.id.hpj05r)
-    RadioGroup hpj05r;
-    @BindView(R.id.hpj05ra)
-    RadioButton hpj05ra;
-    @BindView(R.id.hpj05rb)
-    RadioButton hpj05rb;
-    @BindView(R.id.hpj05s)
-    RadioGroup hpj05s;
-    @BindView(R.id.hpj05sa)
-    RadioButton hpj05sa;
-    @BindView(R.id.hpj05sb)
-    RadioButton hpj05sb;
-    @BindView(R.id.cvhpj06)
-    CardView cvhpj06;
-    @BindView(R.id.hpj06)
-    RadioGroup hpj06;
-    @BindView(R.id.hpj06a)
-    RadioButton hpj06a;
-    @BindView(R.id.hpj06b)
-    RadioButton hpj06b;
-    @BindView(R.id.hpj0698)
-    RadioButton hpj0698;
-    @BindView(R.id.cvhpj07)
-    CardView cvhpj07;
-    @BindView(R.id.cvhpj08)
-    CardView cvhpj08;
-    @BindView(R.id.hpj07)
-    RadioGroup hpj07;
-    @BindView(R.id.hpj07a)
-    RadioButton hpj07a;
-    @BindView(R.id.hpj07b)
-    RadioButton hpj07b;
-    @BindView(R.id.hpj08)
-    EditText hpj08;
+    @BindView(R.id.fpj01)
+    RadioGroup fpj01;
+    @BindView(R.id.fpj01a)
+    RadioButton fpj01a;
+    @BindView(R.id.fpj01b)
+    RadioButton fpj01b;
+    @BindView(R.id.cvfpj02)
+    CardView cvfpj02;
+    @BindView(R.id.fpj02)
+    RadioGroup fpj02;
+    @BindView(R.id.fpj02a)
+    RadioButton fpj02a;
+    @BindView(R.id.fpj02b)
+    RadioButton fpj02b;
+    @BindView(R.id.fpj02c)
+    RadioButton fpj02c;
+    @BindView(R.id.fpj02d)
+    RadioButton fpj02d;
+    @BindView(R.id.cvfpj03)
+    CardView cvfpj03;
+    @BindView(R.id.fpj03r)
+    RadioGroup fpj03r;
+    @BindView(R.id.fpj03ra)
+    RadioButton fpj03ra;
+    @BindView(R.id.fpj03rb)
+    RadioButton fpj03rb;
+    @BindView(R.id.fpj03s)
+    RadioGroup fpj03s;
+    @BindView(R.id.fpj03sa)
+    RadioButton fpj03sa;
+    @BindView(R.id.fpj03sb)
+    RadioButton fpj03sb;
+    @BindView(R.id.cvfpj04)
+    CardView cvfpj04;
+    @BindView(R.id.fpj04r)
+    RadioGroup fpj04r;
+    @BindView(R.id.fpj04ra)
+    RadioButton fpj04ra;
+    @BindView(R.id.fpj04rb)
+    RadioButton fpj04rb;
+    @BindView(R.id.fpj04s)
+    RadioGroup fpj04s;
+    @BindView(R.id.fpj04sa)
+    RadioButton fpj04sa;
+    @BindView(R.id.fpj04sb)
+    RadioButton fpj04sb;
+    @BindView(R.id.cvfpj05)
+    CardView cvfpj05;
+    @BindView(R.id.fpj05r)
+    RadioGroup fpj05r;
+    @BindView(R.id.fpj05ra)
+    RadioButton fpj05ra;
+    @BindView(R.id.fpj05rb)
+    RadioButton fpj05rb;
+    @BindView(R.id.fpj05s)
+    RadioGroup fpj05s;
+    @BindView(R.id.fpj05sa)
+    RadioButton fpj05sa;
+    @BindView(R.id.fpj05sb)
+    RadioButton fpj05sb;
+    @BindView(R.id.cvfpj06)
+    CardView cvfpj06;
+    @BindView(R.id.fpj06)
+    RadioGroup fpj06;
+    @BindView(R.id.fpj06a)
+    RadioButton fpj06a;
+    @BindView(R.id.fpj06b)
+    RadioButton fpj06b;
+    @BindView(R.id.fpj0698)
+    RadioButton fpj0698;
+    @BindView(R.id.cvfpj07)
+    CardView cvfpj07;
+    @BindView(R.id.cvfpj08)
+    CardView cvfpj08;
+    @BindView(R.id.fpj07)
+    RadioGroup fpj07;
+    @BindView(R.id.fpj07a)
+    RadioButton fpj07a;
+    @BindView(R.id.fpj07b)
+    RadioButton fpj07b;
+    @BindView(R.id.fpj08)
+    EditText fpj08;
     @BindView(R.id.btnNext)
     Button btnNext;
     @BindView(R.id.btn_End)
@@ -130,31 +128,31 @@ public class SectionJActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        hpj01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        fpj01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if (checkedId == hpj01a.getId()) {
-                    cvhpj02.setVisibility(View.VISIBLE);
+                if (checkedId == fpj01a.getId()) {
+                    cvfpj02.setVisibility(View.VISIBLE);
                 } else {
-                    ClearClass.ClearAllFields(cvhpj02, null);
-                    cvhpj02.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(cvfpj02, null);
+                    cvfpj02.setVisibility(View.GONE);
                 }
             }
         });
 
-        hpj06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        fpj06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if (checkedId != hpj06b.getId()) {
-                    cvhpj07.setVisibility(View.VISIBLE);
-                    cvhpj08.setVisibility(View.VISIBLE);
+                if (checkedId != fpj06b.getId()) {
+                    cvfpj07.setVisibility(View.VISIBLE);
+                    cvfpj08.setVisibility(View.VISIBLE);
                 } else {
-                    ClearClass.ClearAllFields(cvhpj07, null);
-                    ClearClass.ClearAllFields(cvhpj08, null);
-                    cvhpj07.setVisibility(View.GONE);
-                    cvhpj08.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(cvfpj07, null);
+                    ClearClass.ClearAllFields(cvfpj08, null);
+                    cvfpj07.setVisibility(View.GONE);
+                    cvfpj08.setVisibility(View.GONE);
                 }
             }
         });
@@ -219,51 +217,51 @@ public class SectionJActivity extends AppCompatActivity {
 
         JSONObject sJ = new JSONObject();
 
-        sJ.put("hpj01", hpj01a.isChecked() ? "1"
-                : hpj01b.isChecked() ? "2"
+        sJ.put("fpj01", fpj01a.isChecked() ? "1"
+                : fpj01b.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj02", hpj02a.isChecked() ? "1"
-                : hpj02b.isChecked() ? "2"
-                : hpj02c.isChecked() ? "3"
-                : hpj02d.isChecked() ? "4"
+        sJ.put("fpj02", fpj02a.isChecked() ? "1"
+                : fpj02b.isChecked() ? "2"
+                : fpj02c.isChecked() ? "3"
+                : fpj02d.isChecked() ? "4"
                 : "0");
 
-        sJ.put("hpj03r", hpj03ra.isChecked() ? "1"
-                : hpj03rb.isChecked() ? "2"
+        sJ.put("fpj03r", fpj03ra.isChecked() ? "1"
+                : fpj03rb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj03s", hpj03sa.isChecked() ? "1"
-                : hpj03sb.isChecked() ? "2"
+        sJ.put("fpj03s", fpj03sa.isChecked() ? "1"
+                : fpj03sb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj04r", hpj04ra.isChecked() ? "1"
-                : hpj04rb.isChecked() ? "2"
+        sJ.put("fpj04r", fpj04ra.isChecked() ? "1"
+                : fpj04rb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj04s", hpj04sa.isChecked() ? "1"
-                : hpj04sb.isChecked() ? "2"
+        sJ.put("fpj04s", fpj04sa.isChecked() ? "1"
+                : fpj04sb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj05r", hpj05ra.isChecked() ? "1"
-                : hpj05rb.isChecked() ? "2"
+        sJ.put("fpj05r", fpj05ra.isChecked() ? "1"
+                : fpj05rb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj05s", hpj05sa.isChecked() ? "1"
-                : hpj05sb.isChecked() ? "2"
+        sJ.put("fpj05s", fpj05sa.isChecked() ? "1"
+                : fpj05sb.isChecked() ? "2"
                 : "0");
 
-        sJ.put("hpj06", hpj06a.isChecked() ? "1"
-                : hpj06b.isChecked() ? "2"
-                : hpj0698.isChecked() ? "98"
+        sJ.put("fpj06", fpj06a.isChecked() ? "1"
+                : fpj06b.isChecked() ? "2"
+                : fpj0698.isChecked() ? "98"
                 : "0");
 
-        sJ.put("hpj07", hpj07a.isChecked() ? "1"
-                : hpj07b.isChecked() ? "2"
+        sJ.put("fpj07", fpj07a.isChecked() ? "1"
+                : fpj07b.isChecked() ? "2"
                 : "0");
 
-        //hpj08
-        sJ.put("hpj08", hpj08.getText().toString().length() > 0 ? hpj08.getText().toString().trim() : "0");
+        //fpj08
+        sJ.put("fpj08", fpj08.getText().toString().length() > 0 ? fpj08.getText().toString().trim() : "0");
 
         AppMain.fc.setsJ(String.valueOf(sJ));
 

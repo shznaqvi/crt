@@ -240,49 +240,49 @@
     <string name="fpj001">Name of Supervisor  </string>
     <string name="fpj002">Signature and Date  </string>
 
-    <string name="hpjh"> حفاظتی ٹیکہ جات کی معلومات </string>
+    <string name="fpjh"> حفاظتی ٹیکہ جات کی معلومات </string>
 
-    <string name="hpj01"> کیاآپ کے پاس قومی حفاظتی ٹیکوں کاکارڈ یا کسی نجی ادارے کی طرف سے دیاگیا حفاظتی ٹیکوں کا ریکارڈ موجود ہے ؟ </string>
+    <string name="fpj01"> کیاآپ کے پاس قومی حفاظتی ٹیکوں کاکارڈ یا کسی نجی ادارے کی طرف سے دیاگیا حفاظتی ٹیکوں کا ریکارڈ موجود ہے ؟ </string>
 
-    <string name="hpj02"> کیا میں کارڈ یا دوسرے دستاویزات دیکھ سکتا ہوں؟ </string>
-    <string name="hpj02a"> ہاں ،صرف کارڈ دیکھاہے </string>
-    <string name="hpj02b"> ہاں ،صرف دستاویزات دیکھے ہیں </string>
-    <string name="hpj02c"> ہاں ، کارڈ اور دستاویزات دونوں دیکھےہیں </string>
-    <string name="hpj02d"> کوئی کارڈ یا دستاویزات نہیں دیکھے </string>
+    <string name="fpj02"> کیا میں کارڈ یا دوسرے دستاویزات دیکھ سکتا ہوں؟ </string>
+    <string name="fpj02a"> ہاں ،صرف کارڈ دیکھاہے </string>
+    <string name="fpj02b"> ہاں ،صرف دستاویزات دیکھے ہیں </string>
+    <string name="fpj02c"> ہاں ، کارڈ اور دستاویزات دونوں دیکھےہیں </string>
+    <string name="fpj02d"> کوئی کارڈ یا دستاویزات نہیں دیکھے </string>
 
-    <string name="hpj03"> حفاظتی ٹیکوں کی تفصیل </string>
-    <string name="hpj03s"> تصديق جو ذريعو </string>
-    <string name="hpj03ra"> ہاں </string>
-    <string name="hpj03rb"> نہیں </string>
-    <string name="hpj03sa"> ڪارڊ </string>
-    <string name="hpj03sb"> ياداشت </string>
+    <string name="fpj03"> حفاظتی ٹیکوں کی تفصیل </string>
+    <string name="fpj03s"> تصديق جو ذريعو </string>
+    <string name="fpj03ra"> ہاں </string>
+    <string name="fpj03rb"> نہیں </string>
+    <string name="fpj03sa"> ڪارڊ </string>
+    <string name="fpj03sb"> ياداشت </string>
 
-    <string name="hpj04"> 9مہینے کی عمر میں </string>
-    <string name="hpj04h"> خسرہ - I </string>
-    <string name="hpj04ra"> ہاں </string>
-    <string name="hpj04rb"> نہیں </string>
-    <string name="hpj04sa"> ڪارڊ </string>
-    <string name="hpj04sb"> ياداشت </string>
+    <string name="fpj04"> 9مہینے کی عمر میں </string>
+    <string name="fpj04h"> خسرہ - I </string>
+    <string name="fpj04ra"> ہاں </string>
+    <string name="fpj04rb"> نہیں </string>
+    <string name="fpj04sa"> ڪارڊ </string>
+    <string name="fpj04sb"> ياداشت </string>
 
-    <string name="hpj05"> 15 مہینے کی عمر میں </string>
-    <string name="hpj05h"> خسرہ - II </string>
-    <string name="hpj05ra"> ہاں </string>
-    <string name="hpj05rb"> نہیں </string>
-    <string name="hpj05sa"> Card </string>
-    <string name="hpj05sb">Recall </string>
+    <string name="fpj05"> 15 مہینے کی عمر میں </string>
+    <string name="fpj05h"> خسرہ - II </string>
+    <string name="fpj05ra"> ہاں </string>
+    <string name="fpj05rb"> نہیں </string>
+    <string name="fpj05sa"> Card </string>
+    <string name="fpj05sb">Recall </string>
 
-    <string name="hpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
-    <string name="hpj06a"> ہاں </string>
-    <string name="hpj06b"> نہیں </string>
-    <string name="hpj0698"> معلوم نہیں </string>
+    <string name="fpj06"> کیا بچہ(نام) نےکبھی پولیو مہم کے دوران پولیو سے بچاؤ کے قطرے پیئے ہیں؟ </string>
+    <string name="fpj06a"> ہاں </string>
+    <string name="fpj06b"> نہیں </string>
+    <string name="fpj0698"> معلوم نہیں </string>
 
-    <string name="hpj07"> کیابچے (نام) کو پچھلی پولیو مہم میں پولیو کے قطرے پلائے گئے تھے؟ </string>
-    <string name="hpj07a"> ہاں </string>
-    <string name="hpj07b"> نہیں </string>
+    <string name="fpj07"> کیابچے (نام) کو پچھلی پولیو مہم میں پولیو کے قطرے پلائے گئے تھے؟ </string>
+    <string name="fpj07a"> ہاں </string>
+    <string name="fpj07b"> نہیں </string>
 
-    <string name="hpjh1"> ہیموگلوبن کے نتائج </string>
+    <string name="fpjh1"> ہیموگلوبن کے نتائج </string>
 
-    <string name="hpj08"> خون کی مقدار کا نتیجہ </string>
+    <string name="fpj08"> خون کی مقدار کا نتیجہ </string>
 
 
 </resources>
